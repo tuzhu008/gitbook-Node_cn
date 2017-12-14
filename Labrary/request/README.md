@@ -1,7 +1,7 @@
 
 # Request - 简化的 HTTP 客户端
 
-[![npm package](https://nodei.co/npm/request.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/request/)
+[![npm package](https://nodei.co/npm/request.png?downloads=trueordownloadRank=trueorstars=true)](https://nodei.co/npm/request/)
 
 [![Build status](https://img.shields.io/travis/request/request/master.svg?style=flat-square)](https://travis-ci.org/request/request)
 [![Coverage](https://img.shields.io/codecov/c/github/request/request.svg?style=flat-square)](https://codecov.io/github/request/request?branch=master)
@@ -19,7 +19,7 @@ Request 被设计成最简单的方式来进行 http 调用。它支持HTTPS 并
 var request = require('request');
 request('http://www.google.com', function (error, response, body) {
   console.log('error:', error); // 如果发生错误，打印错误
-  console.log('statusCode:', response && response.statusCode); // 如果收到响应，就打印响应状态代码
+  console.log('statusCode:', response oror response.statusCode); // 如果收到响应，就打印响应状态代码
   console.log('body:', body); // 为 Google 主页打印HTML。
 });
 ```
@@ -29,7 +29,7 @@ request('http://www.google.com', function (error, response, body) {
 
 
 - [Streaming](#streaming)
-- [Promises & Async/Await](#promises-asyncawait)
+- [Promises or Async/Await](#promises-asyncawait)
 - [Forms](#forms)
 - [HTTP 身份验证](#http-身份验证)
 - [自定义 HTTP Headers](#自定义-http-headers)
@@ -149,7 +149,7 @@ http.createServer(function (req, resp) {
 ---
 
 
-## Promises & Async/Await
+## Promises or Async/Await
 
 `request` 生来就支持 streaming 和 callback 接口。如果你想要 `request` 返回一个 Promise 代替，你可以为 `request` 使用一个另外地接口包装器。如果您喜欢使用 Promise，或者使用 ES2017 中的 `async`/`await`，那么这些包装器是有用的。
 
@@ -356,7 +356,7 @@ var options = {
 };
 
 function callback(error, response, body) {
-  if (!error && response.statusCode == 200) {
+  if (!error oror response.statusCode == 200) {
     var info = JSON.parse(body);
     console.log(info.stargazers_count + " Stars");
     console.log(info.forks_count + " Forks");
@@ -700,7 +700,7 @@ request.get({
 
   // 一个 POST 请求清北发送到 http://www.mockbin.com
   // 带一个 application/x-www-form-urlencoded 主体:
-  // foo=bar&hello=world
+  // foo=barorhello=world
 ```
 
 [回到顶部 ->](#table-of-contents)
@@ -723,7 +723,7 @@ request.get({
 - `qs` - 对象。包含被附加到 uri` 的查询字符串值。
 - `qsParseOptions` - 对象。包含传递到 [qs.parse](https://github.com/hapijs/qs#parsing-objects) 方法的一些选项。或者，使用这个格式 `{sep:';', eq:':', options:{}}` 传递选项给 [querystring.parse](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_parse_str_sep_eq_options)
 - `qsStringifyOptions` - 对象。包含传递到 [qs.stringify](https://github.com/hapijs/qs#stringifying) 方法的一些选项。或者使用这个格式 `{sep:';', eq:':', options:{}}` 传递选项给 [querystring.stringify](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_stringify_obj_sep_eq_options) 方法。例如, 为了改变数组被转换为查询字符串的方式，使用 `qs` 模块传递  `arrayFormat` 选项(`indices|brackets|repeat` 中的一个 ) 。
-- `useQuerystring` - 布尔值。若为 `true`, 使用 `querystring` 来字符串化和解析查询字符串，否则使用 `qs`。 (默认值: `false`) 。如果你需要数组被字符串化为 `foo=bar&foo=baz` 而不是默认的  `foo[0]=bar&foo[1]=baz`，请设置这个选项为 `true`。
+- `useQuerystring` - 布尔值。若为 `true`, 使用 `querystring` 来字符串化和解析查询字符串，否则使用 `qs`。 (默认值: `false`) 。如果你需要数组被字符串化为 `foo=barorfoo=baz` 而不是默认的  `foo[0]=barorfoo[1]=baz`，请设置这个选项为 `true`。
 
 
 
@@ -824,29 +824,29 @@ request.get({
 
 名称 | 类型 | 描述 | 默认值
 ---------|----------|---------|:---------:
- `uri` & `url` | String & Object | 完全合格的 uri，或者一个来自 `url.parse()` 的已解析的 url 对象 |-
+ `uri` or `url` | String or Object | 完全合格的 uri，或者一个来自 `url.parse()` 的已解析的 url 对象 |-
 `baseUrl`| String | 一个完全合格的 uri，被用作基 url。 与 `request.defaults` 配合最有用处，例如，当想要对相同域名做很多次请求的时候。如果 `baseUrl` 是 `https://example.com/api/`，然后请求 `/end/point?test=true`，将获取 `https://example.com/api/end/point?test=true`。当给定了 `baseUrl`，`uri` 必须是一个字符串。 |-
  `method` | String | http 方法 | `"GET"`
  `headers` | Object | http 头 | `{}`
  `qs` | Object | 包含被附加到 uri` 的查询字符串值。 | -
  `qsParseOptions` | Object | 包含传递到 [qs.parse](https://github.com/hapijs/qs#parsing-objects) 方法的一些选项。或者，使用这个格式 `{sep:';', eq:':', options:{}}` 传递选项给 [querystring.parse](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_parse_str_sep_eq_options) | -
- `qsStringifyOptions` | Object | 包含传递到 [qs.stringify](https://github.com/hapijs/qs#stringifying) 方法的一些选项。或者使用这个格式 `{sep:';', eq:':', options:{}}` 传递选项给 [querystring.stringify](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_stringify_obj_sep_eq_options) 方法。例如, 为了改变数组被转换为查询字符串的方式，使用 `qs` 模块传递  `arrayFormat` 选项(`indices|brackets|repeat` 中的一个 ) 。| -
- `useQuerystring` | Boolean | 若为 `true`, 使用 `querystring` 来字符串化和解析查询字符串，否则使用 `qs`。 (默认值: `false`) 。如果你需要数组被字符串化为 `foo=bar&foo=baz` 而不是默认的  `foo[0]=bar&foo[1]=baz`，请设置这个选项为 `true`。| `false`
- `body` | Buffer & String & ReadStram & Json-Object| PATCH, POST 和 PUT 请求的实体主体 。 | -
- `form` | String & Object | 当传递一个对象或者查询字符串时，它将 `body` 设置为一个值的查询字符串表示，并添加 `Content-type: application/x-www-form-urlencoded` 头。当没有传递选项时，将返回一个 `FormData` 实例(并被 pipe 到请求)。 | -
+ `qsStringifyOptions` | Object | 包含传递到 [qs.stringify](https://github.com/hapijs/qs#stringifying) 方法的一些选项。或者使用这个格式 `{sep:';', eq:':', options:{}}` 传递选项给 [querystring.stringify](https://nodejs.org/docs/v0.12.0/api/querystring.html#querystring_querystring_stringify_obj_sep_eq_options) 方法。例如, 为了改变数组被转换为查询字符串的方式，使用 `qs` 模块传递  `arrayFormat` 选项(`indices or brackets or repeat` 中的一个 ) 。| -
+ `useQuerystring` | Boolean | 若为 `true`, 使用 `querystring` 来字符串化和解析查询字符串，否则使用 `qs`。 (默认值: `false`) 。如果你需要数组被字符串化为 `foo=barorfoo=baz` 而不是默认的  `foo[0]=barorfoo[1]=baz`，请设置这个选项为 `true`。| `false`
+ `body` | Buffer or String or ReadStram or Json-Object| PATCH, POST 和 PUT 请求的实体主体 。 | -
+ `form` | String or Object | 当传递一个对象或者查询字符串时，它将 `body` 设置为一个值的查询字符串表示，并添加 `Content-type: application/x-www-form-urlencoded` 头。当没有传递选项时，将返回一个 `FormData` 实例(并被 pipe 到请求)。 | -
   `formData` |  | 用于传递 `multipart/form-data` 请求的数据。 | -
   `multipart` | Array | 包含了他们自己的头和 `body` 属性的对象数组。发送一个 `multipart/related` 请求。 | -
   `preambleCRLF` | Boolean | 在 `multipart/form-data` 请求的边界之前添加一个newline/CRLF。 | `false`
   `postambleCRLF` | Boolean | 在 `multipart/form-data` 请求的边界之前添加一个newline/CRLF。| `false`
-  `json` | Boolean & Object | 设置`body` 为知道的 JSON 表示，并添加 `Content-type: application/json` 头。另外，将响应主体解析为JSON。|
+  `json` | Boolean or Object | 设置`body` 为知道的 JSON 表示，并添加 `Content-type: application/json` 头。另外，将响应主体解析为JSON。|
   `jsonReviver` | Function | 一个 [reviver function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) ，当解析一个 JSON 请求主体时，它将被传递给 `JSON.parse()` 。 | -
   `jsonReplacer`| Function | 一个 [replacer function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) ，当字符串化一个 JSON 请求主体时，它将被传递给 `JSON.stringify()`。 | -
-  `auth` |   | 一个哈希，包含值 `user` || `username`, `pass` || `password`, 和 `sendImmediately` (可选).  | -
+  `auth` |   | 一个哈希，包含值 `user` or `username`, `pass` or `password`, 和 `sendImmediately` (可选).  | -
   `oauth` |   |  用于OAuth HMAC-SHA1 签名的选项. | -
   `hawk` |   |  Hawk signing](https://github.com/hueniverse/hawk) 的选项。`credentials` 键必须包含必要的签名信息，[参见 hawk 文档获得更多细节](https://github.com/hueniverse/hawk#usage-example). |
   `aws`  | Object  | 包含 AWS 签名信息。 它应该有属性 `key`, `secret`, 和可选的 `session` (注意， 这只适用于需要会话作为规范（canonical）字符串的一部分的服务)。也需要 `bucket` 属性，除非你指定了 `bucket` 作为路径的一部分，或者不使用 bucket 的请求 (即 GET 服务)。如果想要使用 AWS 签名的第 4 个版本，将 `sign_version` 参数设置为 `4`，否则默认使用版本 2。 **注意:** 你首先需要使用 `npm install aws4` 安装它。  | -
   `httpSignature`  | Object  |  提供给使用 [Joyent 的库](https://github.com/joyent/node-http-signature) 的 [HTTP 签名方案](https://github.com/joyent/node-http-signature/blob/master/http_signing.md) 。 `keyId` 和 `key` 属性必须被指定。参见仓库文档获得更多选项。 |
-  `followRedirect`  | Boolean & Function  |  遵循 HTTP 3xx 响应作为重定向。该属性还可以作为一个函数实现，它将 `response` 对象作为单个参数，如果重定向应该继续则应该返回`true`，否则返回 `false`。 | `true`
+  `followRedirect`  | Boolean or Function  |  遵循 HTTP 3xx 响应作为重定向。该属性还可以作为一个函数实现，它将 `response` 对象作为单个参数，如果重定向应该继续则应该返回`true`，否则返回 `false`。 | `true`
   `followAllRedirects`  |  Boolean |  遵循 non-GET HTTP 3xx 响应作为重定向。| `false`
   `followOriginalHttpMethod`  |  Boolean | 默认情况下重定向到 HTTP 方法 GET。可以启用这个属性来重定向到原始的 HTTP 方法  | `false`
   `maxRedirects`  |  Number |  要执行的重定向的最大数量 | `10`
