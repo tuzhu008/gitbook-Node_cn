@@ -1,7 +1,7 @@
 {
-  "title" : "Node.js高级编程",
+  "title" : "Node.js",
   "author" : "tuzhu008",
-  "description" : "Node.js高级编程手工修正版",
+  "description" : "Node.js 自我学习",
   "language" : "zh-hans",
   "root": ".",
   "styles": {
