@@ -4,7 +4,9 @@
 
 ### 参考文档
 
-### [相关库](Labrary/README.md)
+### 相关库
+
+* [Node 相关库列表](Labrary/README.md)
 
 * [node 版本管理](Labrary/nvm/README.md)
 
