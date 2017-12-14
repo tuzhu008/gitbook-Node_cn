@@ -4,7 +4,7 @@
 
 ### 参考文档
 
-### 相关库
+### [相关库](Labrary/README.md)
 
 * [node 版本管理](Labrary/nvm/README.md)
 
