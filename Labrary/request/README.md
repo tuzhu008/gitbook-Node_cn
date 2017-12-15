@@ -838,7 +838,7 @@ request.get({
   `multipart` | Array | 包含了他们自己的头和 `body` 属性的对象数组。发送一个 `multipart/related` 请求。 | -
   `preambleCRLF` | Boolean | 在 `multipart/form-data` 请求的边界之前添加一个newline/CRLF。 | `false`
   `postambleCRLF` | Boolean | 在 `multipart/form-data` 请求的边界之前添加一个newline/CRLF。| `false`
-  `json` | Boolean or Object | 设置`body` 为知道的 JSON 表示，并添加 `Content-type: application/json` 头。另外，将响应主体解析为JSON。|
+  `json` | Boolean or Object | 设置`body` 为值的 JSON 表示，并添加 `Content-type: application/json` 头。另外，将响应主体解析为JSON。|
   `jsonReviver` | Function | 一个 [reviver function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) ，当解析一个 JSON 请求主体时，它将被传递给 `JSON.parse()` 。 | -
   `jsonReplacer`| Function | 一个 [replacer function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) ，当字符串化一个 JSON 请求主体时，它将被传递给 `JSON.stringify()`。 | -
   `auth` |   | 一个哈希，包含值 `user` or `username`, `pass` or `password`, 和 `sendImmediately` (可选).  | -
