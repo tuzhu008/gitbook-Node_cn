@@ -29,9 +29,7 @@ value. This value will be pulled from the provided `getter`.
 - `getter` - 这个 getter 用来为请求查找覆盖请求方法。 (默认值: `X-HTTP-Method-Override`)
 - `options.methods` - The allowed methods the original request must be in to check for a method override value. (默认值: `['POST']`)
 
-If the found method is supported by node.js core, then `req.method` will be set to
-this value, as if it has originally been that value. The previous `req.method`
-value will be stored in `req.originalMethod`.
+如果找到的方法是 node.js 核心支持的，`req.method` 将被设置为这个值，好像它本来就是那个值。`req.method` 之前的值将被存储在 `req.originalMethod` 中。
 
 #### getter
 
