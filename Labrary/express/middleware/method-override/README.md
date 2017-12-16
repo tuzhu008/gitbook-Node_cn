@@ -22,12 +22,10 @@ $ npm install method-override
 
 ### methodOverride(getter, options)
 
-Create a new middleware function to override the `req.method` property with a new
-value. This value will be pulled from the provided `getter`.
-创建一个新的中间件函数使用新值来覆盖 `req.method` 属性。这个值将从提供的 `getter` 中提取出来。
+创建一个新的中间件函数使用新值来覆盖 `req.method` 属性。这个值将从提供的 `getter` 中被提取出来。
 
 - `getter` - 这个 getter 用来为请求查找覆盖请求方法。 (默认值: `X-HTTP-Method-Override`)
-- `options.methods` - The allowed methods the original request must be in to check for a method override value. (默认值: `['POST']`)
+- `options.methods` - 进行值覆盖时允许原始请求的请求方法的。(默认值: `['POST']`)
 
 如果找到的方法是 node.js 核心支持的，`req.method` 将被设置为这个值，好像它本来就是那个值。`req.method` 之前的值将被存储在 `req.originalMethod` 中。
 
@@ -40,16 +38,17 @@ value. This value will be pulled from the provided `getter`.
 
 #### options.methods
 
-This allows the specification of what methods(s) the request *MUST* be in in order to check for
-the method override value. This defaults to only `POST` methods, which is the only method the
-override should arrive in. More methods may be specified here, but it may introduce security
-issues and cause weird behavior when requests travel through caches. This value is an array
-of methods in upper-case. `null` can be specified to allow all methods.
-这允许指定请求*必须*在什么方法(s)中，以检查方法覆盖值。默认值仅为 `POST` 方法，这是覆盖应该到达的唯一方法。这里可能会指定更多的方法，但是当请求通过缓存时，可能会引入安全问题并导致奇怪的行为。这个值是一个大写的方法数组。指定为 `null` 表示允许所有方法。
+这允许指定原始请求*必须*在指定的 methods 中，以检查方法覆盖值。默认值仅为 `POST` 方法，这表示需要被覆盖的方法只能以 `POST` 到到。这里可能会指定更多的方法，但是当请求通过缓存时，可能会引入安全问题并导致奇怪的行为。这个值是一个大写的方法数组。指定为 `null` 表示允许所有方法。
+
+> **[info] 「译者注」：**
+>
+> 类型：Array
+> 描述：每一项为大写的方法字符串，如 "POST"、"GET"...当到达的请求的请求方法为数组中的某一项时才进行覆盖。
+
 
 ## 示例
 
-### override using a header
+### 使用 header 覆盖
 
 要使用 header 来覆盖该方法，请将 header 名作为字符串参数指定给方法 `methodOverride` 函数。然后进行调用，将 `POST` 请求发送到带有覆盖的方法的 URL 作为该 header 的值。这种使用 header 的方法通常会在『不支持「你尝试使用的方法」的实现』中与 `XMLHttpRequest` 一起使用。
 
@@ -78,7 +77,7 @@ function onload () {
 }
 ```
 
-### override using a query value
+### 使用查询字符串覆盖
 
 要使用查询字符串值来覆盖该方法，请将查询字符串键作为字符串参数指定给 `methodOverride` 函数。然后进行调用，将 `POST` 请求发送到带有覆盖的方法的 URL 作为该查询字符串键的值。当尝试支持遗留浏览器，但仍然使用较新的方法时，使用查询值的方法通常会与普通的 HTML `<form>` 元素一起使用。
 
@@ -114,8 +113,6 @@ app.use(methodOverride('X-Method-Override'))      // IBM
 
 ### custom logic
 
-You can implement any kind of custom logic with a function for the `getter`. The following
-implements the logic for looking in `req.body` that was in `method-override@1`:
 
 您可以使用一个函数为 `getter` 实现任何类型的自定义逻辑。下面实现了查找 `req.body` 逻辑，这是在`method-override@1`:
 
@@ -142,7 +139,7 @@ app.use(methodOverride(function (req, res) {
 使用 HTML `<form>` 和查询字符串进行覆盖：
 
 ```html
-<!-- enctype must be set to the type you will parse before methodOverride() -->
+<!-- enctype 必须在调用 methodOverride() 之前被设置为你讲要解析的类型 -->
 <form method="POST" action="/resource" enctype="application/x-www-form-urlencoded">
   <input type="hidden" name="_method" value="DELETE">
   <button type="submit">Delete resource</button>
