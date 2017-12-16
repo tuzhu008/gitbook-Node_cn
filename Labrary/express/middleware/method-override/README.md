@@ -33,15 +33,10 @@ value. This value will be pulled from the provided `getter`.
 
 #### getter
 
-This is the method of getting the override value from the request. If a function is provided,
-the `req` is passed as the first argument, the `res` as the second argument and the method is
-expected to be returned. If a string is provided, the string is used to look up the method
-with the following rules:
+这是从请求中获取覆盖值的方法。如果提供的是一个函数，则将 `req` 作为第一个参数传递，将 `res` 作为第二个参数，并且该方法将被返回。如果提供的是一个字符串，则使用字符串来查找该方法，并使用以下规则:
 
-- If the string starts with `X-`, then it is treated as the name of a header and that header
-  is used for the method override. If the request contains the same header multiple times, the
-  first occurrence is used.
-- All other strings are treated as a key in the URL query string.
+- 如果字符串以 `X-` 开头，那么，它被当作 header 的名称，而该 header 被用于方法覆盖。如果请求包含多个相同的 header，那么第一个出现的就会被使用。
+- 所有其他字符串都在 URL 查询字符串中被当作键。
 
 #### options.methods
 
@@ -50,11 +45,13 @@ the method override value. This defaults to only `POST` methods, which is the on
 override should arrive in. More methods may be specified here, but it may introduce security
 issues and cause weird behavior when requests travel through caches. This value is an array
 of methods in upper-case. `null` can be specified to allow all methods.
+这允许指定请求*必须*在什么方法(s)中，以检查方法覆盖值。默认值仅为 `POST` 方法，这是覆盖应该到达的唯一方法。这里可能会指定更多的方法，但是当请求通过缓存时，可能会引入安全问题并导致奇怪的行为。这个值是一个大写的方法数组。指定为 `null` 表示允许所有方法。
 
-## Examples
+## 示例
 
 ### override using a header
 
+要使用 header 来覆盖该方法，请将 header 名作为字符串参数指定给方法 `methodOverride` 函数。然后进行调用，将 `POST` 请求发送到带有覆盖的方法的 URL 作为该 header 的值。这种使用 header 的方法通常会在「不支持您尝试使用的方法的实现」中与 `XMLHttpRequest` 一起使用。
 To use a header to override the method, specify the header name
 as a string argument to the `methodOverride` function. To then make
 the call, send  a `POST` request to a URL with the overridden method
