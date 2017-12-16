@@ -6,9 +6,9 @@
 [![Test Coverage][coveralls-image]][coveralls-url]
 [![Gratipay][gratipay-image]][gratipay-url]
 
-Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it.
+让你在客户端不支持的地方使用 HTTP 动词，例如 PUT 或 DELETE 。
 
-## Install
+## 安装
 
 This is a [Node.js](https://nodejs.org/en/) module available through the
 [npm registry](https://www.npmjs.com/). Installation is done using the
