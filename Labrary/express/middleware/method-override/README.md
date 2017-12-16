@@ -10,9 +10,7 @@
 
 ## 安装
 
-This is a [Node.js](https://nodejs.org/en/) module available through the
-[npm registry](https://www.npmjs.com/). Installation is done using the
-[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
+这是一个通过 [npm 注册表](https://www.npmjs.com/) 可用的 [Node.js](https://nodejs.org/en/)  模块。使用 [`npm install` 命令](https://docs.npmjs.com/getting-started/installing-npm-packages-locally) 安装：
 
 ```sh
 $ npm install method-override
@@ -20,17 +18,16 @@ $ npm install method-override
 
 ## API
 
-**NOTE** It is very important that this module is used **before** any module that
-needs to know the method of the request (for example, it _must_ be used prior to
-the `csurf` module).
+**注意** 在任何需要知道请求方法的模块**之前**使用这个模块是非常重要的 (例如，它 _必须_ 在 `csurf` 模块之前被使用)。
 
 ### methodOverride(getter, options)
 
 Create a new middleware function to override the `req.method` property with a new
 value. This value will be pulled from the provided `getter`.
+创建一个新的中间件函数使用新值来覆盖 `req.method` 属性。这个值将从提供的 `getter` 中提取出来。
 
-- `getter` - The getter to use to look up the overridden request method for the request. (default: `X-HTTP-Method-Override`)
-- `options.methods` - The allowed methods the original request must be in to check for a method override value. (default: `['POST']`)
+- `getter` - 这个 getter 用来为请求查找覆盖请求方法。 (默认值: `X-HTTP-Method-Override`)
+- `options.methods` - The allowed methods the original request must be in to check for a method override value. (默认值: `['POST']`)
 
 If the found method is supported by node.js core, then `req.method` will be set to
 this value, as if it has originally been that value. The previous `req.method`
