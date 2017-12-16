@@ -51,13 +51,7 @@ of methods in upper-case. `null` can be specified to allow all methods.
 
 ### override using a header
 
-要使用 header 来覆盖该方法，请将 header 名作为字符串参数指定给方法 `methodOverride` 函数。然后进行调用，将 `POST` 请求发送到带有覆盖的方法的 URL 作为该 header 的值。这种使用 header 的方法通常会在「不支持您尝试使用的方法的实现」中与 `XMLHttpRequest` 一起使用。
-To use a header to override the method, specify the header name
-as a string argument to the `methodOverride` function. To then make
-the call, send  a `POST` request to a URL with the overridden method
-as the value of that header. This method of using a header would
-typically be used in conjunction with `XMLHttpRequest` on implementations
-that do not support the method you are trying to use.
+要使用 header 来覆盖该方法，请将 header 名作为字符串参数指定给方法 `methodOverride` 函数。然后进行调用，将 `POST` 请求发送到带有覆盖的方法的 URL 作为该 header 的值。这种使用 header 的方法通常会在『不支持「你尝试使用的方法」的实现』中与 `XMLHttpRequest` 一起使用。
 
 ```js
 var express = require('express')
@@ -68,7 +62,7 @@ var app = express()
 app.use(methodOverride('X-HTTP-Method-Override'))
 ```
 
-Example call with header override using `XMLHttpRequest`:
+使用 `XMLHttpRequest` 设置 header 来进行覆盖：
 
 <!-- eslint-env browser -->
 
@@ -86,13 +80,7 @@ function onload () {
 
 ### override using a query value
 
-To use a query string value to override the method, specify the query
-string key as a string argument to the `methodOverride` function. To
-then make the call, send  a `POST` request to a URL with the overridden
-method as the value of that query string key. This method of using a
-query value would typically be used in conjunction with plain HTML
-`<form>` elements when trying to support legacy browsers but still use
-newer methods.
+要使用查询字符串值来覆盖该方法，请将查询字符串键作为字符串参数指定给 `methodOverride` 函数。然后进行调用，将 `POST` 请求发送到带有覆盖的方法的 URL 作为该查询字符串键的值。当尝试支持遗留浏览器，但仍然使用较新的方法时，使用查询值的方法通常会与普通的 HTML `<form>` 元素一起使用。
 
 ```js
 var express = require('express')
@@ -103,7 +91,7 @@ var app = express()
 app.use(methodOverride('_method'))
 ```
 
-Example call with query override using HTML `<form>`:
+使用 HTML `<form>` 与查询字符串来进行覆盖：
 
 ```html
 <form method="POST" action="/resource?_method=DELETE">
@@ -118,7 +106,7 @@ var express = require('express')
 var methodOverride = require('method-override')
 var app = express()
 
-// override with different headers; last one takes precedence
+//使用不同的 headers 进行覆盖; 最近的优先。
 app.use(methodOverride('X-HTTP-Method'))          // Microsoft
 app.use(methodOverride('X-HTTP-Method-Override')) // Google/GData
 app.use(methodOverride('X-Method-Override'))      // IBM
@@ -129,19 +117,21 @@ app.use(methodOverride('X-Method-Override'))      // IBM
 You can implement any kind of custom logic with a function for the `getter`. The following
 implements the logic for looking in `req.body` that was in `method-override@1`:
 
+您可以使用一个函数为 `getter` 实现任何类型的自定义逻辑。下面实现了查找 `req.body` 逻辑，这是在`method-override@1`:
+
 ```js
 var bodyParser = require('body-parser')
 var express = require('express')
 var methodOverride = require('method-override')
 var app = express()
 
-// NOTE: when using req.body, you must fully parse the request body
-//       before you call methodOverride() in your middleware stack,
-//       otherwise req.body will not be populated.
+// 注意: 当使用 req.body 时，你必须完全解析请求主体
+// 在中间件堆栈调用 methodOverride() 之前
+// 否则 req.body 不会被填充 
 app.use(bodyParser.urlencoded())
 app.use(methodOverride(function (req, res) {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-    // look in urlencoded POST bodies and delete it
+    // 查找解码的 POST 主体 并 删除它
     var method = req.body._method
     delete req.body._method
     return method
@@ -149,7 +139,7 @@ app.use(methodOverride(function (req, res) {
 }))
 ```
 
-Example call with query override using HTML `<form>`:
+使用 HTML `<form>` 和查询字符串进行覆盖：
 
 ```html
 <!-- enctype must be set to the type you will parse before methodOverride() -->
