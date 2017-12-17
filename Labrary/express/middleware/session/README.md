@@ -54,7 +54,7 @@ var session = require('express-session')
 >
 > | 选项 | 类型 | 描述 | 默认值 |
 > | :--- | :--- | :--- | :--- |
-> | cookie | Obeject | 为会话 ID cookie 而设置的对象。 | `{ path: '/', httpOnly: true, secure: false, maxAge: null }` |
+> | [cookie](#cookie) | Obeject | 为会话 ID cookie 而设置的对象。 | `{ path: '/', httpOnly: true, secure: false, maxAge: null }` |
 > | cookie.domain | String | cookie 适用的域名 | 不设置，默认为只适用于当前域名 |
 > | cookie.expires |  | cookie 到期时间 | - |
 > | cookie.httpOnly | Boolean | 是否只使用 http cookie | `true` |
@@ -236,7 +236,6 @@ app.use(session({
 * `'destroy'` 当响应结束时，会话将被销毁\(删除\)。
 * `'keep'` 存储中的会话将被保留，但是在请求期间所做的修改将被忽略，而不会被保存。
 
-
 ### req.session
 
 要存储或访问会话数据，只需使用请求属性 `req.session` ，这\(通常\)是由存储序列化为 JSON 的，所以嵌套对象通常都很好。下面是一个特定于用户的视图计数器:
@@ -264,7 +263,7 @@ app.get('/', function(req, res, next) {
 >
 > 方法列表：
 >
-> | 方法| 描述 |
+> | 方法 | 描述 |
 > | :--- | :--- |
 > | Session.regenerate\(callback\) | 重新生成会话 |
 > | Session.destroy\(callback\) | 销毁会话，并取消设置 `req.session` 属性。 |
