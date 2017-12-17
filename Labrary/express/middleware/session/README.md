@@ -1,9 +1,9 @@
 # express-session
 
-[![](https://img.shields.io/npm/v/express-session.svg)](https://npmjs.org/package/express-session)
-[![](https://img.shields.io/npm/dm/express-session.svg)](https://npmjs.org/package/express-session)
-[![](https://img.shields.io/travis/expressjs/session/master.svg)](https://travis-ci.org/expressjs/session)
-[![](https://img.shields.io/coveralls/expressjs/session/master.svg)](https://coveralls.io/r/expressjs/session?branch=master)
+[![](https://img.shields.io/npm/v/express-session.svg)](https://npmjs.org/package/express-session)  
+[![](https://img.shields.io/npm/dm/express-session.svg)](https://npmjs.org/package/express-session)  
+[![](https://img.shields.io/travis/expressjs/session/master.svg)](https://travis-ci.org/expressjs/session)  
+[![](https://img.shields.io/coveralls/expressjs/session/master.svg)](https://coveralls.io/r/expressjs/session?branch=master)  
 [![](https://img.shields.io/gratipay/dougwilson.svg)](https://gratipay.com/dougwilson/)
 
 ## 安装
@@ -26,13 +26,11 @@ var session = require('express-session')
 >
 > | 选项 | 类型 | 描述 |
 > | :--- | :--- | :--- |
-> | session(options) | Function | 使用给定的 `options` 创建一个会话中间件。 |
-> | req.session | Object | 存储或访问会话数据 |
-> | req.session.id |  | 每个会话都有一个与之关联的惟一ID。[`req.sessionID`](#reqsessionid-1) 的别名 |
-> | req.session.cookie | Object | 每个会话都有一个惟一的 cookie 对象。 |
-> | req.sessionID |  | 加载会话的 ID |
-
-
+> | [session\(options\)](#sessionoptions) | Function | 使用给定的 `options` 创建一个会话中间件。 |
+> | [req.session](#reqsession) | Object | 存储或访问会话数据 |
+> | [req.session.id](#req-session-id) |  | 每个会话都有一个与之关联的惟一ID。[`req.sessionID`](#reqsessionid-1) 的别名 |
+> | [req.session.cookie](#reqsessioncookie) | Object | 每个会话都有一个惟一的 cookie 对象。 |
+> | [req.sessionID](#reqsessionid) |  | 加载会话的 ID |
 
 ### session\(options\)
 
@@ -52,7 +50,7 @@ var session = require('express-session')
 
 ##### cookie
 
-为会话 ID cookie 而设置的对象。默认值为
+为会话 ID cookie 而设置的对象。默认值为  
 `{ path: '/', httpOnly: true, secure: false, maxAge: null }`。
 
 下面是可以在这个对象中设置的选项。
@@ -221,7 +219,7 @@ app.use(session({
 > | 选项 | 类型 | 描述 | 默认值 |
 > | :--- | :--- | :--- | :--- |
 > | cookie | Obeject | 为会话 ID cookie 而设置的对象。 | `{ path: '/', httpOnly: true, secure: false, maxAge: null }` |
-> | cookie.domain | String |cookie 适用的域名 | 不设置，默认为只适用于当前域名 |
+> | cookie.domain | String | cookie 适用的域名 | 不设置，默认为只适用于当前域名 |
 > | cookie.expires |  | cookie 到期时间 | - |
 > | cookie.httpOnly | Boolean | 是否只使用 http cookie | `true` |
 > | cookie.maxAge | Number | 用于计算 `Expires` `Set-Cookie` 属性。 |  |
@@ -237,7 +235,6 @@ app.use(session({
 > | secret |  | 这是用于签署会话ID cookie 的秘密 |  |
 > | store | Object | 会话存储的实例 | `MemoryStore` 实例 |
 > | unset | String | 控制取消设置 `req.session` 的结果 | `'keep'` |
-
 
 ### req.session
 
@@ -316,14 +313,13 @@ req.session.save(function(err) {
 >
 > | 选项 | 描述 |
 > | :--- | :--- |
-> | Session.regenerate(callback) | 重新生成会话 |
-> | Session.destroy(callback) | 销毁会话，并取消设置 `req.session` 属性。 |
-> | Session.reload(callback) | 从存储中重新加载会话数据，并重新填充 `req.session` 对象 |
-> | Session.save(callback) | 将会话保存回存储，将存储中的内容替换为内存中的内容 |
-> | Session.touch() | 更新 `.maxAge` 属性。 |
+> | Session.regenerate\(callback\) | 重新生成会话 |
+> | Session.destroy\(callback\) | 销毁会话，并取消设置 `req.session` 属性。 |
+> | Session.reload\(callback\) | 从存储中重新加载会话数据，并重新填充 `req.session` 对象 |
+> | Session.save\(callback\) | 将会话保存回存储，将存储中的内容替换为内存中的内容 |
+> | Session.touch\(\) | 更新 `.maxAge` 属性。 |
 
-
-### req.session.id
+### req.session.id {#req-session-id}
 
 每个会话都有一个与之关联的惟一ID。这个属性是 [`req.sessionID`](#reqsessionid-1) 的别名，不能被修改。添加了这个会话 ID，就可以从 `session` 对象访问会话 ID。
 
@@ -383,7 +379,7 @@ req.session.cookie.maxAge // => 30000
 
 **可选的**
 
-这个可选的方法被用来将存储中所有的会话提取到一个数组。
+这个可选的方法被用来将存储中所有的会话提取到一个数组。  
 `callback` 应该像 `callback(error, sessions)` 这样被调用。
 
 ### store.destroy\(sid, callback\)
@@ -402,7 +398,7 @@ req.session.cookie.maxAge // => 30000
 
 **可选的**
 
-这个可选的方法被用于获取存储中所有会话的个数。
+这个可选的方法被用于获取存储中所有会话的个数。  
  `callback` 像 `callback(error, len)` 这样被调用。
 
 ### store.get\(sid, callback\)
@@ -435,8 +431,8 @@ req.session.cookie.maxAge // => 30000
 
 [![](https://img.shields.io/github/stars/webcc/cassandra-store.svg?label=★) cassandra-store](https://www.npmjs.com/package/cassandra-store) An Apache Cassandra-based session store.
 
-[![](https://img.shields.io/github/stars/coolaj86/cluster-store.svg?label=★) cluster-store](https://www.npmjs.com/package/cluster-store) A wrapper for using in-process / embedded
-stores - such as SQLite \(via knex\), leveldb, files, or memory - with node cluster \(desirable for Raspberry Pi 2
+[![](https://img.shields.io/github/stars/coolaj86/cluster-store.svg?label=★) cluster-store](https://www.npmjs.com/package/cluster-store) A wrapper for using in-process / embedded  
+stores - such as SQLite \(via knex\), leveldb, files, or memory - with node cluster \(desirable for Raspberry Pi 2  
 and other multi-core embedded devices\).
 
 [![](https://img.shields.io/github/stars/mike-goodwin/connect-azuretables.svg?label=★) connect-azuretables](https://www.npmjs.com/package/connect-azuretables) An [Azure Table Storage](https://azure.microsoft.com/en-gb/services/storage/tables/)-based session store.
@@ -469,21 +465,21 @@ and other multi-core embedded devices\).
 
 [![](https://img.shields.io/github/stars/balor/connect-memcached.svg?label=★) connect-memcached](https://www.npmjs.com/package/connect-memcached) A memcached-based session store.
 
-[![](https://img.shields.io/github/stars/liamdon/connect-memjs.svg?label=★) connect-memjs](https://www.npmjs.com/package/connect-memjs) A memcached-based session store using
+[![](https://img.shields.io/github/stars/liamdon/connect-memjs.svg?label=★) connect-memjs](https://www.npmjs.com/package/connect-memjs) A memcached-based session store using  
 [memjs](https://www.npmjs.com/package/memjs) as the memcached client.
 
-[![](https://img.shields.io/github/stars/llambda/connect-session-knex.svg?label=★) connect-session-knex](https://www.npmjs.com/package/connect-session-knex) A session store using
+[![](https://img.shields.io/github/stars/llambda/connect-session-knex.svg?label=★) connect-session-knex](https://www.npmjs.com/package/connect-session-knex) A session store using  
 [Knex.js](http://knexjs.org/), which is a SQL query builder for PostgreSQL, MySQL, MariaDB, SQLite3, and Oracle.
 
-[![](https://img.shields.io/github/stars/mweibel/connect-session-sequelize.svg?label=★) connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) A session store using
+[![](https://img.shields.io/github/stars/mweibel/connect-session-sequelize.svg?label=★) connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) A session store using  
 [Sequelize.js](http://sequelizejs.com/), which is a Node.js / io.js ORM for PostgreSQL, MySQL, SQLite and MSSQL.
 
 [![](https://img.shields.io/github/stars/rafaelrpinto/dynamodb-store.svg?label=★) dynamodb-store](https://www.npmjs.com/package/dynamodb-store) A DynamoDB-based session store.
 
-[![](https://img.shields.io/github/stars/chill117/express-mysql-session.svg?label=★) express-mysql-session](https://www.npmjs.com/package/express-mysql-session) A session store using native
+[![](https://img.shields.io/github/stars/chill117/express-mysql-session.svg?label=★) express-mysql-session](https://www.npmjs.com/package/express-mysql-session) A session store using native  
 [MySQL](https://www.mysql.com/) via the [node-mysql](https://github.com/felixge/node-mysql) module.
 
-[![](https://img.shields.io/github/stars/slumber86/express-oracle-session.svg?label=★) express-oracle-session](https://www.npmjs.com/package/express-oracle-session) A session store using native
+[![](https://img.shields.io/github/stars/slumber86/express-oracle-session.svg?label=★) express-oracle-session](https://www.npmjs.com/package/express-oracle-session) A session store using native  
 [oracle](https://www.oracle.com/) via the [node-oracledb](https://www.npmjs.com/package/oracledb) module.
 
 [![](https://img.shields.io/github/stars/konteck/express-sessions.svg?label=★) express-sessions](https://www.npmjs.com/package/express-sessions): A session store supporting both MongoDB and Redis.
@@ -494,15 +490,15 @@ and other multi-core embedded devices\).
 
 [![](https://img.shields.io/github/stars/louischatriot/express-nedb-session.svg?label=★) express-nedb-session](https://www.npmjs.com/package/express-nedb-session) A NeDB-based session store.
 
-[![](https://img.shields.io/github/stars/theogravity/express-session-cache-manager.svg?label=★) express-session-cache-manager](https://www.npmjs.com/package/express-session-cache-manager)
-A store that implements [cache-manager](https://www.npmjs.com/package/cache-manager), which supports
+[![](https://img.shields.io/github/stars/theogravity/express-session-cache-manager.svg?label=★) express-session-cache-manager](https://www.npmjs.com/package/express-session-cache-manager)  
+A store that implements [cache-manager](https://www.npmjs.com/package/cache-manager), which supports  
 a [variety of storage types](https://www.npmjs.com/package/cache-manager#store-engines).
 
 [![](https://img.shields.io/github/stars/tgohn/express-session-level.svg?label=★) express-session-level](https://www.npmjs.com/package/express-session-level) A [LevelDB](https://github.com/Level/levelup) based session store.
 
 [![](https://img.shields.io/github/stars/gildean/express-etcd.svg?label=★) express-etcd](https://www.npmjs.com/package/express-etcd) An [etcd](https://github.com/stianeikeland/node-etcd) based session store.
 
-[![](https://img.shields.io/github/stars/aliceklipper/fortune-session.svg?label=★) fortune-session](https://www.npmjs.com/package/fortune-session) A [Fortune.js](https://github.com/fortunejs/fortune)
+[![](https://img.shields.io/github/stars/aliceklipper/fortune-session.svg?label=★) fortune-session](https://www.npmjs.com/package/fortune-session) A [Fortune.js](https://github.com/fortunejs/fortune)  
 based session store. Supports all backends supported by Fortune \(MongoDB, Redis, Postgres, NeDB\).
 
 [![](https://img.shields.io/github/stars/jackspaniel/hazelcast-store.svg?label=★) hazelcast-store](https://www.npmjs.com/package/hazelcast-store) A Hazelcast-based session store built on the [Hazelcast Node Client](https://www.npmjs.com/package/hazelcast-client).
@@ -566,3 +562,4 @@ app.get('/bar', function (req, res, next) {
 ## License
 
 [MIT](LICENSE)
+
