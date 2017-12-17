@@ -55,22 +55,22 @@ var session = require('express-session')
 > | 选项 | 类型 | 描述 | 默认值 |
 > | :--- | :--- | :--- | :--- |
 > | [cookie](#cookie) | Obeject | 为会话 ID cookie 而设置的对象。 | `{ path: '/', httpOnly: true, secure: false, maxAge: null }` |
-> | cookie.domain | String | cookie 适用的域名 | 不设置，默认为只适用于当前域名 |
-> | cookie.expires |  | cookie 到期时间 | - |
-> | cookie.httpOnly | Boolean | 是否只使用 http cookie | `true` |
-> | cookie.maxAge | Number | 用于计算 `Expires` `Set-Cookie` 属性。 |  |
-> | cookie.path | String | cookie 的目录 | `/` |
-> | cookie.sameSite | Boolean or String | 同源策略 | 未标准化 |
-> | cookie.secure | Boolean or `'auto'` | 是否启用安全的 cookie | `false` |
-> | genid | Fucntion | 一个函数，来生成一个新的会话 ID。 | 一个 `uid-safe` 库的函数 |
-> | name |  | 一个用来在响应中设置\(从请求中读取\)会话 ID cookie 的名称。 | `'connect.sid'` |
-> | proxy | Boolean or `undefined` | 在设置安全 cookie 时，信任反向代理\(通过 "X-Forwarded-Proto" 头\)。 | `undefined` |
-> | resave | Boolean | 强制将会话保存回会话存储，即使会话在请求期间从未被修改过。 | 现为`true` |
-> | rolling | Boolean | 强制在每个响应中设置一个会话标识符 cookie | `false` |
-> | saveUninitialized | Boolean | 强制将一个“未初始化”的会话保存到存储中。 | 现为`true` |
-> | secret |  | 这是用于签署会话ID cookie 的秘密 |  |
-> | store | Object | 会话存储的实例 | `MemoryStore` 实例 |
-> | unset | String | 控制取消设置 `req.session` 的结果 | `'keep'` |
+> | [cookie.domain](#cookiedomain) | String | cookie 适用的域名 | 不设置，默认为只适用于当前域名 |
+> | [cookie.expires](#cookieexpires) |  | cookie 到期时间 | - |
+> | [cookie.httpOnly](#cookiehttponly) | Boolean | 是否只使用 http cookie | `true` |
+> | [cookie.maxAge ](#cookiemaxage )| Number | 用于计算 `Expires` `Set-Cookie` 属性。 |  |
+> | [cookie.path](#cookiepath) | String | cookie 的目录 | `/` |
+> | [cookie.sameSite](#cookiesamesite) | Boolean or String | 同源策略 | 未标准化 |
+> | [cookie.secure](#cookiesecure) | Boolean or `'auto'` | 是否启用安全的 cookie | `false` |
+> | [genid](#genid) | Fucntion | 一个函数，来生成一个新的会话 ID。 | 一个 `uid-safe` 库的函数 |
+> | [name](#name) |  | 一个用来在响应中设置\(从请求中读取\)会话 ID cookie 的名称。 | `'connect.sid'` |
+> | [proxy](#proxy) | Boolean or `undefined` | 在设置安全 cookie 时，信任反向代理\(通过 "X-Forwarded-Proto" 头\)。 | `undefined` |
+> | [resave](#resave) | Boolean | 强制将会话保存回会话存储，即使会话在请求期间从未被修改过。 | 现为`true` |
+> | [rolling](#rolling) | Boolean | 强制在每个响应中设置一个会话标识符 cookie | `false` |
+> | [saveUninitialized](#saveuninitialized) | Boolean | 强制将一个“未初始化”的会话保存到存储中。 | 现为`true` |
+> | [secret](#secret) |  | 这是用于签署会话ID cookie 的秘密 |  |
+> | [store](#store) | Object | 会话存储的实例 | `MemoryStore` 实例 |
+> | [unset](#unset) | String | 控制取消设置 `req.session` 的结果 | `'keep'` |
 
 ##### cookie
 
@@ -236,6 +236,7 @@ app.use(session({
 * `'destroy'` 当响应结束时，会话将被销毁\(删除\)。
 * `'keep'` 存储中的会话将被保留，但是在请求期间所做的修改将被忽略，而不会被保存。
 
+
 ### req.session
 
 要存储或访问会话数据，只需使用请求属性 `req.session` ，这\(通常\)是由存储序列化为 JSON 的，所以嵌套对象通常都很好。下面是一个特定于用户的视图计数器:
@@ -263,13 +264,13 @@ app.get('/', function(req, res, next) {
 >
 > 方法列表：
 >
-> | 方法 | 描述 |
+> | 方法| 描述 |
 > | :--- | :--- |
-> | Session.regenerate\(callback\) | 重新生成会话 |
-> | Session.destroy\(callback\) | 销毁会话，并取消设置 `req.session` 属性。 |
-> | Session.reload\(callback\) | 从存储中重新加载会话数据，并重新填充 `req.session` 对象 |
-> | Session.save\(callback\) | 将会话保存回存储，将存储中的内容替换为内存中的内容 |
-> | Session.touch\(\) | 更新 `.maxAge` 属性。 |
+> | [Session.regenerate\(callback\)](#sessionregeneratecallback) | 重新生成会话 |
+> | [Session.destroy\(callback\)](#sessiondestroycallback)) | 销毁会话，并取消设置 `req.session` 属性。 |
+> | [Session.reload\(callback\)](#sessionreloadcallback) | 从存储中重新加载会话数据，并重新填充 `req.session` 对象 |
+> | [Session.save\(callback\) ](#sessionsavecallback)| 将会话保存回存储，将存储中的内容替换为内存中的内容 |
+> | [Session.touch\(\) ](#sessiontouch)| 更新 `.maxAge` 属性。 |
 
 #### Session.regenerate\(callback\)
 
@@ -367,13 +368,13 @@ req.session.cookie.maxAge // => 30000
 >
 > | 方法 | 描述 | 类型 |
 > | :--- | :--- | :---: |
-> | store.destroy\(sid, callback\) | 从存储中 销毁/删除 一个给定的会话 ID 的会话。 | 必需 |
-> | store.get\(sid, callback\) | 从存储使用给定的会话 ID（`sid`）获取一个会话。 | 必需 |
-> | store.set\(sid, session, callback\) | 将一个会话更新插入（upsert）到存储\(store\)中，使用给定会话 ID\(`sid`\)和会话\(`session`\)对象。 | 必需 |
-> | store.touch\(sid, session, callback\) | 被用来“触碰”（touch）给定的一个给定会话ID\(`sid`\)和会话\(`session`\)对象的会话。 | 推荐 |
-> | store.all\(callback\) | 将存储中所有的会话提取到一个数组。 | 可选 |
-> | store.clear\(callback\) | 删除存储中所有的会话 | 可选 |
-> | store.length\(callback\) | 用于获取存储中所有会话的个数 | 可选 |
+> | [store.destroy\(sid, callback\)](#storedestroysid-callback) | 从存储中 销毁/删除 一个给定的会话 ID 的会话。 | 必需 |
+> | [store.get\(sid, callback\)](#storegetsid-callback) | 从存储使用给定的会话 ID（`sid`）获取一个会话。 | 必需 |
+> | [store.set\(sid, session, callback\)](#storesetsid-session-callback) | 将一个会话更新插入（upsert）到存储\(store\)中，使用给定会话 ID\(`sid`\)和会话\(`session`\)对象。 | 必需 |
+> | [store.touch\(sid, session, callback\)](#storetouchsid-session-callback) | 被用来“触碰”（touch）给定的一个给定会话ID\(`sid`\)和会话\(`session`\)对象的会话。 | 推荐 |
+> | [store.all\(callback\)](#storeallcallback) | 将存储中所有的会话提取到一个数组。 | 可选 |
+> | [store.clear\(callback\)](#storeclearcallback)| 删除存储中所有的会话 | 可选 |
+> | [store.length\(callback\)](#storelengthcallback) | 用于获取存储中所有会话的个数 | 可选 | 
 
 ### store.all\(callback\)
 
