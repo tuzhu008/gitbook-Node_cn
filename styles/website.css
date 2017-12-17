@@ -6,12 +6,8 @@ h1 {
 p {
     text-indent: 2em;
 }
-ul {
+book-body ul {
     padding-left: 4em !important;
-}
-ul.summary {
-    padding-left: 0 !important;
-
 }
 ul p {
     text-indent: 0;
