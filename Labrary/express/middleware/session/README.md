@@ -20,6 +20,27 @@ $ npm install express-session
 var session = require('express-session')
 ```
 
+> **\[info\] 「译者注」**
+>
+> API 列表：
+>
+> | 选项 | 类型 | 描述 | 默认值 |
+> | :--- | :--- | :--- | :--- |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+
+
+
 ### session\(options\)
 
 使用给定的 `options` 创建一个会话中间件。
@@ -200,6 +221,50 @@ app.use(session({
 * `'destroy'` 当响应结束时，会话将被销毁\(删除\)。
 * `'keep'` 存储中的会话将被保留，但是在请求期间所做的修改将被忽略，而不会被保存。
 
+> **\[info\] 「译者注」**
+>
+> 上述选项的列表：
+>
+> | 选项 | 类型 | 描述 | 默认值 |
+> | :--- | :--- | :--- | :--- |
+> | cookie |  |  |  |
+> | cookie.domain |  |  |  |
+> | cookie.expires |  |  |  |
+> | cookie.httpOnly |  |  |  |
+> | cookie.maxAge |  |  |  |
+> | cookie.path |  |  |  |
+> | cookie.sameSite |  |  |  |
+> | cookie.secure |  |  |  |
+> | genid |  |  |  |
+> | name |  |  |  |
+> | proxy |  |  |  |
+> | resave | Boolean | 强制将会话保存回会话存储，即使会话在请求期间从未被修改过。 | 现为`true` |
+> | rolling | Boolean | 强制在每个响应中设置一个会话标识符 cookie | `false` |
+> | saveUninitialized | Boolean | 强制将一个“未初始化”的会话保存到存储中。 | 现为`true` |
+> | secret |  | 这是用于签署会话ID cookie 的秘密 |  |
+> | store | Object | 会话存储的实例 | `MemoryStore` 实例 |
+> | unset | String | 控制取消设置 `req.session` 的结果 | `'keep'` |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### req.session
 
 要存储或访问会话数据，只需使用请求属性 `req.session` ，这\(通常\)是由存储序列化为 JSON 的，所以嵌套对象通常都很好。下面是一个特定于用户的视图计数器:
@@ -271,6 +336,27 @@ req.session.save(function(err) {
 
 更新 `.maxAge` 属性。通常，这并不需要调用，因为会话中间件为您做了这个。
 
+> **\[info\] 「译者注」**
+>
+> 上述选项的列表：
+>
+> | 选项 | 类型 | 描述 | 默认值 |
+> | :--- | :--- | :--- | :--- |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+> |  |  |  |  |
+
+
+
 ### req.session.id
 
 每个会话都有一个与之关联的惟一ID。这个属性是 [`req.sessionID`](#reqsessionid-1) 的别名，不能被修改。添加了这个会话 ID，就可以从 `session` 对象访问会话 ID。
@@ -319,13 +405,13 @@ req.session.cookie.maxAge // => 30000
 >
 > | 名称 | 描述 | 类型 |
 > | :--- | :--- | :---: |
-> | store.destroy(sid, callback) | 从存储中 销毁/删除 一个给定的会话 ID 的会话。 | 必需 |
-> | store.get(sid, callback) | 从存储使用给定的会话 ID（`sid`）获取一个会话。 | 必需 |
-> | store.set(sid, session, callback) | 将一个会话更新插入（upsert）到存储(store)中，使用给定会话 ID(`sid`)和会话(`session`)对象。 | 必需 |
-> | store.touch(sid, session, callback) | 被用来“触碰”（touch）给定的一个给定会话ID(`sid`)和会话(`session`)对象的会话。 | 推荐 |
-> | store.all(callback) | 将存储中所有的会话提取到一个数组。 | 可选 |
-> | store.clear(callback) | 删除存储中所有的会话 | 可选 |
-> | store.length(callback) | 用于获取存储中所有会话的个数 | 可选 |
+> | store.destroy\(sid, callback\) | 从存储中 销毁/删除 一个给定的会话 ID 的会话。 | 必需 |
+> | store.get\(sid, callback\) | 从存储使用给定的会话 ID（`sid`）获取一个会话。 | 必需 |
+> | store.set\(sid, session, callback\) | 将一个会话更新插入（upsert）到存储\(store\)中，使用给定会话 ID\(`sid`\)和会话\(`session`\)对象。 | 必需 |
+> | store.touch\(sid, session, callback\) | 被用来“触碰”（touch）给定的一个给定会话ID\(`sid`\)和会话\(`session`\)对象的会话。 | 推荐 |
+> | store.all\(callback\) | 将存储中所有的会话提取到一个数组。 | 可选 |
+> | store.clear\(callback\) | 删除存储中所有的会话 | 可选 |
+> | store.length\(callback\) | 用于获取存储中所有会话的个数 | 可选 |
 
 ### store.all\(callback\)
 
