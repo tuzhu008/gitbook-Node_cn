@@ -1,0 +1,1016 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>express-session · Node.js</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../../connect/" />
+    
+    
+    <link rel="prev" href="../method-override/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    关于 Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">参考文档</li>
+        
+        
+    
+
+    
+        
+        <li class="header">相关库</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Node 相关库列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../nvm/">
+            
+                <a href="../../../nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../request/">
+            
+                <a href="../../../request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../../async/">
+            
+                <a href="../../../async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../../supervisor/">
+            
+                <a href="../../../supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1.1" data-path="../method-override/">
+            
+                <a href="../method-override/">
+            
+                    
+                    method-override
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.6.1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    express-session
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../../connect/">
+            
+                <a href="../../../connect/">
+            
+                    
+                    connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >express-session</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#express-session"><b>1. </b>express-session</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;"><b>1.1. </b>&#x5B89;&#x88C5;</a></li><li><span class="title-icon "></span><a href="#api"><b>1.2. </b>API</a></li><ul><li><span class="title-icon "></span><a href="#sessionoptions"><b>1.2.1. </b>session(options)</a></li><li><span class="title-icon "></span><a href="#reqsession"><b>1.2.2. </b>req.session</a></li><li><span class="title-icon "></span><a href="#req-session-id"><b>1.2.3. </b>req.session.id </a></li><li><span class="title-icon "></span><a href="#reqsessioncookie"><b>1.2.4. </b>req.session.cookie</a></li><li><span class="title-icon "></span><a href="#reqsessionid"><b>1.2.5. </b>req.sessionID</a></li></ul><li><span class="title-icon "></span><a href="#&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#x5B9E;&#x73B0;"><b>1.3. </b>&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#x5B9E;&#x73B0;</a></li><ul><li><span class="title-icon "></span><a href="#storeallcallback"><b>1.3.1. </b>store.all(callback)</a></li><li><span class="title-icon "></span><a href="#storedestroysid-callback"><b>1.3.2. </b>store.destroy(sid, callback)</a></li><li><span class="title-icon "></span><a href="#storeclearcallback"><b>1.3.3. </b>store.clear(callback)</a></li><li><span class="title-icon "></span><a href="#storelengthcallback"><b>1.3.4. </b>store.length(callback)</a></li><li><span class="title-icon "></span><a href="#storegetsid-callback"><b>1.3.5. </b>store.get(sid, callback)</a></li><li><span class="title-icon "></span><a href="#storesetsid-session-callback"><b>1.3.6. </b>store.set(sid, session, callback)</a></li><li><span class="title-icon "></span><a href="#storetouchsid-session-callback"><b>1.3.7. </b>store.touch(sid, session, callback)</a></li></ul><li><span class="title-icon "></span><a href="#&#x517C;&#x5BB9;&#x7684;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;"><b>1.4. </b>&#x517C;&#x5BB9;&#x7684;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;</a></li><li><span class="title-icon "></span><a href="#&#x793A;&#x4F8B;"><b>1.5. </b>&#x793A;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#license"><b>1.6. </b>License</a></li></ul></ul></div><a href="#express-session" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="express-session"><a name="express-session" class="anchor-navigation-ex-anchor" href="#express-session"><i class="fa fa-link" aria-hidden="true"></i></a>1. express-session</h1>
+<p><a href="https://npmjs.org/package/express-session" target="_blank"><img src="https://img.shields.io/npm/v/express-session.svg" alt=""></a><br><a href="https://npmjs.org/package/express-session" target="_blank"><img src="https://img.shields.io/npm/dm/express-session.svg" alt=""></a><br><a href="https://travis-ci.org/expressjs/session" target="_blank"><img src="https://img.shields.io/travis/expressjs/session/master.svg" alt=""></a><br><a href="https://coveralls.io/r/expressjs/session?branch=master" target="_blank"><img src="https://img.shields.io/coveralls/expressjs/session/master.svg" alt=""></a><br><a href="https://gratipay.com/dougwilson/" target="_blank"><img src="https://img.shields.io/gratipay/dougwilson.svg" alt=""></a></p>
+<h2 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5B89;&#x88C5;</h2>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x901A;&#x8FC7; <a href="https://www.npmjs.com/" target="_blank">npm &#x6CE8;&#x518C;&#x8868;</a> &#x53EF;&#x7528;&#x7684; <a href="https://nodejs.org/en/" target="_blank">Node.js</a>  &#x6A21;&#x5757;&#x3002;&#x4F7F;&#x7528; <a href="https://docs.npmjs.com/getting-started/installing-npm-packages-locally" target="_blank"><code>npm install</code> &#x547D;&#x4EE4;</a> &#x5B89;&#x88C5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sh">$ <span class="token function">npm</span> <span class="token function">install</span> express-session
+</code></pre>
+<h2 id="api"><a name="api" class="anchor-navigation-ex-anchor" href="#api"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. API</h2>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> session <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;express-session&apos;</span><span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p><strong>[info] &#x300C;&#x8BD1;&#x8005;&#x6CE8;&#x300D;</strong></p>
+<p>API &#x5217;&#x8868;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9009;&#x9879;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="#sessionoptions">session(options)</a></td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x7684; <code>options</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x4E2D;&#x95F4;&#x4EF6;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#reqsession">req.session</a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x5B58;&#x50A8;&#x6216;&#x8BBF;&#x95EE;&#x4F1A;&#x8BDD;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#req-session-id">req.session.id</a></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x6BCF;&#x4E2A;&#x4F1A;&#x8BDD;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x60DF;&#x4E00;ID&#x3002;<a href="#reqsessionid-1"><code>req.sessionID</code></a> &#x7684;&#x522B;&#x540D;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#reqsessioncookie">req.session.cookie</a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x6BCF;&#x4E2A;&#x4F1A;&#x8BDD;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x60DF;&#x4E00;&#x7684; cookie &#x5BF9;&#x8C61;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#reqsessionid">req.sessionID</a></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x52A0;&#x8F7D;&#x4F1A;&#x8BDD;&#x7684; ID</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="sessionoptions"><a name="sessionoptions" class="anchor-navigation-ex-anchor" href="#sessionoptions"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. session(options)</h3>
+<p>&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x7684; <code>options</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x4E2D;&#x95F4;&#x4EF6;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong> &#x4F1A;&#x8BDD;&#x6570;&#x636E;<strong>&#x4E0D;&#x4F1A;</strong>&#x88AB;&#x4FDD;&#x5B58;&#x5728; cookie &#x4E2D;&#xFF0C;&#x4FDD;&#x5B58;&#x7684;&#x77E5;&#x8BC6;&#x4F1A;&#x8BDD; ID&#x3002;&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#x662F;&#x88AB;&#x4FDD;&#x5B58;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong> &#x81EA;&#x7248;&#x672C; 1.5.0 &#x4EE5;&#x6765;&#xFF0C;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x4F7F;&#x7528; <a href="https://www.npmjs.com/package/cookie-parser" target="_blank"><code>cookie-parser</code> middleware</a> &#x4E2D;&#x95F4;&#x4EF6;&#x6765;&#x5DE5;&#x4F5C;&#x3002;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x73B0;&#x5728;&#x76F4;&#x63A5;&#x5728; <code>req</code>/<code>res</code> &#x4E0A;&#x8BFB;&#x53D6;&#x548C;&#x5199;&#x5165; cookie&#x3002;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x548C; <code>cookie-parser</code> &#x4E4B;&#x95F4;&#x7684; <code>secret</code> &#x4E0D;&#x540C;&#xFF0C;&#x90A3;&#x4E48;&#x4F7F;&#x7528;cookie&#x89E3;&#x6790;&#x5668;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x95EE;&#x9898;&#x3002;</p>
+<p><strong>&#x8B66;&#x544A;</strong> &#x9ED8;&#x8BA4;&#x7684;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;, <code>MemoryStore</code>&#xFF0C;&#x662F; <em>&#x6709;&#x610F;</em> <strong>&#x4E0D;</strong>&#x4E3A;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x800C;&#x8BBE;&#x8BA1;&#x7684;&#x3002;&#x5B83;&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x6CC4;&#x6F0F;&#x5185;&#x5B58;&#xFF0C;&#x4E0D;&#x4F1A;&#x6269;&#x5C55;&#x5230;&#x5355;&#x4E2A;&#x8FDB;&#x7A0B;&#xFF0C;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#x548C;&#x5F00;&#x53D1;&#x3002;</p>
+<p>&#x66F4;&#x591A;&#x5B58;&#x50A8;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="#&#x517C;&#x5BB9;&#x7684;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;">&#x517C;&#x5BB9;&#x7684;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;</a>.</p>
+<h4 id="options"><a name="options" class="anchor-navigation-ex-anchor" href="#options"><i class="fa fa-link" aria-hidden="true"></i></a><a name="options" class="plugin-anchor" href="#options"><i class="fa fa-link" aria-hidden="true"></i></a>Options</h4>
+<p><code>express-session</code> &#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x6709;&#x4E0B;&#x5217;&#x5C5E;&#x6027;&#x3002;</p>
+<blockquote>
+<p><strong>[info] &#x300C;&#x8BD1;&#x8005;&#x6CE8;&#x300D;</strong></p>
+<p>&#x9009;&#x9879;&#x5217;&#x8868;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9009;&#x9879;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">&#x9ED8;&#x8BA4;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="#cookie">cookie</a></td>
+<td style="text-align:left">Obeject</td>
+<td style="text-align:left">&#x4E3A;&#x4F1A;&#x8BDD; ID cookie &#x800C;&#x8BBE;&#x7F6E;&#x7684;&#x5BF9;&#x8C61;&#x3002;</td>
+<td style="text-align:left"><code>{ path: &apos;/&apos;, httpOnly: true, secure: false, maxAge: null }</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#cookiedomain">cookie.domain</a></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">cookie &#x9002;&#x7528;&#x7684;&#x57DF;&#x540D;</td>
+<td style="text-align:left">&#x4E0D;&#x8BBE;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x5F53;&#x524D;&#x57DF;&#x540D;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#cookieexpires">cookie.expires</a></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">cookie &#x5230;&#x671F;&#x65F6;&#x95F4;</td>
+<td style="text-align:left">-</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#cookiehttponly">cookie.httpOnly</a></td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x53EA;&#x4F7F;&#x7528; http cookie</td>
+<td style="text-align:left"><code>true</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#cookiemaxage">cookie.maxAge </a></td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x8BA1;&#x7B97; <code>Expires</code> <code>Set-Cookie</code> &#x5C5E;&#x6027;&#x3002;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#cookiepath">cookie.path</a></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">cookie &#x7684;&#x76EE;&#x5F55;</td>
+<td style="text-align:left"><code>/</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#cookiesamesite">cookie.sameSite</a></td>
+<td style="text-align:left">Boolean or String</td>
+<td style="text-align:left">&#x540C;&#x6E90;&#x7B56;&#x7565;</td>
+<td style="text-align:left">&#x672A;&#x6807;&#x51C6;&#x5316;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#cookiesecure">cookie.secure</a></td>
+<td style="text-align:left">Boolean or <code>&apos;auto&apos;</code></td>
+<td style="text-align:left">&#x662F;&#x5426;&#x542F;&#x7528;&#x5B89;&#x5168;&#x7684; cookie</td>
+<td style="text-align:left"><code>false</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#genid">genid</a></td>
+<td style="text-align:left">Fucntion</td>
+<td style="text-align:left">&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x6765;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4F1A;&#x8BDD; ID&#x3002;</td>
+<td style="text-align:left">&#x4E00;&#x4E2A; <code>uid-safe</code> &#x5E93;&#x7684;&#x51FD;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#name">name</a></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x4E00;&#x4E2A;&#x7528;&#x6765;&#x5728;&#x54CD;&#x5E94;&#x4E2D;&#x8BBE;&#x7F6E;(&#x4ECE;&#x8BF7;&#x6C42;&#x4E2D;&#x8BFB;&#x53D6;)&#x4F1A;&#x8BDD; ID cookie &#x7684;&#x540D;&#x79F0;&#x3002;</td>
+<td style="text-align:left"><code>&apos;connect.sid&apos;</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#proxy">proxy</a></td>
+<td style="text-align:left">Boolean or <code>undefined</code></td>
+<td style="text-align:left">&#x5728;&#x8BBE;&#x7F6E;&#x5B89;&#x5168; cookie &#x65F6;&#xFF0C;&#x4FE1;&#x4EFB;&#x53CD;&#x5411;&#x4EE3;&#x7406;(&#x901A;&#x8FC7; &quot;X-Forwarded-Proto&quot; &#x5934;)&#x3002;</td>
+<td style="text-align:left"><code>undefined</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#resave">resave</a></td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">&#x5F3A;&#x5236;&#x5C06;&#x4F1A;&#x8BDD;&#x4FDD;&#x5B58;&#x56DE;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#xFF0C;&#x5373;&#x4F7F;&#x4F1A;&#x8BDD;&#x5728;&#x8BF7;&#x6C42;&#x671F;&#x95F4;&#x4ECE;&#x672A;&#x88AB;&#x4FEE;&#x6539;&#x8FC7;&#x3002;</td>
+<td style="text-align:left">&#x73B0;&#x4E3A;<code>true</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#rolling">rolling</a></td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">&#x5F3A;&#x5236;&#x5728;&#x6BCF;&#x4E2A;&#x54CD;&#x5E94;&#x4E2D;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x6807;&#x8BC6;&#x7B26; cookie</td>
+<td style="text-align:left"><code>false</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#saveuninitialized">saveUninitialized</a></td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">&#x5F3A;&#x5236;&#x5C06;&#x4E00;&#x4E2A;&#x201C;&#x672A;&#x521D;&#x59CB;&#x5316;&#x201D;&#x7684;&#x4F1A;&#x8BDD;&#x4FDD;&#x5B58;&#x5230;&#x5B58;&#x50A8;&#x4E2D;&#x3002;</td>
+<td style="text-align:left">&#x73B0;&#x4E3A;<code>true</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#secret">secret</a></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&#x8FD9;&#x662F;&#x7528;&#x4E8E;&#x7B7E;&#x7F72;&#x4F1A;&#x8BDD;ID cookie &#x7684;&#x79D8;&#x5BC6;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#store">store</a></td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#x7684;&#x5B9E;&#x4F8B;</td>
+<td style="text-align:left"><code>MemoryStore</code> &#x5B9E;&#x4F8B;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#unset">unset</a></td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x63A7;&#x5236;&#x53D6;&#x6D88;&#x8BBE;&#x7F6E; <code>req.session</code> &#x7684;&#x7ED3;&#x679C;</td>
+<td style="text-align:left"><code>&apos;keep&apos;</code></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h5 id="cookie"><a name="cookie" class="anchor-navigation-ex-anchor" href="#cookie"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cookie" class="plugin-anchor" href="#cookie"><i class="fa fa-link" aria-hidden="true"></i></a>cookie</h5>
+<p>&#x4E3A;&#x4F1A;&#x8BDD; ID cookie &#x800C;&#x8BBE;&#x7F6E;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<br><code>{ path: &apos;/&apos;, httpOnly: true, secure: false, maxAge: null }</code>&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#x8BBE;&#x7F6E;&#x7684;&#x9009;&#x9879;&#x3002;</p>
+<h5 id="cookiedomain"><a name="cookiedomain" class="anchor-navigation-ex-anchor" href="#cookiedomain"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cookiedomain" class="plugin-anchor" href="#cookiedomain"><i class="fa fa-link" aria-hidden="true"></i></a>cookie.domain</h5>
+<p>&#x4E3A; <code>Domain</code> <code>Set-Cookie</code> &#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0D;&#x8BBE;&#x7F6E;&#x57DF;&#x540D;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x5BA2;&#x6237;&#x4F1A;&#x8BA4;&#x4E3A; cookie &#x53EA;&#x9002;&#x7528;&#x4E8E;&#x5F53;&#x524D;&#x7684;&#x57DF;&#x3002;</p>
+<h5 id="cookieexpires"><a name="cookieexpires" class="anchor-navigation-ex-anchor" href="#cookieexpires"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cookieexpires" class="plugin-anchor" href="#cookieexpires"><i class="fa fa-link" aria-hidden="true"></i></a>cookie.expires</h5>
+<p>&#x4E3A; <code>Expires</code> <code>Set-Cookie</code> &#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x4E00;&#x4E2A; <code>Date</code> &#x5BF9;&#x8C61;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0D;&#x8BBE;&#x7F6E;&#x5230;&#x671F;&#x65F6;&#x95F4;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x8BA4;&#x4E3A;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x975E;&#x6301;&#x4E45; cookie&#x201D; &#xFF0C;&#x5728;&#x7C7B;&#x4F3C;&#x9000;&#x51FA;&#x6D4F;&#x89C8;&#x5668;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x5220;&#x9664;&#x8FD9;&#x4E2A; cookie&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong> &#x5982;&#x679C;&#x5728;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#xFF08;options&#xFF09;&#x4E2D;&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x4E86; <code>expires</code> &#x548C; <code>maxAge</code> &#xFF0C;&#x90A3;&#x4E48;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B9A;&#x4E49;&#x7684;&#x5C06;&#x4F1A;&#x88AB;&#x4F7F;&#x7528;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong> <code>expire</code> &#x9009;&#x9879;&#x4E0D;&#x5E94;&#x8BE5;&#x88AB;&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#xFF0C;&#x53EA;&#x4F7F;&#x7528; <code>maxAge</code> &#x9009;&#x9879;&#x3002;</p>
+<h5 id="cookiehttponly"><a name="cookiehttponly" class="anchor-navigation-ex-anchor" href="#cookiehttponly"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cookiehttponly" class="plugin-anchor" href="#cookiehttponly"><i class="fa fa-link" aria-hidden="true"></i></a>cookie.httpOnly</h5>
+<p>&#x4E3A; <code>HttpOnly</code> <code>Set-Cookie</code> &#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x4E00;&#x4E2A; <code>boolean</code> &#x503C;&#x3002;&#x5F53;&#x4E3A;&#x771F;&#x65F6;&#xFF0C;<code>HttpOnly</code> &#x88AB;&#x8BBE;&#x7F6E;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x8BBE;&#x7F6E;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>HttpOnly</code> &#x5C5E;&#x6027;&#x662F;&#x8BBE;&#x7F6E;&#x7684;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong> &#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code> &#x7684;&#x65F6;&#x5019;&#x8981;&#x5C0F;&#x5FC3;&#xFF0C;&#x56E0;&#x4E3A;&#x517C;&#x5BB9;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x4E0D;&#x5141;&#x8BB8;&#x5BA2;&#x6237;&#x7AEF; JavaScript &#x67E5;&#x770B; <code>document.cookie</code> &#x4E2D;&#x7684; cookie&#x3002;</p>
+<h5 id="cookiemaxage"><a name="cookiemaxage" class="anchor-navigation-ex-anchor" href="#cookiemaxage"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cookiemaxage" class="plugin-anchor" href="#cookiemaxage"><i class="fa fa-link" aria-hidden="true"></i></a>cookie.maxAge</h5>
+<p>&#x6307;&#x5B9A;&#x4E00;&#x4E2A; <code>number</code> &#x7528;&#x4E8E;&#x8BA1;&#x7B97; <code>Expires</code> <code>Set-Cookie</code> &#x5C5E;&#x6027;&#x3002;&#x8FD9;&#x662F;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x7684;&#x670D;&#x52A1;&#x5668;&#x65F6;&#x95F4;&#xFF0C;&#x5E76;&#x5728;&#x503C;&#x4E2D;&#x52A0;&#x4E0A; <code>maxAge</code> &#x6BEB;&#x79D2;&#x6765;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A; <code>Expires</code> &#x65E5;&#x671F;&#x65F6;&#x95F4;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0D;&#x8BBE;&#x7F6E;&#x6700;&#x5927;&#x5E74;&#x9F84;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong> &#x5982;&#x679C;&#x5728;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#xFF08;options&#xFF09;&#x4E2D;&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x4E86; <code>expires</code> &#x548C; <code>maxAge</code> &#xFF0C;&#x90A3;&#x4E48;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B9A;&#x4E49;&#x7684;&#x5C06;&#x4F1A;&#x88AB;&#x4F7F;&#x7528;&#x3002;</p>
+<h5 id="cookiepath"><a name="cookiepath" class="anchor-navigation-ex-anchor" href="#cookiepath"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cookiepath" class="plugin-anchor" href="#cookiepath"><i class="fa fa-link" aria-hidden="true"></i></a>cookie.path</h5>
+<p>&#x4E3A; <code>Path</code> <code>Set-Cookie</code> &#x6307;&#x5B9A;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; <code>/</code>&#xFF0C;&#x7528;&#x4EE5;&#x8868;&#x793A;&#x57DF;&#x540D;&#x7684;&#x6839;&#x8DEF;&#x5F84;&#x3002;</p>
+<h5 id="cookiesamesite"><a name="cookiesamesite" class="anchor-navigation-ex-anchor" href="#cookiesamesite"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cookiesamesite" class="plugin-anchor" href="#cookiesamesite"><i class="fa fa-link" aria-hidden="true"></i></a>cookie.sameSite</h5>
+<p>&#x4E3A; <code>SameSite</code> <code>Set-Cookie</code> &#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x4E00;&#x4E2A; <code>boolean</code> &#x6216; <code>string</code> &#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;</p>
+<ul>
+<li><code>true</code> &#x5C06;&#x8BBE;&#x7F6E; <code>SameSite</code> &#x4E3A; <code>Strict</code>&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x4E25;&#x683C;&#x5730;&#x76F8;&#x540C;&#x7AD9;&#x70B9;&#x6267;&#x884C;&#x3002;</li>
+<li><code>false</code> &#x5C06;&#x4E0D;&#x8BBE;&#x7F6E; <code>SameSite</code> &#x5C5E;&#x6027;&#x3002;</li>
+<li><code>&apos;lax&apos;</code> &#x5C06;&#x8BBE;&#x7F6E; <code>SameSite</code> &#x5C5E;&#x6027;&#x4E3A; <code>Lax</code>&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x5BBD;&#x677E;&#x7684;&#x76F8;&#x540C;&#x7AD9;&#x70B9;&#x6267;&#x884C;&#x3002;</li>
+<li><code>&apos;strict&apos;</code> &#x5C06;&#x8BBE;&#x7F6E; <code>SameSite</code> &#x4E3A; <code>Strict</code>&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x4E25;&#x683C;&#x5730;&#x76F8;&#x540C;&#x7AD9;&#x70B9;&#x6267;&#x884C;&#x3002;</li>
+</ul>
+<p>&#x5173;&#x4E8E;&#x4E0D;&#x540C;&#x7684;&#x6267;&#x884C;&#x7EA7;&#x522B;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x5728;<a href="https://tools.ietf.org/html/draft-west-first-party-cookies-07#section-4.1.1" target="_blank">&#x89C4;&#x8303;</a>&#x4E2D;&#x627E;&#x5230;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong> &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5C1A;&#x672A;&#x5B8C;&#x5168;&#x6807;&#x51C6;&#x5316;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5C06;&#x6765;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;&#x8FD9;&#x4E5F;&#x610F;&#x5473;&#x7740;&#x8BB8;&#x591A;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x80FD;&#x4F1A;&#x5FFD;&#x7565;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x76F4;&#x5230;&#x4ED6;&#x4EEC;&#x7406;&#x89E3;&#x4E86;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x3002;</p>
+<h5 id="cookiesecure"><a name="cookiesecure" class="anchor-navigation-ex-anchor" href="#cookiesecure"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cookiesecure" class="plugin-anchor" href="#cookiesecure"><i class="fa fa-link" aria-hidden="true"></i></a>cookie.secure</h5>
+<p>&#x4E3A; <code>Secure</code> <code>Set-Cookie</code> &#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x4E00;&#x4E2A; <code>boolean</code> &#x503C;&#x3002;&#x5F53;&#x4E3A;&#x771F;&#x65F6;&#xFF0C;<code>Secure</code> &#x88AB;&#x8BBE;&#x7F6E;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x8BBE;&#x7F6E;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>Secure</code> &#x662F;&#x4E0D;&#x8BBE;&#x7F6E;&#x7684;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong> &#x5728;&#x5C06;&#x6B64;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code> &#x65F6;&#x8981;&#x5C0F;&#x5FC3;&#xFF0C;&#x56E0;&#x4E3A;&#x5982;&#x679C;&#x6D4F;&#x89C8;&#x5668;&#x6CA1;&#x6709; HTTPS &#x8FDE;&#x63A5;&#xFF0C;&#x90A3;&#x4E48;&#x517C;&#x5BB9;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x6765;&#x4E0D;&#x4F1A;&#x5C06; cookie &#x53D1;&#x9001;&#x56DE;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<p>&#x8BF7;&#x6CE8;&#x610F; <code>secure: true</code> &#x662F;<strong>&#x88AB;&#x63A8;&#x8350;&#x7684;</strong>&#x9009;&#x9879;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5B83;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x542F;&#x7528;&#x4E86; https &#x7684;&#x7F51;&#x7AD9;&#x3002;HTTPS &#x5BF9;&#x4E8E;&#x5B89;&#x5168;&#x7684; cookie &#x662F;&#x5FC5;&#x9700;&#x7684;&#x3002;&#x5982;&#x679C; <code>secure</code> &#x88AB;&#x8BBE;&#x7F6E;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7; HTTP &#x8BBF;&#x95EE;&#x60A8;&#x7684;&#x7AD9;&#x70B9;&#xFF0C;&#x5219; cookie &#x4E0D;&#x4F1A;&#x88AB;&#x8BBE;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x7684; node.js &#x4F4D;&#x4E8E;&#x4EE3;&#x7406;(proxy)&#x540E;&#xFF0C;&#x5E76;&#x4E14;&#x6B63;&#x5728;&#x4F7F;&#x7528; <code>secure: true</code>&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x5728; express &#x4E2D;&#x8BBE;&#x7F6E; &quot;trust proxy&quot;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;trust proxy&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// trust first proxy</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  secret<span class="token punctuation">:</span> <span class="token string">&apos;keyboard cat&apos;</span><span class="token punctuation">,</span>
+  resave<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  saveUninitialized<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  cookie<span class="token punctuation">:</span> <span class="token punctuation">{</span> secure<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x5728;&#x4EA7;&#x54C1;&#x4E2D;&#x4F7F;&#x7528;&#x5B89;&#x5168;&#x7684; cookie&#xFF0C;&#x4F46;&#x662F;&#x5141;&#x8BB8;&#x5728;&#x5F00;&#x53D1;&#x4E2D;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5728; express &#x4E2D;&#x57FA;&#x4E8E; <code>NODE_ENV</code> &#x542F;&#x7528;&#x8FD9;&#x4E2A;&#x8BBE;&#x7F6E;&#x7684;&#x793A;&#x4F8B;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> sess <span class="token operator">=</span> <span class="token punctuation">{</span>
+  secret<span class="token punctuation">:</span> <span class="token string">&apos;keyboard cat&apos;</span><span class="token punctuation">,</span>
+  cookie<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;env&apos;</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">&apos;production&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  app<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;trust proxy&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// trust first proxy</span>
+  sess<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span>secure <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment" spellcheck="true">// serve secure cookies</span>
+<span class="token punctuation">}</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">session</span><span class="token punctuation">(</span>sess<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p><code>cookie.secure</code> &#x9009;&#x9879;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A;&#x7279;&#x6B8A;&#x503C; <code>&apos;auto&apos;</code>&#xFF0C;&#x8BA9;&#x8FD9;&#x4E2A;&#x8BBE;&#x7F6E;&#x81EA;&#x52A8;&#x5339;&#x914D;&#x8FDE;&#x63A5;&#x7684;&#x786E;&#x5B9A;&#x7684;&#x5B89;&#x5168;&#x6027;&#x3002;&#x5728;&#x4F7F;&#x7528;&#x6B64;&#x8BBE;&#x7F6E;&#x65F6;&#x8981;&#x5C0F;&#x5FC3;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x7AD9;&#x70B9;&#x540C;&#x65F6;&#x53EF;&#x7528; HTTP &#x548C; HTTPS &#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x65E6; cookie &#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;HTTPS&#xFF0C;&#x5B83;&#x5C06;&#x4E0D;&#x518D;&#x5728; HTTP &#x4E0A;&#x53EF;&#x89C1;&#x3002;&#x5F53; Express  <code>&quot;trust proxy&quot;</code>&#x88AB;&#x9002;&#x5F53;&#x5730;&#x8BBE;&#x7F6E;&#x4EE5;&#x7B80;&#x5316;&#x5F00;&#x53D1;&#x548C;&#x751F;&#x4EA7;&#x914D;&#x7F6E;&#x65F6;&#xFF0C;&#x8FD9;&#x662F;&#x5F88;&#x6709;&#x7528;&#x7684;&#x3002;</p>
+<h5 id="genid"><a name="genid" class="anchor-navigation-ex-anchor" href="#genid"><i class="fa fa-link" aria-hidden="true"></i></a><a name="genid" class="plugin-anchor" href="#genid"><i class="fa fa-link" aria-hidden="true"></i></a>genid</h5>
+<p>&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x6765;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4F1A;&#x8BDD; ID&#x3002;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4F5C;&#x4E3A;&#x4F1A;&#x8BDD;ID&#x7684;&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728;&#x751F;&#x6210; ID &#x65F6;&#x4F7F;&#x7528;&#x4E00;&#x4E9B; <code>req</code> &#x7684;&#x9644;&#x52A0;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x7ED9;&#x5B9A; <code>req</code> &#x4F5C;&#x4E3A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x4F7F;&#x7528; <code>uid-safe</code> &#x5E93;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4EE5;&#x751F;&#x6210; ID&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong> &#x8981;&#x5C0F;&#x5FC3;&#x751F;&#x6210;&#x60DF;&#x4E00;&#x7684; ID&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x8BDD;&#x5C31;&#x4E0D;&#x4F1A;&#x51B2;&#x7A81;&#x3002;</p>
+<pre class="language-"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  genid<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">genuuid</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// use UUIDs for session IDs</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  secret<span class="token punctuation">:</span> <span class="token string">&apos;keyboard cat&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h5 id="name"><a name="name" class="anchor-navigation-ex-anchor" href="#name"><i class="fa fa-link" aria-hidden="true"></i></a><a name="name" class="plugin-anchor" href="#name"><i class="fa fa-link" aria-hidden="true"></i></a>name</h5>
+<p>&#x4E00;&#x4E2A;&#x7528;&#x6765;&#x5728;&#x54CD;&#x5E94;&#x4E2D;&#x8BBE;&#x7F6E;(&#x4ECE;&#x8BF7;&#x6C42;&#x4E2D;&#x8BFB;&#x53D6;)&#x4F1A;&#x8BDD; ID cookie &#x7684;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>&apos;connect.sid&apos;</code>.</p>
+<p><strong>&#x6CE8;&#x610F;</strong> &#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x5728;&#x76F8;&#x540C;&#x7684;&#x4E3B;&#x673A;&#x540D;&#x4E0A;(&#x8FD9;&#x53EA;&#x662F;&#x540D;&#x79F0;&#xFF0C;&#x5373; <code>localhost</code> &#x6216; <code>127.0.0.1</code>&#xFF1B;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6848;&#x548C;&#x7AEF;&#x53E3;&#x4E0D;&#x4F1A;&#x547D;&#x540D;&#x4E0D;&#x540C;&#x7684;&#x4E3B;&#x673A;&#x540D;)&#xFF0C;&#x7136;&#x540E;&#x60A8;&#x9700;&#x8981;&#x5C06;&#x4F1A;&#x8BDD; cookie &#x5F7C;&#x6B64;&#x5206;&#x5F00;&#x3002;&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684; <code>name</code>&#x3002;</p>
+<h5 id="proxy"><a name="proxy" class="anchor-navigation-ex-anchor" href="#proxy"><i class="fa fa-link" aria-hidden="true"></i></a><a name="proxy" class="plugin-anchor" href="#proxy"><i class="fa fa-link" aria-hidden="true"></i></a>proxy</h5>
+<p>&#x5728;&#x8BBE;&#x7F6E;&#x5B89;&#x5168; cookie &#x65F6;&#xFF0C;&#x8BF7;&#x4FE1;&#x4EFB;&#x53CD;&#x5411;&#x4EE3;&#x7406;(&#x901A;&#x8FC7; &quot;X-Forwarded-Proto&quot; &#x5934;)&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>undefined</code>.</p>
+<ul>
+<li><code>true</code> &quot;X-Forwarded-Proto&quot; &#x5934;&#x5C06;&#x88AB;&#x8BBE;&#x7F6E;&#x3002;</li>
+<li><code>false</code> &#x6240;&#x6709;&#x7684;&#x5934;&#x90FD;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x6709;&#x76F4;&#x63A5;&#x7684; TLS/SSL &#x8FDE;&#x63A5;&#x65F6;&#xFF0C;&#x8FDE;&#x63A5;&#x624D;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x5B89;&#x5168;&#x7684;&#x3002;</li>
+<li><code>undefined</code> &#x4F7F;&#x7528;&#x6765;&#x81EA; express &#x7684;  &quot;trust proxy&quot; &#x8BBE;&#x7F6E;&#x3002;</li>
+</ul>
+<h5 id="resave"><a name="resave" class="anchor-navigation-ex-anchor" href="#resave"><i class="fa fa-link" aria-hidden="true"></i></a><a name="resave" class="plugin-anchor" href="#resave"><i class="fa fa-link" aria-hidden="true"></i></a>resave</h5>
+<p>&#x5F3A;&#x5236;&#x5C06;&#x4F1A;&#x8BDD;&#x4FDD;&#x5B58;&#x56DE;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#xFF0C;&#x5373;&#x4F7F;&#x4F1A;&#x8BDD;&#x5728;&#x8BF7;&#x6C42;&#x671F;&#x95F4;&#x4ECE;&#x672A;&#x88AB;&#x4FEE;&#x6539;&#x8FC7;&#x3002;&#x8FD9;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x7684;&#x5B58;&#x50A8;&#xFF0C;&#x5BF9;&#x5B58;&#x50A8;&#x6765;&#x8BF4;&#x8FD9;&#x53EF;&#x80FD;&#x662F;&#x5FC5;&#x8981;&#x7684;,&#x4F46;&#x5B83;&#x4E5F;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x7ADE;&#x6001;&#x6761;&#x4EF6;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x4E86;&#x4E24;&#x4E2A;&#x5E76;&#x884C;&#x8BF7;&#x6C42;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x4E2D;&#x5BF9;&#x4F1A;&#x8BDD;&#x8FDB;&#x884C;&#x66F4;&#x6539;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x6CA1;&#x6709;&#x6539;&#x53D8;(&#x8FD9;&#x79CD;&#x884C;&#x4E3A;&#x4E5F;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;)&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>true</code>&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#x5DF2;&#x7ECF;&#x88AB;&#x5F03;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;&#x5C06;&#x5728;&#x5C06;&#x6765;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;&#x8BF7;&#x7814;&#x7A76;&#x8FD9;&#x4E2A;&#x8BBE;&#x7F6E;&#xFF0C;&#x5E76;&#x9009;&#x62E9;&#x9002;&#x5408;&#x60A8;&#x7684;&#x7528;&#x4F8B;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;,&#x4F60;&#x4F1A;&#x60F3;&#x4F7F;&#x7528; <code>false</code>&#x3002;</p>
+<p>&#x6211;&#x600E;&#x4E48;&#x77E5;&#x9053;&#x8FD9;&#x5BF9;&#x6211;&#x7684;&#x5B58;&#x50A8;&#x6765;&#x8BF4;&#x662F;&#x5FC5;&#x8981;&#x7684;?&#x6700;&#x597D;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x68C0;&#x67E5;&#x4F60;&#x7684;&#x5B58;&#x50A8;&#x662F;&#x5426;&#x5B9E;&#x73B0;&#x4E86; <code>touch</code> &#x65B9;&#x6CD5;&#x3002;&#x5982;&#x679C;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x53EF;&#x4EE5;&#x5B89;&#x5168;&#x5730;&#x8BBE;&#x7F6E; <code>resave: false</code>&#x3002;&#x5982;&#x679C;&#x5B83;&#x6CA1;&#x6709;&#x5B9E;&#x73B0; <code>touch</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x60A8;&#x7684;&#x5B58;&#x50A8;&#x5728;&#x4FDD;&#x5B58;&#x7684;&#x4F1A;&#x8BDD;&#x4E2D;&#x8BBE;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;&#x8FC7;&#x671F;&#x65E5;&#x671F;&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x53EF;&#x80FD;&#x9700;&#x8981; <code>resave: true</code>&#x3002;</p>
+<h5 id="rolling"><a name="rolling" class="anchor-navigation-ex-anchor" href="#rolling"><i class="fa fa-link" aria-hidden="true"></i></a><a name="rolling" class="plugin-anchor" href="#rolling"><i class="fa fa-link" aria-hidden="true"></i></a>rolling</h5>
+<p>&#x5F3A;&#x5236;&#x5728;&#x6BCF;&#x4E2A;&#x54CD;&#x5E94;&#x4E2D;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x6807;&#x8BC6;&#x7B26; cookie&#x3002;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x88AB;&#x91CD;&#x7F6E;&#x4E3A;&#x539F;&#x59CB;&#x7684; <a href="#cookiemaxage"><code>maxAge</code></a>&#xFF0C;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x5012;&#x8BA1;&#x65F6;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>false</code>&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong> &#x5F53;&#x9009;&#x9879;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>&#xFF0C;&#x4F46; <code>saveUninitialized</code> &#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; <code>false</code>&#xFF0C;&#x5728;&#x4F1A;&#x8BDD;&#x4E0A;&#x5C06;&#x4F7F;&#x7528;&#x672A;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x7684;&#x4F1A;&#x8BDD;&#x8BBE;&#x7F6E; cookie&#x3002;</p>
+<h5 id="saveuninitialized"><a name="saveuninitialized" class="anchor-navigation-ex-anchor" href="#saveuninitialized"><i class="fa fa-link" aria-hidden="true"></i></a><a name="saveuninitialized" class="plugin-anchor" href="#saveuninitialized"><i class="fa fa-link" aria-hidden="true"></i></a>saveUninitialized</h5>
+<p>&#x5F3A;&#x5236;&#x5C06;&#x4E00;&#x4E2A;&#x201C;&#x672A;&#x521D;&#x59CB;&#x5316;&#x201D;&#x7684;&#x4F1A;&#x8BDD;&#x4FDD;&#x5B58;&#x5230;&#x5B58;&#x50A8;&#x4E2D;&#x3002;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x5728;&#x5B83;&#x662F;&#x65B0;&#x7684;&#x4F46;&#x672A;&#x88AB;&#x4FEE;&#x6539;&#x65F6;&#x662F;&#x672A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x3002;&#x9009;&#x62E9; <code>false</code> &#x5BF9;&#x4E8E;&#x5B9E;&#x73B0;&#x767B;&#x5F55;&#x4F1A;&#x8BDD;&#x3001;&#x51CF;&#x5C11;&#x670D;&#x52A1;&#x5668;&#x5B58;&#x50A8;&#xFF08;storage&#xFF09;&#x4F7F;&#x7528;&#x3001;&#x6216;&#x9075;&#x5B88;&#x5728;&#x8BBE;&#x7F6E; cookie &#x4E4B;&#x524D;&#x52A0;&#x8F7D;&#x8BB8;&#x53EF;&#x7684;&#x89C4;&#x5219;&#x662F;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x3002;&#x9009;&#x62E9; <code>false</code> &#x8FD8;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x5BA2;&#x6237;&#x7AEF;&#x5728;&#x6CA1;&#x6709;&#x4F1A;&#x8BDD;&#x4E0B;&#x8FDB;&#x884C;&#x591A;&#x4E2A;&#x5E76;&#x884C;&#x8BF7;&#x6C42;&#x7684;&#x7ADE;&#x6001;&#x6761;&#x4EF6;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>true</code>&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#x5DF2;&#x7ECF;&#x88AB;&#x5F03;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;&#x5C06;&#x5728;&#x5C06;&#x6765;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;&#x8BF7;&#x7814;&#x7A76;&#x8FD9;&#x4E2A;&#x8BBE;&#x7F6E;&#xFF0C;&#x5E76;&#x9009;&#x62E9;&#x9002;&#x5408;&#x60A8;&#x7684;&#x7528;&#x4F8B;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong> &#x5982;&#x679C;&#x60A8;&#x6B63;&#x5728;&#x7ED3;&#x5408;&#x4F7F;&#x7528; Session &#x4E0E; PassportJS&#xFF0C;&#x90A3;&#x4E48;Passport &#x5C06;&#x5411;&#x4F1A;&#x8BDD;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x7A7A;&#x7684; Passport &#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x7528;&#x6237;&#x7ECF;&#x8FC7;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x540E;&#x4F7F;&#x7528;&#x8BE5;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD9;&#x5C06;&#x4F5C;&#x4E3A;&#x5BF9;&#x4F1A;&#x8BDD;&#x7684;&#x4FEE;&#x6539;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x5176;&#x88AB;&#x4FDD;&#x5B58;&#x3002;<em>&#x8FD9;&#x5728; PassportJS 0.3.0 &#x4E2D;&#x5F97;&#x5230;&#x4E86;&#x4FEE;&#x6B63;&#x3002;</em></p>
+<h5 id="secret"><a name="secret" class="anchor-navigation-ex-anchor" href="#secret"><i class="fa fa-link" aria-hidden="true"></i></a><a name="secret" class="plugin-anchor" href="#secret"><i class="fa fa-link" aria-hidden="true"></i></a>secret</h5>
+<p><strong>&#x5FC5;&#x9700;&#x7684;&#x9009;&#x9879;</strong></p>
+<p>&#x8FD9;&#x662F;&#x7528;&#x4E8E;&#x7B7E;&#x7F72;&#x4F1A;&#x8BDD;ID cookie &#x7684;&#x79D8;&#x5BC6;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x662F;&#x5355;&#x4E2A;&#x79D8;&#x5BC6;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x591A;&#x4E2A;&#x79D8;&#x5BC6;&#x7684;&#x6570;&#x7EC4;&#x3002;&#x5982;&#x679C;&#x63D0;&#x4F9B;&#x4E86;&#x79D8;&#x5BC6;&#x6570;&#x7EC4;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x6709;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5C06;&#x88AB;&#x7528;&#x4E8E;&#x7B7E;&#x7F72;&#x4F1A;&#x8BDD;ID cookie&#xFF0C;&#x800C;&#x5728;&#x9A8C;&#x8BC1;&#x8BF7;&#x6C42;&#x4E2D;&#x7684;&#x7B7E;&#x540D;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5143;&#x7D20;&#x90FD;&#x5C06;&#x88AB;&#x8003;&#x8651;&#x3002;</p>
+<h5 id="store"><a name="store" class="anchor-navigation-ex-anchor" href="#store"><i class="fa fa-link" aria-hidden="true"></i></a><a name="store" class="plugin-anchor" href="#store"><i class="fa fa-link" aria-hidden="true"></i></a>store</h5>
+<p>&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x4E00;&#x4E2A;&#x65B0;&#x7684; <code>MemoryStore</code> &#x5B9E;&#x4F8B;&#x3002;</p>
+<h5 id="unset"><a name="unset" class="anchor-navigation-ex-anchor" href="#unset"><i class="fa fa-link" aria-hidden="true"></i></a><a name="unset" class="plugin-anchor" href="#unset"><i class="fa fa-link" aria-hidden="true"></i></a>unset</h5>
+<p>&#x63A7;&#x5236;&#x53D6;&#x6D88;&#x8BBE;&#x7F6E; <code>req.session</code> &#x7684;&#x7ED3;&#x679C;&#xFF08;&#x901A;&#x8FC7; <code>delete</code>&#x3001;&#x8BBE;&#x7F6E;&#x4E3A; <code>null</code> &#x7B49;&#x7B49;&#xFF09;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>&apos;keep&apos;</code>&#x3002;</p>
+<ul>
+<li><code>&apos;destroy&apos;</code> &#x5F53;&#x54CD;&#x5E94;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x4F1A;&#x8BDD;&#x5C06;&#x88AB;&#x9500;&#x6BC1;(&#x5220;&#x9664;)&#x3002;</li>
+<li><code>&apos;keep&apos;</code> &#x5B58;&#x50A8;&#x4E2D;&#x7684;&#x4F1A;&#x8BDD;&#x5C06;&#x88AB;&#x4FDD;&#x7559;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8BF7;&#x6C42;&#x671F;&#x95F4;&#x6240;&#x505A;&#x7684;&#x4FEE;&#x6539;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;&#x3002;</li>
+</ul>
+<h3 id="reqsession"><a name="reqsession" class="anchor-navigation-ex-anchor" href="#reqsession"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. req.session</h3>
+<p>&#x8981;&#x5B58;&#x50A8;&#x6216;&#x8BBF;&#x95EE;&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#xFF0C;&#x53EA;&#x9700;&#x4F7F;&#x7528;&#x8BF7;&#x6C42;&#x5C5E;&#x6027; <code>req.session</code> &#xFF0C;&#x8FD9;(&#x901A;&#x5E38;)&#x662F;&#x7531;&#x5B58;&#x50A8;&#x5E8F;&#x5217;&#x5316;&#x4E3A; JSON &#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#x901A;&#x5E38;&#x90FD;&#x5F88;&#x597D;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x4E8E;&#x7528;&#x6237;&#x7684;&#x89C6;&#x56FE;&#x8BA1;&#x6570;&#x5668;:</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x4F7F;&#x7528; session &#x4E2D;&#x95F4;&#x4EF6;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">{</span> secret<span class="token punctuation">:</span> <span class="token string">&apos;keyboard cat&apos;</span><span class="token punctuation">,</span> cookie<span class="token punctuation">:</span> <span class="token punctuation">{</span> maxAge<span class="token punctuation">:</span> <span class="token number">60000</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// &#x4F7F;&#x7528; req.sessio &#x8BBF;&#x95EE;&#x4F1A;&#x8BDD;</span>
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>views<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>views<span class="token operator">++</span>
+    res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">&apos;Content-Type&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;text/html&apos;</span><span class="token punctuation">)</span>
+    res<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&apos;&lt;p&gt;views: &apos;</span> <span class="token operator">+</span> req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>views <span class="token operator">+</span> <span class="token string">&apos;&lt;/p&gt;&apos;</span><span class="token punctuation">)</span>
+    res<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&apos;&lt;p&gt;expires in: &apos;</span> <span class="token operator">+</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span>maxAge <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&apos;s&lt;/p&gt;&apos;</span><span class="token punctuation">)</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>views <span class="token operator">=</span> <span class="token number">1</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">&apos;welcome to the session demo. refresh!&apos;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p><strong>[info] &#x300C;&#x8BD1;&#x8005;&#x6CE8;&#x300D;</strong></p>
+<p>&#x65B9;&#x6CD5;&#x5217;&#x8868;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x6CD5;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="#sessionregeneratecallback">Session.regenerate(callback)</a></td>
+<td style="text-align:left">&#x91CD;&#x65B0;&#x751F;&#x6210;&#x4F1A;&#x8BDD;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#sessiondestroycallback">Session.destroy(callback)</a>)</td>
+<td style="text-align:left">&#x9500;&#x6BC1;&#x4F1A;&#x8BDD;&#xFF0C;&#x5E76;&#x53D6;&#x6D88;&#x8BBE;&#x7F6E; <code>req.session</code> &#x5C5E;&#x6027;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#sessionreloadcallback">Session.reload(callback)</a></td>
+<td style="text-align:left">&#x4ECE;&#x5B58;&#x50A8;&#x4E2D;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x91CD;&#x65B0;&#x586B;&#x5145; <code>req.session</code> &#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#sessionsavecallback">Session.save(callback) </a></td>
+<td style="text-align:left">&#x5C06;&#x4F1A;&#x8BDD;&#x4FDD;&#x5B58;&#x56DE;&#x5B58;&#x50A8;&#xFF0C;&#x5C06;&#x5B58;&#x50A8;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x66FF;&#x6362;&#x4E3A;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#sessiontouch">Session.touch() </a></td>
+<td style="text-align:left">&#x66F4;&#x65B0; <code>.maxAge</code> &#x5C5E;&#x6027;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h4 id="sessionregeneratecallback"><a name="sessionregeneratecallback" class="anchor-navigation-ex-anchor" href="#sessionregeneratecallback"><i class="fa fa-link" aria-hidden="true"></i></a><a name="sessionregeneratecallback" class="plugin-anchor" href="#sessionregeneratecallback"><i class="fa fa-link" aria-hidden="true"></i></a>Session.regenerate(callback)</h4>
+<p>&#x8981;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x4F1A;&#x8BDD;&#xFF0C;&#x53EA;&#x9700;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x3002;&#x4E00;&#x65E6;&#x5B8C;&#x6210;&#xFF0C;&#x5C06;&#x5728; <code>req.session</code> &#x4E2D;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x65B0;&#x7684; SID &#x548C; <code>Session</code> &#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x4E14; <code>callback</code> &#x5C06;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<pre class="language-"><code class="lang-js">req<span class="token punctuation">.</span>session<span class="token punctuation">.</span><span class="token function">regenerate</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// will have a new session here</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="sessiondestroycallback"><a name="sessiondestroycallback" class="anchor-navigation-ex-anchor" href="#sessiondestroycallback"><i class="fa fa-link" aria-hidden="true"></i></a><a name="sessiondestroycallback" class="plugin-anchor" href="#sessiondestroycallback"><i class="fa fa-link" aria-hidden="true"></i></a>Session.destroy(callback)</h4>
+<p>&#x9500;&#x6BC1;&#x4F1A;&#x8BDD;&#xFF0C;&#x5E76;&#x53D6;&#x6D88;&#x8BBE;&#x7F6E; <code>req.session</code> &#x5C5E;&#x6027;&#x3002;&#x4E00;&#x65E6;&#x5B8C;&#x6210;&#xFF0C;<code>callback</code> &#x5C06;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<pre class="language-"><code class="lang-js">req<span class="token punctuation">.</span>session<span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// cannot access session here</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="sessionreloadcallback"><a name="sessionreloadcallback" class="anchor-navigation-ex-anchor" href="#sessionreloadcallback"><i class="fa fa-link" aria-hidden="true"></i></a><a name="sessionreloadcallback" class="plugin-anchor" href="#sessionreloadcallback"><i class="fa fa-link" aria-hidden="true"></i></a>Session.reload(callback)</h4>
+<p>&#x4ECE;&#x5B58;&#x50A8;&#x4E2D;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x91CD;&#x65B0;&#x586B;&#x5145; <code>req.session</code> &#x5BF9;&#x8C61;&#x3002;&#x4E00;&#x65E6;&#x5B8C;&#x6210;&#xFF0C;<code>callback</code> &#x5C06;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<pre class="language-"><code class="lang-js">req<span class="token punctuation">.</span>session<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// session updated</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="sessionsavecallback"><a name="sessionsavecallback" class="anchor-navigation-ex-anchor" href="#sessionsavecallback"><i class="fa fa-link" aria-hidden="true"></i></a><a name="sessionsavecallback" class="plugin-anchor" href="#sessionsavecallback"><i class="fa fa-link" aria-hidden="true"></i></a>Session.save(callback)</h4>
+<p>&#x5C06;&#x4F1A;&#x8BDD;&#x4FDD;&#x5B58;&#x56DE;&#x5B58;&#x50A8;&#xFF0C;&#x5C06;&#x5B58;&#x50A8;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x66FF;&#x6362;&#x4E3A;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5185;&#x5BB9;(&#x5C3D;&#x7BA1;&#x5B58;&#x50A8;&#x53EF;&#x80FD;&#x4F1A;&#x505A;&#x5176;&#x4ED6;&#x4E8B;&#x60C5;&#x2014;&#x2014;&#x8BF7;&#x53C2;&#x8003;&#x5B58;&#x50A8;&#x7684;&#x6587;&#x6863;&#x4EE5;&#x83B7;&#x5F97;&#x51C6;&#x786E;&#x7684;&#x884C;&#x4E3A;)&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#x5DF2;&#x88AB;&#x66F4;&#x6539;&#xFF0C;&#x5219;&#x8BE5;&#x65B9;&#x6CD5;&#x5728; HTTP &#x54CD;&#x5E94;&#x7684;&#x672B;&#x5C3E;&#x88AB;&#x81EA;&#x52A8;&#x8C03;&#x7528;(&#x5C3D;&#x7BA1;&#x8BE5;&#x884C;&#x4E3A;&#x53EF;&#x4EE5;&#x5728;&#x4E2D;&#x95F4;&#x4EF6;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x9009;&#x9879;&#x8FDB;&#x884C;&#x4FEE;&#x6539;)&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x901A;&#x5E38;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4E0D;&#x9700;&#x8981;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8C03;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x5F88;&#x6709;&#x7528;&#x7684;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x91CD;&#x5B9A;&#x5411;&#x3001;&#x957F;&#x65F6;&#x95F4;&#x7684;&#x8BF7;&#x6C42;&#x6216; WebSockets&#x3002;</p>
+<pre class="language-"><code class="lang-js">req<span class="token punctuation">.</span>session<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// session saved</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="sessiontouch"><a name="sessiontouch" class="anchor-navigation-ex-anchor" href="#sessiontouch"><i class="fa fa-link" aria-hidden="true"></i></a><a name="sessiontouch" class="plugin-anchor" href="#sessiontouch"><i class="fa fa-link" aria-hidden="true"></i></a>Session.touch()</h4>
+<p>&#x66F4;&#x65B0; <code>.maxAge</code> &#x5C5E;&#x6027;&#x3002;&#x901A;&#x5E38;&#xFF0C;&#x8FD9;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x8C03;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x4F1A;&#x8BDD;&#x4E2D;&#x95F4;&#x4EF6;&#x4E3A;&#x60A8;&#x505A;&#x4E86;&#x8FD9;&#x4E2A;&#x3002;</p>
+<h3 id="req-session-id"><a name="req-session-id" class="anchor-navigation-ex-anchor" href="#req-session-id"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.3. req.session.id </h3>
+<p>&#x6BCF;&#x4E2A;&#x4F1A;&#x8BDD;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x60DF;&#x4E00;ID&#x3002;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x662F; <a href="#reqsessionid-1"><code>req.sessionID</code></a> &#x7684;&#x522B;&#x540D;&#xFF0C;&#x4E0D;&#x80FD;&#x88AB;&#x4FEE;&#x6539;&#x3002;&#x6DFB;&#x52A0;&#x4E86;&#x8FD9;&#x4E2A;&#x4F1A;&#x8BDD; ID&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4ECE; <code>session</code> &#x5BF9;&#x8C61;&#x8BBF;&#x95EE;&#x4F1A;&#x8BDD; ID&#x3002;</p>
+<h3 id="reqsessioncookie"><a name="reqsessioncookie" class="anchor-navigation-ex-anchor" href="#reqsessioncookie"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.4. req.session.cookie</h3>
+<p>&#x6BCF;&#x4E2A;&#x4F1A;&#x8BDD;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x60DF;&#x4E00;&#x7684; cookie &#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x5141;&#x8BB8;&#x60A8;&#x66F4;&#x6539;&#x6BCF;&#x4E2A;&#x8BBF;&#x95EE;&#x8005;&#x7684;&#x4F1A;&#x8BDD; cookie&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; <code>req.session.cookie.expires</code>  &#x4E3A; <code>false</code>&#xFF0C;&#x4F7F; cookie&#x4EC5;&#x5728;&#x7528;&#x6237;&#x4EE3;&#x7406;(user-agent)&#x7684;&#x6301;&#x7EED;&#x65F6;&#x95F4;&#x5185;&#x4FDD;&#x7559;&#x3002;</p>
+<h4 id="cookiemaxage_1"><a name="cookiemaxage_1" class="anchor-navigation-ex-anchor" href="#cookiemaxage_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cookiemaxage" class="plugin-anchor" href="#cookiemaxage"><i class="fa fa-link" aria-hidden="true"></i></a>Cookie.maxAge</h4>
+<p>&#x6216;&#x8005; <code>req.session.cookie.maxAge</code> &#x5C06;&#x8FD4;&#x56DE;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x95F4;&#x9694;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x503C;&#x6765;&#x9002;&#x5F53;&#x5730;&#x8C03;&#x6574; <code>.expires</code> &#x5C5E;&#x6027;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x7B49;&#x6548;&#x7684;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> hour <span class="token operator">=</span> <span class="token number">3600000</span>
+req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span>expires <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> hour<span class="token punctuation">)</span>
+req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span>maxAge <span class="token operator">=</span> hour
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5F53; <code>maxAge</code> &#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; <code>60000</code> (&#x4E00;&#x5206;&#x949F;)&#xFF0C;30 &#x79D2;&#x8FC7;&#x53BB;&#x4E86;&#x5B83;&#x5C06;&#x8FD4;&#x56DE; <code>30000</code> &#x76F4;&#x5230;&#x5F53;&#x524D;&#x8BF7;&#x6C42;&#x5B8C;&#x6210;&#xFF0C;&#x5728;&#x8FD9;&#x6BB5;&#x65F6;&#x95F4;&#x7684;<code>req.session.touch()</code> &#x88AB;&#x8C03;&#x7528;&#x6765;&#x91CD;&#x7F6E;<code>req.session.maxAge</code> &#x4E3A;&#x539F;&#x59CB;&#x503C;&#x3002;</p>
+<blockquote>
+<p><strong>[info] &#x300C;&#x8BD1;&#x8005;&#x6CE8;&#x300D;</strong></p>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x8BF4; <code>maxAge</code> &#x5C5E;&#x6027;&#x662F;&#x4E00;&#x4E2A;&#x5B9E;&#x65F6;&#x53D8;&#x5316;&#x7684;&#x503C;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x5012;&#x8BA1;&#x65F6;&#x3002;</p>
+</blockquote>
+<pre class="language-"><code class="lang-js">req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span>maxAge <span class="token comment" spellcheck="true">// =&gt; 30000</span>
+</code></pre>
+<h3 id="reqsessionid"><a name="reqsessionid" class="anchor-navigation-ex-anchor" href="#reqsessionid"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.5. req.sessionID</h3>
+<p>&#x8981;&#x83B7;&#x53D6;&#x5DF2;&#x52A0;&#x8F7D;&#x4F1A;&#x8BDD;&#x7684; ID&#xFF0C;&#x8BF7;&#x8BBF;&#x95EE;&#x8BF7;&#x6C42;&#x5C5E;&#x6027; <code>req.sessionID</code>&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x88AB;&#x8F7D;&#x5165;/&#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x8FD9;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x53EA;&#x8BFB;&#x503C;&#x3002;</p>
+<h2 id="&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#x5B9E;&#x73B0;"><a name="&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#x5B9E;&#x73B0;</h2>
+<p>&#x6BCF;&#x4E2A;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8; <em>&#x5FC5;&#x987B;</em> &#x662F;&#x4E00;&#x4E2A; <code>EventEmitter</code> &#x5E76;&#x5B9E;&#x73B0;&#x4E00;&#x4E9B;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x4E0B;&#x9762;&#x6709;&#x4E00;&#x4E9B;<strong>&#x5FC5;&#x9700;&#x7684;</strong>&#x3001;<strong>&#x63A8;&#x8350;&#x7684;</strong>&#x3001;<strong>&#x53EF;&#x9009;&#x7684;</strong>&#x65B9;&#x6CD5;&#x3002;</p>
+<ul>
+<li>&#x5FC5;&#x9700;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x603B;&#x662F;&#x8981;&#x5728;&#x5B58;&#x50A8;&#x4E0A;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x63A8;&#x8350;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5982;&#x679C;&#x6709;&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x5728;&#x5B58;&#x50A8;&#x4E0A;&#x8C03;&#x7528;&#x5B83;&#x3002;</li>
+<li>&#x53EF;&#x9009;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x6839;&#x672C;&#x4E0D;&#x8C03;&#x7528;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x5411;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x7EDF;&#x4E00;&#x7684;&#x5B58;&#x50A8;&#x3002;</li>
+</ul>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x5B9E;&#x73B0;&#xFF0C;&#x8BF7;&#x67E5;&#x770B; <a href="http://github.com/visionmedia/connect-redis" target="_blank">connect-redis</a> &#x4ED3;&#x5E93;&#x3002;</p>
+<blockquote>
+<p><strong>[info] &#x300C;&#x8BD1;&#x8005;&#x6CE8;&#x300D;</strong></p>
+<p>&#x65B9;&#x6CD5;&#x5217;&#x8868;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x6CD5;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:center">&#x7C7B;&#x578B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="#storedestroysid-callback">store.destroy(sid, callback)</a></td>
+<td style="text-align:left">&#x4ECE;&#x5B58;&#x50A8;&#x4E2D; &#x9500;&#x6BC1;/&#x5220;&#x9664; &#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x7684;&#x4F1A;&#x8BDD; ID &#x7684;&#x4F1A;&#x8BDD;&#x3002;</td>
+<td style="text-align:center">&#x5FC5;&#x9700;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#storegetsid-callback">store.get(sid, callback)</a></td>
+<td style="text-align:left">&#x4ECE;&#x5B58;&#x50A8;&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x7684;&#x4F1A;&#x8BDD; ID&#xFF08;<code>sid</code>&#xFF09;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x3002;</td>
+<td style="text-align:center">&#x5FC5;&#x9700;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#storesetsid-session-callback">store.set(sid, session, callback)</a></td>
+<td style="text-align:left">&#x5C06;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x66F4;&#x65B0;&#x63D2;&#x5165;&#xFF08;upsert&#xFF09;&#x5230;&#x5B58;&#x50A8;(store)&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x4F1A;&#x8BDD; ID(<code>sid</code>)&#x548C;&#x4F1A;&#x8BDD;(<code>session</code>)&#x5BF9;&#x8C61;&#x3002;</td>
+<td style="text-align:center">&#x5FC5;&#x9700;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#storetouchsid-session-callback">store.touch(sid, session, callback)</a></td>
+<td style="text-align:left">&#x88AB;&#x7528;&#x6765;&#x201C;&#x89E6;&#x78B0;&#x201D;&#xFF08;touch&#xFF09;&#x7ED9;&#x5B9A;&#x7684;&#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x4F1A;&#x8BDD;ID(<code>sid</code>)&#x548C;&#x4F1A;&#x8BDD;(<code>session</code>)&#x5BF9;&#x8C61;&#x7684;&#x4F1A;&#x8BDD;&#x3002;</td>
+<td style="text-align:center">&#x63A8;&#x8350;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#storeallcallback">store.all(callback)</a></td>
+<td style="text-align:left">&#x5C06;&#x5B58;&#x50A8;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x4F1A;&#x8BDD;&#x63D0;&#x53D6;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;</td>
+<td style="text-align:center">&#x53EF;&#x9009;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#storeclearcallback">store.clear(callback)</a></td>
+<td style="text-align:left">&#x5220;&#x9664;&#x5B58;&#x50A8;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x4F1A;&#x8BDD;</td>
+<td style="text-align:center">&#x53EF;&#x9009;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#storelengthcallback">store.length(callback)</a></td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x5B58;&#x50A8;&#x4E2D;&#x6240;&#x6709;&#x4F1A;&#x8BDD;&#x7684;&#x4E2A;&#x6570;</td>
+<td style="text-align:center">&#x53EF;&#x9009;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="storeallcallback"><a name="storeallcallback" class="anchor-navigation-ex-anchor" href="#storeallcallback"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. store.all(callback)</h3>
+<p><strong>&#x53EF;&#x9009;&#x7684;</strong></p>
+<p>&#x8FD9;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x65B9;&#x6CD5;&#x88AB;&#x7528;&#x6765;&#x5C06;&#x5B58;&#x50A8;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x4F1A;&#x8BDD;&#x63D0;&#x53D6;&#x5230;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;<br><code>callback</code> &#x5E94;&#x8BE5;&#x50CF; <code>callback(error, sessions)</code> &#x8FD9;&#x6837;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<h3 id="storedestroysid-callback"><a name="storedestroysid-callback" class="anchor-navigation-ex-anchor" href="#storedestroysid-callback"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. store.destroy(sid, callback)</h3>
+<p><strong>&#x5FC5;&#x9700;&#x7684;</strong></p>
+<p>&#x8FD9;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x65B9;&#x6CD5;&#x88AB;&#x7528;&#x4E8E;&#x4ECE;&#x5B58;&#x50A8;&#x4E2D; &#x9500;&#x6BC1;/&#x5220;&#x9664; &#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x7684;&#x4F1A;&#x8BDD; ID &#x7684;&#x4F1A;&#x8BDD;&#x3002;&#x4E00;&#x65E6;&#x8FD9;&#x4E2A;&#x4F1A;&#x8BDD;&#x88AB;&#x9500;&#x6BC1;&#xFF0C;<code>callback</code> &#x5E94;&#x8BE5;&#x50CF; <code>callback(error)</code> &#x8FD9;&#x6837;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<h3 id="storeclearcallback"><a name="storeclearcallback" class="anchor-navigation-ex-anchor" href="#storeclearcallback"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.3. store.clear(callback)</h3>
+<p><strong>&#x53EF;&#x9009;&#x7684;</strong></p>
+<p>&#x8FD9;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x65B9;&#x6CD5;&#x88AB;&#x7528;&#x4E8E;&#x5220;&#x9664;&#x5B58;&#x50A8;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x4F1A;&#x8BDD;&#x3002;&#x4E00;&#x65E6;&#x5B58;&#x50A8;&#x88AB;&#x6E05;&#x7A7A;&#xFF0C;<code>callback</code> &#x5E94;&#x8BE5;&#x50CF; <code>callback(error)</code>&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<h3 id="storelengthcallback"><a name="storelengthcallback" class="anchor-navigation-ex-anchor" href="#storelengthcallback"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.4. store.length(callback)</h3>
+<p><strong>&#x53EF;&#x9009;&#x7684;</strong></p>
+<p>&#x8FD9;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x65B9;&#x6CD5;&#x88AB;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x5B58;&#x50A8;&#x4E2D;&#x6240;&#x6709;&#x4F1A;&#x8BDD;&#x7684;&#x4E2A;&#x6570;&#x3002;<br> <code>callback</code> &#x50CF; <code>callback(error, len)</code> &#x8FD9;&#x6837;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<h3 id="storegetsid-callback"><a name="storegetsid-callback" class="anchor-navigation-ex-anchor" href="#storegetsid-callback"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.5. store.get(sid, callback)</h3>
+<p><strong>&#x5FC5;&#x9700;&#x7684;</strong></p>
+<p>&#x8FD9;&#x4E2A;&#x5FC5;&#x987B;&#x7684;&#x65B9;&#x6CD5;&#x88AB;&#x7528;&#x4E8E;&#x4ECE;&#x5B58;&#x50A8;&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x7684;&#x4F1A;&#x8BDD; ID&#xFF08;<code>sid</code>&#xFF09;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x3002;<code>callback</code> &#x5E94;&#x8BE5;&#x5982;&#x540C; <code>callback(error, session)</code> &#x8FD9;&#x6837;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<p><code>session</code> &#x53C2;&#x6570;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A;&#x88AB;&#x627E;&#x5230;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x5426;&#x5219;&#x5982;&#x679C;&#x4F1A;&#x8BDD;&#x672A;&#x88AB;&#x627E;&#x5230;&#xFF0C;&#x5B83;&#x5C06;&#x662F; <code>null</code> &#x6216; <code>undefined</code>&#xFF08;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF09;&#x3002;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#xFF0C;&#x5F53; <code>error.code === &apos;ENOENT&apos;</code> &#x65F6;&#x8868;&#x73B0;&#x5F97;&#x50CF; <code>callback(null, null)</code>&#x3002;</p>
+<h3 id="storesetsid-session-callback"><a name="storesetsid-session-callback" class="anchor-navigation-ex-anchor" href="#storesetsid-session-callback"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.6. store.set(sid, session, callback)</h3>
+<p><strong>&#x5FC5;&#x9700;&#x7684;</strong></p>
+<p>&#x8FD9;&#x4E2A;&#x5FC5;&#x9700;&#x7684;&#x65B9;&#x6CD5;&#x88AB;&#x7528;&#x4E8E;&#x5C06;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#x66F4;&#x65B0;&#x63D2;&#x5165;&#xFF08;upsert&#xFF09;&#x5230;&#x5B58;&#x50A8;(store)&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x4F1A;&#x8BDD; ID(<code>sid</code>)&#x548C;&#x4F1A;&#x8BDD;(<code>session</code>)&#x5BF9;&#x8C61;&#x3002;&#x4E00;&#x65E6;&#x4F1A;&#x8BDD;&#x88AB;&#x8BBE;&#x7F6E;&#x5230;&#x4E86;&#x5B58;&#x50A8;&#x4E2D;&#xFF0C;&#x56DE;&#x8C03;&#x5E94;&#x8BE5;&#x5982;&#x540C; <code>callback(error)</code> &#x4E00;&#x6837;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<h3 id="storetouchsid-session-callback"><a name="storetouchsid-session-callback" class="anchor-navigation-ex-anchor" href="#storetouchsid-session-callback"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.7. store.touch(sid, session, callback)</h3>
+<p><strong>&#x63A8;&#x8350;</strong></p>
+<p>&#x8FD9;&#x4E2A;&#x63A8;&#x8350;&#x7684;&#x65B9;&#x6CD5;&#x88AB;&#x7528;&#x6765;&#x201C;&#x89E6;&#x78B0;&#x201D;&#xFF08;touch&#xFF09;&#x7ED9;&#x5B9A;&#x7684;&#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x4F1A;&#x8BDD;ID(<code>sid</code>)&#x548C;&#x4F1A;&#x8BDD;(<code>session</code>)&#x5BF9;&#x8C61;&#x3002;&#x4E00;&#x65E6;&#x4F1A;&#x8BDD;&#x88AB;&#x89E6;&#x78B0;<code>callback</code> &#x5E94;&#x8BE5;&#x5982;&#x540C; <code>callback(error)</code> &#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x8FD9;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5F53;&#x5B58;&#x50A8;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x7A7A;&#x95F2;&#x4F1A;&#x8BDD;&#x65F6;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x5411;&#x5B58;&#x50A8;&#x53D1;&#x51FA;&#x4FE1;&#x53F7;&#xFF0C;&#x5373;&#x7ED9;&#x5B9A;&#x4F1A;&#x8BDD;&#x662F;&#x6D3B;&#x52A8;&#x7684;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x91CD;&#x7F6E;&#x7A7A;&#x95F2;&#x8BA1;&#x65F6;&#x5668;&#x3002;</p>
+<h2 id="&#x517C;&#x5BB9;&#x7684;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;"><a name="&#x517C;&#x5BB9;&#x7684;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;" class="anchor-navigation-ex-anchor" href="#&#x517C;&#x5BB9;&#x7684;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x517C;&#x5BB9;&#x7684;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;</h2>
+<p>&#x4E0B;&#x9762;&#x7684;&#x6A21;&#x5757;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x4E0E;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x517C;&#x5BB9;&#x7684;&#x4F1A;&#x8BDD;&#x5B58;&#x50A8;&#x3002;&#x8BF7;&#x5236;&#x4F5C;&#x4E00;&#x4E2A; PR &#x6765;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x6A21;&#x5757;:)</p>
+<p><a href="https://www.npmjs.com/package/aerospike-session-store" target="_blank"><img src="https://img.shields.io/github/stars/aerospike/aerospike-session-store-expressjs.svg?label=&#x2605;" alt=""> aerospike-session-store</a> A session store using <a href="http://www.aerospike.com/" target="_blank">Aerospike</a>.</p>
+<p><a href="https://www.npmjs.com/package/cassandra-store" target="_blank"><img src="https://img.shields.io/github/stars/webcc/cassandra-store.svg?label=&#x2605;" alt=""> cassandra-store</a> An Apache Cassandra-based session store.</p>
+<p><a href="https://www.npmjs.com/package/cluster-store" target="_blank"><img src="https://img.shields.io/github/stars/coolaj86/cluster-store.svg?label=&#x2605;" alt=""> cluster-store</a> A wrapper for using in-process / embedded<br>stores - such as SQLite (via knex), leveldb, files, or memory - with node cluster (desirable for Raspberry Pi 2<br>and other multi-core embedded devices).</p>
+<p><a href="https://www.npmjs.com/package/connect-azuretables" target="_blank"><img src="https://img.shields.io/github/stars/mike-goodwin/connect-azuretables.svg?label=&#x2605;" alt=""> connect-azuretables</a> An <a href="https://azure.microsoft.com/en-gb/services/storage/tables/" target="_blank">Azure Table Storage</a>-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-cloudant-store" target="_blank"><img src="https://img.shields.io/github/stars/adriantanasa/connect-cloudant-store.svg?label=&#x2605;" alt=""> connect-cloudant-store</a> An <a href="https://cloudant.com/" target="_blank">IBM Cloudant</a>-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-couchbase" target="_blank"><img src="https://img.shields.io/github/stars/christophermina/connect-couchbase.svg?label=&#x2605;" alt=""> connect-couchbase</a> A <a href="http://www.couchbase.com/" target="_blank">couchbase</a>-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-datacache" target="_blank"><img src="https://img.shields.io/github/stars/adriantanasa/connect-datacache.svg?label=&#x2605;" alt=""> connect-datacache</a> An <a href="http://www.ibm.com/cloud-computing/bluemix/" target="_blank">IBM Bluemix Data Cache</a>-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-db2" target="_blank"><img src="https://img.shields.io/github/stars/wallali/connect-db2.svg?label=&#x2605;" alt=""> connect-db2</a> An IBM DB2-based session store built using <a href="https://www.npmjs.com/package/ibm_db" target="_blank">ibm_db</a> module.</p>
+<p><a href="https://github.com/ca98am79/connect-dynamodb" target="_blank"><img src="https://img.shields.io/github/stars/ca98am79/connect-dynamodb.svg?label=&#x2605;" alt=""> connect-dynamodb</a> A DynamoDB-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-loki" target="_blank"><img src="https://img.shields.io/github/stars/Requarks/connect-loki.svg?label=&#x2605;" alt=""> connect-loki</a> A Loki.js-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-ml" target="_blank"><img src="https://img.shields.io/github/stars/bluetorch/connect-ml.svg?label=&#x2605;" alt=""> connect-ml</a> A MarkLogic Server-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-mssql" target="_blank"><img src="https://img.shields.io/github/stars/patriksimek/connect-mssql.svg?label=&#x2605;" alt=""> connect-mssql</a> A SQL Server-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-monetdb" target="_blank"><img src="https://img.shields.io/github/stars/MonetDB/npm-connect-monetdb.svg?label=&#x2605;" alt=""> connect-monetdb</a> A MonetDB-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-mongo" target="_blank"><img src="https://img.shields.io/github/stars/kcbanner/connect-mongo.svg?label=&#x2605;" alt=""> connect-mongo</a> A MongoDB-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-mongodb-session" target="_blank"><img src="https://img.shields.io/github/stars/mongodb-js/connect-mongodb-session.svg?label=&#x2605;" alt=""> connect-mongodb-session</a> Lightweight MongoDB-based session store built and maintained by MongoDB.</p>
+<p><a href="https://www.npmjs.com/package/connect-pg-simple" target="_blank"><img src="https://img.shields.io/github/stars/voxpelli/node-connect-pg-simple.svg?label=&#x2605;" alt=""> connect-pg-simple</a> A PostgreSQL-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-redis" target="_blank"><img src="https://img.shields.io/github/stars/tj/connect-redis.svg?label=&#x2605;" alt=""> connect-redis</a> A Redis-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-memcached" target="_blank"><img src="https://img.shields.io/github/stars/balor/connect-memcached.svg?label=&#x2605;" alt=""> connect-memcached</a> A memcached-based session store.</p>
+<p><a href="https://www.npmjs.com/package/connect-memjs" target="_blank"><img src="https://img.shields.io/github/stars/liamdon/connect-memjs.svg?label=&#x2605;" alt=""> connect-memjs</a> A memcached-based session store using<br><a href="https://www.npmjs.com/package/memjs" target="_blank">memjs</a> as the memcached client.</p>
+<p><a href="https://www.npmjs.com/package/connect-session-knex" target="_blank"><img src="https://img.shields.io/github/stars/llambda/connect-session-knex.svg?label=&#x2605;" alt=""> connect-session-knex</a> A session store using<br><a href="http://knexjs.org/" target="_blank">Knex.js</a>, which is a SQL query builder for PostgreSQL, MySQL, MariaDB, SQLite3, and Oracle.</p>
+<p><a href="https://www.npmjs.com/package/connect-session-sequelize" target="_blank"><img src="https://img.shields.io/github/stars/mweibel/connect-session-sequelize.svg?label=&#x2605;" alt=""> connect-session-sequelize</a> A session store using<br><a href="http://sequelizejs.com/" target="_blank">Sequelize.js</a>, which is a Node.js / io.js ORM for PostgreSQL, MySQL, SQLite and MSSQL.</p>
+<p><a href="https://www.npmjs.com/package/dynamodb-store" target="_blank"><img src="https://img.shields.io/github/stars/rafaelrpinto/dynamodb-store.svg?label=&#x2605;" alt=""> dynamodb-store</a> A DynamoDB-based session store.</p>
+<p><a href="https://www.npmjs.com/package/express-mysql-session" target="_blank"><img src="https://img.shields.io/github/stars/chill117/express-mysql-session.svg?label=&#x2605;" alt=""> express-mysql-session</a> A session store using native<br><a href="https://www.mysql.com/" target="_blank">MySQL</a> via the <a href="https://github.com/felixge/node-mysql" target="_blank">node-mysql</a> module.</p>
+<p><a href="https://www.npmjs.com/package/express-oracle-session" target="_blank"><img src="https://img.shields.io/github/stars/slumber86/express-oracle-session.svg?label=&#x2605;" alt=""> express-oracle-session</a> A session store using native<br><a href="https://www.oracle.com/" target="_blank">oracle</a> via the <a href="https://www.npmjs.com/package/oracledb" target="_blank">node-oracledb</a> module.</p>
+<p><a href="https://www.npmjs.com/package/express-sessions" target="_blank"><img src="https://img.shields.io/github/stars/konteck/express-sessions.svg?label=&#x2605;" alt=""> express-sessions</a>: A session store supporting both MongoDB and Redis.</p>
+<p><a href="https://www.npmjs.com/package/connect-sqlite3" target="_blank"><img src="https://img.shields.io/github/stars/rawberg/connect-sqlite3.svg?label=&#x2605;" alt=""> connect-sqlite3</a> A <a href="https://github.com/mapbox/node-sqlite3" target="_blank">SQLite3</a> session store modeled after the TJ&apos;s <code>connect-redis</code> store.</p>
+<p><a href="https://www.npmjs.com/package/documentdb-session" target="_blank"><img src="https://img.shields.io/github/stars/dwhieb/documentdb-session.svg?label=&#x2605;" alt=""> documentdb-session</a> A session store for Microsoft Azure&apos;s <a href="https://azure.microsoft.com/en-us/services/documentdb/" target="_blank">DocumentDB</a> NoSQL database service.</p>
+<p><a href="https://www.npmjs.com/package/express-nedb-session" target="_blank"><img src="https://img.shields.io/github/stars/louischatriot/express-nedb-session.svg?label=&#x2605;" alt=""> express-nedb-session</a> A NeDB-based session store.</p>
+<p><a href="https://www.npmjs.com/package/express-session-cache-manager" target="_blank"><img src="https://img.shields.io/github/stars/theogravity/express-session-cache-manager.svg?label=&#x2605;" alt=""> express-session-cache-manager</a><br>A store that implements <a href="https://www.npmjs.com/package/cache-manager" target="_blank">cache-manager</a>, which supports<br>a <a href="https://www.npmjs.com/package/cache-manager#store-engines" target="_blank">variety of storage types</a>.</p>
+<p><a href="https://www.npmjs.com/package/express-session-level" target="_blank"><img src="https://img.shields.io/github/stars/tgohn/express-session-level.svg?label=&#x2605;" alt=""> express-session-level</a> A <a href="https://github.com/Level/levelup" target="_blank">LevelDB</a> based session store.</p>
+<p><a href="https://www.npmjs.com/package/express-etcd" target="_blank"><img src="https://img.shields.io/github/stars/gildean/express-etcd.svg?label=&#x2605;" alt=""> express-etcd</a> An <a href="https://github.com/stianeikeland/node-etcd" target="_blank">etcd</a> based session store.</p>
+<p><a href="https://www.npmjs.com/package/fortune-session" target="_blank"><img src="https://img.shields.io/github/stars/aliceklipper/fortune-session.svg?label=&#x2605;" alt=""> fortune-session</a> A <a href="https://github.com/fortunejs/fortune" target="_blank">Fortune.js</a><br>based session store. Supports all backends supported by Fortune (MongoDB, Redis, Postgres, NeDB).</p>
+<p><a href="https://www.npmjs.com/package/hazelcast-store" target="_blank"><img src="https://img.shields.io/github/stars/jackspaniel/hazelcast-store.svg?label=&#x2605;" alt=""> hazelcast-store</a> A Hazelcast-based session store built on the <a href="https://www.npmjs.com/package/hazelcast-client" target="_blank">Hazelcast Node Client</a>.</p>
+<p><a href="https://www.npmjs.com/package/level-session-store" target="_blank"><img src="https://img.shields.io/github/stars/scriptollc/level-session-store.svg?label=&#x2605;" alt=""> level-session-store</a> A LevelDB-based session store.</p>
+<p><a href="https://www.npmjs.com/package/medea-session-store" target="_blank"><img src="https://img.shields.io/github/stars/BenjaminVadant/medea-session-store.svg?label=&#x2605;" alt=""> medea-session-store</a> A Medea-based session store.</p>
+<p><a href="https://www.npmjs.com/package/memorystore" target="_blank"><img src="https://img.shields.io/github/stars/roccomuso/memorystore.svg?label=&#x2605;" alt=""> memorystore</a> A memory session store made for production.</p>
+<p><a href="https://www.npmjs.com/package/mssql-session-store" target="_blank"><img src="https://img.shields.io/github/stars/jwathen/mssql-session-store.svg?label=&#x2605;" alt=""> mssql-session-store</a> A SQL Server-based session store.</p>
+<p><a href="https://www.npmjs.com/package/nedb-session-store" target="_blank"><img src="https://img.shields.io/github/stars/JamesMGreene/nedb-session-store.svg?label=&#x2605;" alt=""> nedb-session-store</a> An alternate NeDB-based (either in-memory or file-persisted) session store.</p>
+<p><a href="https://www.npmjs.com/package/sequelstore-connect" target="_blank"><img src="https://img.shields.io/github/stars/MattMcFarland/sequelstore-connect.svg?label=&#x2605;" alt=""> sequelstore-connect</a> A session store using <a href="http://sequelizejs.com/" target="_blank">Sequelize.js</a>.</p>
+<p><a href="https://www.npmjs.com/package/session-file-store" target="_blank"><img src="https://img.shields.io/github/stars/valery-barysok/session-file-store.svg?label=&#x2605;" alt=""> session-file-store</a> A file system-based session store.</p>
+<p><a href="https://www.npmjs.com/package/session-rethinkdb" target="_blank"><img src="https://img.shields.io/github/stars/llambda/session-rethinkdb.svg?label=&#x2605;" alt=""> session-rethinkdb</a> A <a href="http://rethinkdb.com/" target="_blank">RethinkDB</a>-based session store.</p>
+<h2 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x793A;&#x4F8B;</h2>
+<p>&#x4E00;&#x4E2A;&#x4F7F;&#x7528; <code>express-session</code> &#x6765;&#x4E3A;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x5B58;&#x50A8;&#x9875;&#x9762;&#x89C6;&#x56FE;&#x7684;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;express&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> parseurl <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;parseurl&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> session <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;express-session&apos;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  secret<span class="token punctuation">:</span> <span class="token string">&apos;keyboard cat&apos;</span><span class="token punctuation">,</span>
+  resave<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  saveUninitialized<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>views<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>views <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// &#x83B7;&#x53D6; url pathname</span>
+  <span class="token keyword">var</span> pathname <span class="token operator">=</span> <span class="token function">parseurl</span><span class="token punctuation">(</span>req<span class="token punctuation">)</span><span class="token punctuation">.</span>pathname
+
+  <span class="token comment" spellcheck="true">// count the views</span>
+  req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>views<span class="token punctuation">[</span>pathname<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>views<span class="token punctuation">[</span>pathname<span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
+
+  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;/foo&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;you viewed this page &apos;</span> <span class="token operator">+</span> req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>views<span class="token punctuation">[</span><span class="token string">&apos;/foo&apos;</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">&apos; times&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;/bar&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;you viewed this page &apos;</span> <span class="token operator">+</span> req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>views<span class="token punctuation">[</span><span class="token string">&apos;/bar&apos;</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">&apos; times&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="license"><a name="license" class="anchor-navigation-ex-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. License</h2>
+<p><a href="LICENSE">MIT</a></p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-12-17 16:13:01
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../method-override/" class="navigation navigation-prev " aria-label="Previous page: method-override">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../../connect/" class="navigation navigation-next " aria-label="Next page: connect">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"express-session","level":"3.6.1.2","depth":3,"next":{"title":"connect","level":"3.7","depth":1,"path":"Labrary/connect/README.md","ref":"Labrary/connect/README.md","articles":[]},"previous":{"title":"method-override","level":"3.6.1.1","depth":3,"path":"Labrary/express/middleware/method-override/README.md","ref":"Labrary/express/middleware/method-override/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"acefull","theme":"tomorrow","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Node.js","language":"zh-hans","gitbook":"*","description":"Node.js 自我学习"},"file":{"path":"Labrary/express/middleware/session/README.md","mtime":"2017-12-17T08:13:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-17T07:08:12.072Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
