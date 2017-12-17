@@ -48,6 +48,30 @@ var session = require('express-session')
 
 `express-session` 接受一个选项对象，该对象可以有下列属性。
 
+> **\[info\] 「译者注」**
+>
+> 选项列表：
+>
+> | 选项 | 类型 | 描述 | 默认值 |
+> | :--- | :--- | :--- | :--- |
+> | cookie | Obeject | 为会话 ID cookie 而设置的对象。 | `{ path: '/', httpOnly: true, secure: false, maxAge: null }` |
+> | cookie.domain | String | cookie 适用的域名 | 不设置，默认为只适用于当前域名 |
+> | cookie.expires |  | cookie 到期时间 | - |
+> | cookie.httpOnly | Boolean | 是否只使用 http cookie | `true` |
+> | cookie.maxAge | Number | 用于计算 `Expires` `Set-Cookie` 属性。 |  |
+> | cookie.path | String | cookie 的目录 | `/` |
+> | cookie.sameSite | Boolean or String | 同源策略 | 未标准化 |
+> | cookie.secure | Boolean or `'auto'` | 是否启用安全的 cookie | `false` |
+> | genid | Fucntion | 一个函数，来生成一个新的会话 ID。 | 一个 `uid-safe` 库的函数 |
+> | name |  | 一个用来在响应中设置\(从请求中读取\)会话 ID cookie 的名称。 | `'connect.sid'` |
+> | proxy | Boolean or `undefined` | 在设置安全 cookie 时，信任反向代理\(通过 "X-Forwarded-Proto" 头\)。 | `undefined` |
+> | resave | Boolean | 强制将会话保存回会话存储，即使会话在请求期间从未被修改过。 | 现为`true` |
+> | rolling | Boolean | 强制在每个响应中设置一个会话标识符 cookie | `false` |
+> | saveUninitialized | Boolean | 强制将一个“未初始化”的会话保存到存储中。 | 现为`true` |
+> | secret |  | 这是用于签署会话ID cookie 的秘密 |  |
+> | store | Object | 会话存储的实例 | `MemoryStore` 实例 |
+> | unset | String | 控制取消设置 `req.session` 的结果 | `'keep'` |
+
 ##### cookie
 
 为会话 ID cookie 而设置的对象。默认值为  
@@ -212,29 +236,6 @@ app.use(session({
 * `'destroy'` 当响应结束时，会话将被销毁\(删除\)。
 * `'keep'` 存储中的会话将被保留，但是在请求期间所做的修改将被忽略，而不会被保存。
 
-> **\[info\] 「译者注」**
->
-> 上述选项的列表：
->
-> | 选项 | 类型 | 描述 | 默认值 |
-> | :--- | :--- | :--- | :--- |
-> | cookie | Obeject | 为会话 ID cookie 而设置的对象。 | `{ path: '/', httpOnly: true, secure: false, maxAge: null }` |
-> | cookie.domain | String | cookie 适用的域名 | 不设置，默认为只适用于当前域名 |
-> | cookie.expires |  | cookie 到期时间 | - |
-> | cookie.httpOnly | Boolean | 是否只使用 http cookie | `true` |
-> | cookie.maxAge | Number | 用于计算 `Expires` `Set-Cookie` 属性。 |  |
-> | cookie.path | String | cookie 的目录 | `/` |
-> | cookie.sameSite | Boolean or String | 同源策略 | 未标准化 |
-> | cookie.secure | Boolean or `'auto'` | 是否启用安全的 cookie | `false` |
-> | genid | Fucntion | 一个函数，来生成一个新的会话 ID。 | 一个 `uid-safe` 库的函数 |
-> | name |  | 一个用来在响应中设置\(从请求中读取\)会话 ID cookie 的名称。 | `'connect.sid'` |
-> | proxy | Boolean or `undefined` | 在设置安全 cookie 时，信任反向代理\(通过 "X-Forwarded-Proto" 头\)。 | `undefined` |
-> | resave | Boolean | 强制将会话保存回会话存储，即使会话在请求期间从未被修改过。 | 现为`true` |
-> | rolling | Boolean | 强制在每个响应中设置一个会话标识符 cookie | `false` |
-> | saveUninitialized | Boolean | 强制将一个“未初始化”的会话保存到存储中。 | 现为`true` |
-> | secret |  | 这是用于签署会话ID cookie 的秘密 |  |
-> | store | Object | 会话存储的实例 | `MemoryStore` 实例 |
-> | unset | String | 控制取消设置 `req.session` 的结果 | `'keep'` |
 
 ### req.session
 
@@ -258,6 +259,18 @@ app.get('/', function(req, res, next) {
   }
 })
 ```
+
+> **\[info\] 「译者注」**
+>
+> 方法列表：
+>
+> | 方法| 描述 |
+> | :--- | :--- |
+> | Session.regenerate\(callback\) | 重新生成会话 |
+> | Session.destroy\(callback\) | 销毁会话，并取消设置 `req.session` 属性。 |
+> | Session.reload\(callback\) | 从存储中重新加载会话数据，并重新填充 `req.session` 对象 |
+> | Session.save\(callback\) | 将会话保存回存储，将存储中的内容替换为内存中的内容 |
+> | Session.touch\(\) | 更新 `.maxAge` 属性。 |
 
 #### Session.regenerate\(callback\)
 
@@ -307,18 +320,6 @@ req.session.save(function(err) {
 
 更新 `.maxAge` 属性。通常，这并不需要调用，因为会话中间件为您做了这个。
 
-> **\[info\] 「译者注」**
->
-> 上述选项的列表：
->
-> | 选项 | 描述 |
-> | :--- | :--- |
-> | Session.regenerate\(callback\) | 重新生成会话 |
-> | Session.destroy\(callback\) | 销毁会话，并取消设置 `req.session` 属性。 |
-> | Session.reload\(callback\) | 从存储中重新加载会话数据，并重新填充 `req.session` 对象 |
-> | Session.save\(callback\) | 将会话保存回存储，将存储中的内容替换为内存中的内容 |
-> | Session.touch\(\) | 更新 `.maxAge` 属性。 |
-
 ### req.session.id {#req-session-id}
 
 每个会话都有一个与之关联的惟一ID。这个属性是 [`req.sessionID`](#reqsessionid-1) 的别名，不能被修改。添加了这个会话 ID，就可以从 `session` 对象访问会话 ID。
@@ -363,9 +364,9 @@ req.session.cookie.maxAge // => 30000
 
 > **\[info\] 「译者注」**
 >
-> 下面是这些方法的列表：
+> 方法列表：
 >
-> | 名称 | 描述 | 类型 |
+> | 方法 | 描述 | 类型 |
 > | :--- | :--- | :---: |
 > | store.destroy\(sid, callback\) | 从存储中 销毁/删除 一个给定的会话 ID 的会话。 | 必需 |
 > | store.get\(sid, callback\) | 从存储使用给定的会话 ID（`sid`）获取一个会话。 | 必需 |
