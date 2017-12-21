@@ -7,7 +7,7 @@ io.on('connect', onConnect);
 
 function onConnect(socket){
 
-  // 发送到客户端
+  // 发送到当前 socket 客户端 (点对点)
   socket.emit('hello', 'can you hear me?', 1, 2, 'abc');
 
   // 发送到除开发送者的所有客户端

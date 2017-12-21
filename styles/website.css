@@ -6,9 +6,48 @@ h1 {
 p {
     text-indent: 2em;
 }
-book-body ul {
+.book-body ul {
     padding-left: 4em !important;
 }
+
+.color-theme-0 .book-body h1 {
+  color: #333333 !important;
+}
+.color-theme-0 .book-body h2 {
+  color: #333333 !important;
+}
+.color-theme-0 .book-body h3 {
+  color: #333333 !important;
+}
+.color-theme-0 .book-body h4 {
+  color: #333333 !important;
+}
+.color-theme-0 .book-body h5 {
+  color: #333333 !important;
+}
+.color-theme-0 .book-body h6 {
+  color: #333333 !important;
+}
+
+.color-theme-2 .book-body h1 {
+  color: #EEEEEE !important;
+}
+.color-theme-2 .book-body h2 {
+  color: #EEEEEE !important;
+}
+.color-theme-2 .book-body h3 {
+  color: #EEEEEE !important;
+}
+.color-theme-2 .book-body h4 {
+  color: #EEEEEE !important;
+}
+.color-theme-2 .book-body h5 {
+  color: #EEEEEE !important;
+}
+.color-theme-2 .book-body h6 {
+  color: #EEEEEE !important;
+}
+
 ul p {
     text-indent: 0;
 }
