@@ -8,7 +8,7 @@
 #### API Reference
 
   - [服务器 API](API.md)
-  - [客户端 API](/Labrary/socket.io-client/docs/API.md)
+  - [客户端 API](/Library/socket.io-client/docs/API.md)
 
 #### 高级主题
 

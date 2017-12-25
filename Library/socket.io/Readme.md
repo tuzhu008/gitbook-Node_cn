@@ -137,7 +137,7 @@ server.listen(3000);
 
 ## 文档
 
-请参见 [中文文档](/Labrary/socketIO/docs/README.md). 欢迎贡献！
+请参见 [中文文档](/Library/socketIO/docs/README.md). 欢迎贡献！
 
 ## 调试 / 记录
 
