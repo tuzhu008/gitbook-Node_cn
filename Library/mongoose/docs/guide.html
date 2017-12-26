@@ -1,0 +1,1711 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>指南 · Node.js</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="guide.html" />
+    
+    
+    <link rel="prev" href="quick-start.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    关于 Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../GLOSSARY.html">
+            
+                <a href="../../../GLOSSARY.html">
+            
+                    
+                    术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">参考文档</li>
+        
+        
+    
+
+    
+        
+        <li class="header">相关库</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Node 相关库列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../nvm/">
+            
+                <a href="../../nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../request/">
+            
+                <a href="../../request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../async/">
+            
+                <a href="../../async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../supervisor/">
+            
+                <a href="../../supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../express/">
+            
+                <a href="../../express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../../express/docs/API.html">
+            
+                <a href="../../express/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1.1" >
+            
+                <span>
+            
+                    
+                    express()
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.2" >
+            
+                <span>
+            
+                    
+                    Aplication
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.3" >
+            
+                <span>
+            
+                    
+                    Request
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.4" >
+            
+                <span>
+            
+                    
+                    Response
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.5" data-path="../../express/docs/API.html">
+            
+                <a href="../../express/docs/API.html#router">
+            
+                    
+                    Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../../express/middleware/">
+            
+                <a href="../../express/middleware/">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.2.1" data-path="../../express/middleware/method-override/">
+            
+                <a href="../../express/middleware/method-override/">
+            
+                    
+                    method-override
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.2" data-path="../../express/middleware/session/">
+            
+                <a href="../../express/middleware/session/">
+            
+                    
+                    express-session
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../connect/">
+            
+                <a href="../../connect/">
+            
+                    
+                    connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../../socket.io/">
+            
+                <a href="../../socket.io/">
+            
+                    
+                    socket.io
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1" data-path="../../socket.io/docs/">
+            
+                <a href="../../socket.io/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1.1" data-path="../../socket.io/docs/API.html">
+            
+                <a href="../../socket.io/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.1.2" data-path="../../socket.io/docs/emit.html">
+            
+                <a href="../../socket.io/docs/emit.html">
+            
+                    
+                    emit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.2" data-path="../../socket.io/library/REAME.html">
+            
+                <a href="../../socket.io/library/REAME.html">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.2.1" data-path="../../socket.io/library/engine.io/">
+            
+                <a href="../../socket.io/library/engine.io/">
+            
+                    
+                    engine.io
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../../socket.io-client/">
+            
+                <a href="../../socket.io-client/">
+            
+                    
+                    socket.io-client
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1" data-path="../../socket.io-client/docs/">
+            
+                <a href="../../socket.io-client/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1.1" data-path="../../socket.io-client/docs/API.html">
+            
+                <a href="../../socket.io-client/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../../node_redis/">
+            
+                <a href="../../node_redis/">
+            
+                    
+                    node_redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../../node-http-proxy/">
+            
+                <a href="../../node-http-proxy/">
+            
+                    
+                    node-http-proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../../mysql/">
+            
+                <a href="../../mysql/">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    mongoose
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.1" data-path="quick-start.html">
+            
+                <a href="quick-start.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.13.1.2" data-path="guide.html">
+            
+                <a href="guide.html">
+            
+                    
+                    指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.13.1.2.1" data-path="guide.html">
+            
+                <a href="guide.html">
+            
+                    
+                    schemas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1.1" data-path="SchemaTypes.html">
+            
+                <a href="SchemaTypes.html">
+            
+                    
+                    types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.2" data-path="customschematypes.html">
+            
+                <a href="customschematypes.html">
+            
+                    
+                    custom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.3" data-path="advanced_schemas.html">
+            
+                <a href="advanced_schemas.html">
+            
+                    
+                    advanced usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.2" data-path="models.html">
+            
+                <a href="models.html">
+            
+                    
+                    models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3" data-path="documents.html">
+            
+                <a href="documents.html">
+            
+                    
+                    documents
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.3.1" data-path="subdocs.html">
+            
+                <a href="subdocs.html">
+            
+                    
+                    sub docs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3.2" data-path="defaults.html">
+            
+                <a href="defaults.html">
+            
+                    
+                    defaults
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.4" data-path="queries.html">
+            
+                <a href="queries.html">
+            
+                    
+                    queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.5" data-path="validation.html">
+            
+                <a href="validation.html">
+            
+                    
+                    validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.6" data-path="middleware.html">
+            
+                <a href="middleware.html">
+            
+                    
+                    middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.7" data-path="populate.html">
+            
+                <a href="populate.html">
+            
+                    
+                    population
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.8" data-path="connections.html">
+            
+                <a href="connections.html">
+            
+                    
+                    connections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.9" data-path="plugins.html">
+            
+                <a href="plugins.html">
+            
+                    
+                    plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.10" data-path="promises.html">
+            
+                <a href="promises.html">
+            
+                    
+                    promises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.11" data-path="discriminators.html">
+            
+                <a href="discriminators.html">
+            
+                    
+                    discriminators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.12" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/blob/master/CONTRIBUTING.md">
+            
+                    
+                    contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.13" data-path="harmony.html">
+            
+                <a href="harmony.html">
+            
+                    
+                    ES2015 integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.14" data-path="browser.html">
+            
+                <a href="browser.html">
+            
+                    
+                    schemas in the browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.15" data-path="compatibility.html">
+            
+                <a href="compatibility.html">
+            
+                    
+                    MongoDB Version Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.16" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.6-Release-Notes">
+            
+                    
+                    3.6 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.17" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.8-Release-Notes">
+            
+                    
+                    3.8 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.18" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/4.0-Release-Notes">
+            
+                    
+                    4.0 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.3" data-path="API.html">
+            
+                <a href="API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.4" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.5" data-path="prior.html">
+            
+                <a href="prior.html">
+            
+                    
+                    之前的版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >指南</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#schemas&#xFF08;&#x6A21;&#x5F0F;&#xFF09;"><b>1. </b>Schemas&#xFF08;&#x6A21;&#x5F0F;&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;"><b>1.1. </b>&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x6A21;&#x578B;"><b>1.2. </b>&#x521B;&#x5EFA;&#x6A21;&#x578B;</a></li><li><span class="title-icon "></span><a href="#&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;"><b>1.3. </b>&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#statics"><b>1.4. </b>&#x9759;&#x6001;&#x65B9;&#x6CD5; </a></li><li><span class="title-icon "></span><a href="#&#x67E5;&#x8BE2;&#x52A9;&#x624B;"><b>1.5. </b>&#x67E5;&#x8BE2;&#x52A9;&#x624B;</a></li><li><span class="title-icon "></span><a href="#&#x7D22;&#x5F15;"><b>1.6. </b>&#x7D22;&#x5F15;</a></li><li><span class="title-icon "></span><a href="#virtuals"><b>1.7. </b>&#x865A;&#x62DF;&#x5C5E;&#x6027; </a></li><ul><li><span class="title-icon "></span><a href="#&#x522B;&#x540D;"><b>1.7.1. </b>&#x522B;&#x540D;</a></li></ul><li><span class="title-icon "></span><a href="#options"><b>1.8. </b>Options</a></li><ul><li><span class="title-icon "></span><a href="#autoIndex"><b>1.8.1. </b>&#x9009;&#x9879;: autoIndex </a></li><li><span class="title-icon "></span><a href="#bufferCommands"><b>1.8.2. </b>&#x9009;&#x9879;: bufferCommands </a></li><li><span class="title-icon "></span><a href="#capped"><b>1.8.3. </b>option: capped </a></li><li><span class="title-icon "></span><a href="#collection"><b>1.8.4. </b>&#x9009;&#x9879;: collection </a></li><li><span class="title-icon "></span><a href="#emitIndexErrors"><b>1.8.5. </b>&#x9009;&#x9879;: emitIndexErrors </a></li><li><span class="title-icon "></span><a href="#id"><b>1.8.6. </b>&#x9009;&#x9879;: id </a></li><li><span class="title-icon "></span><a href="#&#x9009;&#x9879;-id"><b>1.8.7. </b>&#x9009;&#x9879;: _id</a></li><li><span class="title-icon "></span><a href="#minimize"><b>1.8.8. </b>&#x9009;&#x9879;: minimize </a></li><li><span class="title-icon "></span><a href="#read"><b>1.8.9. </b>&#x9009;&#x9879;: read </a></li><li><span class="title-icon "></span><a href="#safe"><b>1.8.10. </b>&#x9009;&#x9879;: safe </a></li><li><span class="title-icon "></span><a href="#shardKey"><b>1.8.11. </b>&#x9009;&#x9879;: shardKey </a></li><li><span class="title-icon "></span><a href="#strict"><b>1.8.12. </b>&#x9009;&#x9879;: strict </a></li><li><span class="title-icon "></span><a href="#toJSON"><b>1.8.13. </b>&#x9009;&#x9879;: toJSON </a></li><li><span class="title-icon "></span><a href="#toObject"><b>1.8.14. </b>&#x9009;&#x9879;: toObject </a></li><li><span class="title-icon "></span><a href="#typeKey"><b>1.8.15. </b>&#x9009;&#x9879;: typeKey </a></li><li><span class="title-icon "></span><a href="#validateBeforeSave"><b>1.8.16. </b>&#x9009;&#x9879;: validateBeforeSave </a></li><li><span class="title-icon "></span><a href="#versionKey"><b>1.8.17. </b>&#x9009;&#x9879;: versionKey </a></li><li><span class="title-icon "></span><a href="#collation"><b>1.8.18. </b>&#x9009;&#x9879;: collation </a></li><li><span class="title-icon "></span><a href="#skipVersioning"><b>1.8.19. </b>&#x9009;&#x9879;: skipVersioning </a></li><li><span class="title-icon "></span><a href="#timestamps"><b>1.8.20. </b>&#x9009;&#x9879;: timestamps </a></li><li><span class="title-icon "></span><a href="#useNestedStrict"><b>1.8.21. </b>&#x9009;&#x9879;: useNestedStrict </a></li><li><span class="title-icon "></span><a href="#retainKeyOrder"><b>1.8.22. </b>&#x9009;&#x9879;: retainKeyOrder </a></li></ul><li><span class="title-icon "></span><a href="#&#x53EF;&#x63D2;&#x62D4;"><b>1.9. </b>&#x53EF;&#x63D2;&#x62D4;</a></li><li><span class="title-icon "></span><a href="#&#x63A5;&#x4E0B;&#x6765;"><b>1.10. </b>&#x63A5;&#x4E0B;&#x6765;</a></li></ul></ul></div><a href="#schemas&#xFF08;&#x6A21;&#x5F0F;&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="schemas&#xFF08;&#x6A21;&#x5F0F;&#xFF09;"><a name="schemas&#xFF08;&#x6A21;&#x5F0F;&#xFF09;" class="anchor-navigation-ex-anchor" href="#schemas&#xFF08;&#x6A21;&#x5F0F;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Schemas&#xFF08;&#x6A21;&#x5F0F;&#xFF09;</h1>
+<blockquote>
+<p><strong>[warning]</strong></p>
+<p>&#x5982;&#x679C;&#x4F60;&#x8FD8;&#x6CA1;&#x6709;&#x8FD9;&#x6837;&#x505A;&#xFF0C;&#x8BF7;&#x82B1;&#x4E00;&#x5206;&#x949F;&#x9605;&#x8BFB;&#x4E00;&#x4E0B;<a href="quick-start.html">&#x5FEB;&#x901F;&#x5165;&#x95E8;</a>&#xFF0C;&#x4E86;&#x89E3;&#x4E00;&#x4E0B; Mongoose &#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#x3002;&#x5982;&#x679C;&#x4F60;&#x662F;&#x4ECE;3.x &#x8FC1;&#x79FB;&#x5230; 4.x&#xFF0C;&#x8BF7;&#x7A0D;&#x7B49;&#x4E00;&#x4E0B;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;<a href="http://mongoosejs.com/docs/migration.html" target="_blank">&#x8FC1;&#x79FB;&#x6307;&#x5357;</a>&#x3002;</p>
+</blockquote>
+<h2 id="&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;"><a name="&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5B9A;&#x4E49;&#x6A21;&#x5F0F;</h2>
+<p>Mongoose &#x7684;&#x4E00;&#x5207;&#x90FD;&#x4EE5; Schema &#x5F00;&#x59CB;&#x3002;&#x6BCF;&#x4E2A;&#x6A21;&#x5F0F;&#x6620;&#x5C04;&#x5230; MongoDB &#x96C6;&#x5408;(collection)&#xFF0C;&#x5E76;&#x5B9A;&#x4E49;&#x8BE5;&#x96C6;&#x5408;&#x5185;&#x7684;&#x6587;&#x6863;&#x7684;&#x5F62;&#x72B6;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> mongoose <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;mongoose&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Schema <span class="token operator">=</span> mongoose<span class="token punctuation">.</span>Schema<span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> blogSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  title<span class="token punctuation">:</span>  String<span class="token punctuation">,</span>
+  author<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+  body<span class="token punctuation">:</span>   String<span class="token punctuation">,</span>
+  comments<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> body<span class="token punctuation">:</span> String<span class="token punctuation">,</span> date<span class="token punctuation">:</span> Date <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  date<span class="token punctuation">:</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> Date<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token punctuation">:</span> Date<span class="token punctuation">.</span>now <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  hidden<span class="token punctuation">:</span> Boolean<span class="token punctuation">,</span>
+  meta<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    votes<span class="token punctuation">:</span> Number<span class="token punctuation">,</span>
+    favs<span class="token punctuation">:</span>  Number
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728;&#x4EE5;&#x540E;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x952E;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <a href="API.html#schema_Schema-add">Schema#add</a> &#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x7684; <code>blogSchema</code> &#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x952E;&#x90FD;&#x5B9A;&#x4E49;&#x4E86;&#x6211;&#x4EEC;&#x7684;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x5C06;&#x88AB;&#x8F6C;&#x6362;&#x5230;&#x5B83;&#x76F8;&#x5173;&#x7684; <a href="">SchemaType</a>&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A; <code>title</code>&#xFF0C;&#x5B83;&#x5C06;&#x88AB;&#x8F6C;&#x6362;&#x4E3A; String &#x6A21;&#x5F0F;&#x7C7B;&#x578B;&#x548C; <code>date</code>&#xFF0C;&#x5B83;&#x5C06;&#x88AB;&#x8F6C;&#x6362;&#x4E3A; Date &#x6A21;&#x5F0F;&#x7C7B;&#x578B;&#x3002;&#x952E;&#x8FD8;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x952E;/&#x7C7B;&#x578B;&#x5B9A;&#x4E49;(&#x5982;&#x4E0A;&#x9762;&#x7684; <code>meta</code> &#x5C5E;&#x6027;)&#x3002;</p>
+<p>&#x5141;&#x8BB8; SchemaTypes &#x662F;:</p>
+<ul>
+<li>String</li>
+<li>Number</li>
+<li>Date</li>
+<li>Buffer</li>
+<li>Boolean</li>
+<li>Mixed</li>
+<li>ObjectId</li>
+<li>Array</li>
+</ul>
+<p>&#x9605;&#x8BFB;<a href="SchemaTypes.html">&#x66F4;&#x591A;</a>&#x5173;&#x4E8E;&#x5B83;&#x4EEC;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x6A21;&#x5F0F;&#x4E0D;&#x4EC5;&#x5B9A;&#x4E49;&#x4E86;&#x6587;&#x6863;&#x7684;&#x7ED3;&#x6784;&#x548C;&#x5C5E;&#x6027;&#x7684;&#x8F6C;&#x6362;&#xFF0C;&#x8FD8;&#x5B9A;&#x4E49;&#x4E86;&#x6587;&#x6863;<a href="#&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;">&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</a>&#x3001;&#x9759;&#x6001;<a href="#&#x9759;&#x6001;&#x65B9;&#x6CD5;">&#x6A21;&#x578B;&#x65B9;&#x6CD5;</a>&#x3001;<a href="#&#x7D22;&#x5F15;">&#x590D;&#x5408;&#x7D22;&#x5F15;</a>&#x548C;&#x79F0;&#x4E3A;<a href="middleware.html">&#x4E2D;&#x95F4;&#x4EF6;</a>&#x7684;&#x6587;&#x6863;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x3002;</p>
+<h2 id="&#x521B;&#x5EFA;&#x6A21;&#x578B;"><a name="&#x521B;&#x5EFA;&#x6A21;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x6A21;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x521B;&#x5EFA;&#x6A21;&#x578B;</h2>
+<p>&#x4E3A;&#x4E86;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x7684;&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x6211;&#x4EEC;&#x7684; <code>blogSchema</code> &#x8F6C;&#x6362;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7684; <a href="models.html">Model</a>&#x4E2D;&#x3002;&#x4E3A;&#x4E86;&#x505A;&#x5230;&#x8FD9;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x5B83;&#x4F20;&#x9012;&#x5230;  <code>mongoose.model(modelName, schema)</code> &#x4E2D;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> Blog <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Blog&apos;</span><span class="token punctuation">,</span> blogSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// &#x5F00;&#x8F66;&#x5566;!</span>
+</code></pre>
+<h2 id="&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;"><a name="&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</h2>
+<p>Model &#x7684;&#x5B9E;&#x4F8B;&#x662F;<a href="documents.html">&#x6587;&#x6863;</a>&#xFF0C;&#x6587;&#x6863;&#x6709;&#x8BB8;&#x591A;&#x81EA;&#x5DF1;&#x7684;<a href="">&#x5185;&#x7F6E;&#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</a>&#x3002;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6587;&#x6863;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x5B9A;&#x4E49;&#x4E00;&#x4E2A; schema</span>
+<span class="token keyword">var</span> animalSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> String<span class="token punctuation">,</span> type<span class="token punctuation">:</span> String <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x5206;&#x914D;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7ED9; animalSchema &#x7684; &quot;methods&quot; &#x5BF9;&#x8C61;</span>
+animalSchema<span class="token punctuation">.</span>methods<span class="token punctuation">.</span>findSimilarTypes <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>cb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Animal&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>type <span class="token punctuation">}</span><span class="token punctuation">,</span> cb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x6240;&#x6709;&#x7684;&#x52A8;&#x7269;&#x5B9E;&#x4F8B;&#x90FD;&#x6709;&#x4E00;&#x4E2A; <code>findSimilarTypes</code> &#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> Animal <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Animal&apos;</span><span class="token punctuation">,</span> animalSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;dog&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+dog<span class="token punctuation">.</span><span class="token function">findSimilarTypes</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> dogs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>dogs<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// woof</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p><strong>[warning] &#x8B66;&#x544A;</strong></p>
+<p>&#x91CD;&#x5199;&#x9ED8;&#x8BA4;&#x7684; mongoose &#x6587;&#x6863;&#x65B9;&#x6CD5;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x4E0D;&#x53EF;&#x9884;&#x6D4B;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x8BE6;&#x60C5;&#x8BF7;&#x89C1;<a href="http://mongoosejs.com/docs/api.html#schema_Schema.reserved" target="_blank">&#x6B64;</a>&#x3002;</p>
+<p><strong>[warning] &#x8B66;&#x544A;</strong></p>
+<p>&#x4E0D;&#x8981;&#x4F7F;&#x7528; ES6 &#x7BAD;&#x5934;&#x51FD;&#x6570;(<code>=&gt;</code>)&#x58F0;&#x660E;&#x65B9;&#x6CD5;&#x3002;&#x7BAD;&#x5934;&#x51FD;&#x6570;<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">&#x663E;&#x5F0F;&#x5730;&#x963B;&#x6B62;&#x7ED1;&#x5B9A; <code>this</code></a>&#xFF0C;&#x56E0;&#x6B64;&#x60A8;&#x7684;&#x65B9;&#x6CD5;&#x5C06;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x6587;&#x6863;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x5C06;&#x65E0;&#x6CD5;&#x5DE5;&#x4F5C;&#x3002;</p>
+</blockquote>
+<h2 id="statics"><a name="statics" class="anchor-navigation-ex-anchor" href="#statics"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x9759;&#x6001;&#x65B9;&#x6CD5; </h2>
+<p>&#x5411; Model &#x4E2D;&#x6DFB;&#x52A0;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#x3002;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x7684; <code>animalSchema</code>:</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x5206;&#x914D;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7ED9; animalSchema &#x7684; &quot;statics&quot; &#x5BF9;&#x8C61;</span>
+animalSchema<span class="token punctuation">.</span>statics<span class="token punctuation">.</span>findByName <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> cb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token string">&apos;i&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> cb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> Animal <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Animal&apos;</span><span class="token punctuation">,</span> animalSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Animal<span class="token punctuation">.</span><span class="token function">findByName</span><span class="token punctuation">(</span><span class="token string">&apos;fido&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> animals<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>animals<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p><strong>[warning] &#x8B66;&#x544A;</strong></p>
+<p>&#x4E0D;&#x8981;&#x4F7F;&#x7528; ES6 &#x7BAD;&#x5934;&#x51FD;&#x6570;(<code>=&gt;</code>)&#x58F0;&#x660E;&#x65B9;&#x6CD5;&#x3002;&#x7BAD;&#x5934;&#x51FD;&#x6570;<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">&#x663E;&#x5F0F;&#x5730;&#x963B;&#x6B62;&#x7ED1;&#x5B9A; <code>this</code></a>&#xFF0C;&#x56E0;&#x6B64;&#x60A8;&#x7684;&#x65B9;&#x6CD5;&#x5C06;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x6587;&#x6863;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x5C06;&#x65E0;&#x6CD5;&#x5DE5;&#x4F5C;&#x3002;</p>
+</blockquote>
+<h2 id="&#x67E5;&#x8BE2;&#x52A9;&#x624B;"><a name="&#x67E5;&#x8BE2;&#x52A9;&#x624B;" class="anchor-navigation-ex-anchor" href="#&#x67E5;&#x8BE2;&#x52A9;&#x624B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x67E5;&#x8BE2;&#x52A9;&#x624B;</h2>
+<p>&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x67E5;&#x8BE2;&#x52A9;&#x624B;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x7C7B;&#x4F3C;&#x4E8E;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x53EA;&#x9002;&#x7528;&#x4E8E; mongoose &#x67E5;&#x8BE2;&#x3002;&#x67E5;&#x8BE2;&#x52A9;&#x624B;&#x65B9;&#x6CD5;&#x5141;&#x8BB8;&#x60A8;&#x6269;&#x5C55; mongoose &#x7684;<a href="queries.html">&#x94FE;&#x5F0F;&#x67E5;&#x8BE2;&#x6784;&#x5EFA;&#x5668; API</a>&#x3002;</p>
+<pre class="language-"><code class="lang-js">animalSchema<span class="token punctuation">.</span>query<span class="token punctuation">.</span>byName <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token string">&apos;i&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> Animal <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Animal&apos;</span><span class="token punctuation">,</span> animalSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Animal<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">byName</span><span class="token punctuation">(</span><span class="token string">&apos;fido&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> animals<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>animals<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x7D22;&#x5F15;"><a name="&#x7D22;&#x5F15;" class="anchor-navigation-ex-anchor" href="#&#x7D22;&#x5F15;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x7D22;&#x5F15;</h2>
+<p>MongoDB &#x652F;&#x6301;<a href="https://docs.mongodb.com/manual/indexes/" target="_blank">&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;</a>&#x3002;&#x5BF9;&#x4E8E; mongoose&#xFF0C;&#x6211;&#x4EEC;&#x5728;<a href="http://mongoosejs.com/docs/api.html#schematype_SchemaType-index" target="_blank">&#x8DEF;</a><a href="http://mongoosejs.com/docs/api.html#schematype_SchemaType-unique" target="_blank">&#x5F84;</a><a href="http://mongoosejs.com/docs/api.html#schematype_SchemaType-sparse" target="_blank">&#x7EA7;</a><a href="http://mongoosejs.com/docs/api.html#schema_date_SchemaDate-expires" target="_blank">&#x522B;</a>&#x6216;&#x6A21;&#x5F0F;&#x7EA7;&#x522B;&#x5B9A;&#x4E49;&#x8FD9;&#x4E9B;&#x7D22;&#x5F15;&#x3002;&#x5728;&#x521B;&#x5EFA;<a href="https://docs.mongodb.com/manual/indexes/#Indexes-CompoundKeys" target="_blank">&#x590D;&#x5408;&#x7D22;&#x5F15;</a>&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x6A21;&#x5F0F;&#x7EA7;&#x522B;&#x5B9A;&#x4E49;&#x7D22;&#x5F15;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> animalSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+  type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+  tags<span class="token punctuation">:</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token punctuation">[</span>String<span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// field level</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+animalSchema<span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> type<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// schema level</span>
+</code></pre>
+<blockquote>
+<p><strong>[warning] &#x8B66;&#x544A;</strong></p>
+<p>&#x5F53;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#xFF0C;Mongoose &#x4F1A;&#x81EA;&#x52A8;&#x4E3A;&#x4F60;&#x7684;&#x6A21;&#x5F0F;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5B9A;&#x4E49;&#x7684;&#x7D22;&#x5F15;&#x8C03;&#x7528; <a href="https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/#db.collection.createIndex" target="_blank"><code>createIndex</code></a>&#x3002;Mongoose &#x5C06;&#x6309;&#x987A;&#x5E8F;&#x4E3A;&#x6BCF;&#x4E2A;&#x7D22;&#x5F15;&#x8C03;&#x7528; <code>createIndex</code>&#xFF0C;&#x5E76;&#x5728;&#x6240;&#x6709;&#x7684; <code>createIndex</code> &#x8C03;&#x7528;&#x6210;&#x529F;&#x6216;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x5728;&#x300C;&#x6A21;&#x578B;&#x300D;&#x4E0A;&#x53D1;&#x5C04;&#x4E00;&#x4E2A; &#x201C;index&#x201D; &#x4E8B;&#x4EF6;&#x3002;&#x867D;&#x7136;&#x5BF9;&#x5F00;&#x53D1;&#x5F88;&#x597D;&#xFF0C;&#x4F46;&#x662F;&#x5EFA;&#x8BAE;&#x5728;&#x751F;&#x4EA7;&#x4E2D;&#x7981;&#x7528;&#x8BE5;&#x884C;&#x4E3A;&#xFF0C;&#x56E0;&#x4E3A;&#x7D22;&#x5F15;&#x521B;&#x5EFA;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;<a href="http://docs.mongodb.org/manual/core/indexes/#index-creation-operations" target="_blank">&#x663E;&#x8457;&#x7684;&#x6027;&#x80FD;&#x5F71;&#x54CD;</a>&#x3002;&#x901A;&#x8FC7;&#x5C06;&#x60A8;&#x7684;&#x6A21;&#x5F0F;&#x7684;  <code>autoIndex</code> &#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A; <code>false</code>&#xFF0C;&#x6216;&#x8005;&#x5728;&#x8FDE;&#x63A5;&#x4E0A;&#x5168;&#x5C40;&#x6027;&#x5730;&#x8BBE;&#x7F6E; <code>config.autoIndex</code> &#x4E3A; <code>false</code>&#xFF0C; &#x4ECE;&#x800C;&#x7981;&#x7528;&#x8BE5;&#x884C;&#x4E3A;&#x3002;</p>
+</blockquote>
+<pre class="language-"><code class="lang-js">mongoose<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">&apos;mongodb://user:pass@localhost:port/database&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> config<span class="token punctuation">:</span> <span class="token punctuation">{</span> autoIndex<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// or</span>
+mongoose<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span><span class="token string">&apos;mongodb://user:pass@localhost:port/database&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> config<span class="token punctuation">:</span> <span class="token punctuation">{</span> autoIndex<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// or</span>
+animalSchema<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;autoIndex&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// or</span>
+<span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> autoIndex<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5F53;&#x7D22;&#x5F15;&#x88AB;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x6216;&#x8005;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;Mongoose &#x5C06;&#x4F1A;&#x5728;&#x6A21;&#x578B;&#x4E0A;&#x53D1;&#x5C04;&#x4E00;&#x4E2A; <code>index</code> &#x4E8B;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x5C06;&#x4F1A;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#xFF0C;&#x56E0;&#x4E3A; mongodb &#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x6709;&#x4E00;&#x4E2A; id &#x7D22;&#x5F15;&#xFF0C;&#x8FD9;&#x4E0D;&#x662F;&#x7A00;&#x758F;&#x7684;(sparse)</span>
+animalSchema<span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">{</span> _id<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> sparse<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Animal <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Animal&apos;</span><span class="token punctuation">,</span> animalSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Animal<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;index&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// &quot;_id &#x7D22;&#x5F15;&#x4E0D;&#x80FD;&#x88AB; sparse&#xFF08;&#x7A00;&#x758F;&#x77E9;&#x9635;&#xFF09;&quot;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x67E5;&#x770B; <code>Model#ensureIndexes</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<h2 id="virtuals"><a name="virtuals" class="anchor-navigation-ex-anchor" href="#virtuals"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. &#x865A;&#x62DF;&#x5C5E;&#x6027; </h2>
+<p><a href="http://mongoosejs.com/docs/api.html#schema_Schema-virtual" target="_blank">Virtuals</a> &#x662F;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x548C;&#x8BBE;&#x7F6E;&#x7684;&#x6587;&#x6863;&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x4E0D;&#x4F1A;&#x88AB;&#x6301;&#x4E45;&#x5316;&#x5230; MongoDB &#x4E2D;&#x3002;getter &#x5BF9;&#x4E8E;&#x683C;&#x5F0F;&#x5316;&#x6216;&#x7EC4;&#x5408;&#x5B57;&#x6BB5;&#x662F;&#x5F88;&#x6709;&#x7528;&#x7684;&#xFF0C;&#x800C; setter &#x5BF9;&#x4E8E;&#x5C06;&#x5355;&#x4E2A;&#x503C;&#x7EC4;&#x5408;&#x6210;&#x591A;&#x4E2A;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x7684;&#x503C;&#x662F;&#x5F88;&#x6709;&#x7528;&#x7684;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x5B9A;&#x4E49; schema</span>
+<span class="token keyword">var</span> personSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    first<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    last<span class="token punctuation">:</span> String
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x7F16;&#x8BD1; model</span>
+<span class="token keyword">var</span> Person <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Person&apos;</span><span class="token punctuation">,</span> personSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x521B;&#x5EFA; document</span>
+<span class="token keyword">var</span> axl <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token punctuation">{</span> first<span class="token punctuation">:</span> <span class="token string">&apos;Axl&apos;</span><span class="token punctuation">,</span> last<span class="token punctuation">:</span> <span class="token string">&apos;Rose&apos;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5047;&#x8BBE;&#x4F60;&#x60F3;&#x6253;&#x5370;&#x51FA;&#x8FD9;&#x4E2A;&#x4EBA;&#x7684;&#x5168;&#x540D;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x505A;:</p>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>axl<span class="token punctuation">.</span>name<span class="token punctuation">.</span>first <span class="token operator">+</span> <span class="token string">&apos; &apos;</span> <span class="token operator">+</span> axl<span class="token punctuation">.</span>name<span class="token punctuation">.</span>last<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Axl Rose</span>
+</code></pre>
+<p>&#x4F46;&#x662F;&#x6BCF;&#x6B21;&#x62FC;&#x63A5;&#x540D;&#x5B57;&#x548C;&#x59D3;&#x6C0F;&#x90FD;&#x4F1A;&#x53D8;&#x5F97;&#x9EBB;&#x70E6;&#x3002;&#x800C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5BF9;&#x540D;&#x5B57;&#x505A;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x6BD4;&#x5982;<a href="https://www.npmjs.com/package/diacritics" target="_blank">&#x5220;&#x9664;&#x53D8;&#x97F3;&#x7B26;&#x53F7;?</a> <a href="">&#x865A;&#x62DF;&#x5C5E;&#x6027;&#x83B7;&#x53D6;&#x5668;</a>&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4E0D;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;&#x5230; MongoDB &#x7684; <code>fullName</code> &#x5C5E;&#x6027;&#x3002;</p>
+<pre class="language-"><code class="lang-js">personSchema<span class="token punctuation">.</span><span class="token function">virtual</span><span class="token punctuation">(</span><span class="token string">&apos;fullName&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span>first <span class="token operator">+</span> <span class="token string">&apos; &apos;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span>last<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6BCF;&#x5F53;&#x4F60;&#x8BBF;&#x95EE; <code>fullName</code> &#x5C5E;&#x6027;&#x65F6;&#xFF0C;mongoose &#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x4F60;&#x7684; getter &#x51FD;&#x6570;&#x3002;</p>
+<pre class="language-"><code class="lang-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>axl<span class="token punctuation">.</span>fullName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Axl Rose</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528; <code>toJSON()</code> &#x6216;&#x8005; <code>toObject()</code> (&#x6216;&#x8005;&#x5728;&#x4E00;&#x4E2A; mongoose &#x6587;&#x6863;&#x4E0A;&#x4F7F;&#x7528; <code>JSON.stringify()</code> ) mongoose &#x9ED8;&#x8BA4;&#x5730;&#x5C06;&#x4E0D;&#x4F1A;&#x5305;&#x542B; virtuals&#x3002;&#x4F20;&#x9012; <code>{ virtuals: true }</code> &#x7ED9; <code>toObject()</code> &#x6216; <code>toJSON()</code>&#x3002;</p>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684; setter &#x7ED9;&#x4F60;&#x7684;&#x865A;&#x62DF;&#x5C5E;&#x6027;&#xFF0C;&#x8BA9;&#x60A8;&#x901A;&#x8FC7; <code>fullName</code> &#x865A;&#x62DF;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x540D;&#x79F0;&#x548C;&#x59D3;&#x6C0F;&#x3002;</p>
+<pre class="language-"><code class="lang-js">personSchema<span class="token punctuation">.</span><span class="token function">virtual</span><span class="token punctuation">(</span><span class="token string">&apos;fullName&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+  <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span>first <span class="token operator">+</span> <span class="token string">&apos; &apos;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span>last<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+  <span class="token keyword">set</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span>first <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> v<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">&apos; &apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span>last <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">&apos; &apos;</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+axl<span class="token punctuation">.</span>fullName <span class="token operator">=</span> <span class="token string">&apos;William Rose&apos;</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Now `axl.name.first` is &quot;William&quot;</span>
+</code></pre>
+<p>&#x865A;&#x62DF;&#x5C5E;&#x6027; setter &#x5728;&#x5176;&#x4ED6;&#x6821;&#x9A8C;&#x4E4B;&#x524D;&#x5E94;&#x7528;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x5DE5;&#x4F5C;&#xFF0C;&#x5373;&#x4F7F;&#x9700;&#x8981;&#x7B2C;&#x4E00;&#x4E2A;&#x548C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x540D;&#x79F0;&#x5B57;&#x6BB5;&#x3002;</p>
+<p>&#x53EA;&#x6709;&#x975E;&#x865A;&#x62DF;&#x5C5E;&#x6027;&#x624D;&#x80FD;&#x4F5C;&#x4E3A;&#x67E5;&#x8BE2;&#x548C;&#x5B57;&#x6BB5;&#x9009;&#x62E9;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x5DE5;&#x4F5C;&#x3002;&#x7531;&#x4E8E;&#x865A;&#x62DF;&#x5C5E;&#x6027;&#x6CA1;&#x6709;&#x5B58;&#x50A8;&#x5728; MongoDB &#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x5BF9;&#x5B83;&#x4EEC;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;</p>
+<h3 id="&#x522B;&#x540D;"><a name="&#x522B;&#x540D;" class="anchor-navigation-ex-anchor" href="#&#x522B;&#x540D;"><i class="fa fa-link" aria-hidden="true"></i></a>1.7.1. &#x522B;&#x540D;</h3>
+<p>&#x522B;&#x540D;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x865A;&#x62DF;&#x5C5E;&#x6027;&#xFF0C;getter &#x548C; setter &#x65E0;&#x7F1D;&#x5730;&#x83B7;&#x53D6;&#x5E76;&#x8BBE;&#x7F6E;&#x53E6;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x3002;&#x8FD9;&#x5BF9;&#x4E8E;&#x8282;&#x7701;&#x7F51;&#x7EDC;&#x5E26;&#x5BBD;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x7B80;&#x77ED;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x66F4;&#x957F;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x4EE5;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> personSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  n<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">// &#x73B0;&#x5728;&#x8BBF;&#x95EE; `name` &#x5C06;&#x53D6;&#x5F97; `n` &#x7684;&#x503C;, &#x5E76;&#x4E14;&#x8BBE;&#x7F6E; `n` &#x5C06;&#x8BBE;&#x7F6E; `name` &#x7684;&#x503C;</span>
+    alias<span class="token punctuation">:</span> <span class="token string">&apos;name&apos;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x8BBE;&#x7F6E; `name` &#x5C06;&#x4F20;&#x5BFC;&#x7ED9; `n`</span>
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Val&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { n: &apos;Val&apos; }</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">toObject</span><span class="token punctuation">(</span><span class="token punctuation">{</span> virtuals<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { n: &apos;Val&apos;, name: &apos;Val&apos; }</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// &quot;Val&quot;</span>
+
+person<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&apos;Not Val&apos;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { n: &apos;Not Val&apos; }</span>
+</code></pre>
+<blockquote>
+<p><strong>[info] &#x7B14;&#x8BB0;</strong></p>
+<p><code>n</code> &#x662F;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;<code>name</code> &#x53EA;&#x662F;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x4E00;&#x4E2A;&#x8BED;&#x4E49;&#x5316;&#x7684;&#x522B;&#x540D;&#x3002;</p>
+</blockquote>
+<h2 id="options"><a name="options" class="anchor-navigation-ex-anchor" href="#options"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. Options</h2>
+<p>Schemas have a few configurable options which can be passed to the constructor or set directly:
+Schemas &#x6709;&#x4E00;&#x4E9B;&#x53EF;&#x914D;&#x7F6E;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F20;&#x9012;&#x7ED9;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6216;&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x6216;&#x8005;</span>
+
+<span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+schema<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>option<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x6709;&#x6548;&#x7684;&#x9009;&#x9879;:</p>
+<ul>
+<li><a href="#autoIndex">autoIndex</a></li>
+<li><a href="#bufferCommands">bufferCommands</a></li>
+<li><a href="#capped">capped</a></li>
+<li><a href="#collection">collection</a></li>
+<li><a href="#emitIndexErrors">emitIndexErrors</a></li>
+<li><a href="#id">id</a></li>
+<li><a href="#minimize">minimize</a></li>
+<li><a href="#read">read</a></li>
+<li><a href="#safe">safe</a></li>
+<li><a href="#shardKey">shardKey</a></li>
+<li><a href="#strict">strict</a></li>
+<li><a href="#toJSON">toJSON</a></li>
+<li><a href="#toObject">toObject</a></li>
+<li><a href="#typeKey">typeKey</a></li>
+<li><a href="#validateBeforeSave">validateBeforeSave</a></li>
+<li><a href="#versionKey">versionKey</a></li>
+<li><a href="#collation">collation</a></li>
+<li><a href="#skipVersioning">skipVersioning</a></li>
+<li><a href="#timestamps">timestamps</a></li>
+<li><a href="#retainKeyOrder">retainKeyOrder</a></li>
+</ul>
+<h3 id="autoIndex"><a name="autoIndex" class="anchor-navigation-ex-anchor" href="#autoIndex"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.1. &#x9009;&#x9879;: autoIndex </h3>
+<p>&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x65F6;&#xFF0C;Mongoose &#x4E3A;&#x60A8;&#x7684; Schema &#x4E2D;&#x58F0;&#x660E;&#x7684;&#x6BCF;&#x4E2A;&#x7D22;&#x5F15;&#x53D1;&#x9001;&#x4E00;&#x4E2A; <a href="https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/#db.collection.createIndex" target="_blank"><code>createIndex</code> &#x547D;&#x4EE4;</a>&#x3002;&#x5728; Mongoose v3 &#x4E2D;&#xFF0C;&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7D22;&#x5F15;&#x662F;&#x5728;&#x540E;&#x53F0;&#x521B;&#x5EFA;&#x7684;&#x3002;&#x5982;&#x679C;&#x60A8;&#x5E0C;&#x671B;&#x7981;&#x7528;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x7279;&#x6027;&#xFF0C;&#x5E76;&#x5728;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x65F6;&#x624B;&#x52A8;&#x5904;&#x7406;&#xFF0C;&#x5C06;&#x60A8;&#x7684; Schemas <code>autoIndex</code> &#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A; <code>false</code>&#xFF0C;&#x5E76;&#x5728;&#x60A8;&#x7684;&#x6A21;&#x578B;&#x4E0A;&#x4F7F;&#x7528; <a href="API.html#"><code>ensureIndexes</code></a> &#x65B9;&#x6CD5;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> autoIndex<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Clock <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Clock&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Clock<span class="token punctuation">.</span><span class="token function">ensureIndexes</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="bufferCommands"><a name="bufferCommands" class="anchor-navigation-ex-anchor" href="#bufferCommands"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.2. &#x9009;&#x9879;: bufferCommands </h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53;&#x8FDE;&#x63A5;&#x4E0B;&#x964D;&#x65F6;&#xFF0C;mongoose &#x4F1A;&#x7F13;&#x51B2;&#x547D;&#x4EE4;&#xFF0C;&#x76F4;&#x5230;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x3002;&#x8981;&#x7981;&#x7528;&#x7F13;&#x51B2;&#xFF0C;&#x5C06; <code>buffercommand</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>false</code>&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> bufferCommands<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="capped"><a name="capped" class="anchor-navigation-ex-anchor" href="#capped"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.3. option: capped </h3>
+<p>Mongoose &#x652F;&#x6301; MongoDBs <a href="http://www.mongodb.org/display/DOCS/Capped+Collections" target="_blank">capped</a> &#x96C6;&#x5408;&#x3002;&#x8981;&#x6307;&#x5B9A;&#x5E95;&#x5C42;&#x7684; MongoDB &#x96C6;&#x5408;&#x88AB;&#x9650;&#x5236;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; <code>capped</code> &#x9009;&#x9879;&#x4F5C;&#x4E3A;&#x96C6;&#x5408;&#x7684;&#x6700;&#x5927;<a href="http://www.mongodb.org/display/DOCS/Capped+Collections#CappedCollections-size." target="_blank">&#x5B57;&#x8282;</a>&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> capped<span class="token punctuation">:</span> <span class="token number">1024</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x60A8;&#x60F3;&#x8981;&#x4F20;&#x9012;&#x50CF; <a href="http://www.mongodb.org/display/DOCS/Capped+Collections#CappedCollections-max" target="_blank">max</a> &#x6216; <a href="http://www.mongodb.org/display/DOCS/Capped+Collections#CappedCollections-autoIndexId" target="_blank">autoIndexId</a> &#x8FD9;&#x6837;&#x7684;&#x9644;&#x52A0;&#x9009;&#x9879;&#xFF0C;&#x5219;&#x8BBE;&#x7F6E; <code>capped</code> &#x9009;&#x9879;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A;&#x5BF9;&#x8C61;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x60A8;&#x5FC5;&#x987B;&#x663E;&#x5F0F;&#x5730;&#x4F20;&#x9012;&#x6240;&#x9700;&#x7684; <code>size</code> &#x9009;&#x9879;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> capped<span class="token punctuation">:</span> <span class="token punctuation">{</span> size<span class="token punctuation">:</span> <span class="token number">1024</span><span class="token punctuation">,</span> max<span class="token punctuation">:</span> <span class="token number">1000</span><span class="token punctuation">,</span> autoIndexId<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="collection"><a name="collection" class="anchor-navigation-ex-anchor" href="#collection"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.4. &#x9009;&#x9879;: collection </h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Mongoose &#x901A;&#x8FC7;&#x5C06;&#x6A21;&#x578B;&#x540D;&#x79F0;&#x4F20;&#x9012;&#x7ED9; <code>utils.toCollectionName</code> &#x65B9;&#x6CD5;&#x6765;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x540D;&#x79F0;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5BF9;&#x540D;&#x79F0;&#x8FDB;&#x884C;&#x4E86;&#x590D;&#x6570;&#x5316;&#x3002;&#x5982;&#x679C;&#x60A8;&#x7684;&#x96C6;&#x5408;&#x9700;&#x8981;&#x4E0D;&#x540C;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5C31;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> dataSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> collection<span class="token punctuation">:</span> <span class="token string">&apos;data&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="emitIndexErrors"><a name="emitIndexErrors" class="anchor-navigation-ex-anchor" href="#emitIndexErrors"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.5. &#x9009;&#x9879;: emitIndexErrors </h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;mongoose &#x4F1A;&#x5728;&#x6A21;&#x5F0F;&#x4E2D;&#x4E3A;&#x4F60;&#x6784;&#x5EFA;&#x4EFB;&#x4F55;&#x4F60;&#x6307;&#x5B9A;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x5F53;&#x7D22;&#x5F15;&#x5EFA;&#x7ACB;&#x6210;&#x529F;&#x6216;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x5728;&#x6A21;&#x578B;&#x4E0A;&#x53D1;&#x51FA;&#x4E00;&#x4E2A; <code>index</code> &#x4E8B;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-js">MyModel<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;index&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">/* If error is truthy, index build failed */</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x7136;&#x800C;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97;&#x5728;&#x7D22;&#x5F15;&#x6784;&#x5EFA;&#x5931;&#x8D25;&#x65F6;&#x5F88;&#x96BE;&#x6355;&#x6349;&#x5230;&#x3002;<code>emitIndexErrors</code> &#x9009;&#x9879;&#x4F7F;&#x770B;&#x5230;&#x7D22;&#x5F15;&#x6784;&#x5EFA;&#x5931;&#x8D25;&#x65F6;&#x7684;&#x60C5;&#x51B5;&#x66F4;&#x7B80;&#x5355;&#x3002;&#x5982;&#x679C;&#x8BE5;&#x9009;&#x9879;&#x5DF2;&#x7ECF;&#x6253;&#x5F00;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x7D22;&#x5F15;&#x6784;&#x5EFA;&#x5931;&#x8D25;&#x65F6;&#xFF0C;mongoose &#x5C06;&#x4F1A;&#x5728;&#x6A21;&#x578B;&#x4E0A;&#x53E6;&#x5916;&#x53D1;&#x51FA;&#x4E00;&#x4E2A; <code>error</code> &#x4E8B;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-js">MyModel<span class="token punctuation">.</span>schema<span class="token punctuation">.</span>options<span class="token punctuation">.</span>emitIndexErrors<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+MyModel<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;error&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// gets an error whenever index build fails</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><a href="https://nodejs.org/api/events.html#events_class_events_eventemitter" target="_blank">&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x4E8B;&#x4EF6;&#x88AB;&#x53D1;&#x5C04;&#xFF0C;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x76D1;&#x542C;&#x5668;&#xFF0C;&#x90A3;&#x4E48; Node.js &#x7684;&#x5185;&#x7F6E;&#x4E8B;&#x4EF6;&#x53D1;&#x5C04;&#x5668;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;</a>&#xFF0C;&#x56E0;&#x6B64;&#x5F88;&#x5BB9;&#x6613;&#x914D;&#x7F6E;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x4EE5;&#x5728;&#x7D22;&#x5F15;&#x6784;&#x5EFA;&#x5931;&#x8D25;&#x65F6;&#xFF0C;&#x5FEB;&#x901F;&#x5931;&#x8D25;&#x3002;</p>
+<h3 id="id"><a name="id" class="anchor-navigation-ex-anchor" href="#id"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.6. &#x9009;&#x9879;: id </h3>
+<p>&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Mongoose &#x5C06;&#x6BCF;&#x4E2A;&#x6A21;&#x5F0F;&#x90FD;&#x5206;&#x914D;&#x7ED9;&#x4E00;&#x4E2A; id &#x865A;&#x62DF;&#x5C5E;&#x6027; getter&#xFF0C;&#x8FD9;&#x5C06;&#x628A;&#x6587;&#x6863; <code>_id</code> &#x5B57;&#x6BB5;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6216;&#x8005;&#x5728; ObjectIds &#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x7684; hexString&#x3002;&#x5982;&#x679C;&#x60A8;&#x4E0D;&#x5E0C;&#x671B;&#x5C06; id getter &#x6DFB;&#x52A0;&#x5230;&#x60A8;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x5F0F;&#x6784;&#x5EFA;&#x65F6;&#x7981;&#x7528;&#x8BE5;&#x9009;&#x9879;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x9ED8;&#x8BA4;&#x884C;&#x4E3A;</span>
+<span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> String <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Page <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Page&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;mongodb.org&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// &apos;50341373e894ad16347efe01&apos;</span>
+
+<span class="token comment" spellcheck="true">// disabled id</span>
+<span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> String <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Page <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Page&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;mongodb.org&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// undefined</span>
+</code></pre>
+<h3 id="&#x9009;&#x9879;-id"><a name="&#x9009;&#x9879;-id" class="anchor-navigation-ex-anchor" href="#&#x9009;&#x9879;-id"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.7. &#x9009;&#x9879;: _id</h3>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4F20;&#x9012; <code>_id</code> &#x5230; <a href="http://mongoosejs.com/docs/api.html#schema-js" target="_blank">Schema</a> &#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;Mongoose &#x5C31;&#x4F1A;&#x9ED8;&#x8BA4;&#x4E3A;&#x6BCF;&#x4E2A;&#x6A21;&#x5F0F;&#x5206;&#x914D;&#x4E00;&#x4E2A; <code>_id</code> &#x5B57;&#x6BB5;&#x3002;&#x6307;&#x5B9A;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x4E00;&#x4E2A;&#x4E0E; MongoDB &#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x76F8;&#x4E00;&#x81F4;&#x7684; <a href="http://mongoosejs.com/docs/api.html#schema_Schema.Types" target="_blank">ObjectId</a>&#x3002;&#x5982;&#x679C;&#x60A8;&#x4E0D;&#x5E0C;&#x671B;&#x5C06; <code>_id</code> &#x6DFB;&#x52A0;&#x5230;&#x60A8;&#x7684;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BE5;&#x9009;&#x9879;&#x7981;&#x7528;&#x5B83;&#x3002;</p>
+<p>&#x60A8;&#x53EA;&#x80FD;&#x5728;&#x5B50;&#x6587;&#x6863;&#x4E2D;&#x4F7F;&#x7528;&#x6B64;&#x9009;&#x9879;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x77E5;&#x9053;&#x5B83;&#x7684; id&#xFF0C;Mongoose &#x5C31;&#x4E0D;&#x80FD;&#x4FDD;&#x5B58;&#x6587;&#x6863;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x4F60;&#x8BD5;&#x56FE;&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x6CA1;&#x6709; <code>_id</code> &#x7684;&#x6587;&#x6863;&#xFF0C;&#x4F60;&#x5C31;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x9ED8;&#x8BA4;&#x884C;&#x4E3A;</span>
+<span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> String <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Page <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Page&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;mongodb.org&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { _id: &apos;50341373e894ad16347efe01&apos;, name: &apos;mongodb.org&apos; }</span>
+
+<span class="token comment" spellcheck="true">// disabled _id</span>
+<span class="token keyword">var</span> childSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> String <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> _id<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> parentSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> children<span class="token punctuation">:</span> <span class="token punctuation">[</span>childSchema<span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> Model <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Model&apos;</span><span class="token punctuation">,</span> parentSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Model<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span> children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Luke&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">,</span> doc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// doc.children[0]._id will be undefined</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="minimize"><a name="minimize" class="anchor-navigation-ex-anchor" href="#minimize"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.8. &#x9009;&#x9879;: minimize </h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Mongoose &#x4F1A;&#x901A;&#x8FC7;&#x79FB;&#x9664;&#x7A7A;&#x5BF9;&#x8C61;&#x6765;&#x201C;&#x6700;&#x5C0F;&#x5316;&#x201D;&#x6A21;&#x5F0F;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> String<span class="token punctuation">,</span> inventory<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Character <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Character&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x5982;&#x679C; `inventory` &#x662F;&#x975E;&#x7A7A;&#x7684;&#xFF0C;&#x5C06;&#x5B58;&#x50A8;&#x5B83;</span>
+<span class="token keyword">var</span> frodo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Character</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Frodo&apos;</span><span class="token punctuation">,</span> inventory<span class="token punctuation">:</span> <span class="token punctuation">{</span> ringOfPower<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Character<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Frodo&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> character<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>character<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { name: &apos;Frodo&apos;, inventory: { ringOfPower: 1 }}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x5982;&#x679C; `inventory` &#x662F;&#x7A7A;&#x7684;&#xFF0C;&#x5C06;&#x4E0D;&#x4F1A;&#x5B58;&#x50A8;&#x5B83;</span>
+<span class="token keyword">var</span> sam <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Character</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Sam&apos;</span><span class="token punctuation">,</span> inventory<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Character<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Sam&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> character<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>character<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { name: &apos;Sam&apos; }</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06; <code>minimize</code> &#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A; <code>false</code> &#x6765;&#x8986;&#x76D6;&#x6B64;&#x884C;&#x4E3A;&#x3002;&#x7136;&#x540E;&#x5B83;&#x5C06;&#x5B58;&#x50A8;&#x7A7A;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> String<span class="token punctuation">,</span> inventory<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> minimize<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Character <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Character&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x5982;&#x679C; `inventory` &#x4E3A;&#x7A7A;&#xFF0C;&#x4E5F;&#x5C06;&#x5B58;&#x50A8;&#x5B83;</span>
+<span class="token keyword">var</span> sam <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Character</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Sam&apos;</span><span class="token punctuation">,</span> inventory<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Character<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Sam&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> character<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>character<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { name: &apos;Sam&apos;, inventory: {}}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="read"><a name="read" class="anchor-navigation-ex-anchor" href="#read"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.9. &#x9009;&#x9879;: read </h3>
+<p>&#x5141;&#x8BB8;&#x5728;&#x6A21;&#x5F0F;&#x7EA7;&#x522B;&#x8BBE;&#x7F6E;<a href="http://mongoosejs.com/docs/api.html#query_Query-read" target="_blank">query#read</a>&#x9009;&#x9879;&#xFF0C;&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x9ED8;&#x8BA4;&#x7684; ReadPreferences &#x5E94;&#x7528;&#x4E8E;&#x4ECE;&#x6A21;&#x578B;&#x6D3E;&#x751F;&#x7684;&#x6240;&#x6709;&#x67E5;&#x8BE2;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> read<span class="token punctuation">:</span> <span class="token string">&apos;primary&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// also aliased as &apos;p&apos;</span>
+<span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> read<span class="token punctuation">:</span> <span class="token string">&apos;primaryPreferred&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// aliased as &apos;pp&apos;</span>
+<span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> read<span class="token punctuation">:</span> <span class="token string">&apos;secondary&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">// aliased as &apos;s&apos;</span>
+<span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> read<span class="token punctuation">:</span> <span class="token string">&apos;secondaryPreferred&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// aliased as &apos;sp&apos;</span>
+<span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> read<span class="token punctuation">:</span> <span class="token string">&apos;nearest&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// aliased as &apos;n&apos;</span>
+</code></pre>
+<p>&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x6BCF;&#x4E2A;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x522B;&#x540D;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x5FC5;&#x8F93;&#x5165; &apos;secondaryPreferred&apos;&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x4EA7;&#x751F;&#x62FC;&#x5199;&#x9519;&#x8BEF;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x4F20;&#x9012; &apos;sp&apos;&#x3002;</p>
+<p><code>read</code> &#x9009;&#x9879;&#x8FD8;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x6307;&#x5B9A;&#x6807;&#x8BB0;&#x96C6;(tag sets)&#x3002;&#x8FD9;&#x4E9B;&#x544A;&#x8BC9;<a href="https://github.com/mongodb/node-mongodb-native/" target="_blank">&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</a>&#xFF0C;&#x5B83;&#x5E94;&#x8BE5;&#x5C1D;&#x8BD5;&#x8BFB;&#x53D6;&#x7684;&#x526F;&#x672C;&#x96C6;&#x7684;&#x6210;&#x5458;&#x3002;&#x5728;<a href="http://docs.mongodb.org/manual/applications/replication/#tag-sets" target="_blank">&#x8FD9;&#x91CC;</a>&#x548C;<a href="http://mongodb.github.com/node-mongodb-native/driver-articles/anintroductionto1_1and2_2.html#read-preferences" target="_blank">&#x8FD9;&#x91CC;</a>&#x9605;&#x8BFB;&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x6807;&#x8BB0;&#x96C6;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x6CE8;&#x610F;: &#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x8FDE;&#x63A5;&#x65F6;&#x6307;&#x5B9A;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x8BFB;&#x53D6;&#x4F18;&#x5148;&#x7EA7; <code>strategy</code> &#x9009;&#x9879;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x5B9A;&#x671F;&#x5BF9;&#x526F;&#x672C;&#x96C6;&#x6210;&#x5458;&#x8FDB;&#x884C; ping &#xFF0C;&#x4EE5;&#x8DDF;&#x8E2A;&#x7F51;&#x7EDC;&#x5EF6;&#x8FDF;</span>
+<span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span> replset<span class="token punctuation">:</span> <span class="token punctuation">{</span> strategy<span class="token punctuation">:</span> <span class="token string">&apos;ping&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+mongoose<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>uri<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> read<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;nearest&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> disk<span class="token punctuation">:</span> <span class="token string">&apos;ssd&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;JellyBean&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="safe"><a name="safe" class="anchor-navigation-ex-anchor" href="#safe"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.10. &#x9009;&#x9879;: safe </h3>
+<p>&#x8BE5;&#x9009;&#x9879;&#x5C06;&#x901A;&#x8FC7;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x4F20;&#x9012;&#x7ED9; MongoDB&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x662F;&#x5426;&#x5E94;&#x8BE5;&#x5C06;&#x9519;&#x8BEF;&#x8FD4;&#x56DE;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x4EE5;&#x53CA;&#x8C03;&#x4F18;&#x5199;&#x5165;&#x884C;&#x4E3A;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> safe <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> safe<span class="token punctuation">:</span> safe <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x6240;&#x6709;&#x7684;&#x6A21;&#x5F0F;&#x90FD;&#x662F; <code>true</code> &#x7684;&#xFF0C;&#x8FD9;&#x4E9B;&#x6A21;&#x5F0F;&#x4FDD;&#x8BC1;&#x4EFB;&#x4F55;&#x53D1;&#x751F;&#x7684;&#x9519;&#x8BEF;&#x90FD;&#x4F1A;&#x88AB;&#x4F20;&#x56DE;&#x56DE;&#x8C03;&#x3002;&#x901A;&#x8FC7;&#x5C06; <code>safe</code> &#x8BBE;&#x7F6E;&#x4E3A;<code>{ j: 1, w: 2, wtimeout: 10000 }</code>&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x5199;&#x5165;&#x64CD;&#x4F5C;&#x88AB;&#x63D0;&#x4EA4;&#x5230; MongoDB &#x65E5;&#x5FD7;(j:1)&#xFF0C;&#x81F3;&#x5C11;&#x6709; 2 &#x4E2A;&#x526F;&#x672C;(w:2)&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x8D85;&#x8FC7; 10 &#x79D2;(wtimeout:10000)&#xFF0C;&#x5199;&#x5165;&#x5C06;&#x8D85;&#x65F6;&#x3002;&#x9519;&#x8BEF;&#x4ECD;&#x7136;&#x4F1A;&#x4F20;&#x9012;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x56DE;&#x8C03;&#x3002;</p>
+<p>&#x6CE8;&#x610F;: &#x5728; 3.6.x&#x4E2D;&#xFF0C; &#x60A8;&#x8FD8;&#x9700;&#x8981;&#x5173;&#x95ED;<a href="#versionKey">&#x7248;&#x672C;</a>&#x63A7;&#x5236;&#x3002;&#x5728; 3.7.x &#x548C;&#x66F4;&#x9AD8;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C; &#x5F53; <code>safe</code> &#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; <code>false</code> &#x65F6;&#xFF0C;&#x5C06;&#x81EA;&#x52A8;&#x7981;&#x7528;&#x7248;&#x672C;&#x63A7;&#x5236;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong>: &#x6B64;&#x8BBE;&#x7F6E;&#x4F1A;&#x8986;&#x76D6;&#x5728;<a href="http://mongoosejs.com/docs/api.html#index_Mongoose-createConnection" target="_blank">&#x521B;&#x5EFA;&#x8FDE;&#x63A5;</a>&#x65F6;&#x901A;&#x8FC7;&#x4F20;&#x9012; <code>db</code> &#x9009;&#x9879;&#x6307;&#x5B9A;&#x7684;&#x4EFB;&#x4F55;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x5199;&#x5165;&#x7684;&#x5173;&#x6CE8;&#x70B9;&#xFF0C;&#x5982; <code>{ w: &quot;majority&quot; }</code> &#x3002;&#x53C2;&#x89C1; <a href="http://www.mongodb.org/display/DOCS/getLastError+Command" target="_blank">MongoDB &#x6587;&#x6863;</a>&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x7EC6;&#x8282;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> safe <span class="token operator">=</span> <span class="token punctuation">{</span> w<span class="token punctuation">:</span> <span class="token string">&quot;majority&quot;</span><span class="token punctuation">,</span> wtimeout<span class="token punctuation">:</span> <span class="token number">10000</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> safe<span class="token punctuation">:</span> safe <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="shardKey"><a name="shardKey" class="anchor-navigation-ex-anchor" href="#shardKey"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.11. &#x9009;&#x9879;: shardKey </h3>
+<p>The shardKey option is used when we have a sharded MongoDB architecture. Each sharded collection is given a shard key which must be present in all insert/update operations. We just need to set this schema option to the same shard key and we&#x2019;ll be all set.
+<code>shardKey</code> &#x9009;&#x9879;&#x662F;&#x5728;&#x6211;&#x4EEC;&#x62E5;&#x6709;&#x4E00;&#x4E2A;<a href="http://www.mongodb.org/display/DOCS/Sharding+Introduction" target="_blank">&#x5171;&#x4EAB;&#x7684; MongoDB &#x67B6;&#x6784;</a>&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x3002;&#x6BCF;&#x4E2A;&#x5171;&#x4EAB;&#x7684;&#x96C6;&#x5408;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x5BC6;&#x94A5;(shard key)&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x6240;&#x6709;&#x7684;&#x63D2;&#x5165;/&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x4E2D;&#x90FD;&#x5B58;&#x5728;&#x3002;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A;&#x76F8;&#x540C;&#x7684;&#x5171;&#x4EAB;&#x5BC6;&#x94A5;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x4F1A;&#x5168;&#x90E8;&#x8BBE;&#x7F6E;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> shardKey<span class="token punctuation">:</span> <span class="token punctuation">{</span> tag<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;Mongoose &#x6CA1;&#x6709;&#x4E3A;&#x60A8;&#x53D1;&#x9001; <code>shardcollection</code> &#x547D;&#x4EE4;&#x3002;&#x60A8;&#x5FC5;&#x987B;&#x81EA;&#x5DF1;&#x914D;&#x7F6E;&#x60A8;&#x7684; shard&#x3002;</p>
+<h3 id="strict"><a name="strict" class="anchor-navigation-ex-anchor" href="#strict"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.12. &#x9009;&#x9879;: strict </h3>
+<p><code>strict</code> &#x9009;&#x9879;(&#x9ED8;&#x8BA4;&#x542F;&#x7528;)&#xFF0C;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x4F20;&#x9012;&#x7ED9;&#x6A21;&#x578B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x503C;&#xFF08;&#x6A21;&#x5F0F;&#x4E2D;&#x672A;&#x6307;&#x5B9A;&#x7684;&#xFF09;&#x4E0D;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// iAmNotInTheSchema &#x672A;&#x5728; Schema &#x9009;&#x9879;&#x4E2D;&#x6307;&#x5B9A;</span>
+<span class="token keyword">var</span> thingSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> Thing <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Thing&apos;</span><span class="token punctuation">,</span> thingSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> thing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thing</span><span class="token punctuation">(</span><span class="token punctuation">{</span> iAmNotInTheSchema<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// iAmNotInTheSchema &#x4E0D;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;</span>
+
+<span class="token comment" spellcheck="true">// set to false..</span>
+<span class="token keyword">var</span> thingSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> strict<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> thing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thing</span><span class="token punctuation">(</span><span class="token punctuation">{</span> iAmNotInTheSchema<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// iAmNotInTheSchema &#x73B0;&#x5728;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;&#x3002;</span>
+</code></pre>
+<p>&#x8FD9;&#x4E5F;&#x4F1A;&#x5F71;&#x54CD;&#x4F7F;&#x7528; <code>doc.set()</code> &#x6765;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x503C;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> thingSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> Thing <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Thing&apos;</span><span class="token punctuation">,</span> thingSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> thing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thing</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;iAmNotInTheSchema&apos;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// iAmNotInTheSchema &#x4E0D;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x5728;&#x6A21;&#x578B;&#x5B9E;&#x4F8B;&#x7EA7;&#x4F20;&#x9012;&#x7B2C;&#x4E8C;&#x4E2A;&#x5E03;&#x5C14;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x8BE5;&#x9009;&#x9879;&#x7684;&#x503C;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> Thing <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Thing&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> thing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thing</span><span class="token punctuation">(</span>doc<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// &#x542F;&#x7528; strict &#x6A21;&#x5F0F;</span>
+<span class="token keyword">var</span> thing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thing</span><span class="token punctuation">(</span>doc<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// &#x7981;&#x7528; strict &#x6A21;&#x5F0F;</span>
+</code></pre>
+<p><code>strict</code> &#x9009;&#x9879;&#x4E5F;&#x53EF;&#x80FD;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; <code>&apos;throw&apos;</code>&#xFF0C;&#x8FD9;&#x5C06;&#x5BFC;&#x81F4;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5220;&#x9664;&#x7CDF;&#x7CD5;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x6CE8;&#x610F;: &#x9664;&#x975E;&#x4F60;&#x6709;&#x5145;&#x5206;&#x7684;&#x7406;&#x7531;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x8981;&#x8BBE;&#x4E3A; <code>false</code>&#x3002;</p>
+<p>&#x6CE8;&#x610F;: &#x5728; mongoose v2 &#x4E2D;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F;&#x5047;&#x7684;&#x3002;</p>
+<p>&#x6CE8;&#x610F;: &#x65E0;&#x8BBA;&#x6A21;&#x5F0F;&#x9009;&#x9879;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x6A21;&#x5F0F;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x5B9E;&#x4F8B;&#x4E0A;&#x8BBE;&#x7F6E;&#x7684;&#x952E;/&#x503C;&#x59CB;&#x7EC8;&#x90FD;&#x662F;&#x88AB;&#x5FFD;&#x7565;&#x7684;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> thingSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> Thing <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Thing&apos;</span><span class="token punctuation">,</span> thingSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> thing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thing</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span>iAmNotInTheSchema <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// iAmNotInTheSchema &#x6C38;&#x8FDC;&#x90FD;&#x4E0D;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;</span>
+</code></pre>
+<h3 id="toJSON"><a name="toJSON" class="anchor-navigation-ex-anchor" href="#toJSON"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.13. &#x9009;&#x9879;: toJSON </h3>
+<p>&#x4E0E; <a href="#toObject"><code>toObject</code> </a>&#x9009;&#x9879;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x4EC5;&#x5728;&#x8C03;&#x7528;&#x6587;&#x6863; <code>toJSON</code> &#x65B9;&#x6CD5;&#x65F6;&#x9002;&#x7528;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> String <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+schema<span class="token punctuation">.</span><span class="token function">path</span><span class="token punctuation">(</span><span class="token string">&apos;name&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> v <span class="token operator">+</span> <span class="token string">&apos; is my name&apos;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+schema<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;toJSON&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> getters<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> virtuals<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> M <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Person&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">M</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Max Headroom&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">toObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { _id: 504e0cd7dd992d9be2f20b6f, name: &apos;Max Headroom&apos; }</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">toJSON</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { _id: 504e0cd7dd992d9be2f20b6f, name: &apos;Max Headroom is my name&apos; }</span>
+<span class="token comment" spellcheck="true">// &#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5F53; js &#x5BF9;&#x8C61;&#x88AB;&#x5B57;&#x7B26;&#x4E32;&#x5316;&#x65F6;&#xFF0C;toJSON &#x5C31;&#x4F1A;&#x88AB;&#x8C03;&#x7528;:</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { &quot;_id&quot;: &quot;504e0cd7dd992d9be2f20b6f&quot;, &quot;name&quot;: &quot;Max Headroom is my name&quot; }</span>
+</code></pre>
+<p>&#x67E5;&#x770B;&#x6240;&#x6709;&#x53EF;&#x7528;&#x7684; <code>toJSON</code>/<code>toObject</code> &#x9009;&#x9879;&#xFF0C;&#x9605;&#x8BFB;<a href="http://mongoosejs.com/docs/api.html#document_Document-toObject" target="_blank">&#x8FD9;&#x91CC;</a>&#x3002;</p>
+<h3 id="toObject"><a name="toObject" class="anchor-navigation-ex-anchor" href="#toObject"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.14. &#x9009;&#x9879;: toObject </h3>
+<p>&#x6587;&#x6863;&#x6709;&#x4E00;&#x4E2A; <a href="http://mongoosejs.com/docs/api.html#document_Document-toObject" target="_blank"><code>toObject</code></a> &#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x5C06; mongoose &#x6587;&#x6863;&#x8F6C;&#x6362;&#x5230;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684; javascript &#x5BF9;&#x8C61;&#x4E2D;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E00;&#x4E9B;&#x9009;&#x9879;&#x3002;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x5728;&#x6BCF;&#x4E2A;&#x6587;&#x6863;&#x57FA;&#x7840;&#x4E0A;&#x5E94;&#x7528;&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x58F0;&#x660E;&#x9009;&#x9879;&#xFF0C;&#x5E76;&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x5C06;&#x5176;&#x5E94;&#x7528;&#x5230;&#x6240;&#x6709;&#x6A21;&#x5F0F;&#x6587;&#x6863;&#x4E2D;&#x3002;</p>
+<p>&#x8BA9;&#x6240;&#x6709;&#x7684;&#x865A;&#x62DF;&#x5C5E;&#x6027;&#x90FD;&#x51FA;&#x73B0;&#x5728;&#x4F60;&#x7684; <code>console.log</code> &#x8F93;&#x51FA;&#x4E2D;&#xFF0C;&#x5C06; <code>toObject</code> &#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A; <code>getter:true</code>:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> String <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+schema<span class="token punctuation">.</span><span class="token function">path</span><span class="token punctuation">(</span><span class="token string">&apos;name&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> v <span class="token operator">+</span> <span class="token string">&apos; is my name&apos;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+schema<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;toObject&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> getters<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> M <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Person&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">M</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Max Headroom&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { _id: 504e0cd7dd992d9be2f20b6f, name: &apos;Max Headroom is my name&apos; }</span>
+</code></pre>
+<p>&#x67E5;&#x770B;&#x6240;&#x6709;&#x53EF;&#x7528;&#x7684; <code>toObject</code> &#x9009;&#x9879;&#xFF0C;&#x9605;&#x8BFB;<a href="http://mongoosejs.com/docs/api.html#document_Document-toObject" target="_blank">&#x8FD9;&#x91CC;</a>&#x3002;</p>
+<h3 id="typeKey"><a name="typeKey" class="anchor-navigation-ex-anchor" href="#typeKey"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.15. &#x9009;&#x9879;: typeKey </h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x7684;&#x6A21;&#x5F0F;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x952E; &apos;type&apos; &#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5219; mongoose &#x4F1A;&#x5C06;&#x5176;&#x89E3;&#x91CA;&#x4E3A;&#x7C7B;&#x578B;&#x58F0;&#x660E;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// Mongoose &#x89E3;&#x91CA;&#x8FD9;&#x4E2A;&#x5982;&#x540C; &apos;loc &#x662F;&#x4E00;&#x4E2A; String&apos;</span>
+<span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> loc<span class="token punctuation">:</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> String<span class="token punctuation">,</span> coordinates<span class="token punctuation">:</span> <span class="token punctuation">[</span>Number<span class="token punctuation">]</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x7136;&#x800C;&#xFF0C;&#x5BF9;&#x4E8E;&#x50CF; <a href="http://docs.mongodb.org/manual/reference/geojson/" target="_blank">geoJSON</a> &#x8FD9;&#x6837;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;<code>type</code> &#x5C5E;&#x6027;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;&#x5982;&#x679C;&#x60A8;&#x60F3;&#x8981;&#x63A7;&#x5236; mongoose &#x4F7F;&#x7528;&#x54EA;&#x4E2A; key &#x6765;&#x67E5;&#x627E;&#x7C7B;&#x578B;&#x58F0;&#x660E;&#xFF0C;&#x8BF7;&#x8BBE;&#x7F6E;  <code>typeKey</code> &#x6A21;&#x5F0F;&#x9009;&#x9879;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// Mongoose &#x89E3;&#x91CA;&#x8FD9;&#x4E2A;&#x5982;&#x540C; &apos;loc &#x662F;&#x4E00;&#x4E2A;&#x6709; 2 &#x4E2A;&#x952E;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;type &#x548C; coordinates&apos;</span>
+  loc<span class="token punctuation">:</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> String<span class="token punctuation">,</span> coordinates<span class="token punctuation">:</span> <span class="token punctuation">[</span>Number<span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// Mongoose &#x89E3;&#x91CA;&#x8FD9;&#x4E2A;&#x5982;&#x540C; &apos;name &#x662F;&#x4E00;&#x4E2A; String&apos;</span>
+  name<span class="token punctuation">:</span> <span class="token punctuation">{</span> $type<span class="token punctuation">:</span> String <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> typeKey<span class="token punctuation">:</span> <span class="token string">&apos;$type&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// A &apos;$type&apos; key means this object is a type declaration</span>
+</code></pre>
+<h3 id="validateBeforeSave"><a name="validateBeforeSave" class="anchor-navigation-ex-anchor" href="#validateBeforeSave"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.16. &#x9009;&#x9879;: validateBeforeSave </h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6587;&#x6863;&#x5728;&#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E4B;&#x524D;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x9A8C;&#x8BC1;&#x3002;&#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x4FDD;&#x5B58;&#x65E0;&#x6548;&#x7684;&#x6587;&#x6863;&#x3002;&#x5982;&#x679C;&#x60A8;&#x60F3;&#x624B;&#x52A8;&#x5904;&#x7406;&#x9A8C;&#x8BC1;&#xFF0C;&#x5E76;&#x4E14;&#x80FD;&#x591F;&#x4FDD;&#x5B58;&#x4E0D;&#x7ECF;&#x8FC7;&#x9A8C;&#x8BC1;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5C06; <code>validateBeforeSave</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>false</code>&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> String <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+schema<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;validateBeforeSave&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+schema<span class="token punctuation">.</span><span class="token function">path</span><span class="token punctuation">(</span><span class="token string">&apos;name&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> v <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> M <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Person&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">M</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token keyword">null</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+m<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// &#x4F1A;&#x544A;&#x8BC9;&#x4F60;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x4E3A; null</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+m<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// &#x867D;&#x7136;&#x662F;&#x65E0;&#x6548;&#x7684;&#xFF0C;&#x4F46;&#x8FD8;&#x662F;&#x6210;&#x529F;&#x4E86;</span>
+</code></pre>
+<h3 id="versionKey"><a name="versionKey" class="anchor-navigation-ex-anchor" href="#versionKey"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.17. &#x9009;&#x9879;: versionKey </h3>
+<p>&#x6BCF;&#x4E2A;&#x6587;&#x6863;&#x7B2C;&#x4E00;&#x6B21;&#x88AB; Mongoose &#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x4F1A;&#x4E3A;&#x5B83;&#x4EEC;&#x8BBE;&#x7F6E; <code>versionKey</code> &#x5C5E;&#x6027;&#x3002;&#x8FD9;&#x4E2A;&#x952E;&#x503C;&#x5305;&#x542B;&#x6587;&#x6863;&#x7684;&#x5185;&#x90E8;<a href="http://aaronheckmann.tumblr.com/post/48943525537/mongoose-v3-part-1-versioning" target="_blank">&#x4FEE;&#x8BA2;</a>&#x3002;<code>versionKey</code> &#x9009;&#x9879;&#x662F;&#x8868;&#x793A;&#x7528;&#x4E8E;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7684;&#x8DEF;&#x5F84;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>__v</code>&#x3002;&#x5982;&#x679C;&#x8FD9;&#x4E0E;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x53D1;&#x751F;&#x51B2;&#x7A81;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x914D;&#x7F6E;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;string&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Thing <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Thing&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> thing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thing</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;mongoose v3&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { __v: 0, name: &apos;mongoose v3&apos; }</span>
+
+<span class="token comment" spellcheck="true">// &#x81EA;&#x5B9A;&#x4E49; versionKey</span>
+<span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> versionKey<span class="token punctuation">:</span> <span class="token string">&apos;_somethingElse&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> Thing <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Thing&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> thing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thing</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;mongoose v3&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { _somethingElse: 0, name: &apos;mongoose v3&apos; }</span>
+</code></pre>
+<p>&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06; <code>versionKey</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>false</code> &#x6765;&#x7981;&#x7528;&#x6587;&#x6863;&#x7248;&#x672C;&#x63A7;&#x5236;&#x3002;&#x9664;&#x975E;&#x60A8;<a href="http://aaronheckmann.tumblr.com/post/48943525537/mongoose-v3-part-1-versioning" target="_blank">&#x77E5;&#x9053;&#x60A8;&#x5728;&#x505A;&#x4EC0;&#x4E48;</a>&#xFF0C;&#x5426;&#x5219;<strong>&#x4E0D;&#x8981;</strong>&#x7981;&#x7528;&#x7248;&#x672C;&#x63A7;&#x5236;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> versionKey<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Thing <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Thing&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> thing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thing</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;no versioning please&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// { name: &apos;no versioning please&apos; }</span>
+</code></pre>
+<h3 id="collation"><a name="collation" class="anchor-navigation-ex-anchor" href="#collation"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.18. &#x9009;&#x9879;: collation </h3>
+<p>&#x4E3A;&#x6BCF;&#x4E2A;&#x67E5;&#x8BE2;&#x548C;&#x805A;&#x5408;(aggregation)&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x6392;&#x5E8F;(<a href="https://docs.mongodb.com/manual/reference/collation/" target="_blank">collation</a>)&#x3002;<a href="http://thecodebarbarian.com/a-nodejs-perspective-on-mongodb-34-collations" target="_blank">&#x8FD9;&#x91CC;&#x662F;&#x5173;&#x4E8E; collation &#x7684;&#x521D;&#x5B66;&#x8005;&#x53CB;&#x597D;&#x7684;&#x6982;&#x8FF0;</a>&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> String
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> collation<span class="token punctuation">:</span> <span class="token punctuation">{</span> locale<span class="token punctuation">:</span> <span class="token string">&apos;en_US&apos;</span><span class="token punctuation">,</span> strength<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> MyModel <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;MyModel&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+MyModel<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;val&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Val&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+  <span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> MyModel<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;val&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+  <span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>docs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// `docs` will contain both docs, because `strength: 1` means</span>
+    <span class="token comment" spellcheck="true">// MongoDB will ignore case when matching.</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="skipVersioning"><a name="skipVersioning" class="anchor-navigation-ex-anchor" href="#skipVersioning"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.19. &#x9009;&#x9879;: skipVersioning </h3>
+<p><code>skipVersioning</code> &#x5141;&#x8BB8;&#x4ECE;&#x7248;&#x672C;&#x63A7;&#x5236;&#x4E2D;&#x6392;&#x9664;&#x8DEF;&#x5F84;(&#x5373;:&#x5373;&#x4F7F;&#x66F4;&#x65B0;&#x4E86;&#x8FD9;&#x4E9B;&#x8DEF;&#x5F84;&#xFF0C;&#x5185;&#x90E8;&#x4FEE;&#x8BA2;&#x4E5F;&#x4E0D;&#x4F1A;&#x81EA;&#x589E;&#x3002;&#xFF09;&#x9664;&#x975E;&#x4F60;&#x77E5;&#x9053;&#x4F60;&#x5728;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x5426;&#x5219;<strong>&#x4E0D;&#x8981;</strong>&#x8FD9;&#x6837;&#x505A;&#x3002;&#x5BF9;&#x4E8E;&#x5B50;&#x6587;&#x6863;&#xFF0C;&#x4F7F;&#x7528;&#x5B8C;&#x5168;&#x9650;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x5C06;&#x5176;&#x5305;&#x542B;&#x5728;&#x7236;&#x6587;&#x6863;&#x4E2D;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> skipVersioning<span class="token punctuation">:</span> <span class="token punctuation">{</span> dontVersionMe<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span>dontVersionMe<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&apos;hey&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// version is not incremented</span>
+</code></pre>
+<h3 id="timestamps"><a name="timestamps" class="anchor-navigation-ex-anchor" href="#timestamps"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.20. &#x9009;&#x9879;: timestamps </h3>
+<p>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86; <code>timestamps</code>&#xFF0C;mongoose &#x5C06; <code>createdAt</code> &#x548C; <code>updatedAt</code> &#x5B57;&#x6BB5;&#x5206;&#x914D;&#x7ED9;&#x60A8;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x5206;&#x914D;&#x7684;&#x7C7B;&#x578B;&#x662F; <a href="http://mongoosejs.com/docs/api.html#schema-date-js" target="_blank">Date</a>&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x540D;&#x79F0;&#x662F; <code>createdAt</code> &#x548C; <code>updatedAt</code>&#xFF0C;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E; <code>timestamps.createdAt</code> &#x548C; <code>timestamps.updatedAt</code> &#x6765;&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> thingSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> timestamps<span class="token punctuation">:</span> <span class="token punctuation">{</span> createdAt<span class="token punctuation">:</span> <span class="token string">&apos;created_at&apos;</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Thing <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Thing&apos;</span><span class="token punctuation">,</span> thingSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> thing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+thing<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// `created_at` &amp; `updatedAt` will be included</span>
+</code></pre>
+<h3 id="useNestedStrict"><a name="useNestedStrict" class="anchor-navigation-ex-anchor" href="#useNestedStrict"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.21. &#x9009;&#x9879;: useNestedStrict </h3>
+<p>&#x5728; mongoose 4 &#x4E2D;&#xFF0C; <code>update()</code> &#x548C; <code>findOneAndUpdate()</code> &#x53EA;&#x68C0;&#x67E5;&#x9876;&#x7EA7;&#x7684;&#x6A21;&#x5F0F;&#x7684;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#xFF08;<code>strict</code> &#x9009;&#x9879;&#xFF09;&#x8BBE;&#x7F6E;&#x3002;o</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> childSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> strict<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> parentSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> child<span class="token punctuation">:</span> childSchema <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> strict<span class="token punctuation">:</span> <span class="token string">&apos;throw&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Parent <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Parent&apos;</span><span class="token punctuation">,</span> parentSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Parent<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string">&apos;child.name&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;Luke Skywalker&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// Error&#xFF0C;&#x56E0;&#x4E3A; parentSchema &#x6709; `strict: throw`&#xFF0C;</span>
+  <span class="token comment" spellcheck="true">// &#x5373;&#x4F7F; `childSchema` &#x6709; `strict: false`</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> update <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">&apos;child.name&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;Luke Skywalker&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> opts <span class="token operator">=</span> <span class="token punctuation">{</span> strict<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+Parent<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> update<span class="token punctuation">,</span> opts<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// &#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x56E0;&#x4E3A; `strict: false` &#x5230; `update()` &#x91CD;&#x5199;&#x4E86; parent schema</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x5C06; <code>useNestedStrict</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>&#xFF0C;mongoose &#x5C06;&#x4F7F;&#x7528;&#x5B50;&#x6A21;&#x5F0F;&#x7684; <code>strict</code> &#x9009;&#x9879;&#x6765;&#x8F6C;&#x6362;&#x66F4;&#x65B0;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> childSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> strict<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> parentSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> child<span class="token punctuation">:</span> childSchema <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> strict<span class="token punctuation">:</span> <span class="token string">&apos;throw&apos;</span><span class="token punctuation">,</span> useNestedStrict<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Parent <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Parent&apos;</span><span class="token punctuation">,</span> parentSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Parent<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string">&apos;child.name&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;Luke Skywalker&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// Works!</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="retainKeyOrder"><a name="retainKeyOrder" class="anchor-navigation-ex-anchor" href="#retainKeyOrder"><i class="fa fa-link" aria-hidden="true"></i></a>1.8.22. &#x9009;&#x9879;: retainKeyOrder </h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;mongoose &#x5C06;&#x53CD;&#x8F6C;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x952E;&#x987A;&#x5E8F;&#x6765;&#x8FDB;&#x884C;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x3002; &#x4F8B;&#x5982;&#xFF0C; <code>new Model({ first: 1, second: 2 })</code>; &#x5B9E;&#x9645;&#x4E0A;&#x5C06;&#x4F5C;&#x4E3A; <code>{second&#xFF1A;2, first&#xFF1A;1}</code>&#x5B58;&#x50A8;&#x5728; MongoDB &#x4E2D;&#x3002; &#x8FD9;&#x79CD;&#x884C;&#x4E3A;<a href="https://github.com/Automattic/mongoose/wiki/5.0-Deprecation-Warnings" target="_blank">&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x5F03;&#x7528;&#x7684;</a>&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6709;&#x8BB8;&#x591A;&#x610F;&#x60F3;&#x4E0D;&#x5230;&#x7684;&#x526F;&#x4F5C;&#x7528;&#xFF0C;&#x5305;&#x62EC;&#x96BE;&#x4EE5;&#x5904;&#x7406;&#x5176; <code>_id</code> &#x5B57;&#x6BB5;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x6587;&#x6863;&#x3002;</p>
+<p>Mongoose &gt;= 4.6.4 &#x6709;&#x4E00;&#x4E2A;&#x7528;&#x4E8E; schema &#x7684; <code>retainKeyOrder</code> &#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x786E;&#x4FDD; mongoose &#x59CB;&#x7EC8;&#x4FDD;&#x6301;&#x5BF9;&#x8C61;&#x952E;&#x7684;&#x6B63;&#x786E;&#x987A;&#x5E8F;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> testSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span> first<span class="token punctuation">:</span> Number<span class="token punctuation">,</span> second<span class="token punctuation">:</span> Number <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> retainKeyOrder<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Test <span class="token operator">=</span> mongoose<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Test&apos;</span><span class="token punctuation">,</span> testSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Test<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span> first<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> second<span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Will be stored in mongodb as `{ first: 1, second: 2 }`</span>
+</code></pre>
+<h2 id="&#x53EF;&#x63D2;&#x62D4;"><a name="&#x53EF;&#x63D2;&#x62D4;" class="anchor-navigation-ex-anchor" href="#&#x53EF;&#x63D2;&#x62D4;"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. &#x53EF;&#x63D2;&#x62D4;</h2>
+<p>Schema &#x4E5F;&#x662F;<a href="plugins.html">&#x53EF;&#x63D2;&#x62D4;</a>&#x7684;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x5C06;&#x53EF;&#x91CD;&#x7528;&#x7684;&#x7279;&#x6027;&#x6253;&#x5305;&#x5230;&#x63D2;&#x4EF6;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x63D2;&#x4EF6;&#x53EF;&#x4EE5;&#x4E0E;&#x793E;&#x533A;&#x5171;&#x4EAB;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x9879;&#x76EE;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x3002;</p>
+<h2 id="&#x63A5;&#x4E0B;&#x6765;"><a name="&#x63A5;&#x4E0B;&#x6765;" class="anchor-navigation-ex-anchor" href="#&#x63A5;&#x4E0B;&#x6765;"><i class="fa fa-link" aria-hidden="true"></i></a>1.10. &#x63A5;&#x4E0B;&#x6765;</h2>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4ECB;&#x7ECD;&#x4E86; Schemas&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B; <a href="SchemaTypes.html">SchemaTypes</a>&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-12-24 11:02:33
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="quick-start.html" class="navigation navigation-prev " aria-label="Previous page: 快速入门">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="guide.html" class="navigation navigation-next " aria-label="Next page: schemas">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"指南","level":"3.13.1.2","depth":3,"next":{"title":"schemas","level":"3.13.1.2.1","depth":4,"path":"Library/mongoose/docs/guide.md","ref":"Library/mongoose/docs/guide.md","articles":[{"title":"types","level":"3.13.1.2.1.1","depth":5,"path":"Library/mongoose/docs/SchemaTypes.md","ref":"Library/mongoose/docs/SchemaTypes.md","articles":[]},{"title":"custom","level":"3.13.1.2.1.2","depth":5,"path":"Library/mongoose/docs/customschematypes.md","ref":"Library/mongoose/docs/customschematypes.md","articles":[]},{"title":"advanced usage","level":"3.13.1.2.1.3","depth":5,"path":"Library/mongoose/docs/advanced_schemas.md","ref":"Library/mongoose/docs/advanced_schemas.md","articles":[]}]},"previous":{"title":"快速入门","level":"3.13.1.1","depth":3,"path":"Library/mongoose/docs/quick-start.md","ref":"Library/mongoose/docs/quick-start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"acefull","theme":"tomorrow","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Node.js","language":"zh-hans","gitbook":"*","description":"Node.js 自我学习"},"file":{"path":"Library/mongoose/docs/guide.md","mtime":"2017-12-24T03:02:33.803Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-25T15:33:00.187Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

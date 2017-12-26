@@ -1,0 +1,1739 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>engine.io · Node.js</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../../socket.io-client/" />
+    
+    
+    <link rel="prev" href="../REAME.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    关于 Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../../GLOSSARY.html">
+            
+                <a href="../../../../GLOSSARY.html">
+            
+                    
+                    术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">参考文档</li>
+        
+        
+    
+
+    
+        
+        <li class="header">相关库</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Node 相关库列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../nvm/">
+            
+                <a href="../../../nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../request/">
+            
+                <a href="../../../request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../../async/">
+            
+                <a href="../../../async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../../supervisor/">
+            
+                <a href="../../../supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../../express/">
+            
+                <a href="../../../express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../../../express/docs/API.html">
+            
+                <a href="../../../express/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1.1" >
+            
+                <span>
+            
+                    
+                    express()
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.2" >
+            
+                <span>
+            
+                    
+                    Aplication
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.3" >
+            
+                <span>
+            
+                    
+                    Request
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.4" >
+            
+                <span>
+            
+                    
+                    Response
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.5" data-path="../../../express/docs/API.html">
+            
+                <a href="../../../express/docs/API.html#router">
+            
+                    
+                    Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../../../express/middleware/">
+            
+                <a href="../../../express/middleware/">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.2.1" data-path="../../../express/middleware/method-override/">
+            
+                <a href="../../../express/middleware/method-override/">
+            
+                    
+                    method-override
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.2" data-path="../../../express/middleware/session/">
+            
+                <a href="../../../express/middleware/session/">
+            
+                    
+                    express-session
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../../connect/">
+            
+                <a href="../../../connect/">
+            
+                    
+                    connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    socket.io
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1" data-path="../../docs/">
+            
+                <a href="../../docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1.1" data-path="../../docs/API.html">
+            
+                <a href="../../docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.1.2" data-path="../../docs/emit.html">
+            
+                <a href="../../docs/emit.html">
+            
+                    
+                    emit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.2" data-path="../REAME.html">
+            
+                <a href="../REAME.html">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.8.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    engine.io
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../../../socket.io-client/">
+            
+                <a href="../../../socket.io-client/">
+            
+                    
+                    socket.io-client
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1" data-path="../../../socket.io-client/docs/">
+            
+                <a href="../../../socket.io-client/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1.1" data-path="../../../socket.io-client/docs/API.html">
+            
+                <a href="../../../socket.io-client/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../../../node_redis/">
+            
+                <a href="../../../node_redis/">
+            
+                    
+                    node_redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../../../node-http-proxy/">
+            
+                <a href="../../../node-http-proxy/">
+            
+                    
+                    node-http-proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../../../mysql/">
+            
+                <a href="../../../mysql/">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../../../mongoose/">
+            
+                <a href="../../../mongoose/">
+            
+                    
+                    mongoose
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1" data-path="../../../mongoose/docs/">
+            
+                <a href="../../../mongoose/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.1" data-path="../../../mongoose/docs/quick-start.html">
+            
+                <a href="../../../mongoose/docs/quick-start.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2" data-path="../../../mongoose/docs/guide.html">
+            
+                <a href="../../../mongoose/docs/guide.html">
+            
+                    
+                    指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1" data-path="../../../mongoose/docs/guide.html">
+            
+                <a href="../../../mongoose/docs/guide.html">
+            
+                    
+                    schemas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1.1" data-path="../../../mongoose/docs/SchemaTypes.html">
+            
+                <a href="../../../mongoose/docs/SchemaTypes.html">
+            
+                    
+                    types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.2" data-path="../../../mongoose/docs/customschematypes.html">
+            
+                <a href="../../../mongoose/docs/customschematypes.html">
+            
+                    
+                    custom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.3" data-path="../../../mongoose/docs/advanced_schemas.html">
+            
+                <a href="../../../mongoose/docs/advanced_schemas.html">
+            
+                    
+                    advanced usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.2" data-path="../../../mongoose/docs/models.html">
+            
+                <a href="../../../mongoose/docs/models.html">
+            
+                    
+                    models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3" data-path="../../../mongoose/docs/documents.html">
+            
+                <a href="../../../mongoose/docs/documents.html">
+            
+                    
+                    documents
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.3.1" data-path="../../../mongoose/docs/subdocs.html">
+            
+                <a href="../../../mongoose/docs/subdocs.html">
+            
+                    
+                    sub docs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3.2" data-path="../../../mongoose/docs/defaults.html">
+            
+                <a href="../../../mongoose/docs/defaults.html">
+            
+                    
+                    defaults
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.4" data-path="../../../mongoose/docs/queries.html">
+            
+                <a href="../../../mongoose/docs/queries.html">
+            
+                    
+                    queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.5" data-path="../../../mongoose/docs/validation.html">
+            
+                <a href="../../../mongoose/docs/validation.html">
+            
+                    
+                    validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.6" data-path="../../../mongoose/docs/middleware.html">
+            
+                <a href="../../../mongoose/docs/middleware.html">
+            
+                    
+                    middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.7" data-path="../../../mongoose/docs/populate.html">
+            
+                <a href="../../../mongoose/docs/populate.html">
+            
+                    
+                    population
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.8" data-path="../../../mongoose/docs/connections.html">
+            
+                <a href="../../../mongoose/docs/connections.html">
+            
+                    
+                    connections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.9" data-path="../../../mongoose/docs/plugins.html">
+            
+                <a href="../../../mongoose/docs/plugins.html">
+            
+                    
+                    plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.10" data-path="../../../mongoose/docs/promises.html">
+            
+                <a href="../../../mongoose/docs/promises.html">
+            
+                    
+                    promises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.11" data-path="../../../mongoose/docs/discriminators.html">
+            
+                <a href="../../../mongoose/docs/discriminators.html">
+            
+                    
+                    discriminators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.12" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/blob/master/CONTRIBUTING.md">
+            
+                    
+                    contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.13" data-path="../../../mongoose/docs/harmony.html">
+            
+                <a href="../../../mongoose/docs/harmony.html">
+            
+                    
+                    ES2015 integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.14" data-path="../../../mongoose/docs/browser.html">
+            
+                <a href="../../../mongoose/docs/browser.html">
+            
+                    
+                    schemas in the browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.15" data-path="../../../mongoose/docs/compatibility.html">
+            
+                <a href="../../../mongoose/docs/compatibility.html">
+            
+                    
+                    MongoDB Version Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.16" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.6-Release-Notes">
+            
+                    
+                    3.6 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.17" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.8-Release-Notes">
+            
+                    
+                    3.8 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.18" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/4.0-Release-Notes">
+            
+                    
+                    4.0 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.3" data-path="../../../mongoose/docs/API.html">
+            
+                <a href="../../../mongoose/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.4" data-path="../../../mongoose/docs/faq.html">
+            
+                <a href="../../../mongoose/docs/faq.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.5" data-path="../../../mongoose/docs/prior.html">
+            
+                <a href="../../../mongoose/docs/prior.html">
+            
+                    
+                    之前的版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >engine.io</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#engineio-the-realtime-engine"><b>1. </b>Engine.IO: the realtime engine</a></li><ul><li><span class="title-icon "></span><a href="#how-to-use"><b>1.1. </b>How to use</a></li><ul><li><span class="title-icon "></span><a href="#server"><b>1.1.1. </b>Server</a></li><li><span class="title-icon "></span><a href="#client"><b>1.1.2. </b>Client</a></li></ul><li><span class="title-icon "></span><a href="#what-features-does-it-have"><b>1.2. </b>What features does it have?</a></li><li><span class="title-icon "></span><a href="#api"><b>1.3. </b>API</a></li><ul><li><span class="title-icon "></span><a href="#server_1"><b>1.3.1. </b>Server</a></li><li><span class="title-icon "></span><a href="#client_1"><b>1.3.2. </b>Client</a></li></ul><li><span class="title-icon "></span><a href="#debug--logging"><b>1.4. </b>Debug / logging</a></li><li><span class="title-icon "></span><a href="#transports"><b>1.5. </b>Transports</a></li><li><span class="title-icon "></span><a href="#plugins"><b>1.6. </b>Plugins</a></li><li><span class="title-icon "></span><a href="#support"><b>1.7. </b>Support</a></li><li><span class="title-icon "></span><a href="#development"><b>1.8. </b>Development</a></li><li><span class="title-icon "></span><a href="#tests"><b>1.9. </b>Tests</a></li><li><span class="title-icon "></span><a href="#goals"><b>1.10. </b>Goals</a></li><li><span class="title-icon "></span><a href="#architecture"><b>1.11. </b>Architecture</a></li><li><span class="title-icon "></span><a href="#faq"><b>1.12. </b>FAQ</a></li><ul><li><span class="title-icon "></span><a href="#can-i-use-engine-without-socketio-"><b>1.12.1. </b>Can I use engine without Socket.IO ?</a></li><li><span class="title-icon "></span><a href="#does-the-server-serve-the-client"><b>1.12.2. </b>Does the server serve the client?</a></li><li><span class="title-icon "></span><a href="#can-i-implement-engine-in-other-languages"><b>1.12.3. </b>Can I implement Engine in other languages?</a></li></ul><li><span class="title-icon "></span><a href="#license"><b>1.13. </b>License</a></li></ul></ul></div><a href="#engineio-the-realtime-engine" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="engineio-the-realtime-engine"><a name="engineio-the-realtime-engine" class="anchor-navigation-ex-anchor" href="#engineio-the-realtime-engine"><i class="fa fa-link" aria-hidden="true"></i></a>1. Engine.IO: the realtime engine</h1>
+<p><a href="http://travis-ci.org/socketio/engine.io" target="_blank"><img src="https://travis-ci.org/socketio/engine.io.svg?branch=master" alt="Build Status"></a>
+<a href="http://badge.fury.io/js/engine.io" target="_blank"><img src="https://badge.fury.io/js/engine.io.svg" alt="NPM version"></a></p>
+<p><code>Engine.IO</code> is the implementation of transport-based
+cross-browser/cross-device bi-directional communication layer for
+<a href="http://github.com/socketio/socket.io" target="_blank">Socket.IO</a>.</p>
+<h2 id="how-to-use"><a name="how-to-use" class="anchor-navigation-ex-anchor" href="#how-to-use"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. How to use</h2>
+<h3 id="server"><a name="server" class="anchor-navigation-ex-anchor" href="#server"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. Server</h3>
+<h4 id="a-listening-on-a-port"><a name="a-listening-on-a-port" class="anchor-navigation-ex-anchor" href="#a-listening-on-a-port"><i class="fa fa-link" aria-hidden="true"></i></a><a name="a-listening-on-a-port" class="plugin-anchor" href="#a-listening-on-a-port"><i class="fa fa-link" aria-hidden="true"></i></a>(A) Listening on a port</h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> engine <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;engine.io&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> server <span class="token operator">=</span> engine<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;connection&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>socket<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  socket<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;utf 8 string&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  socket<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// binary data</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="b-intercepting-requests-for-a-httpserver"><a name="b-intercepting-requests-for-a-httpserver" class="anchor-navigation-ex-anchor" href="#b-intercepting-requests-for-a-httpserver"><i class="fa fa-link" aria-hidden="true"></i></a><a name="b-intercepting-requests-for-a-httpserver" class="plugin-anchor" href="#b-intercepting-requests-for-a-httpserver"><i class="fa fa-link" aria-hidden="true"></i></a>(B) Intercepting requests for a http.Server</h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> engine <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;engine.io&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;http&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> server <span class="token operator">=</span> engine<span class="token punctuation">.</span><span class="token function">attach</span><span class="token punctuation">(</span>http<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;connection&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>socket<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;message&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;close&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="c-passing-in-requests"><a name="c-passing-in-requests" class="anchor-navigation-ex-anchor" href="#c-passing-in-requests"><i class="fa fa-link" aria-hidden="true"></i></a><a name="c-passing-in-requests" class="plugin-anchor" href="#c-passing-in-requests"><i class="fa fa-link" aria-hidden="true"></i></a>(C) Passing in requests</h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> engine <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;engine.io&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> server <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">engine<span class="token punctuation">.</span>Server</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;connection&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>socket<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  socket<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&apos;hi&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x2026;</span>
+httpServer<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;upgrade&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> socket<span class="token punctuation">,</span> head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  server<span class="token punctuation">.</span><span class="token function">handleUpgrade</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> socket<span class="token punctuation">,</span> head<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+httpServer<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;request&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  server<span class="token punctuation">.</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="client"><a name="client" class="anchor-navigation-ex-anchor" href="#client"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. Client</h3>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/path/to/engine.io.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+  var socket = new eio.Socket(&apos;ws://localhost/&apos;);
+  socket.on(&apos;open&apos;, function(){
+    socket.on(&apos;message&apos;, function(data){});
+    socket.on(&apos;close&apos;, function(){});
+  });
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>For more information on the client refer to the
+<a href="http://github.com/learnboost/engine.io-client" target="_blank">engine-client</a> repository.</p>
+<h2 id="what-features-does-it-have"><a name="what-features-does-it-have" class="anchor-navigation-ex-anchor" href="#what-features-does-it-have"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. What features does it have?</h2>
+<ul>
+<li><strong>Maximum reliability</strong>. Connections are established even in the presence of:<ul>
+<li>proxies and load balancers.</li>
+<li>personal firewall and antivirus software.</li>
+<li>for more information refer to <strong>Goals</strong> and <strong>Architecture</strong> sections</li>
+</ul>
+</li>
+<li><strong>Minimal client size</strong> aided by:<ul>
+<li>lazy loading of flash transports.</li>
+<li>lack of redundant transports.</li>
+</ul>
+</li>
+<li><strong>Scalable</strong><ul>
+<li>load balancer friendly</li>
+</ul>
+</li>
+<li><strong>Future proof</strong></li>
+<li><strong>100% Node.JS core style</strong><ul>
+<li>No API sugar (left for higher level projects)</li>
+<li>Written in readable vanilla JavaScript</li>
+</ul>
+</li>
+</ul>
+<h2 id="api"><a name="api" class="anchor-navigation-ex-anchor" href="#api"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. API</h2>
+<h3 id="server_1"><a name="server_1" class="anchor-navigation-ex-anchor" href="#server_1"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. Server</h3>
+<p><hr><br></p>
+<h4 id="top-level"><a name="top-level" class="anchor-navigation-ex-anchor" href="#top-level"><i class="fa fa-link" aria-hidden="true"></i></a><a name="top-level" class="plugin-anchor" href="#top-level"><i class="fa fa-link" aria-hidden="true"></i></a>Top-level</h4>
+<p>These are exposed by <code>require(&apos;engine.io&apos;)</code>:</p>
+<h5 id="events"><a name="events" class="anchor-navigation-ex-anchor" href="#events"><i class="fa fa-link" aria-hidden="true"></i></a><a name="events" class="plugin-anchor" href="#events"><i class="fa fa-link" aria-hidden="true"></i></a>Events</h5>
+<ul>
+<li><code>flush</code><ul>
+<li>Called when a socket buffer is being flushed.</li>
+<li><strong>Arguments</strong><ul>
+<li><code>Socket</code>: socket being flushed</li>
+<li><code>Array</code>: write buffer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>drain</code><ul>
+<li>Called when a socket buffer is drained</li>
+<li><strong>Arguments</strong><ul>
+<li><code>Socket</code>: socket being flushed</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="properties"><a name="properties" class="anchor-navigation-ex-anchor" href="#properties"><i class="fa fa-link" aria-hidden="true"></i></a><a name="properties" class="plugin-anchor" href="#properties"><i class="fa fa-link" aria-hidden="true"></i></a>Properties</h5>
+<ul>
+<li><code>protocol</code> <em>(Number)</em>: protocol revision number</li>
+<li><code>Server</code>: Server class constructor</li>
+<li><code>Socket</code>: Socket class constructor</li>
+<li><code>Transport</code> <em>(Function)</em>: transport constructor</li>
+<li><code>transports</code> <em>(Object)</em>: map of available transports</li>
+</ul>
+<h5 id="methods"><a name="methods" class="anchor-navigation-ex-anchor" href="#methods"><i class="fa fa-link" aria-hidden="true"></i></a><a name="methods" class="plugin-anchor" href="#methods"><i class="fa fa-link" aria-hidden="true"></i></a>Methods</h5>
+<ul>
+<li><p><code>()</code></p>
+<ul>
+<li>Returns a new <code>Server</code> instance. If the first argument is an <code>http.Server</code> then the
+new <code>Server</code> instance will be attached to it. Otherwise, the arguments are passed
+directly to the <code>Server</code> constructor.</li>
+<li><strong>Parameters</strong><ul>
+<li><code>http.Server</code>: optional, server to attach to.</li>
+<li><code>Object</code>: optional, options object (see <code>Server#constructor</code> api docs below)</li>
+</ul>
+</li>
+</ul>
+<p>The following are identical ways to instantiate a server and then attach it.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> httpServer<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// previously created with `http.createServer();` from node.js api.</span>
+
+<span class="token comment" spellcheck="true">// create a server first, and then attach</span>
+<span class="token keyword">var</span> eioServer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;engine.io&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Server</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+eioServer<span class="token punctuation">.</span><span class="token function">attach</span><span class="token punctuation">(</span>httpServer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// or call the module as a function to get `Server`</span>
+<span class="token keyword">var</span> eioServer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;engine.io&apos;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+eioServer<span class="token punctuation">.</span><span class="token function">attach</span><span class="token punctuation">(</span>httpServer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// immediately attach</span>
+<span class="token keyword">var</span> eioServer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;engine.io&apos;</span><span class="token punctuation">)</span><span class="token punctuation">(</span>httpServer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p><code>listen</code></p>
+<ul>
+<li>Creates an <code>http.Server</code> which listens on the given port and attaches WS
+to it. It returns <code>501 Not Implemented</code> for regular http requests.</li>
+<li><strong>Parameters</strong><ul>
+<li><code>Number</code>: port to listen on.</li>
+<li><code>Object</code>: optional, options object</li>
+<li><code>Function</code>: callback for <code>listen</code>.</li>
+</ul>
+</li>
+<li><strong>Options</strong><ul>
+<li>All options from <code>Server.attach</code> method, documented below.</li>
+<li><strong>Additionally</strong> See Server <code>constructor</code> below for options you can pass for creating the new Server</li>
+</ul>
+</li>
+<li><strong>Returns</strong> <code>Server</code></li>
+</ul>
+</li>
+<li><code>attach</code><ul>
+<li>Captures <code>upgrade</code> requests for a <code>http.Server</code>. In other words, makes
+a regular http.Server WebSocket-compatible.</li>
+<li><strong>Parameters</strong><ul>
+<li><code>http.Server</code>: server to attach to.</li>
+<li><code>Object</code>: optional, options object</li>
+</ul>
+</li>
+<li><strong>Options</strong><ul>
+<li>All options from <code>Server.attach</code> method, documented below.</li>
+<li><strong>Additionally</strong> See Server <code>constructor</code> below for options you can pass for creating the new Server</li>
+</ul>
+</li>
+<li><strong>Returns</strong> <code>Server</code> a new Server instance.</li>
+</ul>
+</li>
+</ul>
+<p><hr><br></p>
+<h4 id="server_2"><a name="server_2" class="anchor-navigation-ex-anchor" href="#server_2"><i class="fa fa-link" aria-hidden="true"></i></a><a name="server" class="plugin-anchor" href="#server"><i class="fa fa-link" aria-hidden="true"></i></a>Server</h4>
+<p>The main server/manager. <em>Inherits from EventEmitter</em>.</p>
+<h5 id="events_1"><a name="events_1" class="anchor-navigation-ex-anchor" href="#events_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="events" class="plugin-anchor" href="#events"><i class="fa fa-link" aria-hidden="true"></i></a>Events</h5>
+<ul>
+<li><code>connection</code><ul>
+<li>Fired when a new connection is established.</li>
+<li><strong>Arguments</strong><ul>
+<li><code>Socket</code>: a Socket object</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="properties_1"><a name="properties_1" class="anchor-navigation-ex-anchor" href="#properties_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="properties" class="plugin-anchor" href="#properties"><i class="fa fa-link" aria-hidden="true"></i></a>Properties</h5>
+<p><strong>Important</strong>: if you plan to use Engine.IO in a scalable way, please
+keep in mind the properties below will only reflect the clients connected
+to a single process.</p>
+<ul>
+<li><code>clients</code> <em>(Object)</em>: hash of connected clients by id.</li>
+<li><code>clientsCount</code> <em>(Number)</em>: number of connected clients.</li>
+</ul>
+<h5 id="methods_1"><a name="methods_1" class="anchor-navigation-ex-anchor" href="#methods_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="methods" class="plugin-anchor" href="#methods"><i class="fa fa-link" aria-hidden="true"></i></a>Methods</h5>
+<ul>
+<li><strong>constructor</strong><ul>
+<li>Initializes the server</li>
+<li><strong>Parameters</strong><ul>
+<li><code>Object</code>: optional, options object</li>
+</ul>
+</li>
+<li><strong>Options</strong><ul>
+<li><code>pingTimeout</code> (<code>Number</code>): how many ms without a pong packet to
+consider the connection closed (<code>60000</code>)</li>
+<li><code>pingInterval</code> (<code>Number</code>): how many ms before sending a new ping
+packet (<code>25000</code>)</li>
+<li><code>upgradeTimeout</code> (<code>Number</code>): how many ms before an uncompleted transport upgrade is cancelled (<code>10000</code>)</li>
+<li><code>maxHttpBufferSize</code> (<code>Number</code>): how many bytes or characters a message
+can be, before closing the session (to avoid DoS). Default
+value is <code>10E7</code>.</li>
+<li><code>allowRequest</code> (<code>Function</code>): A function that receives a given handshake
+or upgrade request as its first parameter, and can decide whether to
+continue or not. The second argument is a function that needs to be
+called with the decided information: <code>fn(err, success)</code>, where
+<code>success</code> is a boolean value where false means that the request is
+rejected, and err is an error code.</li>
+<li><code>transports</code> (<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Array</span><span class="token punctuation">&gt;</span></span> String</code>): transports to allow connections
+to (<code>[&apos;polling&apos;, &apos;websocket&apos;]</code>)</li>
+<li><code>allowUpgrades</code> (<code>Boolean</code>): whether to allow transport upgrades
+(<code>true</code>)</li>
+<li><code>perMessageDeflate</code> (<code>Object|Boolean</code>): parameters of the WebSocket permessage-deflate extension
+(see <a href="https://github.com/einaros/ws" target="_blank">ws module</a> api docs). Set to <code>false</code> to disable. (<code>true</code>)<ul>
+<li><code>threshold</code> (<code>Number</code>): data is compressed only if the byte size is above this value (<code>1024</code>)</li>
+</ul>
+</li>
+<li><code>httpCompression</code> (<code>Object|Boolean</code>): parameters of the http compression for the polling transports
+(see <a href="http://nodejs.org/api/zlib.html#zlib_options" target="_blank">zlib</a> api docs). Set to <code>false</code> to disable. (<code>true</code>)<ul>
+<li><code>threshold</code> (<code>Number</code>): data is compressed only if the byte size is above this value (<code>1024</code>)</li>
+</ul>
+</li>
+<li><code>cookie</code> (<code>String|Boolean</code>): name of the HTTP cookie that
+contains the client sid to send as part of handshake response
+headers. Set to <code>false</code> to not send one. (<code>io</code>)</li>
+<li><code>cookiePath</code> (<code>String|Boolean</code>): path of the above <code>cookie</code>
+option. If false, no path will be sent, which means browsers will only send the cookie on the engine.io attached path (<code>/engine.io</code>).
+Set false to not save io cookie on all requests. (<code>/</code>)</li>
+<li><code>cookieHttpOnly</code> (<code>Boolean</code>): If <code>true</code> HttpOnly io cookie cannot be accessed by client-side APIs, such as JavaScript. (<code>true</code>) <em>This option has no effect if <code>cookie</code> or <code>cookiePath</code> is set to <code>false</code>.</em></li>
+<li><code>wsEngine</code> (<code>String</code>): what WebSocket server implementation to use. Specified module must conform to the <code>ws</code> interface (see <a href="https://github.com/websockets/ws/blob/master/doc/ws.md" target="_blank">ws module api docs</a>). Default value is <code>uws</code> (see <a href="https://github.com/uWebSockets/uWebSockets" target="_blank">&#xB5;WebSockets</a>).</li>
+<li><code>initialPacket</code> (<code>Object</code>): an optional packet which will be concatenated to the handshake packet emitted by Engine.IO.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>close</code><ul>
+<li>Closes all clients</li>
+<li><strong>Returns</strong> <code>Server</code> for chaining</li>
+</ul>
+</li>
+<li><code>handleRequest</code><ul>
+<li>Called internally when a <code>Engine</code> request is intercepted.</li>
+<li><strong>Parameters</strong><ul>
+<li><code>http.IncomingMessage</code>: a node request object</li>
+<li><code>http.ServerResponse</code>: a node response object</li>
+</ul>
+</li>
+<li><strong>Returns</strong> <code>Server</code> for chaining</li>
+</ul>
+</li>
+<li><code>handleUpgrade</code><ul>
+<li>Called internally when a <code>Engine</code> ws upgrade is intercepted.</li>
+<li><strong>Parameters</strong> (same as <code>upgrade</code> event)<ul>
+<li><code>http.IncomingMessage</code>: a node request object</li>
+<li><code>net.Stream</code>: TCP socket for the request</li>
+<li><code>Buffer</code>: legacy tail bytes</li>
+</ul>
+</li>
+<li><strong>Returns</strong> <code>Server</code> for chaining</li>
+</ul>
+</li>
+<li><code>attach</code><ul>
+<li>Attach this Server instance to an <code>http.Server</code></li>
+<li>Captures <code>upgrade</code> requests for a <code>http.Server</code>. In other words, makes
+a regular http.Server WebSocket-compatible.</li>
+<li><strong>Parameters</strong><ul>
+<li><code>http.Server</code>: server to attach to.</li>
+<li><code>Object</code>: optional, options object</li>
+</ul>
+</li>
+<li><strong>Options</strong><ul>
+<li><code>path</code> (<code>String</code>): name of the path to capture (<code>/engine.io</code>).</li>
+<li><code>destroyUpgrade</code> (<code>Boolean</code>): destroy unhandled upgrade requests (<code>true</code>)</li>
+<li><code>destroyUpgradeTimeout</code> (<code>Number</code>): milliseconds after which unhandled requests are ended (<code>1000</code>)</li>
+<li><code>handlePreflightRequest</code> (<code>Boolean|Function</code>): whether to let engine.io handle the OPTIONS requests. You can also pass a custom function to handle the requests (<code>true</code>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>generateId</code><ul>
+<li>Generate a socket id.</li>
+<li>Overwrite this method to generate your custom socket id.</li>
+<li><strong>Parameters</strong><ul>
+<li><code>http.IncomingMessage</code>: a node request object</li>
+<li><code>Function</code>: a callback method which contains an error (if there is) object and the generated id value</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><hr><br></p>
+<h4 id="socket"><a name="socket" class="anchor-navigation-ex-anchor" href="#socket"><i class="fa fa-link" aria-hidden="true"></i></a><a name="socket" class="plugin-anchor" href="#socket"><i class="fa fa-link" aria-hidden="true"></i></a>Socket</h4>
+<p>A representation of a client. <em>Inherits from EventEmitter</em>.</p>
+<h5 id="events_2"><a name="events_2" class="anchor-navigation-ex-anchor" href="#events_2"><i class="fa fa-link" aria-hidden="true"></i></a><a name="events" class="plugin-anchor" href="#events"><i class="fa fa-link" aria-hidden="true"></i></a>Events</h5>
+<ul>
+<li><code>close</code><ul>
+<li>Fired when the client is disconnected.</li>
+<li><strong>Arguments</strong><ul>
+<li><code>String</code>: reason for closing</li>
+<li><code>Object</code>: description object (optional)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>message</code><ul>
+<li>Fired when the client sends a message.</li>
+<li><strong>Arguments</strong><ul>
+<li><code>String</code> or <code>Buffer</code>: Unicode string or Buffer with binary contents</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>error</code><ul>
+<li>Fired when an error occurs.</li>
+<li><strong>Arguments</strong><ul>
+<li><code>Error</code>: error object</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>flush</code><ul>
+<li>Called when the write buffer is being flushed.</li>
+<li><strong>Arguments</strong><ul>
+<li><code>Array</code>: write buffer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>drain</code><ul>
+<li>Called when the write buffer is drained</li>
+</ul>
+</li>
+<li><code>packet</code><ul>
+<li>Called when a socket received a packet (<code>message</code>, <code>ping</code>)</li>
+<li><strong>Arguments</strong><ul>
+<li><code>type</code>: packet type</li>
+<li><code>data</code>: packet data (if type is message)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>packetCreate</code><ul>
+<li>Called before a socket sends a packet (<code>message</code>, <code>pong</code>)</li>
+<li><strong>Arguments</strong><ul>
+<li><code>type</code>: packet type</li>
+<li><code>data</code>: packet data (if type is message)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="properties_2"><a name="properties_2" class="anchor-navigation-ex-anchor" href="#properties_2"><i class="fa fa-link" aria-hidden="true"></i></a><a name="properties" class="plugin-anchor" href="#properties"><i class="fa fa-link" aria-hidden="true"></i></a>Properties</h5>
+<ul>
+<li><code>id</code> <em>(String)</em>: unique identifier</li>
+<li><code>server</code> <em>(Server)</em>: engine parent reference</li>
+<li><code>request</code> <em>(http.IncomingMessage)</em>: request that originated the Socket</li>
+<li><code>upgraded</code> <em>(Boolean)</em>: whether the transport has been upgraded</li>
+<li><code>readyState</code> <em>(String)</em>: opening|open|closing|closed</li>
+<li><code>transport</code> <em>(Transport)</em>: transport reference</li>
+</ul>
+<h5 id="methods_2"><a name="methods_2" class="anchor-navigation-ex-anchor" href="#methods_2"><i class="fa fa-link" aria-hidden="true"></i></a><a name="methods" class="plugin-anchor" href="#methods"><i class="fa fa-link" aria-hidden="true"></i></a>Methods</h5>
+<ul>
+<li><code>send</code>:<ul>
+<li>Sends a message, performing <code>message = toString(arguments[0])</code> unless
+sending binary data, which is sent as is.</li>
+<li><strong>Parameters</strong><ul>
+<li><code>String</code> | <code>Buffer</code> | <code>ArrayBuffer</code> | <code>ArrayBufferView</code>: a string or any object implementing <code>toString()</code>, with outgoing data, or a Buffer or ArrayBuffer with binary data. Also any ArrayBufferView can be sent as is.</li>
+<li><code>Object</code>: optional, options object</li>
+<li><code>Function</code>: optional, a callback executed when the message gets flushed out by the transport</li>
+</ul>
+</li>
+<li><strong>Options</strong><ul>
+<li><code>compress</code> (<code>Boolean</code>): whether to compress sending data. This option might be ignored and forced to be <code>true</code> when using polling. (<code>true</code>)</li>
+</ul>
+</li>
+<li><strong>Returns</strong> <code>Socket</code> for chaining</li>
+</ul>
+</li>
+<li><code>close</code><ul>
+<li>Disconnects the client</li>
+<li><strong>Returns</strong> <code>Socket</code> for chaining</li>
+</ul>
+</li>
+</ul>
+<h3 id="client_1"><a name="client_1" class="anchor-navigation-ex-anchor" href="#client_1"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. Client</h3>
+<p><hr><br></p>
+<p>Exposed in the <code>eio</code> global namespace (in the browser), or by
+<code>require(&apos;engine.io-client&apos;)</code> (in Node.JS).</p>
+<p>For the client API refer to the
+<a href="http://github.com/learnboost/engine.io-client" target="_blank">engine-client</a> repository.</p>
+<h2 id="debug--logging"><a name="debug--logging" class="anchor-navigation-ex-anchor" href="#debug--logging"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. Debug / logging</h2>
+<p>Engine.IO is powered by <a href="http://github.com/visionmedia/debug" target="_blank">debug</a>.
+In order to see all the debug output, run your app with the environment variable
+<code>DEBUG</code> including the desired scope.</p>
+<p>To see the output from all of Engine.IO&apos;s debugging scopes you can use:</p>
+<pre class="language-"><code>DEBUG=engine* node myapp
+</code></pre><h2 id="transports"><a name="transports" class="anchor-navigation-ex-anchor" href="#transports"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. Transports</h2>
+<ul>
+<li><code>polling</code>: XHR / JSONP polling transport.</li>
+<li><code>websocket</code>: WebSocket transport.</li>
+</ul>
+<h2 id="plugins"><a name="plugins" class="anchor-navigation-ex-anchor" href="#plugins"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. Plugins</h2>
+<ul>
+<li><a href="https://github.com/EugenDueck/engine.io-conflation" target="_blank">engine.io-conflation</a>: Makes <strong>conflation and aggregation</strong> of messages straightforward.</li>
+</ul>
+<h2 id="support"><a name="support" class="anchor-navigation-ex-anchor" href="#support"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. Support</h2>
+<p>The support channels for <code>engine.io</code> are the same as <code>socket.io</code>:</p>
+<ul>
+<li>irc.freenode.net <strong>#socket.io</strong></li>
+<li><a href="http://groups.google.com/group/socket_io" target="_blank">Google Groups</a></li>
+<li><a href="http://socket.io" target="_blank">Website</a></li>
+</ul>
+<h2 id="development"><a name="development" class="anchor-navigation-ex-anchor" href="#development"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. Development</h2>
+<p>To contribute patches, run tests or benchmarks, make sure to clone the
+repository:</p>
+<pre class="language-"><code>git clone git://github.com/LearnBoost/engine.io.git
+</code></pre><p>Then:</p>
+<pre class="language-"><code>cd engine.io
+npm install
+</code></pre><h2 id="tests"><a name="tests" class="anchor-navigation-ex-anchor" href="#tests"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. Tests</h2>
+<p>Tests run with <code>make test</code>. It runs the server tests that are aided by
+the usage of <code>engine.io-client</code>.</p>
+<p>Make sure <code>npm install</code> is run first.</p>
+<h2 id="goals"><a name="goals" class="anchor-navigation-ex-anchor" href="#goals"><i class="fa fa-link" aria-hidden="true"></i></a>1.10. Goals</h2>
+<p>The main goal of <code>Engine</code> is ensuring the most reliable realtime communication.
+Unlike the previous Socket.IO core, it always establishes a long-polling
+connection first, then tries to upgrade to better transports that are &quot;tested&quot; on
+the side.</p>
+<p>During the lifetime of the Socket.IO projects, we&apos;ve found countless drawbacks
+to relying on <code>HTML5 WebSocket</code> or <code>Flash Socket</code> as the first connection
+mechanisms.</p>
+<p>Both are clearly the <em>right way</em> of establishing a bidirectional communication,
+with HTML5 WebSocket being the way of the future. However, to answer most business
+needs, alternative traditional HTTP 1.1 mechanisms are just as good as delivering
+the same solution.</p>
+<p>WebSocket based connections have two fundamental benefits:</p>
+<ol>
+<li><p><strong>Better server performance</strong></p>
+<ul>
+<li><em>A: Load balancers</em><br>
+ Load balancing a long polling connection poses a serious architectural nightmare
+ since requests can come from any number of open sockets by the user agent, but
+ they all need to be routed to the process and computer that owns the <code>Engine</code>
+ connection. This negatively impacts RAM and CPU usage.</li>
+<li><em>B: Network traffic</em><br>
+ WebSocket is designed around the premise that each message frame has to be
+ surrounded by the least amount of data. In HTTP 1.1 transports, each message
+ frame is surrounded by HTTP headers and chunked encoding frames. If you try to
+ send the message <em>&quot;Hello world&quot;</em> with xhr-polling, the message ultimately
+ becomes larger than if you were to send it with WebSocket.</li>
+<li><em>C: Lightweight parser</em><br>
+ As an effect of <strong>B</strong>, the server has to do a lot more work to parse the network
+ data and figure out the message when traditional HTTP requests are used
+ (as in long polling). This means that another advantage of WebSocket is
+ less server CPU usage.</li>
+</ul>
+</li>
+<li><p><strong>Better user experience</strong></p>
+<p> Due to the reasons stated in point <strong>1</strong>, the most important effect of being able
+ to establish a WebSocket connection is raw data transfer speed, which translates
+ in <em>some</em> cases in better user experience.</p>
+<p> Applications with heavy realtime interaction (such as games) will benefit greatly,
+ whereas applications like realtime chat (Gmail/Facebook), newsfeeds (Facebook) or
+ timelines (Twitter) will have negligible user experience improvements.</p>
+</li>
+</ol>
+<p>Having said this, attempting to establish a WebSocket connection directly so far has
+proven problematic:</p>
+<ol>
+<li><p><strong>Proxies</strong><br>
+ Many corporate proxies block WebSocket traffic.</p>
+</li>
+<li><p><strong>Personal firewall and antivirus software</strong><br>
+ As a result of our research, we&apos;ve found that at least 3 personal security
+ applications block WebSocket traffic.</p>
+</li>
+<li><p><strong>Cloud application platforms</strong><br>
+ Platforms like Heroku or No.de have had trouble keeping up with the fast-paced
+ nature of the evolution of the WebSocket protocol. Applications therefore end up
+ inevitably using long polling, but the seamless installation experience of
+ Socket.IO we strive for (<em>&quot;require() it and it just works&quot;</em>) disappears.</p>
+</li>
+</ol>
+<p>Some of these problems have solutions. In the case of proxies and personal programs,
+however, the solutions many times involve upgrading software. Experience has shown
+that relying on client software upgrades to deliver a business solution is
+fruitless: the very existence of this project has to do with a fragmented panorama
+of user agent distribution, with clients connecting with latest versions of the most
+modern user agents (Chrome, Firefox and Safari), but others with versions as low as
+IE 5.5.</p>
+<p>From the user perspective, an unsuccessful WebSocket connection can translate in
+up to at least 10 seconds of waiting for the realtime application to begin
+exchanging data. This <strong>perceptively</strong> hurts user experience.</p>
+<p>To summarize, <strong>Engine</strong> focuses on reliability and user experience first, marginal
+potential UX improvements and increased server performance second. <code>Engine</code> is the
+result of all the lessons learned with WebSocket in the wild.</p>
+<h2 id="architecture"><a name="architecture" class="anchor-navigation-ex-anchor" href="#architecture"><i class="fa fa-link" aria-hidden="true"></i></a>1.11. Architecture</h2>
+<p>The main premise of <code>Engine</code>, and the core of its existence, is the ability to
+swap transports on the fly. A connection starts as xhr-polling, but it can
+switch to WebSocket.</p>
+<p>The central problem this poses is: how do we switch transports without losing
+messages?</p>
+<p><code>Engine</code> only switches from polling to another transport in between polling
+cycles. Since the server closes the connection after a certain timeout when
+there&apos;s no activity, and the polling transport implementation buffers messages
+in between connections, this ensures no message loss and optimal performance.</p>
+<p>Another benefit of this design is that we workaround almost all the limitations
+of <strong>Flash Socket</strong>, such as slow connection times, increased file size (we can
+safely lazy load it without hurting user experience), etc.</p>
+<h2 id="faq"><a name="faq" class="anchor-navigation-ex-anchor" href="#faq"><i class="fa fa-link" aria-hidden="true"></i></a>1.12. FAQ</h2>
+<h3 id="can-i-use-engine-without-socketio-"><a name="can-i-use-engine-without-socketio-" class="anchor-navigation-ex-anchor" href="#can-i-use-engine-without-socketio-"><i class="fa fa-link" aria-hidden="true"></i></a>1.12.1. Can I use engine without Socket.IO ?</h3>
+<p>Absolutely. Although the recommended framework for building realtime applications
+is Socket.IO, since it provides fundamental features for real-world applications
+such as multiplexing, reconnection support, etc.</p>
+<p><code>Engine</code> is to Socket.IO what Connect is to Express. An essential piece for building
+realtime frameworks, but something you <em>probably</em> won&apos;t be using for building
+actual applications.</p>
+<h3 id="does-the-server-serve-the-client"><a name="does-the-server-serve-the-client" class="anchor-navigation-ex-anchor" href="#does-the-server-serve-the-client"><i class="fa fa-link" aria-hidden="true"></i></a>1.12.2. Does the server serve the client?</h3>
+<p>No. The main reason is that <code>Engine</code> is meant to be bundled with frameworks.
+Socket.IO includes <code>Engine</code>, therefore serving two clients is not necessary. If
+you use Socket.IO, including</p>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/socket.io/socket.io.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>has you covered.</p>
+<h3 id="can-i-implement-engine-in-other-languages"><a name="can-i-implement-engine-in-other-languages" class="anchor-navigation-ex-anchor" href="#can-i-implement-engine-in-other-languages"><i class="fa fa-link" aria-hidden="true"></i></a>1.12.3. Can I implement Engine in other languages?</h3>
+<p>Absolutely. The <a href="https://github.com/LearnBoost/engine.io-protocol" target="_blank">engine.io-protocol</a>
+repository contains the most up to date description of the specification
+at all times, and the parser implementation in JavaScript.</p>
+<h2 id="license"><a name="license" class="anchor-navigation-ex-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a>1.13. License</h2>
+<p>(The MIT License)</p>
+<p>Copyright (c) 2014 Guillermo Rauch &lt;guillermo@learnboost.com&gt;</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+&apos;Software&apos;), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &apos;AS IS&apos;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-12-20 22:52:15
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../REAME.html" class="navigation navigation-prev " aria-label="Previous page: 相关库">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../../socket.io-client/" class="navigation navigation-next " aria-label="Next page: socket.io-client">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"engine.io","level":"3.8.2.1","depth":3,"next":{"title":"socket.io-client","level":"3.9","depth":1,"path":"Library/socket.io-client/README.md","ref":"Library/socket.io-client/README.md","articles":[{"title":"文档","level":"3.9.1","depth":2,"path":"Library/socket.io-client/docs/README.md","ref":"Library/socket.io-client/docs/README.md","articles":[{"title":"API","level":"3.9.1.1","depth":3,"path":"Library/socket.io-client/docs/API.md","ref":"Library/socket.io-client/docs/API.md","articles":[]}]}]},"previous":{"title":"相关库","level":"3.8.2","depth":2,"path":"Library/socket.io/library/REAME.md","ref":"Library/socket.io/library/REAME.md","articles":[{"title":"engine.io","level":"3.8.2.1","depth":3,"path":"Library/socket.io/library/engine.io/README.md","ref":"Library/socket.io/library/engine.io/README.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"acefull","theme":"tomorrow","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Node.js","language":"zh-hans","gitbook":"*","description":"Node.js 自我学习"},"file":{"path":"Library/socket.io/library/engine.io/README.md","mtime":"2017-12-20T14:52:15.295Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-25T15:33:00.187Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

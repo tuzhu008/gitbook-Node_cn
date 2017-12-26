@@ -1,0 +1,1878 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>node_redis · Node.js</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../node-http-proxy/" />
+    
+    
+    <link rel="prev" href="../socket.io-client/docs/API.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于 Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../GLOSSARY.html">
+            
+                <a href="../../GLOSSARY.html">
+            
+                    
+                    术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">参考文档</li>
+        
+        
+    
+
+    
+        
+        <li class="header">相关库</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node 相关库列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../nvm/">
+            
+                <a href="../nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../request/">
+            
+                <a href="../request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../async/">
+            
+                <a href="../async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../supervisor/">
+            
+                <a href="../supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../express/">
+            
+                <a href="../express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../express/docs/API.html">
+            
+                <a href="../express/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1.1" >
+            
+                <span>
+            
+                    
+                    express()
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.2" >
+            
+                <span>
+            
+                    
+                    Aplication
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.3" >
+            
+                <span>
+            
+                    
+                    Request
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.4" >
+            
+                <span>
+            
+                    
+                    Response
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.5" data-path="../express/docs/API.html">
+            
+                <a href="../express/docs/API.html#router">
+            
+                    
+                    Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../express/middleware/">
+            
+                <a href="../express/middleware/">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.2.1" data-path="../express/middleware/method-override/">
+            
+                <a href="../express/middleware/method-override/">
+            
+                    
+                    method-override
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.2" data-path="../express/middleware/session/">
+            
+                <a href="../express/middleware/session/">
+            
+                    
+                    express-session
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../connect/">
+            
+                <a href="../connect/">
+            
+                    
+                    connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../socket.io/">
+            
+                <a href="../socket.io/">
+            
+                    
+                    socket.io
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1" data-path="../socket.io/docs/">
+            
+                <a href="../socket.io/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1.1" data-path="../socket.io/docs/API.html">
+            
+                <a href="../socket.io/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.1.2" data-path="../socket.io/docs/emit.html">
+            
+                <a href="../socket.io/docs/emit.html">
+            
+                    
+                    emit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.2" data-path="../socket.io/library/REAME.html">
+            
+                <a href="../socket.io/library/REAME.html">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.2.1" data-path="../socket.io/library/engine.io/">
+            
+                <a href="../socket.io/library/engine.io/">
+            
+                    
+                    engine.io
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../socket.io-client/">
+            
+                <a href="../socket.io-client/">
+            
+                    
+                    socket.io-client
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1" data-path="../socket.io-client/docs/">
+            
+                <a href="../socket.io-client/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1.1" data-path="../socket.io-client/docs/API.html">
+            
+                <a href="../socket.io-client/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.10" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    node_redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../node-http-proxy/">
+            
+                <a href="../node-http-proxy/">
+            
+                    
+                    node-http-proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../mysql/">
+            
+                <a href="../mysql/">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../mongoose/">
+            
+                <a href="../mongoose/">
+            
+                    
+                    mongoose
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1" data-path="../mongoose/docs/">
+            
+                <a href="../mongoose/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.1" data-path="../mongoose/docs/quick-start.html">
+            
+                <a href="../mongoose/docs/quick-start.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2" data-path="../mongoose/docs/guide.html">
+            
+                <a href="../mongoose/docs/guide.html">
+            
+                    
+                    指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1" data-path="../mongoose/docs/guide.html">
+            
+                <a href="../mongoose/docs/guide.html">
+            
+                    
+                    schemas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1.1" data-path="../mongoose/docs/SchemaTypes.html">
+            
+                <a href="../mongoose/docs/SchemaTypes.html">
+            
+                    
+                    types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.2" data-path="../mongoose/docs/customschematypes.html">
+            
+                <a href="../mongoose/docs/customschematypes.html">
+            
+                    
+                    custom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.3" data-path="../mongoose/docs/advanced_schemas.html">
+            
+                <a href="../mongoose/docs/advanced_schemas.html">
+            
+                    
+                    advanced usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.2" data-path="../mongoose/docs/models.html">
+            
+                <a href="../mongoose/docs/models.html">
+            
+                    
+                    models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3" data-path="../mongoose/docs/documents.html">
+            
+                <a href="../mongoose/docs/documents.html">
+            
+                    
+                    documents
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.3.1" data-path="../mongoose/docs/subdocs.html">
+            
+                <a href="../mongoose/docs/subdocs.html">
+            
+                    
+                    sub docs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3.2" data-path="../mongoose/docs/defaults.html">
+            
+                <a href="../mongoose/docs/defaults.html">
+            
+                    
+                    defaults
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.4" data-path="../mongoose/docs/queries.html">
+            
+                <a href="../mongoose/docs/queries.html">
+            
+                    
+                    queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.5" data-path="../mongoose/docs/validation.html">
+            
+                <a href="../mongoose/docs/validation.html">
+            
+                    
+                    validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.6" data-path="../mongoose/docs/middleware.html">
+            
+                <a href="../mongoose/docs/middleware.html">
+            
+                    
+                    middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.7" data-path="../mongoose/docs/populate.html">
+            
+                <a href="../mongoose/docs/populate.html">
+            
+                    
+                    population
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.8" data-path="../mongoose/docs/connections.html">
+            
+                <a href="../mongoose/docs/connections.html">
+            
+                    
+                    connections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.9" data-path="../mongoose/docs/plugins.html">
+            
+                <a href="../mongoose/docs/plugins.html">
+            
+                    
+                    plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.10" data-path="../mongoose/docs/promises.html">
+            
+                <a href="../mongoose/docs/promises.html">
+            
+                    
+                    promises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.11" data-path="../mongoose/docs/discriminators.html">
+            
+                <a href="../mongoose/docs/discriminators.html">
+            
+                    
+                    discriminators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.12" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/blob/master/CONTRIBUTING.md">
+            
+                    
+                    contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.13" data-path="../mongoose/docs/harmony.html">
+            
+                <a href="../mongoose/docs/harmony.html">
+            
+                    
+                    ES2015 integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.14" data-path="../mongoose/docs/browser.html">
+            
+                <a href="../mongoose/docs/browser.html">
+            
+                    
+                    schemas in the browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.15" data-path="../mongoose/docs/compatibility.html">
+            
+                <a href="../mongoose/docs/compatibility.html">
+            
+                    
+                    MongoDB Version Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.16" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.6-Release-Notes">
+            
+                    
+                    3.6 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.17" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.8-Release-Notes">
+            
+                    
+                    3.8 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.18" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/4.0-Release-Notes">
+            
+                    
+                    4.0 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.3" data-path="../mongoose/docs/API.html">
+            
+                <a href="../mongoose/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.4" data-path="../mongoose/docs/faq.html">
+            
+                <a href="../mongoose/docs/faq.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.5" data-path="../mongoose/docs/prior.html">
+            
+                <a href="../mongoose/docs/prior.html">
+            
+                    
+                    之前的版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >node_redis</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#redis---&#x4E00;&#x4E2A;-nodejs-redis-&#x5BA2;&#x6237;&#x7AEF;"><b>1. </b>redis - &#x4E00;&#x4E2A; node.js redis &#x5BA2;&#x6237;&#x7AEF;</a></li><ul><li><span class="title-icon "></span><a href="#&#x7528;&#x6CD5;&#x793A;&#x4F8B;"><b>1.1. </b>&#x7528;&#x6CD5;&#x793A;&#x4F8B;</a></li><ul><li><span class="title-icon "></span><a href="#promises"><b>1.1.1. </b>Promises</a></li><li><span class="title-icon "></span><a href="#&#x53D1;&#x9001;&#x547D;&#x4EE4;"><b>1.1.2. </b>&#x53D1;&#x9001;&#x547D;&#x4EE4;</a></li></ul></ul><li><span class="title-icon "></span><a href="#redis-&#x547D;&#x4EE4;"><b>2. </b>Redis &#x547D;&#x4EE4;</a></li><li><span class="title-icon "></span><a href="#api"><b>3. </b>API</a></li><ul><li><span class="title-icon "></span><a href="#&#x8FDE;&#x63A5;&#x548C;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;"><b>3.1. </b>&#x8FDE;&#x63A5;&#x548C;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;</a></li><ul><li><span class="title-icon "></span><a href="#ready"><b>3.1.1. </b>&quot;ready&quot;</a></li><li><span class="title-icon "></span><a href="#connect"><b>3.1.2. </b>&quot;connect&quot;</a></li><li><span class="title-icon "></span><a href="#reconnecting"><b>3.1.3. </b>&quot;reconnecting&quot;</a></li><li><span class="title-icon "></span><a href="#error"><b>3.1.4. </b>&quot;error&quot;</a></li><li><span class="title-icon "></span><a href="#end"><b>3.1.5. </b>&quot;end&quot;</a></li><li><span class="title-icon "></span><a href="#drain-deprecated"><b>3.1.6. </b>&quot;drain&quot; (deprecated)</a></li><li><span class="title-icon "></span><a href="#warning"><b>3.1.7. </b>&quot;warning&quot;</a></li><li><span class="title-icon "></span><a href="#idle-deprecated"><b>3.1.8. </b>&quot;idle&quot; (deprecated)</a></li></ul><li><span class="title-icon "></span><a href="#rediscreateclient"><b>3.2. </b>redis.createClient()</a></li><li><span class="title-icon "></span><a href="#clientauthpassword-callback"><b>3.3. </b>client.auth(password[, callback])</a></li><li><span class="title-icon "></span><a href="#backpressure"><b>3.4. </b>backpressure</a></li><ul><li><span class="title-icon "></span><a href="#stream"><b>3.4.1. </b>stream</a></li></ul><li><span class="title-icon "></span><a href="#clientquit"><b>3.5. </b>client.quit()</a></li><li><span class="title-icon "></span><a href="#clientendflush"><b>3.6. </b>client.end(flush)</a></li><li><span class="title-icon "></span><a href="#error-handling--v26"><b>3.7. </b>Error handling (&gt;= v.2.6)</a></li><li><span class="title-icon "></span><a href="#clientunref"><b>3.8. </b>client.unref()</a></li><li><span class="title-icon "></span><a href="#&#x53CB;&#x597D;&#x7684;&#x54C8;&#x5E0C;&#x547D;&#x4EE4;"><b>3.9. </b>&#x53CB;&#x597D;&#x7684;&#x54C8;&#x5E0C;&#x547D;&#x4EE4;</a></li><ul><li><span class="title-icon "></span><a href="#clienthgetallhash-callback"><b>3.9.1. </b>client.hgetall(hash, callback)</a></li><li><span class="title-icon "></span><a href="#clienthmsethash-obj-callback"><b>3.9.2. </b>client.hmset(hash, obj[, callback])</a></li><li><span class="title-icon "></span><a href="#clienthmsethash-key1-val1--keyn-valn-callback"><b>3.9.3. </b>client.hmset(hash, key1, val1, ... keyn, valn, [callback])</a></li></ul><li><span class="title-icon "></span><a href="#&#x53D1;&#x5E03;--&#x8BA2;&#x9605;"><b>3.10. </b>&#x53D1;&#x5E03; / &#x8BA2;&#x9605;</a></li><li><span class="title-icon "></span><a href="#&#x8BA2;&#x9605;&#x8005;&#x4E8B;&#x4EF6;"><b>3.11. </b>&#x8BA2;&#x9605;&#x8005;&#x4E8B;&#x4EF6;</a></li><ul><li><span class="title-icon "></span><a href="#message-channel-message"><b>3.11.1. </b>&quot;message&quot; (channel, message)</a></li><li><span class="title-icon "></span><a href="#pmessage-pattern-channel-message"><b>3.11.2. </b>&quot;pmessage&quot; (pattern, channel, message)</a></li><li><span class="title-icon "></span><a href="#messagebuffer-channel-message"><b>3.11.3. </b>&quot;message_buffer&quot; (channel, message)</a></li><li><span class="title-icon "></span><a href="#pmessagebuffer-pattern-channel-message"><b>3.11.4. </b>&quot;pmessage_buffer&quot; (pattern, channel, message)</a></li><li><span class="title-icon "></span><a href="#subscribe-channel-count"><b>3.11.5. </b>&quot;subscribe&quot; (channel, count)</a></li><li><span class="title-icon "></span><a href="#psubscribe-pattern-count"><b>3.11.6. </b>&quot;psubscribe&quot; (pattern, count)</a></li><li><span class="title-icon "></span><a href="#unsubscribe-channel-count"><b>3.11.7. </b>&quot;unsubscribe&quot; (channel, count)</a></li><li><span class="title-icon "></span><a href="#punsubscribe-pattern-count"><b>3.11.8. </b>&quot;punsubscribe&quot; (pattern, count)</a></li></ul><li><span class="title-icon "></span><a href="#clientmulticommands"><b>3.12. </b>client.multi([commands])</a></li><ul><li><span class="title-icon "></span><a href="#multiexeccallback"><b>3.12.1. </b>Multi.exec([callback])</a></li><li><span class="title-icon "></span><a href="#multiexecatomiccallback"><b>3.12.2. </b>Multi.exec_atomic([callback])</a></li></ul><li><span class="title-icon "></span><a href="#clientbatchcommands"><b>3.13. </b>client.batch([commands])</a></li><li><span class="title-icon "></span><a href="#&#x76D1;&#x63A7;&#x6A21;&#x5F0F;"><b>3.14. </b>&#x76D1;&#x63A7;&#x6A21;&#x5F0F;</a></li></ul><li><span class="title-icon "></span><a href="#&#x989D;&#x5916;&#x7684;"><b>4. </b>&#x989D;&#x5916;&#x7684;</a></li><ul><li><span class="title-icon "></span><a href="#clientserverinfo"><b>4.1. </b>client.server_info</a></li><li><span class="title-icon "></span><a href="#redisprint"><b>4.2. </b>redis.print()</a></li><li><span class="title-icon "></span><a href="#multi-word-commands"><b>4.3. </b>Multi-word commands</a></li><li><span class="title-icon "></span><a href="#clientduplicateoptions-callback"><b>4.4. </b>client.duplicate([options][, callback])</a></li><li><span class="title-icon "></span><a href="#clientsendcommandcommandname-args-callback"><b>4.5. </b>client.send_command(command_name[, [args][, callback]])</a></li><li><span class="title-icon "></span><a href="#clientaddcommandcommandname"><b>4.6. </b>client.add_command(command_name)</a></li><li><span class="title-icon "></span><a href="#clientconnected"><b>4.7. </b>client.connected</a></li><li><span class="title-icon "></span><a href="#clientcommandqueuelength"><b>4.8. </b>client.command_queue_length</a></li><li><span class="title-icon "></span><a href="#clientofflinequeuelength"><b>4.9. </b>client.offline_queue_length</a></li><ul><li><span class="title-icon "></span><a href="#&#x5E26;&#x6709;&#x53EF;&#x9009;&#x548C;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x7684;&#x547D;&#x4EE4;"><b>4.9.1. </b>&#x5E26;&#x6709;&#x53EF;&#x9009;&#x548C;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x7684;&#x547D;&#x4EE4;</a></li></ul><li><span class="title-icon "></span><a href="#&#x6027;&#x80FD;"><b>4.10. </b>&#x6027;&#x80FD;</a></li><li><span class="title-icon "></span><a href="#&#x8C03;&#x8BD5;"><b>4.11. </b>&#x8C03;&#x8BD5;</a></li><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x8D21;&#x732E;"><b>4.12. </b>&#x5982;&#x4F55;&#x8D21;&#x732E;</a></li><li><span class="title-icon "></span><a href="#&#x8D21;&#x732E;"><b>4.13. </b>&#x8D21;&#x732E;</a></li><li><span class="title-icon "></span><a href="#license"><b>4.14. </b>License</a></li><ul><li><span class="title-icon "></span><a href="#consolidation-its-time-for-celebration"><b>4.14.1. </b>Consolidation: It&apos;s time for celebration</a></li></ul></ul></ul></div><a href="#redis---&#x4E00;&#x4E2A;-nodejs-redis-&#x5BA2;&#x6237;&#x7AEF;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="redis---&#x4E00;&#x4E2A;-nodejs-redis-&#x5BA2;&#x6237;&#x7AEF;"><a name="redis---&#x4E00;&#x4E2A;-nodejs-redis-&#x5BA2;&#x6237;&#x7AEF;" class="anchor-navigation-ex-anchor" href="#redis---&#x4E00;&#x4E2A;-nodejs-redis-&#x5BA2;&#x6237;&#x7AEF;"><i class="fa fa-link" aria-hidden="true"></i></a>1. redis - &#x4E00;&#x4E2A; node.js redis &#x5BA2;&#x6237;&#x7AEF;</h1>
+<p><a href="https://travis-ci.org/NodeRedis/node_redis" target="_blank"><img src="https://travis-ci.org/NodeRedis/node_redis.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/r/NodeRedis/node_redis?branch=" target="_blank"><img src="https://coveralls.io/repos/NodeRedis/node_redis/badge.svg?branch=" alt="Coverage Status"></a>
+<a href="https://ci.appveyor.com/project/BridgeAR/node-redis/branch/master" target="_blank"><img src="https://img.shields.io/appveyor/ci/BridgeAR/node-redis/master.svg?label=Windows%20Tests" alt="Windows Tests"></a>
+<a href="https://gitter.im/NodeRedis/node_redis?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge" target="_blank"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter"></a></p>
+<p>&#x8FD9;&#x662F; node.js &#x7684;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x4E14;&#x529F;&#x80FD;&#x4E30;&#x5BCC;&#x7684; Redis &#x5BA2;&#x6237;&#x7AEF;&#x3002;<strong>&#x5B83;&#x652F;&#x6301;&#x6240;&#x6709;&#x7684; Redis &#x547D;&#x4EE4;</strong>&#xFF0C;&#x5E76;&#x4E13;&#x6CE8;&#x4E8E;&#x9AD8;&#x6027;&#x80FD;&#x3002;</p>
+<p>&#x5B89;&#x88C5;:</p>
+<pre class="language-"><code>npm install redis
+</code></pre><h2 id="&#x7528;&#x6CD5;&#x793A;&#x4F8B;"><a name="&#x7528;&#x6CD5;&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x7528;&#x6CD5;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x7528;&#x6CD5;&#x793A;&#x4F8B;</h2>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> redis <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;redis&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    client <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x5982;&#x679C;&#x4F60;&#x60F3;&#x9009;&#x62E9; database 3&#xFF0C;&#x800C;&#x4E0D;&#x662F; 0&#xFF08;&#x9ED8;&#x8BA4;&#xFF09;&#xFF0C;&#x8BF7;&#x8C03;&#x7528;</span>
+<span class="token comment" spellcheck="true">// client.select(3, function() { </span><span class="token comment" spellcheck="true">/* ... */</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Error &quot;</span> <span class="token operator">+</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+client<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&quot;string key&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;string val&quot;</span><span class="token punctuation">,</span> redis<span class="token punctuation">.</span>print<span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">hset</span><span class="token punctuation">(</span><span class="token string">&quot;hash key&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;hashtest 1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;some value&quot;</span><span class="token punctuation">,</span> redis<span class="token punctuation">.</span>print<span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">hset</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;hash key&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;hashtest 2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;some other value&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> redis<span class="token punctuation">.</span>print<span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">hkeys</span><span class="token punctuation">(</span><span class="token string">&quot;hash key&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> replies<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>replies<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token string">&quot; replies:&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    replies<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>reply<span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;    &quot;</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span> <span class="token operator">+</span> reply<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    client<span class="token punctuation">.</span><span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x8FD9;&#x5C06;&#x663E;&#x793A;:</p>
+<pre class="language-"><code>mjr:~/work/node_redis (master)$ node example.js
+Reply: OK
+Reply: 0
+Reply: 0
+2 replies:
+    0: hashtest 1
+    1: hashtest 2
+mjr:~/work/node_redis (master)$
+</code></pre><p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x8BE5; API &#x5B8C;&#x5168;&#x662F;&#x5F02;&#x6B65;&#x7684;&#x3002;&#x8981;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x3002;&#x4ECE; v.2.6 &#x7684; API &#x652F;&#x6301;&#x9A7C;&#x5CF0;&#x5199;&#x6CD5;&#x548C; snake_case&#x5199;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x6240;&#x6709;&#x7684;&#x9009;&#x9879;/&#x53D8;&#x91CF;/&#x4E8B;&#x4EF6;&#x7B49;&#x90FD;&#x652F;&#x6301;&#x3002;
+&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x9A7C;&#x5CF0;&#x5199;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x662F; node.js &#x7684;&#x9ED8;&#x8BA4;&#x98CE;&#x683C;&#x3002;</p>
+<h3 id="promises"><a name="promises" class="anchor-navigation-ex-anchor" href="#promises"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. Promises</h3>
+<p>&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x5728; node_redis &#x4E2D;&#x4F7F;&#x7528; promises&#xFF0C;&#x901A;&#x8FC7; <a href="https://github.com/petkaantonov/bluebird" target="_blank">bluebird</a> promise&#x5316; node_redis:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> redis <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;redis&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+bluebird<span class="token punctuation">.</span><span class="token function">promisifyAll</span><span class="token punctuation">(</span>redis<span class="token punctuation">.</span>RedisClient<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+bluebird<span class="token punctuation">.</span><span class="token function">promisifyAll</span><span class="token punctuation">(</span>redis<span class="token punctuation">.</span>Multi<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5B83;&#x5C06;&#x4E3A;&#x6240;&#x6709;&#x7684; node_redis &#x51FD;&#x6570;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A; <em>Async</em> (&#x4F8B;&#x5982; <code>return client.getAsync().then()</code>)</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x6211;&#x4EEC;&#x671F;&#x5F85;&#x4E00;&#x4E2A;&#x503C; &apos;foo&apos;: &apos;bar&apos; &#x51FA;&#x73B0;</span>
+<span class="token comment" spellcheck="true">// &#x56E0;&#x6B64;&#x4E0D;&#x8FD9;&#x6837;&#x5199; client.get(&apos;foo&apos;, cb); &#x4F60;&#x5E94;&#x8BE5;&#x8FD9;&#x6837;&#x5199;:</span>
+<span class="token keyword">return</span> client<span class="token punctuation">.</span><span class="token function">getAsync</span><span class="token punctuation">(</span><span class="token string">&apos;foo&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// =&gt; &apos;bar&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x901A;&#x8FC7; multi &#x4F7F;&#x7528; promise&#xFF0C;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</span>
+
+<span class="token keyword">return</span> client<span class="token punctuation">.</span><span class="token function">multi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;foo&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">execAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// =&gt; &apos;bar&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="&#x53D1;&#x9001;&#x547D;&#x4EE4;"><a name="&#x53D1;&#x9001;&#x547D;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#&#x53D1;&#x9001;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. &#x53D1;&#x9001;&#x547D;&#x4EE4;</h3>
+<p>&#x6BCF;&#x4E00;&#x4E2A; Redis &#x547D;&#x4EE4;&#x90FD;&#x66B4;&#x9732;&#x4E3A; <code>client</code> &#x5BF9;&#x8C61;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x6240;&#x6709;&#x7684;&#x51FD;&#x6570;&#x90FD;&#x6709;&#x4E00;&#x4E2A; <code>args</code>&#x6570;&#x7EC4; &#x548C;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684; <code>callback</code> &#x51FD;&#x6570;&#x672A;&#x505A;&#x53C2;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x4E00;&#x7FA4;&#x53EF;&#x53D8;&#x6570;&#x91CF;&#x7684;&#x5355;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x540E;&#x9762;&#x8DDF;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">client<span class="token punctuation">.</span><span class="token function">hmset</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;key&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test keys 1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test val 1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test keys 2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test val 2&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// &#x548C;&#x4E0B;&#x9762;&#x4E00;&#x6837;&#xFF1A;</span>
+client<span class="token punctuation">.</span><span class="token function">hmset</span><span class="token punctuation">(</span><span class="token string">&quot;key&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;test keys 1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test val 1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test keys 2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test val 2&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// &#x6216;&#x8005;</span>
+client<span class="token punctuation">.</span><span class="token function">hmset</span><span class="token punctuation">(</span><span class="token string">&quot;key&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test keys 1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test val 1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test keys 2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test val 2&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x6570;&#x7EC4;&#x662F;&#x53EF;&#x80FD;&#x7684;(&#x901A;&#x8FC7; body-parser&#xFF0C;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;)&#xFF0C;&#x5C31;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x7528;&#x6237;&#x8F93;&#x5165;&#xFF0C;&#x56E0;&#x4E3A;&#x5355;&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x65E0;&#x610F;&#x5730;&#x89E3;&#x91CA;&#x4E3A;&#x591A;&#x4E2A; args&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x65E0;&#x8BBA;&#x54EA;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;<code>callback</code> &#x90FD;&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;</p>
+<pre class="language-"><code class="lang-js">client<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&quot;some key&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;some val&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;some other key&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;some val&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4E22;&#x5931;&#x4E86; key&#xFF0C;&#x5219;&#x5E94;&#x7B54;&#x5C06;&#x4E3A;&#x7A7A;&#xFF08;null&#xFF09;&#x3002;&#x53EA;&#x6709;&#x5F53; <a href="http://redis.io/commands" target="_blank">Redis&#x547D;&#x4EE4;&#x5F15;&#x7528;</a>&#x58F0;&#x660E;&#x5176;&#x4ED6;&#x5185;&#x5BB9;&#x65F6;&#xFF0C;&#x5B83;&#x624D;&#x4E0D;&#x4F1A;&#x4E3A;&#x7A7A;&#x3002;</p>
+<pre class="language-"><code class="lang-js">client<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&quot;missingkey&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> reply<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// &#x5F53;&#x5BC6;&#x94A5;&#x4E22;&#x5931;&#x65F6;&#xFF0C;&#x5E94;&#x7B54;&#x662F;&#x7A7A;&#x7684;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reply<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5BF9;&#x4E8E; Redis &#x547D;&#x4EE4;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="http://www.redis.cn/commands.html" target="_blank">Redis &#x547D;&#x4EE4;</a>&#x3002;</p>
+<p>&#x5BF9;&#x54CD;&#x5E94;&#x8FDB;&#x884C;&#x6700;&#x5C0F;&#x7684;&#x89E3;&#x6790;&#x3002;&#x547D;&#x4EE4;&#x8FD4;&#x56DE; &#x4E00;&#x4E2A;&#x6574;&#x6570;&#x8FD4;&#x56DE; JavaScript  Numbers&#xFF0C;&#x6570;&#x7EC4;&#x5219;&#x8FD4;&#x56DE; JavaScript Array&#x3002;<code>HGETALL</code> &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7531;&#x54C8;&#x5E0C;&#x952E;&#x952E;&#x63A7;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x6240;&#x6709;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x90FD;&#x5C06;&#x4F5C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x7F13;&#x51B2;&#x533A;&#x8FD4;&#x56DE;&#xFF0C;&#x8FD9;&#x53D6;&#x51B3;&#x4E8E;&#x60A8;&#x7684;&#x8BBE;&#x7F6E;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x53D1;&#x9001; null&#x3001;undefined &#x548C;&#x5E03;&#x5C14;&#x503C; &#x5C06;&#x5BFC;&#x81F4;&#x88AB;&#x5F3A;&#x5236;&#x8F6C;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#xFF01;</p>
+<h1 id="redis-&#x547D;&#x4EE4;"><a name="redis-&#x547D;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#redis-&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>2. Redis &#x547D;&#x4EE4;</h1>
+<p>&#x8FD9;&#x4E2A;&#x5E93;&#x662F;&#x5BF9; <a href="https://redis.io/commands" target="_blank">Redis &#x547D;&#x4EE4;</a> &#x7684; 1 &#x5BF9; 1 &#x7684;&#x6620;&#x5C04;&#x3002;&#x5B83;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x5E93;&#xFF0C;&#x6240;&#x4EE5;&#x8BF7;&#x53C2;&#x8003; Redis &#x547D;&#x4EE4;&#x9875;&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;&#x5B8C;&#x6574;&#x7684;&#x4F7F;&#x7528;&#x7EC6;&#x8282;&#x3002;</p>
+<p>&#x4F7F;&#x7528; SET &#x547D;&#x4EE4;&#x8BBE;&#x7F6E; key &#x81EA;&#x52A8;&#x8FC7;&#x671F;&#x7684;&#x4F8B;&#x5B50;
+<a href="http://www.redis.cn/commands.html#set" target="_blank">SET &#x547D;&#x4EE4;</a></p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// &#x8FD9;&#x4E2A; key &#x5C06;&#x5728; 10 &#x79D2;&#x540E;&#x8FC7;&#x671F;</span>
+client<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;key&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;value!&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;EX&apos;</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h1 id="api"><a name="api" class="anchor-navigation-ex-anchor" href="#api"><i class="fa fa-link" aria-hidden="true"></i></a>3. API</h1>
+<h2 id="&#x8FDE;&#x63A5;&#x548C;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;"><a name="&#x8FDE;&#x63A5;&#x548C;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x8FDE;&#x63A5;&#x548C;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1. &#x8FDE;&#x63A5;&#x548C;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;</h2>
+<p><code>client</code> &#x5C06;&#x4F1A;&#x53D1;&#x5C04;&#x4E00;&#x4E9B;&#x5173;&#x4E8E;&#x8FDE;&#x63A5;&#x5230; Redis &#x670D;&#x52A1;&#x5668;&#x7684;&#x72B6;&#x6001;&#x7684;&#x4E8B;&#x4EF6;&#x3002;</p>
+<h3 id="ready"><a name="ready" class="anchor-navigation-ex-anchor" href="#ready"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.1. &quot;ready&quot;</h3>
+<p>&#x4E00;&#x65E6;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#xFF0C;<code>client</code> &#x5C31;&#x4F1A;&#x53D1;&#x5C04; <code>ready</code>&#x3002;&#x5728; <code>ready</code> &#x4E8B;&#x4EF6;&#x4E4B;&#x524D;&#x4E0B;&#x8FBE;&#x7684;&#x547D;&#x4EE4;&#x88AB;&#x6392;&#x961F;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6B64;&#x4E8B;&#x4EF6;&#x88AB;&#x53D1;&#x51FA;&#x4E4B;&#x524D;&#x91CD;&#x65B0;&#x64AD;&#x653E;&#x3002;<em>&#x300C;&#x8BD1;&#x8005;&#x6CE8;&#x300D;&#xFF1A;&#x4E5F;&#x5C31;&#x662F;&#x5728;&#x8FDE;&#x63A5;&#x5EFA;&#x7ACB;&#x4E4B;&#x524D;&#x4E0B;&#x8FBE;&#x7684;&#x547D;&#x4EE4;&#x4F1A;&#x7B49;&#x5F85;&#x3002;</em></p>
+<h3 id="connect"><a name="connect" class="anchor-navigation-ex-anchor" href="#connect"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.2. &quot;connect&quot;</h3>
+<p><code>client</code> &#x5C06;&#x5728;&#x8FDE;&#x63A5;&#x5230;&#x670D;&#x52A1;&#x5668;&#x540E;&#x7ACB;&#x5373;&#x53D1;&#x5C04; <code>connect</code>&#x3002;</p>
+<h3 id="reconnecting"><a name="reconnecting" class="anchor-navigation-ex-anchor" href="#reconnecting"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.3. &quot;reconnecting&quot;</h3>
+<p>&#x5728;&#x5931;&#x53BB;&#x8FDE;&#x63A5;&#x540E;&#x5C1D;&#x8BD5;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x5230; Redis &#x670D;&#x52A1;&#x5668;&#x65F6;&#xFF0C;<code>client</code> &#x5C06;&#x4F1A;&#x53D1;&#x5C04; <code>reconnecting</code>&#x3002;&#x76D1;&#x542C;&#x5668;&#x88AB;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5305;&#x542B; <code>delay</code>&#xFF08;&#x6BEB;&#x79D2;&#xFF09; &#x548C; <code>attempt</code>&#xFF08;&#x5C1D;&#x8BD5;&#x6B21;&#x6570;&#xFF09; &#x5C5E;&#x6027;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<h3 id="error"><a name="error" class="anchor-navigation-ex-anchor" href="#error"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.4. &quot;error&quot;</h3>
+<p>&#x5F53;&#x9047;&#x5230;&#x8FDE;&#x63A5;&#x5230; Redis &#x670D;&#x52A1;&#x5668;&#x7684;&#x9519;&#x8BEF;&#x6216; node<em>redis &#x4E2D;&#x51FA;&#x73B0;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;<code>client</code> &#x5C06;&#x4F1A;&#x53D1;&#x5C04; <code>error</code>&#x3002;&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x56DE;&#x8C03;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x4E14;&#x9047;&#x5230;&#x4E00;&#x4E2A; ReplyError&#xFF0C;&#x5B83;&#x5C06;&#x88AB;&#x53D1;&#x9001;&#x7ED9;&#x9519;&#x8BEF;&#x76D1;&#x542C;&#x5668;&#x3002;</em>&#x300C;&#x8BD1;&#x8005;&#x6CE8;&#x300D;&#xFF1A;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x53D1;&#x751F;&#x7684;&#x9519;&#x8BEF;&#x672A;&#x80FD;&#x5728;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E2D;&#x5F97;&#x5230;&#x59A5;&#x5584;&#x5904;&#x7406;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x88AB;&#x629B;&#x51FA;&#xFF0C;&#x7136;&#x540E;&#x88AB;&#x9519;&#x8BEF;&#x76D1;&#x542C;&#x5668;&#x6355;&#x83B7;&#x3002;_</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x8BF7;&#x5C06;&#x9519;&#x8BEF;&#x76D1;&#x542C;&#x5668;&#x9644;&#x52A0;&#x5230; node_redis&#x3002;</p>
+<h3 id="end"><a name="end" class="anchor-navigation-ex-anchor" href="#end"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.5. &quot;end&quot;</h3>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x5DF2;&#x5EFA;&#x7ACB;&#x7684; Redis&#x670D;&#x52A1;&#x5668; &#x8FDE;&#x63A5;&#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#x65F6;&#xFF0C;<code>client</code> &#x5C06;&#x4F1A;&#x53D1;&#x5C04; <code>end</code>&#x3002;</p>
+<h3 id="drain-deprecated"><a name="drain-deprecated" class="anchor-navigation-ex-anchor" href="#drain-deprecated"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.6. &quot;drain&quot; (deprecated)</h3>
+<p>&#x5F53;&#x4E0E; Redis &#x670D;&#x52A1;&#x5668;&#x7684; TCP &#x8FDE;&#x63A5;&#x88AB;&#x7F13;&#x51B2;&#x65F6;&#xFF0C;<code>client</code> &#x5C06;&#x4F1A;&#x53D1;&#x5C04; <code>drain</code>&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x662F;&#x53EF;&#x5199;&#x7684;&#x3002;&#x8BE5;&#x4E8B;&#x4EF6;&#x53EF;&#x7528;&#x4E8E;&#x5C06;&#x547D;&#x4EE4;&#x300C;&#x6D41;&#x300D;&#x5230; Redis&#xFF0C;&#x5E76;&#x9002;&#x5E94;&#x53CD;&#x538B;&#x529B;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6D41;&#x88AB;&#x7F13;&#x51B2;&#xFF0C;<code>client.should_buffer</code> &#x662F;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>&#x7684;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x603B;&#x662F;&#x88AB;&#x8BBE;&#x4E3A; <code>false</code>&#x3002;&#x8FD9;&#x6837;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x51B3;&#x5B9A;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x51CF;&#x5C11;&#x4F60;&#x7684;&#x53D1;&#x9001;&#x7387;&#xFF0C;&#x5E76;&#x4E14;&#x5F53;&#x4F60;&#x83B7;&#x5F97; <code>drain</code>&#x65F6;&#x91CD;&#x65B0;&#x53D1;&#x9001;&#x547D;&#x4EE4;&#x3002;</p>
+<p>&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x6BCF;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x8FD8;&#x4F1A;&#x8FD4;&#x56DE;&#x53CD;&#x538B;&#x529B;&#x6307;&#x793A;&#x7B26;(<strong>&#x5DF2;&#x5F03;&#x7528;</strong>)&#x3002;&#x5982;&#x679C;&#x8FD4;&#x56DE; <code>false</code>&#xFF0C;&#x5219;&#x6D41;&#x5FC5;&#x987B;&#x7F13;&#x51B2;&#x3002;</p>
+<h3 id="warning"><a name="warning" class="anchor-navigation-ex-anchor" href="#warning"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.7. &quot;warning&quot;</h3>
+<p>&#x5F53;&#x8BBE;&#x7F6E;&#x5BC6;&#x7801;&#x4F46;&#x662F;&#x4E0D;&#x9700;&#x8981;&#xFF0C;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x5DF2;&#x5F03;&#x7528;&#x7684; &#x9009;&#x9879;/&#x51FD;&#x6570;/&#x7C7B;&#x4F3C;&#x7684;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;<code>client</code> &#x4F1A;&#x53D1;&#x5C04; <code>warning</code>&#x3002;</p>
+<h3 id="idle-deprecated"><a name="idle-deprecated" class="anchor-navigation-ex-anchor" href="#idle-deprecated"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.8. &quot;idle&quot; (deprecated)</h3>
+<p>&#x5F53;&#x6CA1;&#x6709;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x547D;&#x4EE4;&#x7B49;&#x5F85;&#x54CD;&#x5E94;&#x65F6;&#xFF0C;<code>client</code> &#x5C06;&#x4F1A;&#x53D1;&#x51FA; <code>idle</code>&#x3002;</p>
+<h2 id="rediscreateclient"><a name="rediscreateclient" class="anchor-navigation-ex-anchor" href="#rediscreateclient"><i class="fa fa-link" aria-hidden="true"></i></a>3.2. redis.createClient()</h2>
+<p>&#x5982;&#x679C;&#x60A8;&#x5728;&#x540C;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#x4E86; <code>redis-server</code> &#x670D;&#x52A1;&#x5668; &#x548C; node&#xFF0C;&#x90A3;&#x4E48;&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x548C;&#x4E3B;&#x673A;&#x53EF;&#x80FD;&#x5F88;&#x597D;&#xFF0C;&#x60A8;&#x4E0D;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#x3002;<code>createClient()</code> &#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>RedisClient</code> &#x5BF9;&#x8C61;&#x3002;&#x5426;&#x5219;&#xFF0C;<code>createClient()</code> &#x63A5;&#x53D7;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;:</p>
+<ul>
+<li><code>redis.createClient([options])</code></li>
+<li><code>redis.createClient(unix_socket[, options])</code></li>
+<li><code>redis.createClient(redis_url[, options])</code></li>
+<li><code>redis.createClient(port[, host][, options])</code></li>
+</ul>
+<p><strong>&#x63D0;&#x793A;&#xFF1A;</strong> &#x5982;&#x679C; Redis &#x670D;&#x52A1;&#x5668;&#x5728;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x76F8;&#x540C;&#x7684;&#x673A;&#x5668;&#x4E0A;&#x8FD0;&#x884C;
+&#x5982;&#x679C;&#x53EF;&#x80FD;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; unix &#x5957;&#x63A5;&#x5B57;&#x6765;&#x589E;&#x52A0;&#x541E;&#x5410;&#x91CF;&#x3002;</p>
+<h4 id="options-&#x5BF9;&#x8C61;&#x5C5E;&#x6027;"><a name="options-&#x5BF9;&#x8C61;&#x5C5E;&#x6027;" class="anchor-navigation-ex-anchor" href="#options-&#x5BF9;&#x8C61;&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="options-&#x5BF9;&#x8C61;&#x5C5E;&#x6027;" class="plugin-anchor" href="#options-&#x5BF9;&#x8C61;&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a><code>options</code> &#x5BF9;&#x8C61;&#x5C5E;&#x6027;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>host</td>
+<td>127.0.0.1</td>
+<td>Redis &#x670D;&#x52A1;&#x5668;&#x7684; IP &#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>port</td>
+<td>6379</td>
+<td>Redis &#x670D;&#x52A1;&#x5668;&#x7684;&#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td>path</td>
+<td>null</td>
+<td>Redis &#x670D;&#x52A1;&#x5668;&#x7684; UNIX &#x5957;&#x63A5;&#x5B57;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td>url</td>
+<td>null</td>
+<td>Redis &#x670D;&#x52A1;&#x5668;&#x7684; URL&#x3002; &#x683C;&#x5F0F;: <code>[redis:]//[[user][:password@]][host][:port][/db-number][?db=db-number[&amp;password=bar[&amp;option=value]]]</code> (&#x66F4;&#x591A;&#x7684;&#x53EF;&#x7528;&#x4FE1;&#x606F;&#x5728; <a href="http://www.iana.org/assignments/uri-schemes/prov/redis" target="_blank">IANA</a>)&#x3002;</td>
+</tr>
+<tr>
+<td>parser</td>
+<td>javascript</td>
+<td><strong>&#x5F03;&#x7528;&#x7684;</strong> Use either the built-in JS parser <a href=""><code>javascript</code></a> or the native <a href=""><code>hiredis</code></a> parser. <strong>Note</strong> <code>node_redis</code> &lt; 2.6 uses hiredis as default if installed. This changed in v.2.6.0.</td>
+</tr>
+<tr>
+<td>string_numbers</td>
+<td>null</td>
+<td>&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>, <code>node_redis</code> &#x5C06;&#x8FD4;&#x56DE;&#x4F5C;&#x4E3A; String &#x7684; Redis &#x6570;&#x5B57;&#x503C;&#xFF0C;&#xFF0C;&#x800C;&#x4E0D;&#x662F; JavaScript Numbers&#x3002;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x5927;&#x91CF;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x8FD9;&#x662F;&#x5F88;&#x6709;&#x7528;&#x6237;&#x7684; (&#x8D85;&#x8FC7; <code>Number.MAX_SAFE_INTEGER === 2^53</code>)&#x3002; Hiredis &#x65E0;&#x6CD5;&#x6267;&#x884C;&#x6B64;&#x884C;&#x4E3A;&#xFF0C;&#x56E0;&#x6B64;&#x5C06;&#x6B64;&#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code> &#x5C06;&#x5BFC;&#x81F4;&#x5185;&#x7F6E;&#x7684; javascript &#x89E3;&#x6790;&#x5668;&#x88AB;&#x4F7F;&#x7528;&#xFF0C;&#x65E0;&#x8BBA; <code>parser</code> &#x9009;&#x9879;&#x7684;&#x503C;&#x5982;&#x4F55;&#x3002;</td>
+</tr>
+<tr>
+<td>return_buffers</td>
+<td>false</td>
+<td>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7B54;&#x90FD;&#x5C06;&#x4F5C;&#x4E3A;&#x7F13;&#x51B2;&#x533A;&#xFF08;Buffers&#xFF09;&#x800C;&#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF08;Strings&#xFF09;&#x53D1;&#x9001;&#x7ED9;&#x56DE;&#x8C03;&#x3002;</td>
+</tr>
+<tr>
+<td>detect_buffers</td>
+<td>false</td>
+<td>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x5E94;&#x7B54;&#x5C06;&#x4F5C;&#x4E3A;&#x7F13;&#x51B2;&#x533A;&#x88AB;&#x53D1;&#x9001;&#x7ED9;&#x56DE;&#x8C03;&#x3002;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x5141;&#x8BB8;&#x60A8;&#x5728;&#x6BCF;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x5207;&#x6362;&#x7F13;&#x51B2;&#x533A;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x800C; <code>return_buffers</code> &#x9002;&#x7528;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#x4E0A;&#x7684;&#x6BCF;&#x4E2A;&#x547D;&#x4EE4;&#x3002;<strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x8FD9;&#x5728; pubsub &#x6A21;&#x5F0F;&#x4E0B;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;&#x8BA2;&#x9605;&#x8005;&#x5FC5;&#x987B;&#x603B;&#x662F;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x7F13;&#x51B2;&#x533A;&#x3002;</td>
+</tr>
+<tr>
+<td>socket_keepalive</td>
+<td>true</td>
+<td>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>&#xFF0C;&#x5C06;&#x542F;&#x7528;&#x5E95;&#x5C42;&#x5957;&#x63A5;&#x5B57;&#x4E0A;&#x7684; keep-alive &#x529F;&#x80FD;</td>
+</tr>
+<tr>
+<td>no_ready_check</td>
+<td>false</td>
+<td>&#x5F53;&#x4E00;&#x4E2A;&#x5230; Redis &#x670D;&#x52A1;&#x5668;&#x7684;&#x8FDE;&#x63A5;&#x88AB;&#x5EFA;&#x7ACB;&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x80FD;&#x4ECD;&#x7136;&#x5728;&#x4ECE;&#x78C1;&#x76D8;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x5E93;&#x3002;&#x5728;&#x52A0;&#x8F7D;&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x4F1A;&#x54CD;&#x5E94;&#x4EFB;&#x4F55;&#x547D;&#x4EE4;&#x3002;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;<code>node_redis</code> &#x6709;&#x4E00;&#x4E2A;&#x201C;&#x5C31;&#x7EEA;&#x68C0;&#x67E5;&#xFF08;ready check&#xFF09;&#x201D;&#xFF0C;&#x5B83;&#x5C06; <code>INFO</code> &#x547D;&#x4EE4;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#x3002;<code>INFO</code> &#x547D;&#x4EE4;&#x7684;&#x54CD;&#x5E94;&#x8868;&#x660E;&#x670D;&#x52A1;&#x5668;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x51C6;&#x5907;&#x597D;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x547D;&#x4EE4;&#x3002;&#x5F53;&#x51C6;&#x5907;&#x5C31;&#x7EEA;&#x65F6;&#xFF0C;<code>node_redis</code> &#x4F1A;&#x53D1;&#x51FA;&#x4E00;&#x4E2A; <code>ready</code> &#x4E8B;&#x4EF6;&#x3002;&#x8BBE;&#x7F6E; <code>no_ready_check</code> &#x4E3A; <code>true</code> &#x5C06;&#x68C0;&#x67E5;&#x8BBE;&#x7F6E;&#x4E3A;true&#x5C06;&#x4F1A;&#x7981;&#x6B62;&#x6B64;&#x68C0;&#x67E5;&#x3002;</td>
+</tr>
+<tr>
+<td>enable_offline_queue</td>
+<td>true</td>
+<td>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4E0E; Redis &#x670D;&#x52A1;&#x5668;&#x7684;&#x6D3B;&#x52A8;&#x8FDE;&#x63A5;&#xFF0C;&#x5219;&#x5C06;&#x547D;&#x4EE4;&#x6DFB;&#x52A0;&#x5230;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x5E76;&#x5728;&#x8FDE;&#x63A5;&#x5EFA;&#x7ACB;&#x540E;&#x6267;&#x884C;&#x3002;&#x5C06; <code>enable_offline_queue</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>false</code> &#x5C06;&#x7981;&#x7528;&#x8BE5;&#x7279;&#x6027;&#xFF0C;&#x56DE;&#x8C03;&#x5C06;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x7ACB;&#x5373;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x56DE;&#x8C03;&#xFF0C;&#x5219;&#x4F1A;&#x53D1;&#x5C04;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;</td>
+</tr>
+<tr>
+<td>retry_max_delay</td>
+<td>null</td>
+<td><strong>&#x5F03;&#x7528;&#x7684;</strong> <em>Please use <code>retry_strategy</code> instead.</em> By default, every time the client tries to connect and fails, the reconnection delay almost doubles. This delay normally grows infinitely, but setting <code>retry_max_delay</code> limits it to the maximum value provided in milliseconds.</td>
+</tr>
+<tr>
+<td>connect_timeout</td>
+<td>3600000</td>
+<td><strong>&#x5F03;&#x7528;&#x7684;</strong> <em>Please use <code>retry_strategy</code> instead.</em> Setting <code>connect_timeout</code> limits the total time for the client to connect and reconnect. The value is provided in milliseconds and is counted from the moment a new client is created or from the time the connection is lost. The last retry is going to happen exactly at the timeout time. Default is to try connecting until the default system socket timeout has been exceeded and to try reconnecting until 1h has elapsed.</td>
+</tr>
+<tr>
+<td>max_attempts</td>
+<td>0</td>
+<td><strong>&#x5F03;&#x7528;&#x7684;</strong> <em>Please use <code>retry_strategy</code> instead.</em> By default, a client will try reconnecting until connected. Setting <code>max_attempts</code> limits total amount of connection attempts. Setting this to 1 will prevent any reconnect attempt.</td>
+</tr>
+<tr>
+<td>retry_unfulfilled_commands</td>
+<td>false</td>
+<td>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>&#xFF0C;&#x8FDE;&#x63A5;&#x4E22;&#x5931;&#x65F6;&#x672A;&#x5B9E;&#x73B0;&#x7684;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x5C06;&#x5728;&#x8FDE;&#x63A5;&#x91CD;&#x65B0;&#x5EFA;&#x7ACB;&#x540E;&#x91CD;&#x8BD5;&#x3002;&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x72B6;&#x6001;&#x66F4;&#x6539;&#x547D;&#x4EE4;(&#x4F8B;&#x5982; <code>incr</code>)&#xFF0C;&#x8BF7;&#x8C28;&#x614E;&#x4F7F;&#x7528;&#x6B64;&#x547D;&#x4EE4;&#x3002;&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x963B;&#x585E;&#x547D;&#x4EE4;&#xFF0C;&#x8FD9;&#x5C24;&#x5176;&#x6709;&#x7528;&#x3002;</td>
+</tr>
+<tr>
+<td>password</td>
+<td>null</td>
+<td>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x5728;&#x8FDE;&#x63A5;&#x4E0A;&#x7814;&#x7A76;&#x5462;&#x884C; Redist &#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;&#x547D;&#x4EE4;&#x3002; &#x522B;&#x540D;&#x53EB; <code>auth_pass</code> <strong>&#x6CE8;&#x610F;</strong> <code>node_redis</code> &lt; 2.5 &#x5FC5;&#x987B;&#x4F7F;&#x7528; <code>auth_pass</code></td>
+</tr>
+<tr>
+<td>db</td>
+<td>null</td>
+<td>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x5728; &#x8FDE;&#x63A5;&#x4E0A;&#x8FD0;&#x884C; Redis <code>select</code> &#x547D;&#x4EE4;&#x3002;</td>
+</tr>
+<tr>
+<td>family</td>
+<td>IPv4</td>
+<td>&#x5982;&#x679C;&#x5C06; <code>family</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>&apos;IPv6&apos;</code> &#xFF0C;&#x5C06;&#x5F3A;&#x5236;&#x4F7F;&#x7528; IPv6&#x3002; &#x5173;&#x4E8E;&#x5982;&#x4F55;&#x4F7F;&#x7528; family &#x7C7B;&#x578B;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; Node.js <a href="http://nodejs.cn/api/net.html" target="_blank">net</a> &#x6216;&#x8005; <a href="http://nodejs.cn/api/dns.html" target="_blank">dns</a> &#x6A21;&#x5757;&#x3002;</td>
+</tr>
+<tr>
+<td>disable_resubscribing</td>
+<td>false</td>
+<td>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>&#xFF0C;&#x5BA2;&#x6237;&#x5728;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x540E;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x8BA2;&#x9605;&#x3002;</td>
+</tr>
+<tr>
+<td>rename_commands</td>
+<td>null</td>
+<td>&#x4F20;&#x9012;&#x5E26;&#x6709;&#x91CD;&#x547D;&#x540D;&#x547D;&#x4EE4;&#x7684;&#x5BF9;&#x8C61;&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x539F;&#x59CB;&#x7684;&#x51FD;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x5C06;&#x547D;&#x4EE4; KEYS &#x91CD;&#x547D;&#x540D;&#x4E3A; &quot;DO-NOT-USE&quot;&#xFF0C;&#x90A3;&#x4E48; rename_commands &#x5BF9;&#x8C61;&#x5C06;&#x662F;:<code>{ KEYS : &quot;DO-NOT-USE&quot; }</code>&#x3002;&#x6709;&#x5173;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605; <a href="http://redis.io/topics/security" target="_blank">Redis &#x5B89;&#x5168;&#x4E3B;&#x9898;</a>&#x3002;</td>
+</tr>
+<tr>
+<td>tls</td>
+<td>null</td>
+<td>&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5305;&#x542B;&#x4F20;&#x9012;&#x5230; <a href="http://nodejs.org/api/tls.html#tls_tls_connect_port_host_options_callback" target="_blank">tls.connect</a> &#x7684;&#x9009;&#x9879;&#x3002;&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x5230; Redis &#x7684; TLS &#x8FDE;&#x63A5;(&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#x53EF;&#x901A;&#x8FC7;&#x96A7;&#x9053;&#xFF08;tunnel&#xFF09;&#x8BBF;&#x95EE;)&#x3002;</td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>null</td>
+<td>&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x88AB;&#x7528;&#x4E8E;&#x6240;&#x6709;&#x4F7F;&#x7528;&#x7684;&#x952E;&#x7684;&#x524D;&#x7F00;(&#x4F8B;&#x5982;: <code>namespace:test</code>)&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;<code>keys</code> &#x547D;&#x4EE4;&#x4E0D;&#x4F1A;&#x88AB;&#x6DFB;&#x52A0;&#x524D;&#x7F00;&#x3002;<code>keys</code> &#x547D;&#x4EE4;&#x6709;&#x4E00;&#x4E2A; &quot;pattern&quot; &#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x6CA1;&#x6709;&#x952E;&#xFF0C;&#x5982;&#x679C;&#x88AB;&#x6DFB;&#x52A0;&#x4E86;&#x524D;&#x7F00;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4E0D;&#x53EF;&#x80FD;&#x786E;&#x5B9A; Redis &#x4E2D;&#x73B0;&#x6709;&#x7684;&#x952E;&#x3002;</td>
+</tr>
+<tr>
+<td>retry_strategy</td>
+<td>function</td>
+<td>&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5305;&#x62EC;&#x91CD;&#x8BD5; <code>attempt</code>&#x3001;<code>total_retry_time</code>&#xFF0C;&#x8BF4;&#x660E;&#x81EA;&#x4E0A;&#x6B21;&#x8FDE;&#x63A5;&#x540E;&#x7ECF;&#x8FC7;&#x4E86;&#x591A;&#x5C11;&#x65F6;&#x95F4;&#x3001;&#x8FDE;&#x63A5;&#x4E22;&#x5931;&#x7684; <code>error</code> &#x548C; <code>times_connected</code> &#x6570;&#x7684;&#x603B;&#x548C;&#x3002;&#x5982;&#x679C;&#x60A8;&#x4ECE;&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x90A3;&#x4E48;&#x91CD;&#x8BD5;&#x5C06;&#x7CBE;&#x786E;&#x5730;&#x53D1;&#x751F;&#x5728;&#x8FD9;&#x4E2A;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x95F4;&#x9694;&#x7684;&#x65F6;&#x95F4;&#x540E;&#x3002;&#x5982;&#x679C;&#x60A8;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x975E;&#x6570;&#x5B57;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x91CD;&#x8BD5;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x8131;&#x673A;&#x547D;&#x4EE4;&#x90FD;&#x4F1A;&#x88AB;&#x9519;&#x8BEF;&#x5237;&#x65B0;&#x3002;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF0C;&#x5C06;&#x8FD9;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x9519;&#x8BEF;&#x8FD4;&#x56DE;&#x5230;&#x6240;&#x6709;&#x7684;&#x8131;&#x673A;&#x547D;&#x4EE4;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> redis <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;redis&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> client <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">{</span>detect_buffers<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+client<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&quot;foo_rand000000000000&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;OK&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// This will return a JavaScript String</span>
+client<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&quot;foo_rand000000000000&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> reply<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reply<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Will print `OK`</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x8FD9;&#x5C06;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Buffer&#xFF0C;&#x56E0;&#x4E3A;&#x539F;&#x59CB;&#x7684; key &#x88AB;&#x6307;&#x5B9A;&#x4E3A;&#x4E00;&#x4E2A; Buffer</span>
+client<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span><span class="token string">&quot;foo_rand000000000000&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> reply<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>reply<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// &#x5C06;&#x6253;&#x5370; `&lt;Buffer 4f 4b&gt;`</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>retry_strategy &#x793A;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> client <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    retry_strategy<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>error <span class="token operator">&amp;&amp;</span> options<span class="token punctuation">.</span>error<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token string">&apos;ECONNREFUSED&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// &#x5728;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x9519;&#x8BEF;&#x65F6;&#x7ED3;&#x675F;&#x91CD;&#x8FDE;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x4E2A;&#x522B;&#x7684;&#x9519;&#x8BEF;&#x51B2;&#x6389;&#x6240;&#x6709;&#x547D;&#x4EE4;</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">&apos;The server refused the connection&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>total_retry_time <span class="token operator">&gt;</span> <span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// End reconnecting after a specific timeout and flush all commands</span>
+            <span class="token comment" spellcheck="true">// with a individual error</span>
+            <span class="token comment" spellcheck="true">// &#x5728;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x8D85;&#x65F6;&#x4E4B;&#x540E;&#x7ED3;&#x675F;&#x91CD;&#x8FDE;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x4E2A;&#x522B;&#x7684;&#x9519;&#x8BEF;&#x51B2;&#x6389;&#x6240;&#x6709;&#x547D;&#x4EE4;</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">&apos;Retry time exhausted&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>attempt <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// &#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684;&#x9519;&#x8BEF;&#x7ED3;&#x675F;&#x91CD;&#x8FDE;</span>
+            <span class="token keyword">return</span> undefined<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// &#x5728;&#x7ECF;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x65F6;&#x95F4;&#x540E;&#xFF0C;&#x8FDB;&#x884C;&#x91CD;&#x8FDE;</span>
+        <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>attempt <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="clientauthpassword-callback"><a name="clientauthpassword-callback" class="anchor-navigation-ex-anchor" href="#clientauthpassword-callback"><i class="fa fa-link" aria-hidden="true"></i></a>3.3. client.auth(password[, callback])</h2>
+<p>&#x5F53;&#x8FDE;&#x63A5;&#x5230;&#x9700;&#x8981;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x7684; Redis &#x670D;&#x52A1;&#x5668;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5C06; <code>AUTH</code> &#x547D;&#x4EE4;&#x4F5C;&#x4E3A;&#x8FDE;&#x63A5;&#x540E;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x53D1;&#x9001;&#x3002;&#x8FD9;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4E0E;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x3001;&#x5C31;&#x7EEA;&#x68C0;&#x67E5;&#x7B49;&#x8FDB;&#x884C;&#x534F;&#x8C03;&#x3002;&#x4E3A;&#x4E86;&#x4F7F;&#x8FD9;&#x4E2A;&#x66F4;&#x5BB9;&#x6613;&#xFF0C;<code>client.auth()</code> &#x8BBE;&#x7F6E; <code>password</code> &#x5E76;&#x5728;&#x6BCF;&#x6B21;&#x8FDE;&#x63A5;&#x540E;&#x53D1;&#x9001;&#x5B83;&#xFF0C;&#x5305;&#x62EC;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x3002;<code>callback</code> &#x53EA;&#x5728;&#x5BF9;&#x7B2C;&#x4E00;&#x4E2A; <code>AUTH</code> &#x547D;&#x4EE4;&#x53D1;&#x51FA;&#x7684;&#x54CD;&#x5E94;&#x4E4B;&#x540E;&#x624D;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x3002;&#x6CE8;&#x610F;: &#x60A8;&#x5BF9; <code>client.auth()</code> &#x7684;&#x8C03;&#x7528;&#x4E0D;&#x5E94;&#x8BE5;&#x5728;&#x5C31;&#x7EEA;&#x7684;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x60A8;&#x505A;&#x9519;&#x4E86;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x53D1;&#x5C04;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF0C;&#x770B;&#x8D77;&#x6765;&#x7C7B;&#x4F3C;&#x8FD9;&#x4E2A;:<code>Error: Ready check failed: ERR operation not permitted</code>&#x3002;</p>
+<h2 id="backpressure"><a name="backpressure" class="anchor-navigation-ex-anchor" href="#backpressure"><i class="fa fa-link" aria-hidden="true"></i></a>3.4. backpressure</h2>
+<h3 id="stream"><a name="stream" class="anchor-navigation-ex-anchor" href="#stream"><i class="fa fa-link" aria-hidden="true"></i></a>3.4.1. stream</h3>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x4F7F;&#x7528;&#x7684; <a href="http://nodejs.cn/api/stream.html" target="_blank">stream</a> &#x66B4;&#x9732;&#x5728; <code>client.stream</code>&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6D41;&#x6216;&#x5BA2;&#x6237;&#x7AEF;&#x5FC5;&#x987B; <a href="http://nodejs.cn/api/stream.html#stream_writable_write_chunk_encoding_callback_1" target="_blank">buffer</a> &#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x547D;&#x4EE4;&#x5230; <code>client.should_buffer</code> &#x4E2D;&#x3002;&#x7ED3;&#x5408;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x53D1;&#x9001;&#x547D;&#x4EE4;&#x4E4B;&#x524D;&#x68C0;&#x67E5;&#x7F13;&#x51B2;&#x533A;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4FA6;&#x542C;&#x6D41;&#x7684; <code>drain</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x53CD;&#x538B;&#x529B;(backpressure)&#x3002;</p>
+<h2 id="clientquit"><a name="clientquit" class="anchor-navigation-ex-anchor" href="#clientquit"><i class="fa fa-link" aria-hidden="true"></i></a>3.5. client.quit()</h2>
+<p>&#x8FD9;&#x4F1A;&#x5C06;&#x9000;&#x51FA;&#x547D;&#x4EE4;&#x53D1;&#x9001;&#x5230; redis &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5E76;&#x5728;&#x88AB;&#x6B63;&#x786E;&#x5904;&#x7406;&#x7684;&#x6240;&#x6709;&#x8FD0;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x4E4B;&#x540E;&#x4EE5;&#x5E72;&#x51C0;&#x7684;&#x65B9;&#x5F0F;&#x7ED3;&#x675F;&#x3002;&#x5982;&#x679C;&#x8FD9;&#x662F;&#x5728;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x65F6;&#x8C03;&#x7528;&#x7684;(&#x56E0;&#x6B64;&#x4E0D;&#x5B58;&#x5728;&#x4E0E; redis &#x670D;&#x52A1;&#x5668;&#x7684;&#x8FDE;&#x63A5;)&#xFF0C;&#x5B83;&#x5C06;&#x7ACB;&#x5373;&#x7EC8;&#x6B62;&#x8FDE;&#x63A5;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5BFC;&#x81F4;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#xFF01;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x79BB;&#x7EBF;&#x547D;&#x4EE4;&#x90FD;&#x5C06;&#x88AB;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x6240;&#x5237;&#x65B0;&#x3002;</p>
+<h2 id="clientendflush"><a name="clientendflush" class="anchor-navigation-ex-anchor" href="#clientendflush"><i class="fa fa-link" aria-hidden="true"></i></a>3.6. client.end(flush)</h2>
+<p>&#x5F3A;&#x884C;&#x5173;&#x95ED;&#x4E0E; Redis &#x670D;&#x52A1;&#x5668;&#x7684;&#x8FDE;&#x63A5;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E0D;&#x4F1A;&#x7B49;&#x5230;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7B54;&#x90FD;&#x88AB;&#x89E3;&#x6790;&#x540E;&#x624D;&#x6267;&#x884C;&#x3002;&#x5982;&#x679C;&#x60A8;&#x60F3;&#x8981;&#x5E72;&#x51C0;&#x5730;&#x9000;&#x51FA;&#xFF0C;&#x8BF7;&#x8C03;&#x7528;<code>client.quit()</code>&#xFF0C;&#x5982;&#x4E0A;&#x6240;&#x8FF0;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x4E0D;&#x5B8C;&#x5168;&#x786E;&#x5B9A;&#x60A8;&#x4E0D;&#x5173;&#x5FC3;&#x5176;&#x4ED6;&#x547D;&#x4EE4;&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x5E94;&#x8BE5;&#x5C06; <code>flush</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>&#x3002;&#x5982;&#x679C;&#x60A8;&#x5C06; <code>flush</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>false</code>&#xFF0C;&#x6240;&#x6709;&#x4ECD;&#x7136;&#x8FD0;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x5C06;&#x4F1A;&#x65E0;&#x58F0;&#x5730;&#x5931;&#x8D25;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5728;&#x8BFB;&#x53D6;&#x5E94;&#x7B54;&#x4E4B;&#x524D;&#x5173;&#x95ED;&#x4E86;&#x4E0E; Redis &#x670D;&#x52A1;&#x5668;&#x7684;&#x8FDE;&#x63A5;&#x3002;&#x4F60;&#x53EF;&#x80FD;&#x4E0D;&#x60F3;&#x8FD9;&#x6837;&#x505A;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> redis <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;redis&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    client <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+client<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&quot;foo_rand000000000000&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;some fantastic value&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> reply<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// &#x8FD9;&#x5C06;&#x5BFC;&#x81F4;&#x4E00;&#x4E2A;&#x9519;&#x8BEF; (flush &#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A; true)</span>
+    <span class="token comment" spellcheck="true">// &#x6216;&#x5219;&#x5C06;&#x4F1A;&#x65E0;&#x58F0;&#x5730;&#x5931;&#x8D25;&#x5E76;&#x4E14;&#x8FD9;&#x4E2A;&#x56DE;&#x8C03;&#x4E0D;&#x4F1A;&#x88AB;&#x8C03;&#x7528;(flush &#x8BBE;&#x7F6E;&#x4E3A; false)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// &#x6CA1;&#x6709;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x547D;&#x4EE4;&#x88AB;&#x6267;&#x884C;</span>
+client<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&quot;foo_rand000000000000&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> reply<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// =&gt; &apos;The connection has already been closed.&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>client.end()</code> &#x4E0D;&#x5C06; <code>flush</code>&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A; <code>true</code>&#xFF0C;&#x5C31;<strong>&#x4E0D;&#x5E94;&#x8BE5;</strong>&#x5728;&#x751F;&#x4EA7;&#x4E2D;&#x4F7F;&#x7528;&#xFF01;</p>
+<h2 id="error-handling--v26"><a name="error-handling--v26" class="anchor-navigation-ex-anchor" href="#error-handling--v26"><i class="fa fa-link" aria-hidden="true"></i></a>3.7. Error handling (&gt;= v.2.6)</h2>
+<p>&#x5F53;&#x524D;&#x5B58;&#x5728;&#x4E0B;&#x5217;&#x9519;&#x8BEF;&#x5B50;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li><code>RedisError</code>: &#x88AB;&#x5BA2;&#x6237;&#x7AEF;&#x8FD4;&#x56DE;&#x7684; <em>&#x6240;&#x6709;&#x9519;&#x8BEF;</em></li>
+<li><code>ReplyError</code> &#x662F; <code>RedisError</code> &#x7684;&#x5B50;&#x7C7B;: &#x7531; <strong>Redis</strong> &#x81EA;&#x8EAB;&#x8FD4;&#x56DE;&#x7684;&#x6240;&#x6709;&#x9519;&#x8BEF;</li>
+<li><code>AbortError</code> &#x662F; <code>RedisError</code> &#x7684;&#x5B50;&#x7C7B;: &#x56E0;&#x4E3A;&#x6709;&#x4EC0;&#x4E48;&#x539F;&#x56E0;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x547D;&#x4EE4;&#x90FD;&#x65E0;&#x6CD5;&#x5B8C;&#x6210;</li>
+<li><code>ParserError</code> &#x662F; <code>RedisError</code> &#x7684;&#x5B50;&#x7C7B;: &#x5728;&#x89E3;&#x6790;&#x5668;&#x9519;&#x8BEF;&#x65F6;&#x88AB;&#x8FD4;&#x56DE;(&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x672C;&#x4E0D;&#x5E94;&#x8BE5;&#x53D1;&#x751F;)</li>
+<li><code>AggregateError</code> &#x662F; <code>AbortError</code> &#x7684;&#x5B50;&#x7C7B;: &#x5728;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x591A;&#x4E2A;&#x6CA1;&#x6709;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x672A;&#x89E3;&#x51B3;&#x7684;&#x547D;&#x4EE4;&#x4F1A;&#x88AB;&#x62D2;&#x7EDD;&#xFF0C;<code>AggregateError</code>&#x9519;&#x8BEF;&#x88AB;&#x53D1;&#x5C04;&#xFF0C;&#x4EE5;&#x9632;&#x5927;&#x91CF;&#x7684; <code>AbortError</code>&#x3002;</li>
+</ul>
+<p>&#x6240;&#x6709;&#x7684;&#x9519;&#x8BEF;&#x7C7B;&#x90FD;&#x662F;&#x7531;&#x6A21;&#x5757;&#x5BFC;&#x51FA;&#x7684;&#x3002;</p>
+<p>&#x793A;&#x4F8B;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> redis <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;./&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;assert&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> client <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;error&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">assert</span><span class="token punctuation">(</span>err <span class="token keyword">instanceof</span> <span class="token class-name">Error</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">assert</span><span class="token punctuation">(</span>err <span class="token keyword">instanceof</span> <span class="token class-name">redis<span class="token punctuation">.</span>AbortError</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">assert</span><span class="token punctuation">(</span>err <span class="token keyword">instanceof</span> <span class="token class-name">redis<span class="token punctuation">.</span>AggregateError</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// The set and get get aggregated in here</span>
+    assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errors<span class="token punctuation">.</span>length<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>code<span class="token punctuation">,</span> <span class="token string">&apos;NR_CLOSED&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;foo&apos;</span><span class="token punctuation">,</span> <span class="token number">123</span><span class="token punctuation">,</span> <span class="token string">&apos;bar&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// Too many arguments</span>
+    <span class="token function">assert</span><span class="token punctuation">(</span>err <span class="token keyword">instanceof</span> <span class="token class-name">redis<span class="token punctuation">.</span>ReplyError</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// =&gt; true</span>
+    assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>command<span class="token punctuation">,</span> <span class="token string">&apos;SET&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">deepStrictEqual</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>args<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&apos;foo&apos;</span><span class="token punctuation">,</span> <span class="token number">123</span><span class="token punctuation">,</span> <span class="token string">&apos;bar&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    redis<span class="token punctuation">.</span>debug_mode <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    client<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;foo&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;bar&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    client<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;foo&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    process<span class="token punctuation">.</span><span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// Force closing the connection while the command did not yet return</span>
+        client<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        redis<span class="token punctuation">.</span>debug_mode <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x6BCF;&#x4E2A; <code>ReplyError</code> &#x4E2D;&#x7684; <code>command</code> &#x540D;&#x90FD;&#x662F;&#x5927;&#x5199;&#x7684;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x5305;&#x542B;&#x5728;&#x53C2;&#x6570;(<code>args</code>)&#x4E2D;&#x3002;</p>
+<p>&#x5982;&#x679C; node_redis &#x56E0;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x800C;&#x53D1;&#x5C04;&#x4E00;&#x4E2A;&#x5E93;&#x9519;&#x8BEF;&#xFF0C;&#x90A3;&#x4E48;&#x300C;&#x89E6;&#x53D1;&#x9519;&#x8BEF;&#x300D;&#x662F;&#x4F5C;&#x4E3A; <code>origin</code> &#x5C5E;&#x6027;&#x88AB;&#x6DFB;&#x52A0;&#x5230;&#x8FD4;&#x56DE;&#x7684;&#x9519;&#x8BEF;&#x4E2D;&#x3002;</p>
+<p><strong><em>&#x9519;&#x8BEF;&#x4EE3;&#x7801;</em></strong></p>
+<p>&#x5982;&#x679C;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x5931;&#x8D25;&#xFF0C;node_redis &#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>NR_CLOSED</code> &#x7684;&#x9519;&#x8BEF;&#x4EE3;&#x7801;&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x672A;&#x89E3;&#x51B3;&#x7684;&#x547D;&#x4EE4;&#x88AB;&#x62D2;&#x7EDD;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>UNCERTAIN_STATE</code> &#x7684;&#x4EE3;&#x7801;&#x3002;&#x5982;&#x679C; node_redis &#x653E;&#x5F03;&#x4E86;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; <code>CONNECTION_BROKEN</code> &#x7684;&#x9519;&#x8BEF;&#x4EE3;&#x7801;&#x3002;</p>
+<h2 id="clientunref"><a name="clientunref" class="anchor-navigation-ex-anchor" href="#clientunref"><i class="fa fa-link" aria-hidden="true"></i></a>3.8. client.unref()</h2>
+<p>&#x5728; Redis &#x670D;&#x52A1;&#x5668;&#x7684;&#x5E95;&#x5C42;&#x5957;&#x63A5;&#x5B57;&#x8FDE;&#x63A5;&#x4E0A;&#x8C03;&#x7528; <code>unref()</code>&#xFF0C;&#x5141;&#x8BB8;&#x7A0B;&#x5E8F;&#x5728;&#x6CA1;&#x6709;&#x66F4;&#x591A;&#x547D;&#x4EE4;&#x88AB;&#x6302;&#x8D77;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x9000;&#x51FA;&#x3002;</p>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;<strong>&#x5B9E;&#x9A8C;&#x6027;&#x7684;</strong>&#x7279;&#x6027;&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x652F;&#x6301; Redis &#x534F;&#x8BAE;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#x3002;&#x4EFB;&#x4F55;&#x5728; Redis &#x670D;&#x52A1;&#x5668;&#x4E0A;&#x4FDD;&#x5B58;&#x5BA2;&#x6237;&#x7AEF;&#x72B6;&#x6001;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x4F8B;&#x5982; <code>*SUBSCRIBE</code> &#x6216;&#x963B;&#x585E;&#x7684; <code>BL*</code> &#x547D;&#x4EE4;&#x90FD;<em>&#x4E0D;&#x80FD;</em>&#x4E0E; <code>.unref()</code> &#x4E00;&#x8D77;&#x5DE5;&#x4F5C;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> redis <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;redis&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> client <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">/*
+    &#x8C03;&#x7528; unref() &#x5C06;&#x5141;&#x8BB8;&#x8BE5;&#x7A0B;&#x5E8F;&#x5728; get &#x547D;&#x4EE4;&#x5B8C;&#x6210;&#x540E;&#x7ACB;&#x5373;&#x9000;&#x51FA;&#x3002;
+    &#x5426;&#x5219;&#xFF0C;&#x53EA;&#x8981;&#x5BA2;&#x6237;&#x7AEF;-&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x8FD8;&#x6D3B;&#x7740;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5C31;&#x4F1A;&#x6302;&#x8D77;&#x3002;
+*/</span>
+client<span class="token punctuation">.</span><span class="token function">unref</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+client<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&quot;foo&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="&#x53CB;&#x597D;&#x7684;&#x54C8;&#x5E0C;&#x547D;&#x4EE4;"><a name="&#x53CB;&#x597D;&#x7684;&#x54C8;&#x5E0C;&#x547D;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#&#x53CB;&#x597D;&#x7684;&#x54C8;&#x5E0C;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>3.9. &#x53CB;&#x597D;&#x7684;&#x54C8;&#x5E0C;&#x547D;&#x4EE4;</h2>
+<p>&#x5927;&#x591A;&#x6570; Redis &#x547D;&#x4EE4;&#x90FD;&#x4F7F;&#x7528;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5E94;&#x7B54;&#x88AB;&#x4F5C;&#x4E3A;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#x88AB;&#x53D1;&#x56DE;&#x3002;&#x5728;&#x5904;&#x7406;&#x54C8;&#x5E0C;&#x503C;&#x65F6;&#xFF0C;&#x6709;&#x51E0;&#x4E2A;&#x6709;&#x7528;&#x7684;&#x4F8B;&#x5916;&#x3002;</p>
+<h3 id="clienthgetallhash-callback"><a name="clienthgetallhash-callback" class="anchor-navigation-ex-anchor" href="#clienthgetallhash-callback"><i class="fa fa-link" aria-hidden="true"></i></a>3.9.1. client.hgetall(hash, callback)</h3>
+<p>&#x6765;&#x81EA; <code>HGETALL</code> &#x547D;&#x4EE4;&#x7684;&#x5E94;&#x7B54;&#x5C06;&#x4F1A;&#x88AB; <code>node_redis</code> &#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A; JavaScript &#x5BF9;&#x8C61;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; JavaScript &#x8BED;&#x6CD5;&#x4E0E;&#x54CD;&#x5E94;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;</p>
+<p>&#x793A;&#x4F8B;:</p>
+<pre class="language-"><code class="lang-js">client<span class="token punctuation">.</span><span class="token function">hmset</span><span class="token punctuation">(</span><span class="token string">&quot;hosts&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;mjr&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;another&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;23&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;home&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;1234&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">hgetall</span><span class="token punctuation">(</span><span class="token string">&quot;hosts&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x8F93;&#x51FA;:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span> mjr<span class="token punctuation">:</span> <span class="token string">&apos;1&apos;</span><span class="token punctuation">,</span> another<span class="token punctuation">:</span> <span class="token string">&apos;23&apos;</span><span class="token punctuation">,</span> home<span class="token punctuation">:</span> <span class="token string">&apos;1234&apos;</span> <span class="token punctuation">}</span>
+</code></pre>
+<h3 id="clienthmsethash-obj-callback"><a name="clienthmsethash-obj-callback" class="anchor-navigation-ex-anchor" href="#clienthmsethash-obj-callback"><i class="fa fa-link" aria-hidden="true"></i></a>3.9.2. client.hmset(hash, obj[, callback])</h3>
+<p>&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x503C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6765;&#x8BBE;&#x7F6E;:</p>
+<pre class="language-"><code class="lang-js">client<span class="token punctuation">.</span><span class="token function">HMSET</span><span class="token punctuation">(</span>key2<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;0123456789&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;abcdefghij&quot;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x6CE8;&#x610F;: key and value &#x5C06;&#x88AB;&#x5F3A;&#x5236;&#x8F6C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;</span>
+    <span class="token string">&quot;some manner of key&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;a type of value&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x503C;&#x5C06;&#x5728; Redis &#x6563;&#x5217;&#x4E2D;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#x952E;&#x548C;&#x503C;&#x3002;</p>
+<h3 id="clienthmsethash-key1-val1--keyn-valn-callback"><a name="clienthmsethash-key1-val1--keyn-valn-callback" class="anchor-navigation-ex-anchor" href="#clienthmsethash-key1-val1--keyn-valn-callback"><i class="fa fa-link" aria-hidden="true"></i></a>3.9.3. client.hmset(hash, key1, val1, ... keyn, valn, [callback])</h3>
+<p>&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x6765;&#x8BBE;&#x7F6E;&#x591A;&#x4E2A;&#x503C;:</p>
+<pre class="language-"><code class="lang-js">client<span class="token punctuation">.</span><span class="token function">HMSET</span><span class="token punctuation">(</span>key1<span class="token punctuation">,</span> <span class="token string">&quot;0123456789&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;abcdefghij&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;some manner of key&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;a type of value&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x53D1;&#x5E03;--&#x8BA2;&#x9605;"><a name="&#x53D1;&#x5E03;--&#x8BA2;&#x9605;" class="anchor-navigation-ex-anchor" href="#&#x53D1;&#x5E03;--&#x8BA2;&#x9605;"><i class="fa fa-link" aria-hidden="true"></i></a>3.10. &#x53D1;&#x5E03; / &#x8BA2;&#x9605;</h2>
+<p>&#x53D1;&#x5E03;/&#x8BA2;&#x9605;(publish / subscribe) API &#x7684;&#x4F8B;&#x5B50;&#x3002;&#x8BE5;&#x7A0B;&#x5E8F;&#x6253;&#x5F00;&#x4E24;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#xFF0C;&#x8BA2;&#x9605;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#xFF0C;&#x5E76;&#x53D1;&#x5E03;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x4E0A;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> redis <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;redis&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sub <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> pub <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> msg_count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+sub<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&quot;subscribe&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>channel<span class="token punctuation">,</span> count<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    pub<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span><span class="token string">&quot;a nice channel&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;I am sending a message.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pub<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span><span class="token string">&quot;a nice channel&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;I am sending a second message.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pub<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span><span class="token string">&quot;a nice channel&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;I am sending my last message.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+sub<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&quot;message&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>channel<span class="token punctuation">,</span> message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;sub channel &quot;</span> <span class="token operator">+</span> channel <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span> <span class="token operator">+</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    msg_count <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>msg_count <span class="token operator">===</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        sub<span class="token punctuation">.</span><span class="token function">unsubscribe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sub<span class="token punctuation">.</span><span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pub<span class="token punctuation">.</span><span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+sub<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">&quot;a nice channel&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5F53;&#x5BA2;&#x6237;&#x673A;&#x53D1;&#x51FA; <code>SUBSCRIBE</code> &#x6216; <code>PSUBSCRIBE</code> &#x65F6;&#xFF0C;&#x8BE5;&#x8FDE;&#x63A5;&#x5C06;&#x88AB;&#x653E;&#x5165;&#x201C;&#x8BA2;&#x9605;&#x8005;&#xFF08;subscriber&#xFF09;&#x201D;&#x6A21;&#x5F0F;&#x3002;&#x5728;&#x8FD9;&#x4E00;&#x70B9;&#x4E0A;&#xFF0C;&#x53EA;&#x6709;&#x4FEE;&#x6539;&#x8BA2;&#x9605;&#x96C6;&#x7684;&#x547D;&#x4EE4;&#x662F;&#x6709;&#x6548;&#x7684;&#x5E76;&#x9000;&#x51FA;(&#x5E76;&#x4E14;&#x4F9D;&#x8D56;&#x4E8E; redis &#x7248;&#x672C; ping)&#x3002;&#x5F53;&#x8BA2;&#x9605;&#x96C6;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x8FDE;&#x63A5;&#x5C06;&#x88AB;&#x653E;&#x56DE;&#x5E38;&#x89C4;&#x6A21;&#x5F0F;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x9700;&#x8981;&#x5728;&#x8BA2;&#x9605;&#x6A21;&#x5F0F;&#x4E0B;&#x5411; Redis &#x53D1;&#x9001;&#x5E38;&#x89C4;&#x547D;&#x4EE4;&#xFF0C;&#x53EA;&#x9700;&#x6253;&#x5F00;&#x53E6;&#x4E00;&#x4E2A;&#x4E0E;&#x65B0;&#x5BA2;&#x6237;&#x673A;&#x7684;&#x8FDE;&#x63A5;(&#x63D0;&#x793A;:&#x4F7F;&#x7528; <code>client.duplicate()</code>)&#x3002;</p>
+<h2 id="&#x8BA2;&#x9605;&#x8005;&#x4E8B;&#x4EF6;"><a name="&#x8BA2;&#x9605;&#x8005;&#x4E8B;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x8BA2;&#x9605;&#x8005;&#x4E8B;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>3.11. &#x8BA2;&#x9605;&#x8005;&#x4E8B;&#x4EF6;</h2>
+<p>&#x5982;&#x679C;&#x5BA2;&#x6237;&#x7AEF;&#x6709;&#x8BA2;&#x9605;&#x6D3B;&#x52A8;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x51FA;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;:</p>
+<h3 id="message-channel-message"><a name="message-channel-message" class="anchor-navigation-ex-anchor" href="#message-channel-message"><i class="fa fa-link" aria-hidden="true"></i></a>3.11.1. &quot;message&quot; (channel, message)</h3>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x4E3A;&#x6536;&#x5230;&#x7684;&#x6BCF;&#x4E00;&#x6761;&#x4E0E;&#x6D3B;&#x52A8;&#x8BA2;&#x9605;&#x76F8;&#x5339;&#x914D;&#x7684;&#x6D88;&#x606F;&#x53D1;&#x5C04; <code>message</code>&#x4E8B;&#x4EF6;&#x3002;&#x901A;&#x9053;&#x540D;&#x79F0;&#x4F5C;&#x4E3A; <code>channel</code>&#xFF0C;&#x6D88;&#x606F;&#x4F5C;&#x4E3A; <code>message</code>  &#x88AB;&#x4F20;&#x9012;&#x5230;&#x76D1;&#x542C;&#x5668;&#x3002;</p>
+<h3 id="pmessage-pattern-channel-message"><a name="pmessage-pattern-channel-message" class="anchor-navigation-ex-anchor" href="#pmessage-pattern-channel-message"><i class="fa fa-link" aria-hidden="true"></i></a>3.11.2. &quot;pmessage&quot; (pattern, channel, message)</h3>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x4E3A;&#x6536;&#x5230;&#x7684;&#x6BCF;&#x4E00;&#x6761;&#x4E0E;&#x6D3B;&#x52A8;&#x8BA2;&#x9605;&#x6A21;&#x5F0F;&#x76F8;&#x5339;&#x914D;&#x7684;&#x6D88;&#x606F;&#x53D1;&#x5C04;  <code>pmessage</code> &#x4E8B;&#x4EF6;&#x3002;&#x4E0E;<code>PSUBSCRIBE</code>&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x7684;&#x539F;&#x59CB;&#x6A21;&#x5F0F;&#x5C06;&#x4F5C;&#x4E3A; <code>pattern</code>&#xFF0C;&#x53D1;&#x9001;&#x4FE1;&#x606F;&#x7684;&#x901A;&#x9053;&#x540D;&#x79F0;&#x4F5C;&#x4E3A; <code>channel</code>&#xFF0C;&#x4FE1;&#x606F;&#x4F5C;&#x4E3A; <code>message</code> &#x88AB;&#x4F20;&#x9012;&#x7ED9;&#x76D1;&#x542C;&#x5668;&#x3002;</p>
+<h3 id="messagebuffer-channel-message"><a name="messagebuffer-channel-message" class="anchor-navigation-ex-anchor" href="#messagebuffer-channel-message"><i class="fa fa-link" aria-hidden="true"></i></a>3.11.3. &quot;message_buffer&quot; (channel, message)</h3>
+<p>&#x8FD9;&#x4E0E;&#x5E26;&#x6709;&#x5F02;&#x5E38;&#x7684; <code>message</code> &#x4E8B;&#x4EF6;&#x76F8;&#x540C;&#xFF0C;&#x5B83;&#x603B;&#x662F;&#x4F1A;&#x53D1;&#x5C04;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x533A;&#x3002;&#x5982;&#x679C;&#x60A8;&#x5728;&#x76D1;&#x542C; <code>message_buffer</code> &#x7684;&#x540C;&#x65F6;&#x76D1;&#x542C; <code>message</code>&#xFF0C;&#x5B83;&#x603B;&#x662F;&#x4F1A;&#x53D1;&#x5C04;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<h3 id="pmessagebuffer-pattern-channel-message"><a name="pmessagebuffer-pattern-channel-message" class="anchor-navigation-ex-anchor" href="#pmessagebuffer-pattern-channel-message"><i class="fa fa-link" aria-hidden="true"></i></a>3.11.4. &quot;pmessage_buffer&quot; (pattern, channel, message)</h3>
+<p>&#x8FD9;&#x4E0E;&#x5E26;&#x6709;&#x5F02;&#x5E38;&#x7684; <code>pmessage</code> &#x4E8B;&#x4EF6;&#x76F8;&#x540C;&#xFF0C;&#x5B83;&#x603B;&#x662F;&#x4F1A;&#x53D1;&#x5C04;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x533A;&#x3002;&#x5982;&#x679C;&#x60A8;&#x5728;&#x76D1;&#x542C; <code>pmessage_buffer</code> &#x7684;&#x540C;&#x65F6;&#x76D1;&#x542C; <code>message</code>&#xFF0C;&#x5B83;&#x603B;&#x662F;&#x4F1A;&#x53D1;&#x5C04;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<h3 id="subscribe-channel-count"><a name="subscribe-channel-count" class="anchor-navigation-ex-anchor" href="#subscribe-channel-count"><i class="fa fa-link" aria-hidden="true"></i></a>3.11.5. &quot;subscribe&quot; (channel, count)</h3>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x4F1A;&#x54CD;&#x5E94; <code>SUBSCRIBE</code> &#x547D;&#x4EE4;&#x65F6;&#x53D1;&#x5C04; <code>subscribe</code> &#x4E8B;&#x4EF6;&#x3002;&#x901A;&#x9053;&#x540D;&#x79F0;&#x4F5C;&#x4E3A; <code>channel</code>&#xFF0C;&#x5E76;&#x5C06;&#x6B64;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x65B0;&#x8BA2;&#x9605;&#x8BA1;&#x6570;&#x4F5C;&#x4E3A; <code>count</code> &#x4F20;&#x9012;&#x7ED9;&#x76D1;&#x542C;&#x5668;&#x3002;</p>
+<h3 id="psubscribe-pattern-count"><a name="psubscribe-pattern-count" class="anchor-navigation-ex-anchor" href="#psubscribe-pattern-count"><i class="fa fa-link" aria-hidden="true"></i></a>3.11.6. &quot;psubscribe&quot; (pattern, count)</h3>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x4F1A;&#x5728;&#x54CD;&#x5E94; <code>PSUBSCRIBE</code> &#x547D;&#x4EE4;&#x65F6;&#x53D1;&#x5C04; <code>psubscribe</code>&#x4E8B;&#x4EF6;&#x3002;&#x539F;&#x59CB;&#x7684;&#x6A21;&#x5F0F;&#x4F5C;&#x4E3A; <code>pattern</code>&#xFF0C;&#x5E76;&#x5C06;&#x6B64;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x65B0;&#x8BA2;&#x9605;&#x8BA1;&#x6570;&#x4F5C;&#x4E3A; <code>count</code> &#x4F20;&#x9012;&#x7ED9;&#x76D1;&#x542C;&#x5668;&#x3002;</p>
+<h3 id="unsubscribe-channel-count"><a name="unsubscribe-channel-count" class="anchor-navigation-ex-anchor" href="#unsubscribe-channel-count"><i class="fa fa-link" aria-hidden="true"></i></a>3.11.7. &quot;unsubscribe&quot; (channel, count)</h3>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x5728;&#x54CD;&#x5E94; <code>UNSUBSCRIBE</code> &#x547D;&#x4EE4;&#x65F6;&#x53D1;&#x5C04; <code>unsubscribe</code> &#x4E8B;&#x4EF6;&#x3002;&#x901A;&#x9053;&#x540D;&#x79F0;&#x4F5C;&#x4E3A; <code>channel</code>&#xFF0C;&#x5E76;&#x5C06;&#x6B64;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x65B0;&#x8BA2;&#x9605;&#x8BA1;&#x6570;&#x4F5C;&#x4E3A; <code>count</code> &#x88AB;&#x4F20;&#x9012;&#x7ED9;&#x76D1;&#x542C;&#x5668;&#x3002;&#x5F53; <code>count</code> &#x4E3A; 0 &#x65F6;&#xFF0C;&#x8BE5;&#x5BA2;&#x6237;&#x7AEF;&#x5DF2;&#x7ECF;&#x79BB;&#x5F00;&#x4E86;&#x8BA2;&#x9605;&#x8005;&#x6A21;&#x5F0F;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x518D;&#x4F1A;&#x53D1;&#x5C04;&#x8BA2;&#x9605;&#x8005;&#x4E8B;&#x4EF6;&#x3002;</p>
+<h3 id="punsubscribe-pattern-count"><a name="punsubscribe-pattern-count" class="anchor-navigation-ex-anchor" href="#punsubscribe-pattern-count"><i class="fa fa-link" aria-hidden="true"></i></a>3.11.8. &quot;punsubscribe&quot; (pattern, count)</h3>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x5728;&#x54CD;&#x5E94; <code>PUNSUBSCRIBE</code>  &#x547D;&#x4EE4;&#x65F6;&#x53D1;&#x5C04; <code>punsubscribe</code> &#x4E8B;&#x4EF6;&#x3002;&#x539F;&#x59CB;&#x7684;&#x6A21;&#x5F0F;&#x4F5C;&#x4E3A; <code>pattern</code>&#xFF0C;&#x5E76;&#x5C06;&#x6B64;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x65B0;&#x8BA2;&#x9605;&#x8BA1;&#x6570;&#x4F5C;&#x4E3A; <code>count</code> &#x4F20;&#x9012;&#x7ED9;&#x76D1;&#x542C;&#x5668;&#x3002;&#x5F53; <code>count</code> &#x4E3A; 0 &#x65F6;&#xFF0C;&#x8BE5;&#x5BA2;&#x6237;&#x7AEF;&#x5DF2;&#x7ECF;&#x79BB;&#x5F00;&#x4E86;&#x8BA2;&#x9605;&#x8005;&#x6A21;&#x5F0F;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x518D;&#x4F1A;&#x53D1;&#x5C04;&#x8BA2;&#x9605;&#x8005;&#x4E8B;&#x4EF6;&#x3002;</p>
+<h2 id="clientmulticommands"><a name="clientmulticommands" class="anchor-navigation-ex-anchor" href="#clientmulticommands"><i class="fa fa-link" aria-hidden="true"></i></a>3.12. client.multi([commands])</h2>
+<p><code>MULTI</code> &#x547D;&#x4EE4;&#x6392;&#x961F;&#x7B49;&#x5F85;&#xFF0C;&#x76F4;&#x5230; <code>EXEC</code> &#x88AB;&#x4E0B;&#x8FBE;&#xFF0C;&#x7136;&#x540E;&#x6240;&#x6709;&#x7684;&#x547D;&#x4EE4;&#x7531; Redis &#x5728; &#x539F;&#x5B50;&#x5730;&#xFF08;<a href="../../GLOSSARY.html#atomically" class="glossary-term" title="atomicity &#x7684;&#x526F;&#x8BCD;&#x5F62;&#x5F0F;&#x3002;&#x539F;&#x5B50;&#x6027;&#x3002;&#x4E8B;&#x52A1;&#x7684;&#x539F;&#x5B50;&#x6027;&#x6307;&#x7684;&#x662F;&#xFF0C;&#x4E8B;&#x52A1;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x7A0B;&#x5E8F;&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x5E93;&#x7684;&#x903B;&#x8F91;&#x5DE5;&#x4F5C;&#x5355;&#x4F4D;&#xFF0C;&#x5B83;&#x6240;&#x505A;&#x7684;&#x5BF9;&#x6570;&#x636E;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x8981;&#x4E48;&#x5168;&#x90E8;&#x6267;&#x884C;&#xFF0C;&#x8981;&#x4E48;&#x5B8C;&#x5168;&#x4E0D;&#x6267;&#x884C;&#x3002;&#x8FD9;&#x79CD;&#x7279;&#x6027;&#x79F0;&#x4E3A;&#x539F;&#x5B50;&#x6027;&#x3002;">atomically</a>&#xFF09;&#x8FD0;&#x884C;&#x3002;<code>node_redis</code> &#x4E2D;&#x7684;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x662F;&#x901A;&#x8FC7;&#x8C03;&#x7528; <code>client.multi()</code> &#x8FD4;&#x56DE;&#x7684;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684; <code>Multi</code> &#x5BF9;&#x8C61;&#x3002;&#x5982;&#x679C;&#x4EFB;&#x4F55;&#x547D;&#x4EE4;&#x90FD;&#x4E0D;&#x80FD;&#x6267;&#x884C;&#x961F;&#x5217;&#xFF0C;&#x90A3;&#x4E48;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x90FD;&#x4F1A;&#x88AB;&#x56DE;&#x6EDA;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;(&#x5173;&#x4E8E;&#x7279;&#x6027;&#x7684;&#x4FE1;&#x606F;&#x8BF7;&#x53C2;&#x89C1;<a href="http://www.redis.cn/topics/transactions" target="_blank">&#x4E8B;&#x52A1;&#xFF08;transactions&#xFF09;</a>)&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> redis  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;./index&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    client <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> set_size <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+
+client<span class="token punctuation">.</span><span class="token function">sadd</span><span class="token punctuation">(</span><span class="token string">&quot;bigset&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;a member&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">sadd</span><span class="token punctuation">(</span><span class="token string">&quot;bigset&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;another member&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>set_size <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    client<span class="token punctuation">.</span><span class="token function">sadd</span><span class="token punctuation">(</span><span class="token string">&quot;bigset&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;member &quot;</span> <span class="token operator">+</span> set_size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    set_size <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// &#x5E26;&#x4E00;&#x4E2A;&#x4E2A;&#x522B;&#x56DE;&#x8C03;&#x7684; multi &#x94FE;</span>
+client<span class="token punctuation">.</span><span class="token function">multi</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">scard</span><span class="token punctuation">(</span><span class="token string">&quot;bigset&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">smembers</span><span class="token punctuation">(</span><span class="token string">&quot;bigset&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token string">&quot;*&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> replies<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// &#x6CE8;&#x610F;: &#x8FD9;&#x4E2A;&#x56DE;&#x8C03;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x4E0D;&#x662F;&#x539F;&#x5B50;&#x7684;&#xFF08;atomic&#xFF09;</span>
+        <span class="token comment" spellcheck="true">// &#x8FD9;&#x53EA;&#x53D1;&#x751F;&#x5728; .exec &#x6267;&#x884C;&#x8C03;&#x7528;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x3002;</span>
+        client<span class="token punctuation">.</span><span class="token function">mget</span><span class="token punctuation">(</span>replies<span class="token punctuation">,</span> redis<span class="token punctuation">.</span>print<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">dbsize</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> replies<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;MULTI got &quot;</span> <span class="token operator">+</span> replies<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token string">&quot; replies&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        replies<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>reply<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Reply &quot;</span> <span class="token operator">+</span> index <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span> <span class="token operator">+</span> reply<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="multiexeccallback"><a name="multiexeccallback" class="anchor-navigation-ex-anchor" href="#multiexeccallback"><i class="fa fa-link" aria-hidden="true"></i></a>3.12.1. Multi.exec([callback])</h3>
+<p><code>client.multi()</code> &#x662F;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>Multi</code> &#x5BF9;&#x8C61;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;<code>Multi</code> &#x5BF9;&#x8C61;&#x4E0E; <code>client</code> &#x5BF9;&#x8C61;&#x5171;&#x4EAB;&#x6240;&#x6709;&#x76F8;&#x540C;&#x7684;&#x547D;&#x4EE4;&#x65B9;&#x6CD5;&#x3002;&#x5728; <code>Multi</code>&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x547D;&#x4EE4;&#x88AB;&#x6392;&#x961F;&#x7B49;&#x5019;&#x76F4;&#x5230; <code>Multi.exec()</code> &#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x7684;&#x4EE3;&#x7801;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x4F1A;&#x629B;&#x51FA;&#x4E00;&#x4E2A; <code>EXECABORT</code> &#x9519;&#x8BEF;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x547D;&#x4EE4;&#x90FD;&#x5C06;&#x88AB;&#x4E2D;&#x6B62;&#x3002;&#x90A3;&#x4E2A;&#x9519;&#x8BEF;&#x5305;&#x542B;&#x4E00;&#x4E2A; <code>.errors</code> &#x5C5E;&#x6027;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x5305;&#x542B;&#x5177;&#x4F53;&#x7684;&#x9519;&#x8BEF;&#x3002;&#x5982;&#x679C;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x90FD;&#x6210;&#x529F;&#x5730;&#x6392;&#x961F;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x300C;&#x6B63;&#x5728;&#x5904;&#x7406;&#x7ED3;&#x679C;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x300D;&#x4E2D;&#x8FD4;&#x56DE;&#x4E86;&#x9519;&#x8BEF;&#xFF0C;redis &#x4F1A;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF01;&#x9664;&#x4E86; <code>onces</code> &#x5931;&#x8D25;&#x4E4B;&#x5916;&#xFF0C;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x547D;&#x4EE4;&#x4F1A;&#x88AB;&#x4E2D;&#x6B62;&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5C06; <code>MULTI</code> &#x547D;&#x4EE4;&#x94FE;&#x5F0F;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x50CF;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6216;&#x8005;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x4ECD;&#x7136;&#x53D1;&#x9001;&#x5E38;&#x89C4;&#x5BA2;&#x6237;&#x7AEF;&#x547D;&#x4EE4;&#x7684;&#x65F6;&#x5BF9;&#x5355;&#x4E2A;&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x6392;&#x961F;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> redis  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;redis&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    client <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> multi<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684; multi &#x547D;&#x4EE4;&#x961F;&#x5217;</span>
+multi <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token function">multi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+multi<span class="token punctuation">.</span><span class="token function">incr</span><span class="token punctuation">(</span><span class="token string">&quot;incr thing&quot;</span><span class="token punctuation">,</span> redis<span class="token punctuation">.</span>print<span class="token punctuation">)</span><span class="token punctuation">;</span>
+multi<span class="token punctuation">.</span><span class="token function">incr</span><span class="token punctuation">(</span><span class="token string">&quot;incr other thing&quot;</span><span class="token punctuation">,</span> redis<span class="token punctuation">.</span>print<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x7ACB;&#x5373;&#x8FD0;&#x884C;</span>
+client<span class="token punctuation">.</span><span class="token function">mset</span><span class="token punctuation">(</span><span class="token string">&quot;incr thing&quot;</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">&quot;incr other thing&quot;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> redis<span class="token punctuation">.</span>print<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x6D29;&#x6D41;&#xFF08;drain&#xFF09; multi &#x961F;&#x5217;&#xFF0C;&#x5E76;&#x4EE5;&#x539F;&#x5B50;&#x7684;&#x65B9;&#x5F0F;&#xFF08;atomically&#xFF09;&#x8FD0;&#x884C;</span>
+multi<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> replies<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>replies<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 101, 2</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x9664;&#x4E86;&#x5355;&#x72EC;&#x5730;&#x5411; <code>MULTI</code> &#x961F;&#x5217;&#x6DFB;&#x52A0;&#x547D;&#x4EE4;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5411;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x548C;&#x53C2;&#x6570;&#x6570;&#x7EC4;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> redis  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;redis&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    client <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+client<span class="token punctuation">.</span><span class="token function">multi</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">&quot;mget&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;multifoo&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;multibar&quot;</span><span class="token punctuation">,</span> redis<span class="token punctuation">.</span>print<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">&quot;incr&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;multifoo&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">&quot;incr&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;multibar&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> replies<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>replies<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="multiexecatomiccallback"><a name="multiexecatomiccallback" class="anchor-navigation-ex-anchor" href="#multiexecatomiccallback"><i class="fa fa-link" aria-hidden="true"></i></a>3.12.2. Multi.exec_atomic([callback])</h3>
+<p>&#x4E0E; Multi.exec &#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x662F;&#x6267;&#x884C;&#x5355;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x533A;&#x522B;&#x5C06;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#x4E8B;&#x52A1;(<a href="http://www.redis.cn/topics/transactions" target="_blank">transactions</a>)&#x3002;</p>
+<h2 id="clientbatchcommands"><a name="clientbatchcommands" class="anchor-navigation-ex-anchor" href="#clientbatchcommands"><i class="fa fa-link" aria-hidden="true"></i></a>3.13. client.batch([commands])</h2>
+<p>&#x4E0E; <code>.multi</code> &#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x4E0D;&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x3002;&#x5982;&#x679C;&#x60A8;&#x5E0C;&#x671B;&#x540C;&#x65F6;&#x6267;&#x884C;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x4F46;&#x4E0D;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x4E8B;&#x52A1;&#xFF0C;&#x90A3;&#x4E48;&#x5EFA;&#x8BAE;&#x60A8;&#x8FD9;&#x6837;&#x505A;&#x3002;</p>
+<p><code>BATCH</code> &#x547D;&#x4EE4;&#x88AB;&#x6392;&#x961F;&#xFF0C;&#x76F4;&#x5230; <code>EXEC</code> &#x88AB;&#x4E0B;&#x8FBE;&#xFF0C;&#x7136;&#x540E;&#x6240;&#x6709;&#x7684;&#x547D;&#x4EE4;&#x90FD;&#x7531; Redis &#x539F;&#x5B50;&#x5730;&#xFF08;<a href="../../GLOSSARY.html#atomically" class="glossary-term" title="atomicity &#x7684;&#x526F;&#x8BCD;&#x5F62;&#x5F0F;&#x3002;&#x539F;&#x5B50;&#x6027;&#x3002;&#x4E8B;&#x52A1;&#x7684;&#x539F;&#x5B50;&#x6027;&#x6307;&#x7684;&#x662F;&#xFF0C;&#x4E8B;&#x52A1;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x7A0B;&#x5E8F;&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x5E93;&#x7684;&#x903B;&#x8F91;&#x5DE5;&#x4F5C;&#x5355;&#x4F4D;&#xFF0C;&#x5B83;&#x6240;&#x505A;&#x7684;&#x5BF9;&#x6570;&#x636E;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x8981;&#x4E48;&#x5168;&#x90E8;&#x6267;&#x884C;&#xFF0C;&#x8981;&#x4E48;&#x5B8C;&#x5168;&#x4E0D;&#x6267;&#x884C;&#x3002;&#x8FD9;&#x79CD;&#x7279;&#x6027;&#x79F0;&#x4E3A;&#x539F;&#x5B50;&#x6027;&#x3002;">atomically</a>&#xFF09;&#x8FD0;&#x884C;&#x3002;<code>node_redis</code> &#x4E2D;&#x7684;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x662F;&#x901A;&#x8FC7;&#x8C03;&#x7528; <code>client.batch()</code> &#x6765;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684; <code>Batch</code> &#x5BF9;&#x8C61;&#x3002;<code>.batch</code> &#x4E0E; <code>.multi</code> &#x552F;&#x4E00;&#x7684;&#x533A;&#x522B;&#x662F;&#x6CA1;&#x6709;&#x4E8B;&#x52A1;&#x5C06;&#x88AB;&#x4F7F;&#x7528;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x9519;&#x8BEF;&#x662F;&#x2014;&#x2014;&#x5C31;&#x50CF;&#x5728; multi &#x8BED;&#x53E5;&#x4E2D;&#x4E00;&#x6837;&#x2014;&#x2014;&#x5728;&#x7ED3;&#x679C;&#x4E2D;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x9519;&#x8BEF;&#x548C;&#x7ED3;&#x679C;&#x90FD;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x8FD4;&#x56DE;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x540C;&#x65F6;&#x89E6;&#x53D1;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x4E0E;&#x5728;&#x5FAA;&#x73AF;&#x4E2D;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x547D;&#x4EE4;&#x76F8;&#x6BD4;&#xFF0C;&#x8FD9;&#x5C06;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x6267;&#x884C;&#x901F;&#x5EA6;&#xFF0C;&#x8FD9;&#x4E0D;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x7ED3;&#x679C;&#xFF01;&#x67E5;&#x770B;&#x7279;&#x6027;&#x6BD4;&#x8F83;&#x7684;<a href="http://www.redis.cn/topics/benchmarks.html" target="_blank">&#x57FA;&#x51C6;</a>&#x3002;&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x547D;&#x4EE4;&#x90FD;&#x4FDD;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x76F4;&#x5230;&#x5B83;&#x4EEC;&#x88AB;&#x89E6;&#x53D1;&#x3002;</p>
+<h2 id="&#x76D1;&#x63A7;&#x6A21;&#x5F0F;"><a name="&#x76D1;&#x63A7;&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x76D1;&#x63A7;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>3.14. &#x76D1;&#x63A7;&#x6A21;&#x5F0F;</h2>
+<p>Redis&#x652F;&#x6301; <code>MONITOR</code> &#x547D;&#x4EE4;&#xFF0C;&#x8FD9;&#x8BA9;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x6240;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x4E2D;&#x770B;&#x5230; Redis &#x670D;&#x52A1;&#x5668;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6240;&#x6709;&#x547D;&#x4EE4;&#xFF0C;&#x5305;&#x62EC;&#x6765;&#x81EA;&#x5176;&#x4ED6;&#x5BA2;&#x6237;&#x7AEF;&#x5E93;&#x548C;&#x5176;&#x4ED6;&#x8BA1;&#x7B97;&#x673A;&#x3002;</p>
+<p>&#x8FDE;&#x63A5;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7684;&#x4EFB;&#x4F55;&#x5BA2;&#x6237;&#x7AEF;&#xFF08;&#x5305;&#x62EC;&#x76D1;&#x63A7;&#x5BA2;&#x6237;&#x7AEF;&#x672C;&#x8EAB;&#xFF09;&#x53D1;&#x51FA;&#x7684;&#x6BCF;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x90FD;&#x4F1A;&#x53D1;&#x5C04;&#x4E00;&#x4E2A; <code>monitor</code> &#x4E8B;&#x4EF6;&#x3002;<code>monitor</code> &#x4E8B;&#x4EF6;&#x7684;&#x56DE;&#x8C03;&#x4ECE; Redis &#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x6570;&#x7EC4;&#x53C2;&#x6570;&#x548C;&#x539F;&#x59CB;&#x76D1;&#x63A7;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<p>&#x793A;&#x4F8B;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> client  <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;redis&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">monitor</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Entering monitoring mode.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;foo&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;bar&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&quot;monitor&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>time<span class="token punctuation">,</span> args<span class="token punctuation">,</span> raw_reply<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>time <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span> <span class="token operator">+</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1458910076.446514:[&apos;set&apos;, &apos;foo&apos;, &apos;bar&apos;]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h1 id="&#x989D;&#x5916;&#x7684;"><a name="&#x989D;&#x5916;&#x7684;" class="anchor-navigation-ex-anchor" href="#&#x989D;&#x5916;&#x7684;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x989D;&#x5916;&#x7684;</h1>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x4F60;&#x53EF;&#x80FD;&#x60F3;&#x77E5;&#x9053;&#x7684;&#x4E8B;&#x60C5;&#x3002;</p>
+<h2 id="clientserverinfo"><a name="clientserverinfo" class="anchor-navigation-ex-anchor" href="#clientserverinfo"><i class="fa fa-link" aria-hidden="true"></i></a>4.1. client.server_info</h2>
+<p>&#x5728;&#x5C31;&#x7EEA;&#x63A2;&#x6D4B;&#xFF08;ready probe&#xFF09;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#xB7;<code>INFO</code> &#x547D;&#x4EE4;&#x7684;&#x7ED3;&#x679C;&#x5C06;&#x4FDD;&#x5B58;&#x5728; <code>client.server_info</code> &#x5BF9;&#x8C61;&#x4E2D;&#x3002;</p>
+<p><code>versions</code> &#x952E;&#x5305;&#x542B;&#x7248;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5143;&#x7D20;&#x6570;&#x7EC4;&#xFF0C;&#x4EE5;&#x4FBF;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002;</p>
+<pre class="language-"><code>&gt; client.server_info.redis_version
+&apos;2.3.0&apos;
+&gt; client.server_info.versions
+[ 2, 3, 0 ]
+</code></pre><h2 id="redisprint"><a name="redisprint" class="anchor-navigation-ex-anchor" href="#redisprint"><i class="fa fa-link" aria-hidden="true"></i></a>4.2. redis.print()</h2>
+<p>&#x4E00;&#x4E2A;&#x65B9;&#x4FBF;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x6D4B;&#x8BD5;&#x65F6;&#x663E;&#x793A;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x4F8B;&#x5B50;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> redis <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;redis&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    client <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&quot;connect&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    client<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&quot;foo_rand000000000000&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;some fantastic value&quot;</span><span class="token punctuation">,</span> redis<span class="token punctuation">.</span>print<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    client<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&quot;foo_rand000000000000&quot;</span><span class="token punctuation">,</span> redis<span class="token punctuation">.</span>print<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x8FD9;&#x5C06;&#x8F93;&#x51FA;:</p>
+<pre class="language-"><code>Reply: OK
+Reply: some fantastic value
+</code></pre><p>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x4E0D;&#x4F1A;&#x5E72;&#x51C0;&#x5730;&#x9000;&#x51FA;&#xFF0C;&#x56E0;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x4ECD;&#x7136;&#x662F;&#x8FDE;&#x63A5;&#x7684;&#x3002;</p>
+<h2 id="multi-word-commands"><a name="multi-word-commands" class="anchor-navigation-ex-anchor" href="#multi-word-commands"><i class="fa fa-link" aria-hidden="true"></i></a>4.3. Multi-word commands</h2>
+<p>&#x8981;&#x6267;&#x884C; redis &#x591A;&#x5B57;(multi-word)&#x547D;&#x4EE4;&#xFF0C;&#x5982; <code>SCRIPT LOAD</code> &#x6216; <code>CLIENT LIST</code>&#xFF0C;&#x5C06;&#x7B2C;&#x4E8C;&#x4E2A;&#x5355;&#x8BCD;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x9012;:</p>
+<pre class="language-"><code class="lang-js">client<span class="token punctuation">.</span><span class="token function">script</span><span class="token punctuation">(</span><span class="token string">&apos;load&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;return 1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">multi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">script</span><span class="token punctuation">(</span><span class="token string">&apos;load&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;return 1&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">multi</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&apos;script&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;load&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;return 1&apos;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="clientduplicateoptions-callback"><a name="clientduplicateoptions-callback" class="anchor-navigation-ex-anchor" href="#clientduplicateoptions-callback"><i class="fa fa-link" aria-hidden="true"></i></a>4.4. client.duplicate([options][, callback])</h2>
+<p>&#x590D;&#x5236;&#x6240;&#x6709;&#x5F53;&#x524D;&#x9009;&#x9879;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684; redisClient &#x5B9E;&#x4F8B;&#x3002;&#x4F20;&#x9012;&#x7ED9; <code>duplicate</code> &#x51FD;&#x6570;&#x7684;&#x6240;&#x6709;&#x9009;&#x9879;&#x90FD;&#x5C06;&#x66FF;&#x6362;&#x539F;&#x6765;&#x7684;&#x9009;&#x9879;&#x3002;&#x5982;&#x679C;&#x60A8;&#x4F20;&#x9012;&#x4E86;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#xFF0C;<code>duplicate</code> &#x5C06;&#x7B49;&#x5F85;&#x5BA2;&#x6237;&#x7AEF;&#x51C6;&#x5907;&#x597D;&#x5E76;&#x5728;&#x56DE;&#x8C03;&#x4E2D;&#x8FD4;&#x56DE;&#x5B83;&#x3002;&#x5982;&#x679C;&#x540C;&#x65F6;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x5219;&#x4F1A;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x56DE;&#x8C03;&#x4E2D;&#x3002;</p>
+<p>&#x4F7F;&#x7528; <code>duplicate()</code> &#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x662F;&#x9002;&#x5E94;&#x8FDE;&#x63A5;&#x963B;&#x585E;&#x7684;redis&#x547D;&#x4EE4;BRPOP&#x3001;BLPOP&#x548C;BRPOPLPUSH&#x3002;&#x5982;&#x679C;&#x8FD9;&#x4E9B;&#x547D;&#x4EE4;&#x5728;&#x4E0E;&#x975E;&#x963B;&#x585E;&#x547D;&#x4EE4;&#x76F8;&#x540C;&#x7684;redisClient&#x5B9E;&#x4F8B;&#x4E0A;&#x4F7F;&#x7528;&#xFF0C;&#x5219;&#x975E;&#x963B;&#x585E;&#x7684;&#x547D;&#x4EE4;&#x53EF;&#x80FD;&#x4F1A;&#x6392;&#x961F;&#x76F4;&#x5230;&#x963B;&#x585E;&#x7684;&#x547D;&#x4EE4;&#x7ED3;&#x675F;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x662F;&#xFF0C;&#x5F53;&#x4F7F;&#x7528; <code>duplicate()</code> &#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FDE;&#x63A5;&#x963B;&#x585E;&#x7684; redis &#x547D;&#x4EE4; <code>BRPOP</code>&#x3001;<code>BLPOP</code> &#x548C; <code>BRPOPLPUSH</code>&#x3002;&#x5982;&#x679C;&#x8FD9;&#x4E9B;&#x547D;&#x4EE4;&#x4F5C;&#x4E3A;&#x975E;&#x963B;&#x585E;&#x547D;&#x4EE4;&#x88AB;&#x7528;&#x4E8E;&#x76F8;&#x540C;&#x7684; redisClient &#x5B9E;&#x4F8B;&#xFF0C;&#x5219;&#x975E;&#x963B;&#x585E;&#x7684;&#x547D;&#x4EE4;&#x53EF;&#x80FD;&#x4F1A;&#x6392;&#x961F;&#x76F4;&#x5230;&#x963B;&#x585E;&#x7684;&#x547D;&#x4EE4;&#x7ED3;&#x675F;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> Redis<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;redis&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> client <span class="token operator">=</span> Redis<span class="token punctuation">.</span><span class="token function">createClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> clientBlocking <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token function">duplicate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> <span class="token keyword">get</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;get called&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    client<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&quot;any_key&quot;</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;get returned&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span> <span class="token keyword">get</span><span class="token punctuation">,</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> brpop <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;brpop called&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    clientBlocking<span class="token punctuation">.</span><span class="token function">brpop</span><span class="token punctuation">(</span><span class="token string">&quot;nonexistent&quot;</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;brpop return&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span> brpop<span class="token punctuation">,</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">brpop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4F7F;&#x7528; <code>duplicate()</code> &#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x539F;&#x56E0;&#x662F;&#xFF0C;&#x5F53;&#x901A;&#x8FC7; redis <code>SELECT</code> &#x547D;&#x4EE4;&#x8BBF;&#x95EE;&#x540C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x591A;&#x4E2A; DBs &#x65F6;&#x3002;&#x6BCF;&#x4E2A; DB &#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x81EA;&#x5DF1;&#x7684;&#x8FDE;&#x63A5;&#x3002;</p>
+<h2 id="clientsendcommandcommandname-args-callback"><a name="clientsendcommandcommandname-args-callback" class="anchor-navigation-ex-anchor" href="#clientsendcommandcommandname-args-callback"><i class="fa fa-link" aria-hidden="true"></i></a>4.5. client.send_command(command_name[, [args][, callback]])</h2>
+<p>&#x6240;&#x6709;&#x7684; Redis &#x547D;&#x4EE4;&#x90FD;&#x88AB;&#x6DFB;&#x52A0;&#x5230; <code>client</code> &#x5BF9;&#x8C61;&#x4E2D;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x8FD9;&#x4E2A;&#x5E93;&#x66F4;&#x65B0;&#x4E4B;&#x524D;&#x5F15;&#x5165;&#x4E86;&#x65B0;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x6216;&#x8005;&#x5982;&#x679C;&#x60A8;&#x60F3;&#x8981;&#x6DFB;&#x52A0;&#x5355;&#x72EC;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>send_command()</code> &#x5411; Redis &#x53D1;&#x9001;&#x4EFB;&#x610F;&#x547D;&#x4EE4;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x547D;&#x4EE4;&#x90FD;&#x662F;&#x4F5C;&#x4E3A;&#x591A;&#x6279;&#x91CF;(multi-bulk)&#x547D;&#x4EE4;&#x53D1;&#x9001;&#x7684;&#x3002;<code>args</code> &#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x7EC4;&#x53C2;&#x6570;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F; undefine&#xFF08;&#x7701;&#x7565;&#x6216;&#x8005;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#xFF09;&#x3002;</p>
+<h2 id="clientaddcommandcommandname"><a name="clientaddcommandcommandname" class="anchor-navigation-ex-anchor" href="#clientaddcommandcommandname"><i class="fa fa-link" aria-hidden="true"></i></a>4.6. client.add_command(command_name)</h2>
+<p>&#x8C03;&#x7528; add_command &#x5C06;&#x5411;&#x539F;&#x578B;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x547D;&#x4EE4;&#x3002;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x65B0;&#x547D;&#x4EE4;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x5C06;&#x4F7F;&#x7528;&#x7CBE;&#x786E;&#x7684;&#x547D;&#x4EE4;&#x540D;&#x3002;&#x53EF;&#x4EE5;&#x50CF;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x547D;&#x4EE4;&#x4E00;&#x6837;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x610F;&#x53C2;&#x6570;&#x3002;</p>
+<h2 id="clientconnected"><a name="clientconnected" class="anchor-navigation-ex-anchor" href="#clientconnected"><i class="fa fa-link" aria-hidden="true"></i></a>4.7. client.connected</h2>
+<p>&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8DDF;&#x8E2A;&#x8FDE;&#x63A5;&#x5230; Redis &#x670D;&#x52A1;&#x5668;&#x7684;&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#x3002;</p>
+<h2 id="clientcommandqueuelength"><a name="clientcommandqueuelength" class="anchor-navigation-ex-anchor" href="#clientcommandqueuelength"><i class="fa fa-link" aria-hidden="true"></i></a>4.8. client.command_queue_length</h2>
+<p>&#x5DF2;&#x7ECF;&#x53D1;&#x9001;&#x5230; Redis &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4F46;&#x8FD8;&#x672A;&#x5E94;&#x7B54;&#x7684;&#x547D;&#x4EE4;&#x7684;&#x6570;&#x91CF;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B64;&#x547D;&#x4EE4;&#x5728;&#x5DF2;&#x8FDE;&#x63A5;&#x65F6;&#x5BF9;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x67D0;&#x79CD;&#x6700;&#x5927;&#x961F;&#x5217;&#x6DF1;&#x5EA6;&#x3002;</p>
+<h2 id="clientofflinequeuelength"><a name="clientofflinequeuelength" class="anchor-navigation-ex-anchor" href="#clientofflinequeuelength"><i class="fa fa-link" aria-hidden="true"></i></a>4.9. client.offline_queue_length</h2>
+<p>&#x4E3A;&#x4E00;&#x4E2A;&#x672A;&#x6765;&#x7684;&#x8FDE;&#x63A5;&#x800C;&#x6392;&#x961F;&#x7684;&#x547D;&#x4EE4;&#x7684;&#x6570;&#x91CF;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x4E3A;&#x9884;&#x8FDE;&#x63A5;&#x547D;&#x4EE4;&#x5F3A;&#x5236;&#x6267;&#x884C;&#x67D0;&#x79CD;&#x6700;&#x5927;&#x961F;&#x5217;&#x6DF1;&#x5EA6;&#x3002;</p>
+<h3 id="&#x5E26;&#x6709;&#x53EF;&#x9009;&#x548C;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x7684;&#x547D;&#x4EE4;"><a name="&#x5E26;&#x6709;&#x53EF;&#x9009;&#x548C;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x7684;&#x547D;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#&#x5E26;&#x6709;&#x53EF;&#x9009;&#x548C;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x7684;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>4.9.1. &#x5E26;&#x6709;&#x53EF;&#x9009;&#x548C;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x7684;&#x547D;&#x4EE4;</h3>
+<p>&#x8FD9;&#x9002;&#x7528;&#x4E8E;&#x4EFB;&#x4F55; <a href="http://redis.io/commands" target="_blank">redis.io/commands</a> &#x6587;&#x6863;&#x4E2D;&#x4F7F;&#x7528;&#x53EF;&#x9009;&#x7684; <code>[WITHSCORES]</code> &#x6216;<code>[LIMIT offset count]</code> &#x7684;&#x4E1C;&#x897F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> args <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">&apos;myzset&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&apos;one&apos;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&apos;two&apos;</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">&apos;three&apos;</span><span class="token punctuation">,</span> <span class="token number">99</span><span class="token punctuation">,</span> <span class="token string">&apos;ninety-nine&apos;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+client<span class="token punctuation">.</span><span class="token function">zadd</span><span class="token punctuation">(</span>args<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> err<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;added &apos;</span><span class="token operator">+</span>response<span class="token operator">+</span><span class="token string">&apos; items.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// &#x8D1F;&#x65E0;&#x7A77; &#x548C; &#x6B63;&#x65E0;&#x7A77;&#x4E5F;&#x80FD;&#x5DE5;&#x4F5C;</span>
+    <span class="token keyword">var</span> args1 <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">&apos;myzset&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;+inf&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;-inf&apos;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    client<span class="token punctuation">.</span><span class="token function">zrevrangebyscore</span><span class="token punctuation">(</span>args1<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> err<span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;example1&apos;</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// write your code here</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">var</span> max <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> min <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> offset <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> count <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> args2 <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">&apos;myzset&apos;</span><span class="token punctuation">,</span> max<span class="token punctuation">,</span> min<span class="token punctuation">,</span> <span class="token string">&apos;WITHSCORES&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;LIMIT&apos;</span><span class="token punctuation">,</span> offset<span class="token punctuation">,</span> count <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    client<span class="token punctuation">.</span><span class="token function">zrevrangebyscore</span><span class="token punctuation">(</span>args2<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> err<span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;example2&apos;</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// write your code here</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x6027;&#x80FD;"><a name="&#x6027;&#x80FD;" class="anchor-navigation-ex-anchor" href="#&#x6027;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>4.10. &#x6027;&#x80FD;</h2>
+<p>&#x82B1;&#x8D39;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x7CBE;&#x529B;&#x4F7F; <code>node_redis</code> &#x5C3D;&#x53EF;&#x80FD;&#x5FEB;&#x5730;&#x8FDB;&#x884C;&#x666E;&#x901A;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre class="language-"><code>Lenovo T450s, i7-5600U and 12gb memory
+clients: 1, NodeJS: 6.2.0, Redis: 3.2.0, parser: javascript, connected by: tcp
+         PING,         1/1 avg/max:   0.02/  5.26 2501ms total,   46916 ops/sec
+         PING,  batch 50/1 avg/max:   0.06/  4.35 2501ms total,  755178 ops/sec
+   SET 4B str,         1/1 avg/max:   0.02/  4.75 2501ms total,   40856 ops/sec
+   SET 4B str,  batch 50/1 avg/max:   0.11/  1.51 2501ms total,  432727 ops/sec
+   SET 4B buf,         1/1 avg/max:   0.05/  2.76 2501ms total,   20659 ops/sec
+   SET 4B buf,  batch 50/1 avg/max:   0.25/  1.76 2501ms total,  194962 ops/sec
+   GET 4B str,         1/1 avg/max:   0.02/  1.55 2501ms total,   45156 ops/sec
+   GET 4B str,  batch 50/1 avg/max:   0.09/  3.15 2501ms total,  524110 ops/sec
+   GET 4B buf,         1/1 avg/max:   0.02/  3.07 2501ms total,   44563 ops/sec
+   GET 4B buf,  batch 50/1 avg/max:   0.10/  3.18 2501ms total,  473171 ops/sec
+ SET 4KiB str,         1/1 avg/max:   0.03/  1.54 2501ms total,   32627 ops/sec
+ SET 4KiB str,  batch 50/1 avg/max:   0.34/  1.89 2501ms total,  146861 ops/sec
+ SET 4KiB buf,         1/1 avg/max:   0.05/  2.85 2501ms total,   20688 ops/sec
+ SET 4KiB buf,  batch 50/1 avg/max:   0.36/  1.83 2501ms total,  138165 ops/sec
+ GET 4KiB str,         1/1 avg/max:   0.02/  1.37 2501ms total,   39389 ops/sec
+ GET 4KiB str,  batch 50/1 avg/max:   0.24/  1.81 2501ms total,  208157 ops/sec
+ GET 4KiB buf,         1/1 avg/max:   0.02/  2.63 2501ms total,   39918 ops/sec
+ GET 4KiB buf,  batch 50/1 avg/max:   0.31/  8.56 2501ms total,  161575 ops/sec
+         INCR,         1/1 avg/max:   0.02/  4.69 2501ms total,   45685 ops/sec
+         INCR,  batch 50/1 avg/max:   0.09/  3.06 2501ms total,  539964 ops/sec
+        LPUSH,         1/1 avg/max:   0.02/  3.04 2501ms total,   41253 ops/sec
+        LPUSH,  batch 50/1 avg/max:   0.12/  1.94 2501ms total,  425090 ops/sec
+    LRANGE 10,         1/1 avg/max:   0.02/  2.28 2501ms total,   39850 ops/sec
+    LRANGE 10,  batch 50/1 avg/max:   0.25/  1.85 2501ms total,  194302 ops/sec
+   LRANGE 100,         1/1 avg/max:   0.05/  2.93 2501ms total,   21026 ops/sec
+   LRANGE 100,  batch 50/1 avg/max:   1.52/  2.89 2501ms total,   32767 ops/sec
+ SET 4MiB str,         1/1 avg/max:   5.16/ 15.55 2502ms total,     193 ops/sec
+ SET 4MiB str,  batch 20/1 avg/max:  89.73/ 99.96 2513ms total,     223 ops/sec
+ SET 4MiB buf,         1/1 avg/max:   2.23/  8.35 2501ms total,     446 ops/sec
+ SET 4MiB buf,  batch 20/1 avg/max:  41.47/ 50.91 2530ms total,     482 ops/sec
+ GET 4MiB str,         1/1 avg/max:   2.79/ 10.91 2502ms total,     358 ops/sec
+ GET 4MiB str,  batch 20/1 avg/max: 101.61/118.11 2541ms total,     197 ops/sec
+ GET 4MiB buf,         1/1 avg/max:   2.32/ 14.93 2502ms total,     430 ops/sec
+ GET 4MiB buf,  batch 20/1 avg/max:  65.01/ 84.72 2536ms total,     308 ops/sec
+</code></pre><h2 id="&#x8C03;&#x8BD5;"><a name="&#x8C03;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x8C03;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>4.11. &#x8C03;&#x8BD5;</h2>
+<p>&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x8C03;&#x8BD5;&#x8F93;&#x51FA;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>NODE_DEBUG=redis</code> &#x8FD0;&#x884C;&#x4F60;&#x7684; <code>node_redis</code> &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x8FD9;&#x4E5F;&#x4F1A;&#x5BFC;&#x81F4;&#x597D;&#x7684;&#x5806;&#x6808;&#x8DDF;&#x8E2A;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x65E0;&#x7528;&#x7684;&#x5806;&#x6808;&#x8FFD;&#x8E2A;&#xFF0C;&#x5426;&#x5219;&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x5982;&#x6B64;&#x3002;&#x5982;&#x679C;&#x60A8;&#x53EA;&#x60F3;&#x62E5;&#x6709;&#x597D;&#x7684;&#x5806;&#x6808;&#x8FFD;&#x8E2A;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x4E0B;&#x8C03;&#x8BD5;&#x8F93;&#x51FA;&#x8FD0;&#x884C;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;(<code>NODE_ENV=development</code>)&#x3002;</p>
+<p>&#x597D;&#x7684;&#x5806;&#x6808;&#x8DDF;&#x8E2A;&#x53EA;&#x5728;&#x5F00;&#x53D1;&#x548C;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;&#x4E2D;&#x88AB;&#x6FC0;&#x6D3B;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x5C06;&#x5BFC;&#x81F4;&#x4E25;&#x91CD;&#x7684;&#x6027;&#x80FD;&#x635F;&#x5931;&#x3002;</p>
+<p><strong><em>&#x6BD4;&#x8F83;</em></strong>:
+&#x65E0;&#x7528;&#x7684;&#x5806;&#x6808;&#x8FFD;&#x8E2A;:</p>
+<pre class="language-"><code>ReplyError: ERR wrong number of arguments for &apos;set&apos; command
+    at parseError (/home/ruben/repos/redis/node_modules/redis-parser/lib/parser.js:158:12)
+    at parseType (/home/ruben/repos/redis/node_modules/redis-parser/lib/parser.js:219:14)
+</code></pre><p>&#x597D;&#x7684;&#x5806;&#x6808;&#x8FFD;&#x8E2A;:</p>
+<pre class="language-"><code>ReplyError: ERR wrong number of arguments for &apos;set&apos; command
+    at new Command (/home/ruben/repos/redis/lib/command.js:9:902)
+    at RedisClient.set (/home/ruben/repos/redis/lib/commands.js:9:3238)
+    at Context.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>anonymous</span><span class="token punctuation">&gt;</span></span> (/home/ruben/repos/redis/test/good_stacks.spec.js:20:20)
+    at callFnAsync (/home/ruben/repos/redis/node_modules/mocha/lib/runnable.js:349:8)
+    at Test.Runnable.run (/home/ruben/repos/redis/node_modules/mocha/lib/runnable.js:301:7)
+    at Runner.runTest (/home/ruben/repos/redis/node_modules/mocha/lib/runner.js:422:10)
+    at /home/ruben/repos/redis/node_modules/mocha/lib/runner.js:528:12
+    at next (/home/ruben/repos/redis/node_modules/mocha/lib/runner.js:342:14)
+    at /home/ruben/repos/redis/node_modules/mocha/lib/runner.js:352:7
+    at next (/home/ruben/repos/redis/node_modules/mocha/lib/runner.js:284:14)
+    at Immediate._onImmediate (/home/ruben/repos/redis/node_modules/mocha/lib/runner.js:320:5)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+</code></pre><h2 id="&#x5982;&#x4F55;&#x8D21;&#x732E;"><a name="&#x5982;&#x4F55;&#x8D21;&#x732E;" class="anchor-navigation-ex-anchor" href="#&#x5982;&#x4F55;&#x8D21;&#x732E;"><i class="fa fa-link" aria-hidden="true"></i></a>4.12. &#x5982;&#x4F55;&#x8D21;&#x732E;</h2>
+<ul>
+<li>&#x6253;&#x5F00;&#x4E00;&#x4E2A; pull&#x8BF7;&#x6C42;&#x6216;&#x4E00;&#x4E2A;&#x5173;&#x4E8E;&#x60A8;&#x60F3;&#x8981;&#x5B9E;&#x73B0;/&#x53D8;&#x66F4;&#x7684;&#x95EE;&#x9898;&#x3002;&#x6211;&#x4EEC;&#x5F88;&#x9AD8;&#x5174;&#x5F97;&#x5230;&#x4EFB;&#x4F55;&#x5E2E;&#x52A9;&#xFF01;<ul>
+<li>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x63A5;&#x53D7;&#x7ECF;&#x8FC7;&#x5145;&#x5206;&#x6D4B;&#x8BD5;&#x7684;&#x4EE3;&#x7801;&#x3002;<h2 id="&#x8D21;&#x732E;"><a name="&#x8D21;&#x732E;" class="anchor-navigation-ex-anchor" href="#&#x8D21;&#x732E;"><i class="fa fa-link" aria-hidden="true"></i></a>4.13. &#x8D21;&#x732E;</h2>
+</li>
+</ul>
+</li>
+</ul>
+<p>node_redis &#x7684;&#x539F;&#x59CB;&#x4F5C;&#x8005;&#x662F; <a href="https://github.com/mranney" target="_blank">Matthew Ranney</a></p>
+<p>&#x5F53;&#x524D;&#x7684;&#x4E3B;&#x8981;&#x7EF4;&#x62A4;&#x4EBA;&#x5458;&#x662F; <a href="https://github.com/BridgeAR" target="_blank">Ruben Bridgewater</a></p>
+<p>Many <a href="https://github.com/NodeRedis/node_redis/graphs/contributors" target="_blank">others</a>
+contributed to <code>node_redis</code> too. Thanks to all of them!</p>
+<h2 id="license"><a name="license" class="anchor-navigation-ex-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a>4.14. License</h2>
+<p><a href="LICENSE">MIT</a></p>
+<h3 id="consolidation-its-time-for-celebration"><a name="consolidation-its-time-for-celebration" class="anchor-navigation-ex-anchor" href="#consolidation-its-time-for-celebration"><i class="fa fa-link" aria-hidden="true"></i></a>4.14.1. Consolidation: It&apos;s time for celebration</h3>
+<p>Right now there are two great redis clients around and both have some advantages
+above each other. We speak about ioredis and node_redis. So after talking to
+each other about how we could improve in working together we (that is @luin and
+@BridgeAR) decided to work towards a single library on the long run. But step by
+step.</p>
+<p>First of all, we want to split small parts of our libraries into others so that
+we&apos;re both able to use the same code. Those libraries are going to be maintained
+under the NodeRedis organization. This is going to reduce the maintenance
+overhead, allows others to use the very same code, if they need it and it&apos;s way
+easyer for others to contribute to both libraries.</p>
+<p>We&apos;re very happy about this step towards working together as we both want to
+give you the best redis experience possible.</p>
+<p>If you want to join our cause by help maintaining something, please don&apos;t
+hesitate to contact either one of us.</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-12-20 22:41:54
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../socket.io-client/docs/API.html" class="navigation navigation-prev " aria-label="Previous page: API">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../node-http-proxy/" class="navigation navigation-next " aria-label="Next page: node-http-proxy">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"node_redis","level":"3.10","depth":1,"next":{"title":"node-http-proxy","level":"3.11","depth":1,"path":"Library/node-http-proxy/README.md","ref":"Library/node-http-proxy/README.md","articles":[]},"previous":{"title":"API","level":"3.9.1.1","depth":3,"path":"Library/socket.io-client/docs/API.md","ref":"Library/socket.io-client/docs/API.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"acefull","theme":"tomorrow","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Node.js","language":"zh-hans","gitbook":"*","description":"Node.js 自我学习"},"file":{"path":"Library/node_redis/README.md","mtime":"2017-12-20T14:41:54.023Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-25T15:33:00.187Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

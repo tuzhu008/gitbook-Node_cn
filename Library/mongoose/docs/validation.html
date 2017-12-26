@@ -1,0 +1,1573 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>validation · Node.js</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="middleware.html" />
+    
+    
+    <link rel="prev" href="queries.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    关于 Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../GLOSSARY.html">
+            
+                <a href="../../../GLOSSARY.html">
+            
+                    
+                    术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">参考文档</li>
+        
+        
+    
+
+    
+        
+        <li class="header">相关库</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Node 相关库列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../nvm/">
+            
+                <a href="../../nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../request/">
+            
+                <a href="../../request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../async/">
+            
+                <a href="../../async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../supervisor/">
+            
+                <a href="../../supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../express/">
+            
+                <a href="../../express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../../express/docs/API.html">
+            
+                <a href="../../express/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1.1" >
+            
+                <span>
+            
+                    
+                    express()
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.2" >
+            
+                <span>
+            
+                    
+                    Aplication
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.3" >
+            
+                <span>
+            
+                    
+                    Request
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.4" >
+            
+                <span>
+            
+                    
+                    Response
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.5" data-path="../../express/docs/API.html">
+            
+                <a href="../../express/docs/API.html#router">
+            
+                    
+                    Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../../express/middleware/">
+            
+                <a href="../../express/middleware/">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.2.1" data-path="../../express/middleware/method-override/">
+            
+                <a href="../../express/middleware/method-override/">
+            
+                    
+                    method-override
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.2" data-path="../../express/middleware/session/">
+            
+                <a href="../../express/middleware/session/">
+            
+                    
+                    express-session
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../connect/">
+            
+                <a href="../../connect/">
+            
+                    
+                    connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../../socket.io/">
+            
+                <a href="../../socket.io/">
+            
+                    
+                    socket.io
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1" data-path="../../socket.io/docs/">
+            
+                <a href="../../socket.io/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1.1" data-path="../../socket.io/docs/API.html">
+            
+                <a href="../../socket.io/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.1.2" data-path="../../socket.io/docs/emit.html">
+            
+                <a href="../../socket.io/docs/emit.html">
+            
+                    
+                    emit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.2" data-path="../../socket.io/library/REAME.html">
+            
+                <a href="../../socket.io/library/REAME.html">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.2.1" data-path="../../socket.io/library/engine.io/">
+            
+                <a href="../../socket.io/library/engine.io/">
+            
+                    
+                    engine.io
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../../socket.io-client/">
+            
+                <a href="../../socket.io-client/">
+            
+                    
+                    socket.io-client
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1" data-path="../../socket.io-client/docs/">
+            
+                <a href="../../socket.io-client/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1.1" data-path="../../socket.io-client/docs/API.html">
+            
+                <a href="../../socket.io-client/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../../node_redis/">
+            
+                <a href="../../node_redis/">
+            
+                    
+                    node_redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../../node-http-proxy/">
+            
+                <a href="../../node-http-proxy/">
+            
+                    
+                    node-http-proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../../mysql/">
+            
+                <a href="../../mysql/">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    mongoose
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.1" data-path="quick-start.html">
+            
+                <a href="quick-start.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2" data-path="guide.html">
+            
+                <a href="guide.html">
+            
+                    
+                    指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1" data-path="guide.html">
+            
+                <a href="guide.html">
+            
+                    
+                    schemas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1.1" data-path="SchemaTypes.html">
+            
+                <a href="SchemaTypes.html">
+            
+                    
+                    types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.2" data-path="customschematypes.html">
+            
+                <a href="customschematypes.html">
+            
+                    
+                    custom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.3" data-path="advanced_schemas.html">
+            
+                <a href="advanced_schemas.html">
+            
+                    
+                    advanced usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.2" data-path="models.html">
+            
+                <a href="models.html">
+            
+                    
+                    models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3" data-path="documents.html">
+            
+                <a href="documents.html">
+            
+                    
+                    documents
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.3.1" data-path="subdocs.html">
+            
+                <a href="subdocs.html">
+            
+                    
+                    sub docs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3.2" data-path="defaults.html">
+            
+                <a href="defaults.html">
+            
+                    
+                    defaults
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.4" data-path="queries.html">
+            
+                <a href="queries.html">
+            
+                    
+                    queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.13.1.2.5" data-path="validation.html">
+            
+                <a href="validation.html">
+            
+                    
+                    validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.6" data-path="middleware.html">
+            
+                <a href="middleware.html">
+            
+                    
+                    middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.7" data-path="populate.html">
+            
+                <a href="populate.html">
+            
+                    
+                    population
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.8" data-path="connections.html">
+            
+                <a href="connections.html">
+            
+                    
+                    connections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.9" data-path="plugins.html">
+            
+                <a href="plugins.html">
+            
+                    
+                    plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.10" data-path="promises.html">
+            
+                <a href="promises.html">
+            
+                    
+                    promises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.11" data-path="discriminators.html">
+            
+                <a href="discriminators.html">
+            
+                    
+                    discriminators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.12" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/blob/master/CONTRIBUTING.md">
+            
+                    
+                    contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.13" data-path="harmony.html">
+            
+                <a href="harmony.html">
+            
+                    
+                    ES2015 integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.14" data-path="browser.html">
+            
+                <a href="browser.html">
+            
+                    
+                    schemas in the browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.15" data-path="compatibility.html">
+            
+                <a href="compatibility.html">
+            
+                    
+                    MongoDB Version Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.16" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.6-Release-Notes">
+            
+                    
+                    3.6 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.17" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.8-Release-Notes">
+            
+                    
+                    3.8 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.18" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/4.0-Release-Notes">
+            
+                    
+                    4.0 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.3" data-path="API.html">
+            
+                <a href="API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.4" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.5" data-path="prior.html">
+            
+                <a href="prior.html">
+            
+                    
+                    之前的版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >validation</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#validation&#xFF08;&#x9A8C;&#x8BC1;&#xFF09;"><b>1. </b>Validation&#xFF08;&#x9A8C;&#x8BC1;&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5185;&#x7F6E;&#x9A8C;&#x8BC1;&#x5668;"><b>1.1. </b>&#x5185;&#x7F6E;&#x9A8C;&#x8BC1;&#x5668;</a></li><li><span class="title-icon "></span><a href="#unique-&#x9009;&#x9879;&#x4E0D;&#x662F;&#x9A8C;&#x8BC1;&#x5668;"><b>1.2. </b>unique &#x9009;&#x9879;&#x4E0D;&#x662F;&#x9A8C;&#x8BC1;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x5F02;&#x6B65;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x5668;"><b>1.3. </b>&#x5F02;&#x6B65;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x9A8C;&#x8BC1;&#x9519;&#x8BEF;"><b>1.4. </b>&#x9A8C;&#x8BC1;&#x9519;&#x8BEF;</a></li><li><span class="title-icon "></span><a href="#&#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;required-&#x9A8C;&#x8BC1;&#x5668;"><b>1.5. </b>&#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;Required &#x9A8C;&#x8BC1;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;"><b>1.6. </b>&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x548C;-this"><b>1.7. </b>&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x548C; this</a></li><li><span class="title-icon "></span><a href="#context-&#x9009;&#x9879;"><b>1.8. </b>context &#x9009;&#x9879;</a></li><li><span class="title-icon "></span><a href="#&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x8DEF;&#x5F84;"><b>1.9. </b>&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x8DEF;&#x5F84;</a></li><li><span class="title-icon "></span><a href="#&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x4EC5;&#x8FD0;&#x884C;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x4E0A;"><b>1.10. </b>&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x4EC5;&#x8FD0;&#x884C;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x4E0A;</a></li><li><span class="title-icon "></span><a href="#&#x5173;&#x4E8E;-push-&#x548C;-addtoset"><b>1.11. </b>&#x5173;&#x4E8E; $push &#x548C; $addToSet</a></li></ul></ul></div><a href="#validation&#xFF08;&#x9A8C;&#x8BC1;&#xFF09;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="validation&#xFF08;&#x9A8C;&#x8BC1;&#xFF09;"><a name="validation&#xFF08;&#x9A8C;&#x8BC1;&#xFF09;" class="anchor-navigation-ex-anchor" href="#validation&#xFF08;&#x9A8C;&#x8BC1;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Validation&#xFF08;&#x9A8C;&#x8BC1;&#xFF09;</h1>
+<p>&#x5728;&#x4ECB;&#x7ECD;&#x9A8C;&#x8BC1;&#x8BED;&#x6CD5;&#x7684;&#x5177;&#x4F53;&#x7EC6;&#x8282;&#x4E4B;&#x524D;&#xFF0C;&#x8BF7;&#x7262;&#x8BB0;&#x4EE5;&#x4E0B;&#x89C4;&#x5219;&#xFF1A;</p>
+<ul>
+<li>&#x9A8C;&#x8BC1;&#x5728; <a href="SchemaType.md">SchemaType</a> &#x4E2D;&#x5B9A;&#x4E49;</li>
+<li>&#x9A8C;&#x8BC1;&#x662F;<a href="middleware.html">&#x4E2D;&#x95F4;&#x4EF6;</a>&#x3002; Mongoose &#x9ED8;&#x8BA4;&#x5C06;&#x9A8C;&#x8BC1;&#x6CE8;&#x518C;&#x4E3A;&#x6BCF;&#x4E2A;&#x6A21;&#x5F0F;&#x7684; <code>pre(&apos;save&apos;)</code> &#x94A9;&#x5B50;&#x3002;</li>
+<li>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>doc.validate(callback)</code> &#x6216; <code>doc.validateSync()</code> &#x624B;&#x52A8;&#x8FD0;&#x884C;&#x9A8C;&#x8BC1;</li>
+<li>&#x9A8C;&#x8BC1;&#x5668;&#x4E0D;&#x5728;&#x672A;&#x5B9A;&#x4E49;&#x7684;&#x503C;&#x4E0A;&#x8FD0;&#x884C;&#x3002; &#x552F;&#x4E00;&#x7684;&#x4F8B;&#x5916;&#x662F; <a href="http://mongoosejs.com/docs/api.html#schematype_SchemaType-required" target="_blank">required&#x7684;&#x9A8C;&#x8BC1;&#x5668;</a>&#x3002;</li>
+<li>&#x9A8C;&#x8BC1;&#x662F;&#x5F02;&#x6B65;&#x9012;&#x5F52;&#x7684;; &#x5F53;&#x60A8;&#x8C03;&#x7528; <a href="http://mongoosejs.com/docs/api.html#model_Model-save" target="_blank">Model#save</a> &#x65F6;&#xFF0C;&#x4E5F;&#x4F1A;&#x6267;&#x884C;&#x5B50;&#x6587;&#x6863;&#x9A8C;&#x8BC1;&#x3002;&#x5982;&#x679C;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x60A8;&#x7684; [Model#save] &#x56DE;&#x8C03;&#x4F1A;&#x6536;&#x5230;&#x5B83;</li>
+<li>&#x9A8C;&#x8BC1;&#x662F;&#x53EF;&#x5B9A;&#x5236;&#x7684;</li>
+</ul>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> schema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+ name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+   type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+   required<span class="token punctuation">:</span> <span class="token boolean">true</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Cat <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Cat&apos;</span><span class="token punctuation">,</span> schema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// This cat has no name :(</span>
+<span class="token keyword">var</span> cat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cat<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;name&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+   <span class="token string">&apos;Path `name` is required.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ error <span class="token operator">=</span> cat<span class="token punctuation">.</span><span class="token function">validateSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;name&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+   <span class="token string">&apos;Path `name` is required.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x5185;&#x7F6E;&#x9A8C;&#x8BC1;&#x5668;"><a name="&#x5185;&#x7F6E;&#x9A8C;&#x8BC1;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x7F6E;&#x9A8C;&#x8BC1;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5185;&#x7F6E;&#x9A8C;&#x8BC1;&#x5668;</h2>
+<p>Mongoose &#x6709;&#x51E0;&#x4E2A;&#x5185;&#x7F6E;&#x7684;&#x9A8C;&#x8BC1;&#x5668;&#x3002;</p>
+<ul>
+<li>&#x6240;&#x6709; <a href="SchemaType.md">SchemaTypes</a> &#x90FD;&#x6709;&#x5185;&#x7F6E;&#x7684; <a href="http://mongoosejs.com/docs/api.html#schematype_SchemaType-required" target="_blank">required</a> &#x9A8C;&#x8BC1;&#x5668;&#x3002; required &#x7684;&#x9A8C;&#x8BC1;&#x5668;&#x4F7F;&#x7528; SchemaType &#x7684; <a href="http://mongoosejs.com/docs/api.html#schematype_SchemaType-checkRequired" target="_blank"><code>checkRequired()</code></a> &#x51FD;&#x6570;&#x6765;&#x786E;&#x5B9A;&#x8BE5;&#x503C;&#x662F;&#x5426;&#x6EE1;&#x8DB3; required &#x9A8C;&#x8BC1;&#x5668;&#x3002;</li>
+<li>&#x6570;&#x5B57;&#x6709; <a href="http://mongoosejs.com/docs/api.html#schema_number_SchemaNumber-min" target="_blank">min</a> &#x548C; <a href="http://mongoosejs.com/docs/api.html#schema_number_SchemaNumber-max" target="_blank">max</a> &#x9A8C;&#x8BC1;&#x5668;&#x3002;</li>
+<li>&#x5B57;&#x7B26;&#x4E32;&#x6709; <a href="http://mongoosejs.com/docs/api.html#schema_string_SchemaString-enum" target="_blank">enum</a>&#x3001;<a href="http://mongoosejs.com/docs/api.html#schema_string_SchemaString-match" target="_blank">match</a>&#x3001;<a href="http://mongoosejs.com/docs/api.html#schema_string_SchemaString-maxlength" target="_blank">maxlength</a> &#x548C; <a href="http://mongoosejs.com/docs/api.html#schema_string_SchemaString-minlength" target="_blank">minlength</a> &#x9A8C;&#x8BC1;&#x5668;&#x3002;</li>
+</ul>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> breakfastSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  eggs<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> Number<span class="token punctuation">,</span>
+    min<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">&apos;Too few eggs&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    max<span class="token punctuation">:</span> <span class="token number">12</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  bacon<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> Number<span class="token punctuation">,</span>
+    required<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string">&apos;Why no bacon?&apos;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  drink<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    <span class="token keyword">enum</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Coffee&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Tea&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    required<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>bacon <span class="token operator">&gt;</span> <span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> Breakfast <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Breakfast&apos;</span><span class="token punctuation">,</span> breakfastSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> badBreakfast <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Breakfast</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  eggs<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  bacon<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  drink<span class="token punctuation">:</span> <span class="token string">&apos;Milk&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> error <span class="token operator">=</span> badBreakfast<span class="token punctuation">.</span><span class="token function">validateSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;eggs&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+  <span class="token string">&apos;Too few eggs&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token operator">!</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;bacon&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;drink&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+  <span class="token string">&apos;`Milk` is not a valid enum value for path `drink`.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+badBreakfast<span class="token punctuation">.</span>bacon <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+badBreakfast<span class="token punctuation">.</span>drink <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+error <span class="token operator">=</span> badBreakfast<span class="token punctuation">.</span><span class="token function">validateSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;drink&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">,</span> <span class="token string">&apos;Path `drink` is required.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+badBreakfast<span class="token punctuation">.</span>bacon <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+error <span class="token operator">=</span> badBreakfast<span class="token punctuation">.</span><span class="token function">validateSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;bacon&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">,</span> <span class="token string">&apos;Why no bacon?&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="unique-&#x9009;&#x9879;&#x4E0D;&#x662F;&#x9A8C;&#x8BC1;&#x5668;"><a name="unique-&#x9009;&#x9879;&#x4E0D;&#x662F;&#x9A8C;&#x8BC1;&#x5668;" class="anchor-navigation-ex-anchor" href="#unique-&#x9009;&#x9879;&#x4E0D;&#x662F;&#x9A8C;&#x8BC1;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. unique &#x9009;&#x9879;&#x4E0D;&#x662F;&#x9A8C;&#x8BC1;&#x5668;</h2>
+<p>&#x521D;&#x5B66;&#x8005;&#x5E38;&#x89C1;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#xFF0C;&#x6A21;&#x5F0F;&#x7684; <code>unique</code> &#x9009;&#x9879;&#x4E0D;&#x662F;&#x9A8C;&#x8BC1;&#x5668;&#x3002;&#x8FD9;&#x662F;&#x6784;&#x5EFA; MongoDB &#x552F;&#x4E00;&#x7D22;&#x5F15;&#x7684;&#x4FBF;&#x5229;&#x5E2E;&#x624B;&#x3002;&#x67E5;&#x770B;<a href="faq.html">&#x5E38;&#x89C1;&#x95EE;&#x9898;</a>&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> uniqueUsernameSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  username<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    unique<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> U1 <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;U1&apos;</span><span class="token punctuation">,</span> uniqueUsernameSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> U2 <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;U2&apos;</span><span class="token punctuation">,</span> uniqueUsernameSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> dup <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> username<span class="token punctuation">:</span> <span class="token string">&apos;Val&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> username<span class="token punctuation">:</span> <span class="token string">&apos;Val&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+U1<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>dup<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// &#x5C06;&#x6210;&#x529F;&#x4FDD;&#x5B58;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x4FDD;&#x5B58;&#x524D;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x7D22;&#x5F15;&#x5B8C;&#x6210;&#x5EFA;&#x8BBE;&#xFF0C;</span>
+    <span class="token comment" spellcheck="true">// &#x5426;&#x5219; unique &#x7684;&#x7EA6;&#x675F;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x8FDD;&#x53CD;&#x3002;</span>
+U2<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;index&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  assert<span class="token punctuation">.</span><span class="token function">ifError</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  U2<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>dup<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// &#x5C06;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x4F46;**&#x4E0D;&#x662F;** &#x4E00;&#x4E2A; mongoose &#x9A8C;&#x8BC1;&#x5668;&#x9519;&#x8BEF;</span>
+    <span class="token comment" spellcheck="true">// &#x5C06;&#x662F;&#x4E00;&#x4E2A;&#x91CD;&#x590D;&#x7684;&#x952E;&#x9519;&#x8BEF;</span>
+    assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token operator">!</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>message<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">&apos;duplicate key error&apos;</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; promise &#x7684;&#x7B49;&#x4EF7;&#x4E8B;&#x4EF6;&#x53D1;&#x5C04;&#x5668; API&#x3002;</span>
+    <span class="token comment" spellcheck="true">// `init()` &#x51FD;&#x6570;&#x662F;&#x5E42;&#x7B49;&#x7684;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; promise</span>
+    <span class="token comment" spellcheck="true">//&#x4E00;&#x65E6;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;&#x5B8C;&#x6210;&#x5C31;&#x4F1A; resolve;</span>
+U2<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  U2<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>dup<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// &#x5C06;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x4F46;**&#x4E0D;&#x662F;** &#x4E00;&#x4E2A; mongoose &#x9A8C;&#x8BC1;&#x5668;&#x9519;&#x8BEF;</span>
+    <span class="token comment" spellcheck="true">// &#x5C06;&#x662F;&#x4E00;&#x4E2A;&#x91CD;&#x590D;&#x7684;&#x952E;&#x9519;&#x8BEF;</span>
+    assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token operator">!</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>message<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">&apos;duplicate key error&apos;</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x5F02;&#x6B65;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x5668;"><a name="&#x5F02;&#x6B65;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x5F02;&#x6B65;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x5F02;&#x6B65;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x5668;</h2>
+<p>&#x5B9A;&#x5236;&#x9A8C;&#x8BC1;&#x5668;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5F02;&#x6B65;&#x7684;&#x3002;&#x5982;&#x679C;&#x9A8C;&#x8BC1;&#x5668;&#x51FD;&#x6570;&#x63A5;&#x53D7;2&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x90A3;&#x4E48; mongoose &#x4F1A;&#x8BA4;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x5373;&#x4F7F;&#x4F60;&#x4E0D;&#x60F3;&#x4F7F;&#x7528;&#x5F02;&#x6B65;&#x9A8C;&#x8BC1;&#x5668;&#xFF0C;&#x4E5F;&#x8981;&#x5C0F;&#x5FC3;&#xFF0C;&#x56E0;&#x4E3A; mongoose 4 &#x4F1A;&#x5047;&#x8BBE;&#x6240;&#x6709;&#x5E26;&#x6709; 2 &#x4E2A;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x5F02;&#x6B65;&#x7684;&#xFF0C;&#x6BD4;&#x5982;<a href="https://www.npmjs.com/package/validator" target="_blank">validator.isEmail</a> &#x51FD;&#x6570;&#x3002; &#x4ECE; 4.9.0 &#x5F00;&#x59CB;&#xFF0C;&#x6B64;&#x884C;&#x4E3A;&#x88AB;&#x89C6;&#x4E3A;&#x5F03;&#x7528;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x5668;&#x4E0A;&#x6307;&#x5B9A; <code>isAsync: false</code> &#x6765;&#x5173;&#x95ED;&#x5B83;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> userSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  phone<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    validate<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// &#x5728; mongoose 4.x &#x4E2D;&#xFF0C;`isAsync` &#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x7684;</span>
+      <span class="token comment" spellcheck="true">// &#x4F46;&#x662F;&#x4F9D;&#x8D56;&#x4E8E; 2 &#x4E2A;&#x53C2;&#x6570;&#x9A8C;&#x8BC1;&#x5668;&#x662F;&#x5F02;&#x6B65;&#x7684;&#x8FD9;&#x79CD;&#x884C;&#x4E3A;&#x88AB;&#x5F03;&#x7528;&#x3002;</span>
+      <span class="token comment" spellcheck="true">// &#x5C06; `isAsync` &#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A; `true` &#xFF0C;&#x4EE5;&#x4F7F;&#x5F03;&#x7528;&#x8B66;&#x544A;&#x6D88;&#x5931;&#x3002;</span>
+      isAsync<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      validator<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> cb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">var</span> phoneRegex <span class="token operator">=</span> <span class="token regex">/\d{3}-\d{3}-\d{4}/</span><span class="token punctuation">;</span>
+          <span class="token keyword">var</span> msg <span class="token operator">=</span> v <span class="token operator">+</span> <span class="token string">&apos; is not a valid phone number!&apos;</span><span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">// &#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x9A8C;&#x8BC1;&#x5668;&#x662F;&#x5426;&#x6210;&#x529F;</span>
+          <span class="token comment" spellcheck="true">// &#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x8986;&#x76D6;</span>
+          <span class="token function">cb</span><span class="token punctuation">(</span>phoneRegex<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">// &#x9ED8;&#x8BA4;&#x7684;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#xFF0C;&#x88AB; `cb()` &#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x8986;&#x76D6;</span>
+      message<span class="token punctuation">:</span> <span class="token string">&apos;Default error message&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    required<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string">&apos;User phone number required&apos;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">// &#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE; promise &#x7684;&#x5F02;&#x6B65;&#x9A8C;&#x8BC1;&#x5668;&#x3002;</span>
+    <span class="token comment" spellcheck="true">// &#x5982;&#x679C;&#x4F60;&#x8FD4;&#x56DE;&#x4E86;&#x4E00;&#x4E2A; promise&#xFF0C;&#x4E0D;&#x8981;&#x6307;&#x5B9A; `isAsync` &#x9009;&#x9879;</span>
+    validate<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> User <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;User&apos;</span><span class="token punctuation">,</span> userSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> error<span class="token punctuation">;</span>
+
+user<span class="token punctuation">.</span>phone <span class="token operator">=</span> <span class="token string">&apos;555.0123&apos;</span><span class="token punctuation">;</span>
+user<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&apos;test&apos;</span><span class="token punctuation">;</span>
+user<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;phone&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+    <span class="token string">&apos;555.0123 is not a valid phone number!&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;name&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+    <span class="token string">&apos;Validator failed for path `name` with value `test`&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x9A8C;&#x8BC1;&#x9519;&#x8BEF;"><a name="&#x9A8C;&#x8BC1;&#x9519;&#x8BEF;" class="anchor-navigation-ex-anchor" href="#&#x9A8C;&#x8BC1;&#x9519;&#x8BEF;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x9A8C;&#x8BC1;&#x9519;&#x8BEF;</h2>
+<p>&#x9A8C;&#x8BC1;&#x5931;&#x8D25;&#x540E;&#x8FD4;&#x56DE;&#x7684;&#x9519;&#x8BEF;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x503C;&#x4E3A;ValidatorError&#x5BF9;&#x8C61;&#x3002; &#x6BCF;&#x4E2A; <a href="http://mongoosejs.com/docs/api.html#error-validation-js" target="_blank">ValidatorError</a> &#x90FD;&#x6709; kind&#x3001; path&#x3001;value &#x548C; message &#x5C5E;&#x6027;&#x3002; ValidatorError &#x4E5F;&#x53EF;&#x80FD;&#x6709;&#x4E00;&#x4E2A; reason &#x5C5E;&#x6027;&#x3002; &#x5982;&#x679C;&#x9519;&#x8BEF;&#x5728;&#x9A8C;&#x8BC1;&#x5668;&#x4E2D;&#x88AB;&#x629B;&#x51FA;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5C06;&#x5305;&#x542B;&#x629B;&#x51FA;&#x7684;&#x9519;&#x8BEF;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> toySchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    color<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> String
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> validator <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token regex">/red|white|gold/i</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  toySchema<span class="token punctuation">.</span><span class="token function">path</span><span class="token punctuation">(</span><span class="token string">&apos;color&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span>validator<span class="token punctuation">,</span>
+    <span class="token string">&apos;Color `{VALUE}` not valid&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Invalid color&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  toySchema<span class="token punctuation">.</span><span class="token function">path</span><span class="token punctuation">(</span><span class="token string">&apos;name&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>v <span class="token operator">!==</span> <span class="token string">&apos;Turbo Man&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">&apos;Need to get a Turbo Man for Christmas&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">&apos;Name `{VALUE}` is not valid&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> Toy <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Toy&apos;</span><span class="token punctuation">,</span> toySchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> toy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Toy</span><span class="token punctuation">(</span><span class="token punctuation">{</span> color<span class="token punctuation">:</span> <span class="token string">&apos;Green&apos;</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Power Ranger&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  toy<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// `err` is a ValidationError object</span>
+    <span class="token comment" spellcheck="true">// `err.errors.color` is a ValidatorError object</span>
+    assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errors<span class="token punctuation">.</span>color<span class="token punctuation">.</span>message<span class="token punctuation">,</span> <span class="token string">&apos;Color `Green` not valid&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errors<span class="token punctuation">.</span>color<span class="token punctuation">.</span>kind<span class="token punctuation">,</span> <span class="token string">&apos;Invalid color&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errors<span class="token punctuation">.</span>color<span class="token punctuation">.</span>path<span class="token punctuation">,</span> <span class="token string">&apos;color&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errors<span class="token punctuation">.</span>color<span class="token punctuation">.</span>value<span class="token punctuation">,</span> <span class="token string">&apos;Green&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errors<span class="token punctuation">.</span>name<span class="token punctuation">.</span>message<span class="token punctuation">,</span> <span class="token string">&apos;Name `Power Ranger` is not valid&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errors<span class="token punctuation">.</span>name<span class="token punctuation">.</span>value<span class="token punctuation">,</span> <span class="token string">&apos;Power Ranger&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errors<span class="token punctuation">.</span>name<span class="token punctuation">.</span>reason<span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+      <span class="token string">&apos;Need to get a Turbo Man for Christmas&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">&apos;ValidationError&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;required-&#x9A8C;&#x8BC1;&#x5668;"><a name="&#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;required-&#x9A8C;&#x8BC1;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;required-&#x9A8C;&#x8BC1;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;Required &#x9A8C;&#x8BC1;&#x5668;</h2>
+<p>&#x5728; mongoose &#x4E2D;&#x7684;&#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#x4E0A;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x5668;&#x662F;&#x975E;&#x5E38;&#x68D8;&#x624B;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#x4E0D;&#x662F;&#x5B8C;&#x5168;&#x6210;&#x719F;&#x7684;&#x8DEF;&#x5F84;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> personSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+ name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+   first<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+   last<span class="token punctuation">:</span> String
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+assert<span class="token punctuation">.</span><span class="token function">throws</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token comment" spellcheck="true">// &#x8FD9;&#x5C06;&#x629B;&#x51FA;&#x4E00;&#x4E2A; error, &#x56E0;&#x4E3A; &apos;name&apos; &#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x5168;&#x6210;&#x719F;&#x7684;&#x8DEF;&#x5F84;</span>
+ personSchema<span class="token punctuation">.</span><span class="token function">path</span><span class="token punctuation">(</span><span class="token string">&apos;name&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">required</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token regex">/Cannot.*&apos;required&apos;/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x8981;&#x4F7F;&#x4E00;&#x4E2A;&#x5D4C;&#x5957;&#x5BF9;&#x8C61; required&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5D4C;&#x5957;&#x7684; schema</span>
+<span class="token keyword">var</span> nameSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+ first<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+ last<span class="token punctuation">:</span> String
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+personSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+ name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+   type<span class="token punctuation">:</span> nameSchema<span class="token punctuation">,</span>
+   required<span class="token punctuation">:</span> <span class="token boolean">true</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> Person <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Person&apos;</span><span class="token punctuation">,</span> personSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> error <span class="token operator">=</span> person<span class="token punctuation">.</span><span class="token function">validateSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;name&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;"><a name="&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;</h2>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x60A8;&#x4E86;&#x89E3;&#x4E86;&#x6587;&#x6863;&#x9A8C;&#x8BC1;&#x3002; Mongoose &#x8FD8;&#x652F;&#x6301; <code>update()</code> &#x548C; <code>findOneAndUpdate()</code> &#x64CD;&#x4F5C;&#x7684;&#x9A8C;&#x8BC1;&#x3002; &#x5728;Mongoose 4.x &#x4E2D;&#xFF0C;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x9ED8;&#x8BA4;&#x662F;&#x5173;&#x95ED;&#x7684; &#x2014;&#x2014; &#x60A8;&#x9700;&#x8981;&#x6307;&#x5B9A; <code>runValidators</code> &#x9009;&#x9879;&#x3002;</p>
+<p>&#x8981;&#x6253;&#x5F00;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#xFF0C;&#x8BF7;&#x4E3A; <code>update()</code> &#x6216; <code>findOneAndUpdate()</code> &#x8BBE;&#x7F6E; <code>runValidators</code> &#x9009;&#x9879;&#x3002; &#x5C0F;&#x5FC3;&#xFF1A;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x9ED8;&#x8BA4;&#x5173;&#x95ED;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x4EEC;&#x6709;&#x51E0;&#x4E2A;&#x8B66;&#x544A;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> toySchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    color<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> String
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> Toy <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Toys&apos;</span><span class="token punctuation">,</span> toySchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  Toy<span class="token punctuation">.</span>schema<span class="token punctuation">.</span><span class="token function">path</span><span class="token punctuation">(</span><span class="token string">&apos;color&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token regex">/blue|green|white|red|orange|periwinkle/i</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">&apos;Invalid color&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> opts <span class="token operator">=</span> <span class="token punctuation">{</span> runValidators<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  Toy<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> color<span class="token punctuation">:</span> <span class="token string">&apos;bacon&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> opts<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errors<span class="token punctuation">.</span>color<span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+      <span class="token string">&apos;Invalid color&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x548C;-this"><a name="&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x548C;-this" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x548C;-this"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. &#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x548C; this</h2>
+<p>&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x548C;&#x6587;&#x6863;&#x9A8C;&#x8BC1;&#x5668;&#x4E4B;&#x95F4;&#x6709;&#x51E0;&#x4E2A;&#x5173;&#x952E;&#x7684;&#x533A;&#x522B;&#x3002; &#x5728;&#x4E0A;&#x9762;&#x7684;&#x989C;&#x8272;&#x9A8C;&#x8BC1;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;<code>this</code> &#x6307;&#x5411;&#x5728;&#x4F7F;&#x7528;&#x6587;&#x6863;&#x9A8C;&#x8BC1;&#x65F6;&#x6B63;&#x5728;&#x88AB;&#x9A8C;&#x8BC1;&#x7684;&#x6587;&#x6863;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x65F6;&#xFF0C;&#x6B63;&#x5728;&#x66F4;&#x65B0;&#x7684;&#x6587;&#x6863;&#x53EF;&#x80FD;&#x4E0D;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7684;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; <code>this</code> &#x503C;&#x6CA1;&#x6709;&#x88AB;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> toySchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    color<span class="token punctuation">:</span> String<span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> String
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  toySchema<span class="token punctuation">.</span><span class="token function">path</span><span class="token punctuation">(</span><span class="token string">&apos;color&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// &#x5F53;&#x5728; `validate()` &#x6216; `validateSync()` &#x4E2D;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;</span>
+    <span class="token comment" spellcheck="true">// &#x9A8C;&#x8BC1;&#x5668;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; `this` &#x8BBF;&#x95EE;&#x6587;&#x6863;</span>
+    <span class="token comment" spellcheck="true">// &#x4F46;&#x662F;**&#x4E0D;&#x80FD;**&#x5728;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x4E2D;&#x8FD9;&#x6837;&#x4F7F;&#x7528;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">&apos;red&apos;</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> value <span class="token operator">!==</span> <span class="token string">&apos;red&apos;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> Toy <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;ActionFigure&apos;</span><span class="token punctuation">,</span> toySchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> toy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Toy</span><span class="token punctuation">(</span><span class="token punctuation">{</span> color<span class="token punctuation">:</span> <span class="token string">&apos;red&apos;</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Red Power Ranger&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> error <span class="token operator">=</span> toy<span class="token punctuation">.</span><span class="token function">validateSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;color&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> update <span class="token operator">=</span> <span class="token punctuation">{</span> color<span class="token punctuation">:</span> <span class="token string">&apos;red&apos;</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Red Power Ranger&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> opts <span class="token operator">=</span> <span class="token punctuation">{</span> runValidators<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  Toy<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> update<span class="token punctuation">,</span> opts<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// update validator &#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF; :</span>
+    <span class="token comment" spellcheck="true">// &quot;TypeError: Cannot read property &apos;toLowerCase&apos; of undefined&quot;,</span>
+    <span class="token comment" spellcheck="true">// because `this` is **not** the document being updated when using</span>
+    <span class="token comment" spellcheck="true">// update validators</span>
+    assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="context-&#x9009;&#x9879;"><a name="context-&#x9009;&#x9879;" class="anchor-navigation-ex-anchor" href="#context-&#x9009;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. context &#x9009;&#x9879;</h2>
+<p><code>context</code> &#x9009;&#x9879;&#x5141;&#x8BB8;&#x60A8;&#x5C06;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x4E2D; <code>this</code> &#x7684;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x57FA;&#x7840;&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre class="language-"><code class="lang-js">toySchema<span class="token punctuation">.</span><span class="token function">path</span><span class="token punctuation">(</span><span class="token string">&apos;color&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">// &#x5F53;&#x8FD0;&#x884C; `context` &#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A; &apos;query&apos; &#x7684;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x65F6;</span>
+   <span class="token comment" spellcheck="true">// `this` &#x6307;&#x5411; query &#x5BF9;&#x8C61;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>$<span class="token keyword">set</span><span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">&apos;red&apos;</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> value <span class="token operator">===</span> <span class="token string">&apos;red&apos;</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> Toy <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Figure&apos;</span><span class="token punctuation">,</span> toySchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> update <span class="token operator">=</span> <span class="token punctuation">{</span> color<span class="token punctuation">:</span> <span class="token string">&apos;blue&apos;</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Red Power Ranger&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">// &#x6CE8;&#x610F; context &#x9009;&#x9879;</span>
+ <span class="token keyword">var</span> opts <span class="token operator">=</span> <span class="token punctuation">{</span> runValidators<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> context<span class="token punctuation">:</span> <span class="token string">&apos;query&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+ Toy<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> update<span class="token punctuation">,</span> opts<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;color&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x8DEF;&#x5F84;"><a name="&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x8DEF;&#x5F84;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x8DEF;&#x5F84;"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. &#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x8DEF;&#x5F84;</h2>
+<p>&#x53E6;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x533A;&#x522B;&#x662F;&#xFF0C;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x4EC5;&#x5728;&#x66F4;&#x65B0;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x4E0A;&#x8FD0;&#x884C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x56E0;&#x4E3A;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x4E2D;&#x6CA1;&#x6709;&#x6307;&#x5B9A; <code>&apos;name&apos;</code>&#xFF0C;&#x6240;&#x4EE5;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5C06;&#x6210;&#x529F;&#x3002;</p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x65F6;&#xFF0C;required &#x9A8C;&#x8BC1;&#x5668;<strong>&#x4EC5;&#x5728;</strong>&#x60A8;&#x8BD5;&#x56FE;&#x663E;&#x5F0F; <code>$unset</code> &#x952E;&#xFF08;&#x300C;&#x8BD1;&#x8005;&#x6CE8;&#x300D;&#xFF1A;&#x4E5F;&#x5C31;&#x662F;&#x5220;&#x9664; schema &#x67D0;&#x9879;&#x5C5E;&#x6027;&#xFF09;&#x65F6;&#x624D;&#x4F1A;&#x5931;&#x8D25;&#x3002;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> kittenSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> String<span class="token punctuation">,</span> required<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> Number
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> Kitten <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Kitten&apos;</span><span class="token punctuation">,</span> kittenSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> update <span class="token operator">=</span> <span class="token punctuation">{</span> color<span class="token punctuation">:</span> <span class="token string">&apos;blue&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> opts <span class="token operator">=</span> <span class="token punctuation">{</span> runValidators<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  Kitten<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> update<span class="token punctuation">,</span> opts<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// &#x64CD;&#x4F5C;&#x6210;&#x529F;&#xFF0C;&#x5C3D;&#x7BA1;&#x4E8B;&#x5B9E;&#x4E0A;&#x6CA1;&#x6709;&#x6307;&#x5B9A; &apos;name&apos;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> unset <span class="token operator">=</span> <span class="token punctuation">{</span> $unset<span class="token punctuation">:</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  Kitten<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> unset<span class="token punctuation">,</span> opts<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Operation fails because &apos;name&apos; is required</span>
+    assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;name&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x4EC5;&#x8FD0;&#x884C;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x4E0A;"><a name="&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x4EC5;&#x8FD0;&#x884C;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x4E0A;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x4EC5;&#x8FD0;&#x884C;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x4E0A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.10. &#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x4EC5;&#x8FD0;&#x884C;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x4E0A;</h2>
+<p>&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7EC6;&#x8282;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#xFF1A;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x53EA;&#x80FD;&#x5728;&#x4EE5;&#x4E0B;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x7B26;&#x4E0A;&#x8FD0;&#x884C;&#xFF1A;</p>
+<p><em><code>$set</code> </em> <code>$unset</code> <em> <code>$push</code> (&gt;= 4.8.0) </em> <code>$addToSet</code> (&gt;= 4.8.0) <em> <code>$pull</code> (&gt;= 4.12.0) </em> <code>$pullAll</code> (&gt;= 4.12.0)</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x66F4;&#x65B0;&#x4F1A;&#x6210;&#x529F;&#xFF0C;&#x4E0D;&#x7BA1;&#x6570;&#x5B57;&#x7684;&#x503C;&#x662F;&#x591A;&#x5C11;&#xFF0C;&#x56E0;&#x4E3A;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x5FFD;&#x7565; <code>$inc</code>&#x3002; &#x53E6;&#x5916;&#xFF0C;<code>$push</code>&#xFF0C;<code>$addToSet</code>&#xFF0C;<code>$pull</code> &#x548C; <code>$pullAll</code> &#x9A8C;&#x8BC1;&#x4E0D;&#x4F1A;&#x5728;&#x6570;&#x7EC4;&#x672C;&#x8EAB;&#x4E0A;&#x8FD0;&#x884C;&#x4EFB;&#x4F55;&#x9A8C;&#x8BC1;&#xFF0C;&#x53EA;&#x4F1A;&#x5BF9;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5355;&#x4E2A;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#x3002;</p>
+<pre class="language-"><code class="lang-js">
+  <span class="token keyword">var</span> testSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    number<span class="token punctuation">:</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> Number<span class="token punctuation">,</span> max<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    arr<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> message<span class="token punctuation">:</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> String<span class="token punctuation">,</span> maxLength<span class="token punctuation">:</span> <span class="token number">10</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// &#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x4E0D;&#x4F1A;&#x68C0;&#x67E5;&#x8FD9;&#x4E2A;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x5728;&#x6570;&#x7EC4;&#x4E0A;&#x52A0;&#x4E0A; `$push` 2 &#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x53EA;&#x8981;&#x5B83;&#x4EEC;&#x6CA1;&#x6709;&#x592A;&#x957F;&#x7684; `message&apos;&#x3002;</span>
+  testSchema<span class="token punctuation">.</span><span class="token function">path</span><span class="token punctuation">(</span><span class="token string">&apos;arr&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> v<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> Test <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;Test&apos;</span><span class="token punctuation">,</span> testSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> update <span class="token operator">=</span> <span class="token punctuation">{</span> $inc<span class="token punctuation">:</span> <span class="token punctuation">{</span> number<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> opts <span class="token operator">=</span> <span class="token punctuation">{</span> runValidators<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  Test<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> update<span class="token punctuation">,</span> opts<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// &#x8FD9;&#x91CC;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x6709;&#x9A8C;&#x8BC1;&#x9519;&#x8BEF;</span>
+    update <span class="token operator">=</span> <span class="token punctuation">{</span> $push<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> message<span class="token punctuation">:</span> <span class="token string">&apos;hello&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> message<span class="token punctuation">:</span> <span class="token string">&apos;world&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    Test<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> update<span class="token punctuation">,</span> opts<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// &#x5373;&#x4F7F;&#x6570;&#x7EC4;&#x81F3;&#x5C11;&#x6709; 2 &#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x8FD9;&#x4E5F;&#x4E0D;&#x4F1A;&#x51FA;&#x9519;&#x3002;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x5173;&#x4E8E;-push-&#x548C;-addtoset"><a name="&#x5173;&#x4E8E;-push-&#x548C;-addtoset" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x4E8E;-push-&#x548C;-addtoset"><i class="fa fa-link" aria-hidden="true"></i></a>1.11. &#x5173;&#x4E8E; $push &#x548C; $addToSet</h2>
+<p>4.8.0 &#x4E2D;&#x7684;&#x65B0;&#x589E;&#x529F;&#x80FD;&#xFF1A;&#x66F4;&#x65B0;&#x9A8C;&#x8BC1;&#x5668;&#x4E5F;&#x5728; <code>$push</code>&#x548C; <code>$addToSet</code> &#x4E0A;&#x8FD0;&#x884C;</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">var</span> testSchema <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Schema</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+   numbers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> Number<span class="token punctuation">,</span> max<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+   docs<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+     name<span class="token punctuation">:</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> String<span class="token punctuation">,</span> required<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span><span class="token punctuation">]</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> Test <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">model</span><span class="token punctuation">(</span><span class="token string">&apos;TestPush&apos;</span><span class="token punctuation">,</span> testSchema<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">var</span> update <span class="token operator">=</span> <span class="token punctuation">{</span>
+   $push<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+     numbers<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+     docs<span class="token punctuation">:</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token keyword">null</span> <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ <span class="token keyword">var</span> opts <span class="token operator">=</span> <span class="token punctuation">{</span> runValidators<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ Test<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> update<span class="token punctuation">,</span> opts<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;numbers&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>errors<span class="token punctuation">[</span><span class="token string">&apos;docs&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-12-24 17:08:55
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="queries.html" class="navigation navigation-prev " aria-label="Previous page: queries">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="middleware.html" class="navigation navigation-next " aria-label="Next page: middleware">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"validation","level":"3.13.1.2.5","depth":4,"next":{"title":"middleware","level":"3.13.1.2.6","depth":4,"path":"Library/mongoose/docs/middleware.md","ref":"Library/mongoose/docs/middleware.md","articles":[]},"previous":{"title":"queries","level":"3.13.1.2.4","depth":4,"path":"Library/mongoose/docs/queries.md","ref":"Library/mongoose/docs/queries.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"acefull","theme":"tomorrow","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Node.js","language":"zh-hans","gitbook":"*","description":"Node.js 自我学习"},"file":{"path":"Library/mongoose/docs/validation.md","mtime":"2017-12-24T09:08:55.731Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-25T15:33:00.187Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
