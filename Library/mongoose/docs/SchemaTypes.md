@@ -1,17 +1,26 @@
 # SchemaTypes
 
- SchemaTypes 处理路径 [defaults]()、[validation]()、[getter]()、[setter]()、[queries]() 的 [field selection defaults]()以及 [Strings]() 和 [Numbers]() 的其他常规特征的定义。请参阅它们各自的API文档，了解更多细节。
+ SchemaTypes 处理路径
+ [defaults](/Library/mongoose/docs/API.md#SchemaType_default)、
+ [validation](/Library/mongoose/docs/API.md#SchemaType_validate)、
+ [getter](/Library/mongoose/docs/API.md#SchemaType_get)、
+ [setter](/Library/mongoose/docs/API.md#SchemaType_set)、
+ [queries](/Library/mongoose/docs/API.md#query-js) 的
+ [field selection defaults](/Library/mongoose/docs/API.md#select)以及
+ [Strings](/Library/mongoose/docs/API.md#schema_string) 和
+ [Numbers](/Library/mongoose/docs/API.md#schema_number)
+ 的其他常规特征的定义。请参阅它们各自的API文档，了解更多细节。
 
-下面是一些可用的 [Schema Types]().
+下面是一些可用的 [Schema Types](/Library/mongoose/docs/API.md#Schema_Types).
 
-  * [String]()
-  * [Number]()
-  * [Date]()
-  * [Buffer]()
-  * Boolean
-  * Mixed
-  * [Objectid]()
-  * Array
+  * [String](/Library/mongoose/docs/API.md#schema_string)
+  * [Number](/Library/mongoose/docs/API.md#schema_number)
+  * [Date](/Library/mongoose/docs/API.md#schema_date)
+  * [Buffer](/Library/mongoose/docs/API.md#schema_buffer)
+  * [Boolean](/Library/mongoose/docs/API.md#schema_boolean)
+  * [Mixed](/Library/mongoose/docs/API.md#schema_mixed)
+  * [Objectid](/Library/mongoose/docs/API.md#schema_objectid)
+  * [Array](/Library/mongoose/docs/API.md#schema_array)
 
 ## 示例
 
@@ -76,7 +85,7 @@ var schema2 = new Schema({
 });
 ```
 
-除了 `type` 属性之外，您还可以为路径指定额外的属性。例如，如果在保存之前想要小写的字符串:
+除了 `type` 属性之外，您还可以为路径指定额外的属性。例如，如果在「保存之前」想要小写的字符串:
 
 ```js
 var schema2 = new Schema({
@@ -89,14 +98,14 @@ var schema2 = new Schema({
 
 `lowercase` 属性只适用于字符串。有一些特定的选项适用于所有的模式类型，还有一些适用于特定的模式类型。
 
-### 通用的 SchemaType 选项 
+### 通用的 SchemaType 选项
 
 选项  |  类型 |  描述
 -------------|-----------------|----------
-required  |  Boolean or Function  | 如果 `true`，需要为该属性添加[必要的验证器]()
+required  |  Boolean or Function  | 如果 `true`，需要为该属性添加[必要的验证器](/Library/mongoose/docs/validation.html#built-in-validators)
 default  |  Any or Function | 设置该路径的默认值。如果值是一个函数，那么函数的返回值就会被用作默认值。
-select  | Boolean  | 指定查询的默认[预测]()
-validate  |  Function | 为该属性添加[验证器函数]()
+select  | Boolean  | 指定查询的默认[预测(projections)](https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/)
+validate  |  Function or Array or Object | 为该属性添加[验证器函数](/Library/mongoose/docs/API.md#SchemaType_validate)
 get  |  Function |  使用 [`Object.defineProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) 为该属性定义一个自定义 getter。
 set  |  Function |  使用 [`Object.defineProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) 为该属性定义一个自定义 setter。
 alias  |  String |  mongoose >= 4.10.0 可用。定义一个具有给定名称的虚拟属性，可以用来获取或者设置此路径。
@@ -123,13 +132,13 @@ doc.i; // 3
 ```
 ### Indexes
 
-您还可以使用模式类型选项定义 MongoDB 索引。
+您还可以使用模式类型选项定义 [MongoDB 索引](https://docs.mongodb.com/manual/indexes/)。
 
 选项  |  类型 |  描述
 -------------|-----------------|----------
-index   |  Boolean  | 是否在这个属性上定义一个索引。
-unique  |  Boolean  | 是否要在这个属性上定义一个『惟一的』索引。
-sparse  |  Boolean  | 是否在这个属性上定义一个『稀疏的』索引。
+index   |  Boolean  | 是否在这个属性上定义一个[索引](https://docs.mongodb.com/manual/indexes/)。
+unique  |  Boolean  | 是否要在这个属性上定义一个『[惟一的』索引](https://docs.mongodb.com/manual/core/index-unique/)。
+sparse  |  Boolean  | 是否在这个属性上定义一个[『稀疏的』索引](https://docs.mongodb.com/manual/core/index-sparse/)。
 
 ```js
 var schema2 = new Schema({
@@ -160,15 +169,18 @@ min   |  Number  | 创建一个[验证器](/Library/mongoose/docs/validation.md)
 max  | Number  |  创建一个[验证器](/Library/mongoose/docs/validation.md)，检查该值是否小于或等于给定的最大值。
 
 ### Date
-  * min: Date
-  * max: Date
+
+选项  |  类型 |  描述
+-------------|-----------------|----------
+min   |  Date  | 创建一个[验证器](/Library/mongoose/docs/validation.md)，检查该日期是否大于或等于给定值
+max  | Date  |  创建一个[验证器](/Library/mongoose/docs/validation.md)，检查该日期是否小于或等于给定的最大值。
 
 
 ## 使用笔记:
 
 ### Dates
 
-内置的 [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) 方法[不会挂在](https://github.com/Automattic/mongoose/issues/1598) mongoose 更改跟踪逻辑中，英文表示如果您在文档中使用 Date 并使用 `setMonth()` 方法对其进行修改，则 mongoose 将不会意识到此更改，而 `doc.save()` 不会持保存这个修改。如果您必须使用内置方法修改 Date 类型，请在保存之前使用 `doc.markModified('pathToYourDate')` 告诉 mongoose 有关更改。
+内置的 [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) 方法[不会勾挂在](https://github.com/Automattic/mongoose/issues/1598) mongoose 更改跟踪逻辑中，英文表示如果您在文档中使用 Date 并使用 `setMonth()` 方法对其进行修改，则 mongoose 将不会意识到此更改，而 `doc.save()` 不会保存这个修改。如果您必须使用内置方法修改 Date 类型，请在保存之前使用 `doc.markModified('pathToYourDate')` 告诉 mongoose 有关更改。
 
 ```js
 var Assignment = mongoose.model('Assignment', { dueDate: Date });
@@ -182,7 +194,7 @@ Assignment.findOne(function (err, doc) {
 ```
 ### Mixed
 
-一切皆 SchemaType，它的灵活性来自于难以维护的折衷。 Mixed 可以通过 `Schema.Types.Mixed` 或通过传递一个空的对象文字来获得。 以下是等同的：
+任何 SchemaType，它的灵活性来自于难以维护的折衷。 Mixed 可以通过 `Schema.Types.Mixed` 或通过传递一个空的对象文字来获得。 以下是等同的：
 
 ```js
 var Any = new Schema({ any: {} });
@@ -211,7 +223,7 @@ var Car = new Schema({ driver: ObjectId });
 
 ### Arrays
 
-提供 of[SchemaTypes]() 或 [子文档]() 数组。
+提供 of[SchemaTypes](/Library/mongoose/docs/API.md_Schema_Types) 或 [子文档](/Library/mongoose/docs/subdocs.md) 数组。
 
 ```js
 var ToySchema = new Schema({ name: String });
@@ -269,7 +281,7 @@ Mongoose 也可以使用自定义的 SchemaTypes 进行扩展。搜索[插件网
 
 ## `schema.path()` 函数
 
-The `schema.path()` 函数为给定路径返回实例化的模式类型。
+[`schema.path()` 函数](/Library/mongoose/docs/API.md#Schema_path) 为给定路径返回实例化的模式类型。
 
 ```js
 var sampleSchema = new Schema({ name: { type: String, required: true } });

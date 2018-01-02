@@ -4,6 +4,34 @@
 
 ## Aplication
 
+### app.engine(ext, callback) {#app_engine}
+
+将给定的模板引擎 `callback` 注册为 `ext`。
+
+默认情况下，Express 将 `require()` 基于文件扩展名的引擎。例如，如果您试图渲染一个 “foo.jade” 文件，Express 在内部调用以下内容，并在后续调用中缓存 `require()` 以提高性能。
+
+```js
+app.engine('jade', require('jade').__express);
+```
+
+对不提供的开箱即用的 `.__express` 的引擎使用这种方法，或者如果您想要“映射”一个不同的扩展到模板引擎。
+
+例如，将 EJS 模板引擎映射到 “.html” 文件:
+
+```js
+app.engine('html', require('ejs').renderFile);
+```
+
+在这种情况下，EJS 提供了一个 `.renderFile()` 方法，它具有与 Express 所期望的相同的签名：`(path, options, callback)`，但是请注意，在内部，这个方法别名为 `ejs.__express`，所以如果使用 “.ejs” 扩展名，你不需要做任何事情。
+
+一些模板引擎不遵循这个约定。[consolidate.js](https://github.com/tj/consolidate.js) 库将 Node 模板引擎映射为遵循这个约定，所以它们与 Express 一起工作得很好。
+
+```js
+var engines = require('consolidate');
+app.engine('haml', engines.haml);
+app.engine('html', engines.hogan);
+```
+
 ## Request
 
 ## Response

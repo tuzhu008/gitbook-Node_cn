@@ -3,7 +3,7 @@
 | 名称 | 描述 |
 | :--- | :--- |
 | [nvm](/Library/nvm/README.md) | node版本管理工具 |
-| [supervisor](/Library/supervisor/README.md) | 调试工具 |
+| [supervisor](/Library/supervisor/README.md) | 文件监控、进程重启 |
 | [express](/Library/express/README.md) | 快速、开放、极简的 web 开发框架 |
 | [async](/Library/async/README.md) | 异步编程库 |
 | [request](/Library/request/README.md) | 简化的 HTTP 请求的客户端。 |
@@ -13,3 +13,6 @@
 | [node-http-proxy](/Library/node-http-proxy/README.md)   |   |
 | [mysql](/Library/mysql/README.md)   | MySQL 数据库驱动程序  |
 | [mongoose](/Library/mongoose/README.md)   | MongoDB 驱动程序  |
+| [passport](/Library/passport/README.md)   | 身份认证  |
+| [node-formidable](/Library/node-formidable/README.md)   | 表单解析  |
+| [pm2](/Library/pm2/README.md)   |   |

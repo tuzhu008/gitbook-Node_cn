@@ -10,6 +10,11 @@ p {
     text-indent: 2em;
 }
 
+strong {
+    font-weight: 900 !important;
+    color: #FF9900 !important;
+}
+
 .book-body ul {
     padding-left: 4em !important;
 }
@@ -74,13 +79,24 @@ blockquote {
     padding-bottom: 15px !important;
 }
 
-a>code:first-child {
-    border: 1px solid #3eb1d0 !important;
+blockquote.info strong {
+    color: #42acf3 !important;
 }
 
-strong {
-    font-weight: 900 !important;
-    color: #FF9900 !important;
+blockquote.info warning {
+    color: #f0ad4e !important;
+}
+
+blockquote.info danger {
+    color: #d9534f !important;
+}
+
+blockquote.info error {
+    color: #50af51 !important;
+}
+
+a>code:first-child {
+    border: 1px solid #3eb1d0 !important;
 }
 
 

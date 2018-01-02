@@ -28,7 +28,10 @@
   - [中间件](Library/express/middleware/README.md)
     - [method-override](Library/express/middleware/method-override/README.md)
     - [express-session](Library/express/middleware/session/README.md)
-
+    - [connect-mongo](Library/express/middleware/connect-mongo/README.md)
+    - [connect-flash](Library/express/middleware/connect-flash/README.md)
+    - [express-formidable](Library/express/middleware/express-formidable/README.md)
+    - [express-winston](Library/express/middleware/express-winston/README.md)
 * [connect](Library/connect/README.md)
 
 * [socket.io](Library/socket.io/README.md)
@@ -78,3 +81,9 @@
     - [API](Library/mongoose/docs/API.md)
     - [常见问题](Library/mongoose/docs/faq.md)
     - [之前的版本](Library/mongoose/docs/prior.md)
+
+* [passport](Library/passport/README.md)
+
+* [node-formidable](Library/node-formidable/README.md)
+
+* [pm2](Library/pm2/README.md) 

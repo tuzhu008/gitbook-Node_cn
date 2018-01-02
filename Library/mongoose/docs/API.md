@@ -1,470 +1,13 @@
-- [index.js](#indexjs)
-	- [Mongoose#Aggregate()](#mongooseaggregate)
-	- [Mongoose#CastError(type, value, path, [reason])](#mongoosecasterrortype-value-path-reason)
-	- [Mongoose#Collection()](#mongoosecollection)
-	- [Mongoose#connect(uri(s), [options], [options.useMongoClient], [callback])](#mongooseconnecturis-options-optionsusemongoclient-callback)
-	- [Mongoose#Connection()](#mongooseconnection)
-	- [Mongoose#createConnection([uri], [options], [options.config], [options.config.autoIndex], [options.useMongoClient])](#mongoosecreateconnectionuri-options-optionsconfig-optionsconfigautoindex-optionsusemongoclient)
-	- [Mongoose#disconnect([fn])](#mongoosedisconnectfn)
-	- [Mongoose#Document()](#mongoosedocument)
-	- [Mongoose#DocumentProvider()](#mongoosedocumentprovider)
-	- [Mongoose#Error()](#mongooseerror)
-	- [Mongoose#get(key)](#mongoosegetkey)
-	- [Mongoose#getPromiseConstructor()](#mongoosegetpromiseconstructor)
-	- [Mongoose#Model()](#mongoosemodel)
-	- [Mongoose#modelNames()](#mongoosemodelnames)
-	- [Mongoose()](#mongoose)
-	- [Mongoose#Mongoose()](#mongoosemongoose)
-	- [Mongoose#plugin(fn, [opts])](#mongoosepluginfn-opts)
-	- [function Object() { [native code] }#Promise()](#function-object-native-code-promise)
-	- [Mongoose#PromiseProvider()](#mongoosepromiseprovider)
-	- [Mongoose#Query()](#mongoosequery)
-	- [Mongoose#Schema()](#mongooseschema)
-	- [Mongoose#SchemaType()](#mongooseschematype)
-	- [Mongoose#set(key, value)](#mongoosesetkey-value)
-	- [()](#)
-	- [Mongoose#VirtualType()](#mongoosevirtualtype)
-	- [Mongoose#connection](#mongooseconnection)
-	- [Mongoose#mongo](#mongoosemongo)
-	- [Mongoose#mquery](#mongoosemquery)
-	- [Mongoose#SchemaTypes](#mongooseschematypes)
-	- [Mongoose#Types](#mongoosetypes)
-	- [Mongoose#version](#mongooseversion)
-- [types/array.js](#typesarrayjs)
-	- [MongooseArray#$shift()](#mongoosearrayshift)
-	- [MongooseArray#remove()](#mongoosearrayremove)
-	- [MongooseArray.$pop()](#mongoosearraypop)
-	- [MongooseArray.addToSet([args...])](#mongoosearrayaddtosetargs)
-	- [MongooseArray.indexOf(obj)](#mongoosearrayindexofobj)
-	- [MongooseArray.inspect()](#mongoosearrayinspect)
-	- [MongooseArray.nonAtomicPush([args...])](#mongoosearraynonatomicpushargs)
-	- [MongooseArray.pop()](#mongoosearraypop)
-	- [MongooseArray.pull([args...])](#mongoosearraypullargs)
-	- [MongooseArray.push([args...])](#mongoosearraypushargs)
-	- [MongooseArray.set()](#mongoosearrayset)
-	- [MongooseArray.shift()](#mongoosearrayshift)
-	- [MongooseArray.sort()](#mongoosearraysort)
-	- [MongooseArray.splice()](#mongoosearraysplice)
-	- [MongooseArray.toObject(options)](#mongoosearraytoobjectoptions)
-	- [MongooseArray.unshift()](#mongoosearrayunshift)
-- [types/subdocument.js](#typessubdocumentjs)
-	- [Subdocument#ownerDocument()](#subdocumentownerdocument)
-	- [Subdocument#parent()](#subdocumentparent)
-	- [Subdocument#remove([options], [callback])](#subdocumentremoveoptions-callback)
-- [types/embedded.js](#typesembeddedjs)
-	- [EmbeddedDocument#inspect()](#embeddeddocumentinspect)
-	- [EmbeddedDocument#invalidate(path, err)](#embeddeddocumentinvalidatepath-err)
-	- [EmbeddedDocument#ownerDocument()](#embeddeddocumentownerdocument)
-	- [EmbeddedDocument#parent()](#embeddeddocumentparent)
-	- [EmbeddedDocument#parentArray()](#embeddeddocumentparentarray)
-	- [EmbeddedDocument#remove([options], [fn])](#embeddeddocumentremoveoptions-fn)
-	- [EmbeddedDocument.markModified(path)](#embeddeddocumentmarkmodifiedpath)
-- [types/buffer.js](#typesbufferjs)
-	- [MongooseBuffer.copy(target)](#mongoosebuffercopytarget)
-	- [MongooseBuffer.equals(other)](#mongoosebufferequalsother)
-	- [MongooseBuffer.subtype(subtype)](#mongoosebuffersubtypesubtype)
-	- [MongooseBuffer.toBSON()](#mongoosebuffertobson)
-	- [MongooseBuffer.toObject([subtype])](#mongoosebuffertoobjectsubtype)
-	- [MongooseBuffer.write()](#mongoosebufferwrite)
-- [types/objectid.js](#typesobjectidjs)
-	- [ObjectId()](#objectid)
-- [types/decimal128.js](#typesdecimal128js)
-	- [exports()](#exports)
-- [types/documentarray.js](#typesdocumentarrayjs)
-	- [MongooseDocumentArray.create(obj)](#mongoosedocumentarraycreateobj)
-	- [MongooseDocumentArray.id(id)](#mongoosedocumentarrayidid)
-	- [MongooseDocumentArray.inspect()](#mongoosedocumentarrayinspect)
-	- [MongooseDocumentArray.toObject([options])](#mongoosedocumentarraytoobjectoptions)
-- [promise.js](#promisejs)
-	- [Promise#addBack(listener)](#promiseaddbacklistener)
-	- [Promise#addCallback(listener)](#promiseaddcallbacklistener)
-	- [Promise#addErrback(listener)](#promiseadderrbacklistener)
-	- [Promise#end()](#promiseend)
-	- [Promise#on(event, listener)](#promiseonevent-listener)
-	- [Promise(fn)](#promisefn)
-	- [Promise#reject(reason)](#promiserejectreason)
-	- [Promise#resolve([err], [val])](#promiseresolveerr-val)
-	- [Promise#then(onFulFill, onReject)](#promisethenonfulfill-onreject)
-	- [Promise.complete(args)](#promisecompleteargs)
-	- [Promise.ES6(resolver)](#promisees6resolver)
-	- [Promise.fulfill(args)](#promisefulfillargs)
-- [virtualtype.js](#virtualtypejs)
-	- [VirtualType()](#virtualtype)
-	- [VirtualType#get(fn)](#virtualtypegetfn)
-	- [VirtualType#set(fn)](#virtualtypesetfn)
-	- [VirtualType#applyGetters(value, scope)](#virtualtypeapplygettersvalue-scope)
-	- [VirtualType#applySetters(value, scope)](#virtualtypeapplysettersvalue-scope)
-- [utils.js](#utilsjs)
-	- [exports.pluralization](#exportspluralization)
-	- [exports.uncountables](#exportsuncountables)
-- [drivers/node-mongodb-native/collection.js](#driversnode-mongodb-nativecollectionjs)
-	- [function Object() { [native code] }#$format()](#function-object-native-code-format)
-	- [function Object() { [native code] }#$print(](#function-object-native-code-print)
-	- [NativeCollection#getIndexes(callback)](#nativecollectiongetindexescallback)
-- [drivers/node-mongodb-native/connection.js](#driversnode-mongodb-nativeconnectionjs)
-	- [NativeConnection#useDb(name)](#nativeconnectionusedbname)
-	- [NativeConnection.STATES](#nativeconnectionstates)
-- [browser.js](#browserjs)
-	- [function Object() { [native code] }#Promise()](#function-object-native-code-promise)
-	- [exports.Document()](#exportsdocument)
-	- [exports.Error()](#exportserror)
-	- [exports.PromiseProvider()](#exportspromiseprovider)
-	- [exports.Schema()](#exportsschema)
-	- [exports.VirtualType()](#exportsvirtualtype)
-	- [exports#SchemaTypes](#exportsschematypes)
-	- [exports#Types](#exportstypes)
-- [ES6Promise.js](#es6promisejs)
-	- [ES6Promise(fn)](#es6promisefn)
-	- [schema.js](#schemajs)
-	- [Schema#add(obj, prefix)](#schemaaddobj-prefix)
-	- [Schema#clone()](#schemaclone)
-	- [Schema#eachPath(fn)](#schemaeachpathfn)
-	- [Schema#get(key)](#schemagetkey)
-	- [Schema#index(fields, [options], [options.expires=null])](#schemaindexfields-options-optionsexpiresnull)
-	- [Schema#indexes()](#schemaindexes)
-	- [Schema#method(method, [fn])](#schemamethodmethod-fn)
-	- [Schema#path(path, constructor)](#schemapathpath-constructor)
-	- [Schema#pathType(path)](#schemapathtypepath)
-	- [Schema#plugin(plugin, [opts])](#schemapluginplugin-opts)
-	- [Schema#post(method, fn)](#schemapostmethod-fn)
-	- [Schema#pre(method, callback)](#schemapremethod-callback)
-	- [Schema#queue(name, args)](#schemaqueuename-args)
-	- [Schema#remove(path)](#schemaremovepath)
-	- [Schema#requiredPaths(invalidate)](#schemarequiredpathsinvalidate)
-	- [Schema(definition, [options])](#schemadefinition-options)
-	- [Schema#set(key, [value])](#schemasetkey-value)
-	- [Schema#static(name, [fn])](#schemastaticname-fn)
-	- [Schema#virtual(name, [options])](#schemavirtualname-options)
-	- [Schema#virtualpath(name)](#schemavirtualpathname)
-	- [Schema.indexTypes()](#schemaindextypes)
-	- [Schema.reserved](#schemareserved)
-	- [Schema.Types](#schematypes)
-	- [Schema#childSchemas](#schemachildschemas)
-	- [Schema#obj](#schemaobj)
-- [document.js](#documentjs)
-	- [MISSING method name](#missing-method-name)
-	- [MISSING method name](#missing-method-name)
-	- [Document#$ignore(path)](#documentignorepath)
-	- [Document#$isDefault([path])](#documentisdefaultpath)
-	- [Document#depopulate(path)](#documentdepopulatepath)
-	- [Document#equals(doc)](#documentequalsdoc)
-	- [Document#execPopulate()](#documentexecpopulate)
-	- [Document#get(path, [type])](#documentgetpath-type)
-	- [Document#init(doc, fn)](#documentinitdoc-fn)
-	- [Document#inspect()](#documentinspect)
-	- [Document#invalidate(path, errorMsg, value, [kind])](#documentinvalidatepath-errormsg-value-kind)
-	- [Document#isDirectModified(path)](#documentisdirectmodifiedpath)
-	- [Document#isDirectSelected(path)](#documentisdirectselectedpath)
-	- [Document#isInit(path)](#documentisinitpath)
-	- [Document#isModified([path])](#documentismodifiedpath)
-	- [Document#isSelected(path)](#documentisselectedpath)
-	- [Document#markModified(path, [scope])](#documentmarkmodifiedpath-scope)
-	- [Document#modifiedPaths()](#documentmodifiedpaths)
-	- [Document#populate([path], [callback])](#documentpopulatepath-callback)
-	- [Document#populated(path)](#documentpopulatedpath)
-	- [function Object() { [native code] }#save([options], [options.safe], [options.validateBeforeSave], [fn])](#function-object-native-code-saveoptions-optionssafe-optionsvalidatebeforesave-fn)
-	- [(path, val, [type], [options])](#path-val-type-options)
-	- [Document#toJSON(options)](#documenttojsonoptions)
-	- [Document#toObject([options])](#documenttoobjectoptions)
-	- [Document#toString()](#documenttostring)
-	- [Document#unmarkModified(path)](#documentunmarkmodifiedpath)
-	- [Document#update(doc, options, callback)](#documentupdatedoc-options-callback)
-	- [Document#validate(optional, callback)](#documentvalidateoptional-callback)
-	- [Document#validateSync(pathsToValidate)](#documentvalidatesyncpathstovalidate)
-	- [Document.$markValid(path)](#documentmarkvalidpath)
-	- [Document#errors](#documenterrors)
-	- [Document#id](#documentid)
-	- [Document#isNew](#documentisnew)
-	- [Document#schema](#documentschema)
-- [query.js](#queryjs)
-	- [Query#$where(js)](#querywherejs)
-	- [Query#all([path], val)](#queryallpath-val)
-	- [Query#and(array)](#queryandarray)
-	- [Query#batchSize(val)](#querybatchsizeval)
-	- [Query#box(val, Upper)](#queryboxval-upper)
-	- [Query#cast(model, [obj])](#querycastmodel-obj)
-	- [Query#catch([reject])](#querycatchreject)
-	- [Query#center()](#querycenter)
-	- [Query#centerSphere([path], val)](#querycenterspherepath-val)
-	- [Query#circle([path], area)](#querycirclepath-area)
-	- [Query#collation(value)](#querycollationvalue)
-	- [Query#comment(val)](#querycommentval)
-	- [Query#count([criteria], [callback])](#querycountcriteria-callback)
-	- [Query#cursor([options])](#querycursoroptions)
-	- [Query#deleteMany([filter], [callback])](#querydeletemanyfilter-callback)
-	- [Query#deleteOne([filter], [callback])](#querydeleteonefilter-callback)
-	- [Query#distinct([field], [criteria], [callback])](#querydistinctfield-criteria-callback)
-	- [Query#elemMatch(path, criteria)](#queryelemmatchpath-criteria)
-	- [Query#equals(val)](#queryequalsval)
-	- [Query#error(err)](#queryerrorerr)
-	- [Query#exec([operation], [callback])](#queryexecoperation-callback)
-	- [Query#exists([path], val)](#queryexistspath-val)
-	- [Query#find([filter], [callback])](#queryfindfilter-callback)
-	- [Query#findOne([filter], [projection], [options], [callback])](#queryfindonefilter-projection-options-callback)
-	- [Query#findOneAndRemove([conditions], [options], [options.passRawResult], [options.strict], [callback])](#queryfindoneandremoveconditions-options-optionspassrawresult-optionsstrict-callback)
-	- [Query#findOneAndUpdate([query], [doc], [options], [options.passRawResult], [options.strict], [options.multipleCastError], [callback])](#queryfindoneandupdatequery-doc-options-optionspassrawresult-optionsstrict-optionsmultiplecasterror-callback)
-	- [Query#geometry(object)](#querygeometryobject)
-	- [Query#getQuery()](#querygetquery)
-	- [Query#getUpdate()](#querygetupdate)
-	- [Query#gt([path], val)](#querygtpath-val)
-	- [Query#gte([path], val)](#querygtepath-val)
-	- [Query#hint(val)](#queryhintval)
-	- [Query#in([path], val)](#queryinpath-val)
-	- [Query#intersects([arg])](#queryintersectsarg)
-	- [Query#lean(bool)](#queryleanbool)
-	- [Query#limit(val)](#querylimitval)
-	- [Query#lt([path], val)](#queryltpath-val)
-	- [Query#lte([path], val)](#queryltepath-val)
-	- [Query#maxDistance([path], val)](#querymaxdistancepath-val)
-	- [Query#maxscan()](#querymaxscan)
-	- [Query#maxScan(val)]()](#querymaxscanval)
-	- [Query#merge(source)](#querymergesource)
-	- [Query#merge(source)](#querymergesource)
-	- [Query#mod([path], val)](#querymodpath-val)
-	- [Query#mongooseOptions(options)](#querymongooseoptionsoptions)
-	- [Query#ne([path], val)](#querynepath-val)
-	- [Query#near([path], val)](#querynearpath-val)
-	- [Query#nin([path], val)](#queryninpath-val)
-	- [Query#nor(array)](#querynorarray)
-	- [Query#or(array)](#queryorarray)
-	- [Query#polygon([path], [coordinatePairs...])](#querypolygonpath-coordinatepairs)
-	- [Query#populate(path, [select], [model], [match], [options])](#querypopulatepath-select-model-match-options)
-	- [Query#read(pref, [tags])](#queryreadpref-tags)
-	- [Query#regex([path], val)](#queryregexpath-val)
-	- [Query#remove([filter], [callback])](#queryremovefilter-callback)
-	- [Query#replaceOne([criteria], [doc], [options], [callback])](#queryreplaceonecriteria-doc-options-callback)
-	- [Query#select(arg)](#queryselectarg)
-	- [Query#selected()](#queryselected)
-	- [Query#selectedExclusively()](#queryselectedexclusively)
-	- [Query#selectedInclusively()](#queryselectedinclusively)
-	- [Query#setOptions(options)](#querysetoptionsoptions)
-	- [Query#size([path], val)](#querysizepath-val)
-	- [Query#skip(val)](#queryskipval)
-	- [Query#slaveOk(v)](#queryslaveokv)
-	- [Query#slice([path], val)](#queryslicepath-val)
-	- [Query#slice([path], [val])](#queryslicepath-val)
-	- [Query#snapshot()](#querysnapshot)
-	- [Query#sort(arg)](#querysortarg)
-	- [Query#stream([options])](#querystreamoptions)
-	- [Query#tailable(bool, [opts], [opts.numberOfRetries], [opts.tailableRetryInterval])](#querytailablebool-opts-optsnumberofretries-optstailableretryinterval)
-	- [Query#then([resolve], [reject])](#querythenresolve-reject)
-	- [Query#toConstructor()](#querytoconstructor)
-	- [Query#update([criteria], [doc], [options], [options.multipleCastError], [callback])](#queryupdatecriteria-doc-options-optionsmultiplecasterror-callback)
-	- [Query#updateMany([criteria], [doc], [options], [callback])](#queryupdatemanycriteria-doc-options-callback)
-	- [Query#updateOne([criteria], [doc], [options], [callback])](#queryupdateonecriteria-doc-options-callback)
-	- [Query#within()](#querywithin)
-	- [Query#use$geoWithin](#queryusegeowithin)
-- [aggregate.js](#aggregatejs)
-	- [Aggregate#addCursorFlag(flag, value)](#aggregateaddcursorflagflag-value)
-	- [Aggregate#addFields(arg)](#aggregateaddfieldsarg)
-	- [Aggregate([ops])](#aggregateops)
-	- [Aggregate#allowDiskUse(value, [tags])](#aggregateallowdiskusevalue-tags)
-	- [Aggregate#append(ops)](#aggregateappendops)
-	- [Aggregate#collation(collation, value)](#aggregatecollationcollation-value)
-	- [Aggregate#cursor(options, options.batchSize, [options.useMongooseAggCursor])](#aggregatecursoroptions-optionsbatchsize-optionsusemongooseaggcursor)
-	- [Aggregate#exec([callback])](#aggregateexeccallback)
-	- [Aggregate#explain(callback)](#aggregateexplaincallback)
-	- [Aggregate#facet(facet)](#aggregatefacetfacet)
-	- [Aggregate#graphLookup(options)](#aggregategraphlookupoptions)
-	- [Aggregate#group(arg)](#aggregategrouparg)
-	- [Aggregate#limit(num)](#aggregatelimitnum)
-	- [Aggregate#lookup(options)](#aggregatelookupoptions)
-	- [Aggregate#match(arg)](#aggregatematcharg)
-	- [Aggregate#model(model)](#aggregatemodelmodel)
-	- [Aggregate#near(parameters)](#aggregatenearparameters)
-	- [Aggregate#option(value)](#aggregateoptionvalue)
-	- [Aggregate#pipeline()](#aggregatepipeline)
-	- [Aggregate#project(arg)](#aggregateprojectarg)
-	- [Aggregate#read(pref, [tags])](#aggregatereadpref-tags)
-	- [Aggregate#sample(size)](#aggregatesamplesize)
-	- [Aggregate#skip(num)](#aggregateskipnum)
-	- [Aggregate#sort(arg)](#aggregatesortarg)
-	- [Aggregate#then([resolve], [reject])](#aggregatethenresolve-reject)
-	- [Aggregate#unwind(fields)](#aggregateunwindfields)
-- [querystream.js](#querystreamjs)
-	- [QueryStream#destroy([err])](#querystreamdestroyerr)
-	- [QueryStream#pause()](#querystreampause)
-	- [QueryStream#pipe()](#querystreampipe)
-	- [QueryStream(query, [options])](#querystreamquery-options)
-	- [QueryStream#resume()](#querystreamresume)
-	- [QueryStream#paused](#querystreampaused)
-	- [QueryStream#readable](#querystreamreadable)
-- [services/cursor/eachAsync.js](#servicescursoreachasyncjs)
-	- [module.exports(next, fn, options, [callback])](#moduleexportsnext-fn-options-callback)
-- [error/index.js](#errorindexjs)
-	- [MongooseError(msg)](#mongooseerrormsg)
-	- [MongooseError.DocumentNotFoundError](#mongooseerrordocumentnotfounderror)
-	- [MongooseError.messages](#mongooseerrormessages)
-- [error/messages.js](#errormessagesjs)
-	- [MongooseError.messages()](#mongooseerrormessages)
-- [error/validation.js](#errorvalidationjs)
-	- [ValidationError#toString()](#validationerrortostring)
-- [model.js](#modeljs)
-	- [Model#$where(argument)](#modelwhereargument)
-	- [Model#increment()](#modelincrement)
-	- [Model#model(name)](#modelmodelname)
-	- [Model(doc)](#modeldoc)
-	- [Model#remove([fn])](#modelremovefn)
-	- [Model#save([options], [options.safe], [options.validateBeforeSave], [fn])](#modelsaveoptions-optionssafe-optionsvalidatebeforesave-fn)
-	- [Model.aggregate([...], [callback])](#modelaggregate-callback)
-	- [Model.count(conditions, [callback])](#modelcountconditions-callback)
-	- [Model.create(doc(s), [callback])](#modelcreatedocs-callback)
-	- [Model.createIndexes([options], [cb])](#modelcreateindexesoptions-cb)
-	- [Model.deleteMany(conditions, [callback])](#modeldeletemanyconditions-callback)
-	- [Model.deleteOne(conditions, [callback])](#modeldeleteoneconditions-callback)
-	- [Model.discriminator(name, schema)](#modeldiscriminatorname-schema)
-	- [Model.distinct(field, [conditions], [callback])](#modeldistinctfield-conditions-callback)
-	- [Model.ensureIndexes([options], [cb])](#modelensureindexesoptions-cb)
-	- [Model.find(conditions, [projection], [options], [callback])](#modelfindconditions-projection-options-callback)
-	- [Model.findById(id, [projection], [options], [callback])](#modelfindbyidid-projection-options-callback)
-	- [Model.findByIdAndRemove(id, [options], [callback])](#modelfindbyidandremoveid-options-callback)
-	- [Model.findByIdAndUpdate(id, [update], [options], [callback])](#modelfindbyidandupdateid-update-options-callback)
-	- [Model.findOne([conditions], [projection], [options], [callback])](#modelfindoneconditions-projection-options-callback)
-	- [Model.findOneAndRemove(conditions, [options], [callback])](#modelfindoneandremoveconditions-options-callback)
-	- [Model.findOneAndUpdate([conditions], [update], [options], [callback])](#modelfindoneandupdateconditions-update-options-callback)
-	- [Model.geoNear(GeoJSON, options, [callback])](#modelgeoneargeojson-options-callback)
-	- [Model.geoSearch(conditions, options, [callback])](#modelgeosearchconditions-options-callback)
-	- [Model.hydrate(obj)](#modelhydrateobj)
-	- [Model.init([callback])](#modelinitcallback)
-	- [Model.insertMany(doc(s), [options], [options.ordered, [options.rawResult, [callback])](#modelinsertmanydocs-options-optionsordered-optionsrawresult-callback)
-	- [Model.mapReduce(o, [callback])](#modelmapreduceo-callback)
-	- [Model.populate(docs, options, [callback(err,doc)])](#modelpopulatedocs-options-callbackerrdoc)
-	- [Model.remove(conditions, [callback])](#modelremoveconditions-callback)
-	- [Model.replaceOne(conditions, doc, [options], [callback])](#modelreplaceoneconditions-doc-options-callback)
-	- [Model.translateAliases(raw)](#modeltranslatealiasesraw)
-	- [Model.update(conditions, doc, [options], [callback])](#modelupdateconditions-doc-options-callback)
-	- [Model.updateMany(conditions, doc, [options], [callback])](#modelupdatemanyconditions-doc-options-callback)
-	- [Model.updateOne(conditions, doc, [options], [callback])](#modelupdateoneconditions-doc-options-callback)
-	- [Model.where(path, [val])](#modelwherepath-val)
-	- [Model#$where](#modelwhere)
-	- [Model#base](#modelbase)
-	- [Model#baseModelName](#modelbasemodelname)
-	- [Model#collection](#modelcollection)
-	- [Model#db](#modeldb)
-	- [Model#discriminators](#modeldiscriminators)
-	- [Model#modelName](#modelmodelname)
-	- [Model#schema](#modelschema)
-- [schema/array.js](#schemaarrayjs)
-	- [SchemaArray#checkRequired(value)](#schemaarraycheckrequiredvalue)
-	- [SchemaArray(key, cast, options)](#schemaarraykey-cast-options)
-	- [SchemaArray.schemaName](#schemaarrayschemaname)
-- [schema/boolean.js](#schemabooleanjs)
-	- [SchemaBoolean#checkRequired(value)](#schemabooleancheckrequiredvalue)
-	- [SchemaBoolean(path, options)](#schemabooleanpath-options)
-	- [SchemaBoolean.schemaName](#schemabooleanschemaname)
-- [schema/mixed.js](#schemamixedjs)
-	- [Mixed(path, options)](#mixedpath-options)
-	- [Mixed.schemaName](#mixedschemaname)
-- [schema/embedded.js](#schemaembeddedjs)
-	- [Embedded#discriminator(name, schema)](#embeddeddiscriminatorname-schema)
-	- [Embedded(schema, key, options)](#embeddedschema-key-options)
-- [schema/buffer.js](#schemabufferjs)
-	- [SchemaBuffer#checkRequired(value, doc)](#schemabuffercheckrequiredvalue-doc)
-	- [SchemaBuffer(key, options)](#schemabufferkey-options)
-	- [SchemaBuffer#subtype(subtype)](#schemabuffersubtypesubtype)
-	- [SchemaBuffer.schemaName](#schemabufferschemaname)
-- [schema/objectid.js](#schemaobjectidjs)
-	- [ObjectId#auto(turnOn)](#objectidautoturnon)
-	- [ObjectId#checkRequired(value, doc)](#objectidcheckrequiredvalue-doc)
-	- [ObjectId(key, options)](#objectidkey-options)
-	- [ObjectId.schemaName](#objectidschemaname)
-- [schema/string.js](#schemastringjs)
-	- [SchemaString#checkRequired(value, doc)](#schemastringcheckrequiredvalue-doc)
-	- [SchemaString#enum([args...])](#schemastringenumargs)
-	- [SchemaString#lowercase()](#schemastringlowercase)
-	- [SchemaString#match(regExp, [message])](#schemastringmatchregexp-message)
-	- [SchemaString#maxlength(value, [message])](#schemastringmaxlengthvalue-message)
-	- [SchemaString#minlength(value, [message])](#schemastringminlengthvalue-message)
-	- [SchemaString(key, options)](#schemastringkey-options)
-	- [SchemaString#trim()](#schemastringtrim)
-	- [SchemaString#uppercase()](#schemastringuppercase)
-	- [SchemaString.schemaName](#schemastringschemaname)
-- [schema/decimal128.js](#schemadecimal128js)
-	- [Decimal128#checkRequired(value, doc)](#decimal128checkrequiredvalue-doc)
-	- [Decimal128(key, options)](#decimal128key-options)
-	- [Decimal128.schemaName](#decimal128schemaname)
-- [schema/documentarray.js](#schemadocumentarrayjs)
-	- [DocumentArray(key, schema, options)](#documentarraykey-schema-options)
-	- [DocumentArray.schemaName](#documentarrayschemaname)
-- [schema/date.js](#schemadatejs)
-	- [SchemaDate#checkRequired(value, doc)](#schemadatecheckrequiredvalue-doc)
-	- [SchemaDate#expires(when)](#schemadateexpireswhen)
-	- [SchemaDate#max(maximum, [message])](#schemadatemaxmaximum-message)
-	- [SchemaDate#min(value, [message])](#schemadateminvalue-message)
-	- [SchemaDate(key, options)](#schemadatekey-options)
-	- [SchemaDate.schemaName](#schemadateschemaname)
-- [schema/number.js](#schemanumberjs)
-	- [SchemaNumber#checkRequired(value, doc)](#schemanumbercheckrequiredvalue-doc)
-	- [SchemaNumber#max(maximum, [message])](#schemanumbermaxmaximum-message)
-	- [SchemaNumber#min(value, [message])](#schemanumberminvalue-message)
-	- [SchemaNumber(key, options)](#schemanumberkey-options)
-	- [SchemaNumber.schemaName](#schemanumberschemaname)
-- [cursor/QueryCursor.js](#cursorquerycursorjs)
-	- [QueryCursor#addCursorFlag(flag, value)](#querycursoraddcursorflagflag-value)
-	- [QueryCursor#close(callback)](#querycursorclosecallback)
-	- [QueryCursor#eachAsync(fn, [options], [options.parallel], [callback])](#querycursoreachasyncfn-options-optionsparallel-callback)
-	- [QueryCursor#map(fn)](#querycursormapfn)
-	- [QueryCursor#next(callback)](#querycursornextcallback)
-	- [QueryCursor(query, options)](#querycursorquery-options)
-- [cursor/AggregationCursor.js](#cursoraggregationcursorjs)
-	- [AggregationCursor#addCursorFlag(flag, value)](#aggregationcursoraddcursorflagflag-value)
-	- [AggregationCursor(agg, options)](#aggregationcursoragg-options)
-	- [AggregationCursor#close(callback)](#aggregationcursorclosecallback)
-	- [AggregationCursor#eachAsync(fn, [callback])](#aggregationcursoreachasyncfn-callback)
-	- [AggregationCursor#map(fn)](#aggregationcursormapfn)
-	- [AggregationCursor#next(callback)](#aggregationcursornextcallback)
-- [schematype.js](#schematypejs)
-	- [SchemaType#default(val)](#schematypedefaultval)
-	- [SchemaType#get(fn)](#schematypegetfn)
-	- [SchemaType#index(options)](#schematypeindexoptions)
-	- [SchemaType#required(required, [options.isRequired], [options.ErrorConstructor], [message])](#schematyperequiredrequired-optionsisrequired-optionserrorconstructor-message)
-	- [SchemaType(path, [options], [instance])](#schematypepath-options-instance)
-	- [SchemaType#select(val)](#schematypeselectval)
-	- [SchemaType#set(fn)](#schematypesetfn)
-	- [SchemaType#sparse(bool)](#schematypesparsebool)
-	- [SchemaType#text(bool)](#schematypetextbool)
-	- [SchemaType#unique(bool)](#schematypeuniquebool)
-	- [SchemaType#validate(obj, [errorMsg], [type])](#schematypevalidateobj-errormsg-type)
-- [connection.js](#connectionjs)
-	- [Connection#close([force], [callback])](#connectioncloseforce-callback)
-	- [Connection#collection(name, [options])](#connectioncollectionname-options)
-	- [Connection(base)](#connectionbase)
-	- [(collection, [options], [callback])](#collection-options-callback)
-	- [(collection, [callback])](#collection-callback)
-	- [([callback])](#callback)
-	- [Connection#model(name, [schema], [collection])](#connectionmodelname-schema-collection)
-	- [Connection#modelNames()](#connectionmodelnames)
-	- [(connection_string, [database], [port], [options], [callback])](#connectionstring-database-port-options-callback)
-	- [(uris, [database], [options], [callback])](#uris-database-options-callback)
-	- [Connection#collections](#connectioncollections)
-	- [Connection#config](#connectionconfig)
-	- [Connection#db](#connectiondb)
-	- [Connection#readyState](#connectionreadystate)
-- [collection.js](#collectionjs)
-	- [Collection(name, conn, opts)](#collectionname-conn-opts)
-	- [Collection#createIndex()](#collectioncreateindex)
-	- [Collection#ensureIndex()](#collectionensureindex)
-	- [Collection#find()](#collectionfind)
-	- [Collection#findAndModify()](#collectionfindandmodify)
-	- [Collection#findOne()](#collectionfindone)
-	- [Collection#getIndexes()](#collectiongetindexes)
-	- [Collection#insert()](#collectioninsert)
-	- [Collection#mapReduce()](#collectionmapreduce)
-	- [Collection#save()](#collectionsave)
-	- [Collection#update()](#collectionupdate)
-	- [Collection#collectionName](#collectioncollectionname)
-	- [Collection#conn](#collectionconn)
-	- [Collection#name](#collectionname)
 
 # index.js
 
 > 源码：[index.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/index.js)
 
-## Mongoose#Aggregate()
+## Mongoose#Aggregate() {#Mongoose_Aggregate_constructor}
 
 Mongoose 的 Aggregate 构造函数
 
-## Mongoose#CastError(type, value, path, [reason])
+## Mongoose#CastError(type, value, path, [reason]) {#Mongoose_CastError_constructor}
 
 Mongoose 的 CastError 构造函数
 
@@ -475,11 +18,11 @@ Mongoose 的 CastError 构造函数
   * `path` &lt;[String][]&gt; The path a.b.c in the doc where this cast error occurred
   * `[reason]` &lt;[Error][]&gt; The original error that was thrown
 
-## Mongoose#Collection()
+## Mongoose#Collection() {#Mongoose_Collection_constructor}
 
 Mongoose 的 Collection 构造函数
 
-## Mongoose#connect(uri(s), [options], [options.useMongoClient], [callback])
+## Mongoose#connect(uri(s), [options], [options.useMongoClient], [callback]) {#Mongoose_connect}
 
 打开默认的 mongoose 连接
 
@@ -487,7 +30,7 @@ Mongoose 的 Collection 构造函数
 
   * `uri(s)` &lt;[String][]&gt;
   * `[options]` &lt;[Object][]&gt;
-  * `[options.useMongoClient]` &lt;[Boolean][]&gt; false by default, set to true to use new mongoose connection logic
+  * `[options.useMongoClient]` &lt;[Boolean][]&gt; 默认为 `false`，设置为 `true` 来使用一个新的 mongoose 连接逻辑。
   * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
@@ -496,9 +39,9 @@ Mongoose 的 Collection 构造函数
 
 ##### 参见：
 
-  * [Mongoose#createConnection](#mongoose-createConnection)
+  * [Mongoose#createConnection](#Mongoose_createConnection)
 
-如果提供了参数，它们也会被适当地代理到 [Connection#open]() 或者 [Connection#openSet]()。
+如果提供了参数，它们也会被适当地代理到 [Connection#open][] 或者 [Connection#openSet][]。
 
 *传递的选项优先于连接字符串中包含的选项。*
 
@@ -507,7 +50,7 @@ Mongoose 的 Collection 构造函数
 ```js
 mongoose.connect('mongodb://user:pass@localhost:port/database');
 
-// replica sets 副本集
+// 副本集(replica sets)
 var uri = 'mongodb://user:pass@localhost:port,anotherhost:port,yetanother:port/mydatabase';
 mongoose.connect(uri);
 
@@ -526,7 +69,7 @@ mongoose.connect(uri, function(error) {
 })
 ```
 
-<!--sec data-title="源码" data-id="Mongoose_connect" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_connect" data-show=true data-collapse=true ces-->
   ```js
   Mongoose.prototype.connect = function() {
     var conn = this.connection;
@@ -547,7 +90,7 @@ mongoose.connect(uri, function(error) {
 <!--endsec-->
 
 
-## Mongoose#Connection()
+## Mongoose#Connection() {#Mongoose_Connection_constructor}
 
 Mongoose 的 [Connection](#connectionbase) 构造函数
 
@@ -566,16 +109,16 @@ Mongoose 的 [Connection](#connectionbase) 构造函数
 
 ##### 返回值：
 
-  * &lt;[Connection](#connectionbase), [Promise](#promisefn)&gt; the created Connection object, or promise that resolves to the connection if `useMongoClient` option specified.
+  * &lt;[Connection](#connectionbase), [Promise](#promise)&gt; the created Connection object, or promise that resolves to the connection if `useMongoClient` option specified.
 
 ##### 参见：
 
-  * [Connection#open]()
-  * [Connection#openSet]()
+  * [Connection#open][]
+  * [Connection#openSet][]
 
 Each connection instance maps to a single database. This method is helpful when mangaging multiple db connections.
 
-If arguments are passed, they are proxied to either [Connection#open]() or [Connection#openSet]() appropriately. This means we can pass db, server, and replset options to the driver. Note that the safe option specified in your schema will overwrite the safe db option specified here unless you set your schemas safe option to undefined. See [this](/Library/mongoose/docs/guide.md#safe) for more information.
+If arguments are passed, they are proxied to either [Connection#open][] or [Connection#openSet][] appropriately. This means we can pass db, server, and replset options to the driver. Note that the safe option specified in your schema will overwrite the safe db option specified here unless you set your schemas safe option to undefined. See [this](/Library/mongoose/docs/guide.md#safe) for more information.
 
 *Options passed take precedence over options included in connection strings.*
 
@@ -609,7 +152,7 @@ db = mongoose.createConnection();
 db.open('localhost', 'database', port, [opts]);
 ```
 
-<!--sec data-title="源码" data-id="Mongoose_createConnection" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_createConnection" data-show=true data-collapse=true ces-->
   ```js
   Mongoose.prototype.createConnection = function(uri, options) {
     var conn = new Connection(this);
@@ -648,9 +191,9 @@ db.open('localhost', 'database', port, [opts]);
 
 ##### 返回值：
 
-  * <MongooseThenable> pseudo-promise wrapper around this
+  * [MongooseThenable]() pseudo-promise wrapper around this
 
-<!--sec data-title="源码" data-id="Mongoose_disconnect" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_disconnect" data-show=true data-collapse=true ces-->
   ```js
   Mongoose.prototype.disconnect = function(fn) {
     var _this = this;
@@ -713,8 +256,9 @@ mongoose.get('test') // returns the 'test' value
 返回当前的 ES6 样式的 promise 构造函数。在 Mongoose 4.x 中，等价于 `mongoose.Promise.ES6`，但是一旦我们去掉了 `.ES6` 位，就会改变。
 
 
-Mongoose#model(name, [schema], [collection], [skipInit])
-Defines a model or retrieves it.
+## Mongoose#model(name, [schema], [collection], [skipInit]) {#Mongoose_model}
+
+定义一个模型或检索它。
 
 ##### 参数：
   * name &lt;[String][], [Function][]&gt;model name or class extending Model
@@ -729,13 +273,13 @@ Models defined on the `mongoose` instance are available to all connection create
 ```js
 var mongoose = require('mongoose');
 
-// define an Actor model with this mongoose instance
+// 使用 mongoose 示例定义一个 Actor 模型
 mongoose.model('Actor', new Schema({ name: String }));
 
-// create a new connection
+// 创建一个新连接
 var conn = mongoose.createConnection(..);
 
-// retrieve the Actor model
+// 检索 Actor 模型
 var Actor = conn.model('Actor');
 ```
 
@@ -756,7 +300,7 @@ var collectionName = 'actor'
 var M = mongoose.model('Actor', schema, collectionName)
 ```
 
-<!--sec data-title="源码" data-id="Mongoose_getPromiseConstructor" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_getPromiseConstructor" data-show=true data-collapse=true ces-->
 ```js
 Mongoose.prototype.model = function(name, schema, collection, skipInit) {
   var model;
@@ -864,11 +408,11 @@ Mongoose.prototype.model.$hasSideEffects = true;
 ```
 <!--endsec-->
 
-## Mongoose#Model()
+## Mongoose#Model() {#Mongoose_Model_constructor}
 
 Mongoose [Model](#modeldoc) 构造函数。
 
-## Mongoose#modelNames()
+## Mongoose#modelNames() {#Mongoose_modelNames}
 
 返回一个在 Mongoose 实例上创建的模型名称数组。
 
@@ -880,7 +424,7 @@ Mongoose [Model](#modeldoc) 构造函数。
 
 不包括使用 `connection.model()` 创建的模型的名称。
 
-<!--sec data-title="源码" data-id="Mongoose_modelNames" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_modelNames" data-show=true data-collapse=true ces-->
 ```js
 Mongoose.prototype.modelNames = function() {
   var names = Object.keys(this.models);
@@ -890,13 +434,13 @@ Mongoose.prototype.modelNames.$hasSideEffects = true;
 ```
 <!--endsec-->
 
-## Mongoose()
+## Mongoose() {#Mongoose_constructor}
 
 Mongoose 构造函数。
 
 `mongoose` 模块的导出对象（exports）是该类的一个实例。大多数应用程序只会使用这个实例。
 
-<!--sec data-title="源码" data-id="Mongoose" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose" data-show=true data-collapse=true ces-->
 ```js
 function Mongoose() {
   this.connections = [];
@@ -924,7 +468,7 @@ function Mongoose() {
 ```
 <!--endsec-->
 
-## Mongoose#Mongoose()
+## Mongoose#Mongoose() {#Mongoose_Mongoose_constructor}
 
 Mongoose 构造函数
 
@@ -937,7 +481,7 @@ mongoose 模块的导出对象（exports）是该类的一个实例。大多数�
   var mongoose2 = new mongoose.Mongoose();
 ```
 
-## Mongoose#plugin(fn, [opts])
+## Mongoose#plugin(fn, [opts]) {#Mongoose_plugin}
 
 声明一个在所有模式上执行的全局插件。
 
@@ -947,15 +491,15 @@ mongoose 模块的导出对象（exports）是该类的一个实例。大多数�
 
 ##### 返回值：
 
-  * <Mongoose> this
+  * &lt;[Mongoose](#Mongoose_Mongoose)&gt; this
 
 ##### 参见：
 
-  * [plugins](/Library/mongoose/docs/plugins.md)
+  * [plugins](/Library/mongoose/docs/plugins.md#全局插件)
 
 等效于在创建的每个模式上调用 `.plugin(fn)`。
 
-<!--sec data-title="源码" data-id="Mongoose_Mongoose" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_Mongoose" data-show=true data-collapse=true ces-->
 ```js
 Mongoose.prototype.plugin = function(fn, opts) {
   this.plugins.push([fn, opts]);
@@ -991,7 +535,7 @@ var CatSchema = new Schema(..);
 
 ## Mongoose#SchemaType()
 
-Mongoose [SchemaType]() 构造函数
+Mongoose [SchemaType](#SchemaType_constructor) 构造函数
 
 ## Mongoose#set(key, value)
 
@@ -1000,7 +544,7 @@ Mongoose [SchemaType]() 构造函数
 ##### 参数：
 
   * `key` &lt;[String][]&gt;
-  * `value` <String, Function, Boolean>
+  * `value` &lt;[String][], [Function][], [Boolean][]&lt;
 
 ##### 示例：
 
@@ -1012,7 +556,7 @@ mongoose.set('debug', true) // enable logging collection methods + arguments to 
 mongoose.set('debug', function(collectionName, methodName, arg1, arg2...) {}); // use custom function to log collection methods + arguments
 ```
 
-<!--sec data-title="源码" data-id="Mongoose_set" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_set" data-show=true data-collapse=true ces-->
 ```js
 Mongoose.prototype.set = function(key, value) {
   if (arguments.length === 1) {
@@ -1029,7 +573,7 @@ Mongoose.prototype.set.$hasSideEffects = true;
 
 为用户空间（user-land）暴露连接状态
 
-<!--sec data-title="源码" data-id="__" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec___" data-show=true data-collapse=true ces-->
 ```js
 Mongoose.prototype.STATES = STATES;
 ```
@@ -1053,20 +597,20 @@ mongoose.connection.on('error', cb);
 
 这是为使用 [`mongoose.model`]() 创建的每个模型所默认使用的连接。
 
-<!--sec data-title="源码" data-id="Mongoose_connection" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_connection" data-show=true data-collapse=true ces-->
 ```js
 ```
 <!--endsec-->
 
 ##### 返回值：
 
-  * <Connection>
+  * &lt;[Connection][]&gt;
 
 ## Mongoose#mongo
 
 Mongoose 使用的[原生的 node-mongodb 驱动器](https://github.com/mongodb/node-mongodb-native)。
 
-<!--sec data-title="源码" data-id="Mongoose_mongo" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_mongo" data-show=true data-collapse=true ces-->
 ```js
 Mongoose.prototype.mongo = require('mongodb');
 ```
@@ -1076,7 +620,7 @@ Mongoose.prototype.mongo = require('mongodb');
 
 Mongoose 使用的 [mquery](https://github.com/aheckmann/mquery) 查询构建器。
 
-<!--sec data-title="源码" data-id="Mongoose_mquery" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_mquery" data-show=true data-collapse=true ces-->
 ```js
 Mongoose.prototype.mquery = require('mquery');
 ```
@@ -1090,7 +634,7 @@ Mongoose.prototype.mquery = require('mquery');
 
 *用于向后兼容的 `mongoose.Schema.Types` 的别名。*
 
-<!--sec data-title="源码" data-id="Mongoose_SchemaTypes" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_SchemaTypes" data-show=true data-collapse=true ces-->
 ```js
 Mongoose.prototype.SchemaTypes = Schema.Types;
 ```
@@ -1126,7 +670,7 @@ var ObjectId = mongoose.Types.ObjectId;
 var id1 = new ObjectId;
 ```
 
-<!--sec data-title="源码" data-id="Mongoose_Types" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_Types" data-show=true data-collapse=true ces-->
 ```js
 Mongoose.prototype.Types = Types;
 ```
@@ -1136,13 +680,13 @@ Mongoose.prototype.Types = Types;
 
 Mongoose 版本
 
-<!--sec data-title="源码" data-id="Mongoose_version" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mongoose_version" data-show=true data-collapse=true ces-->
 ```js
 Mongoose.prototype.version = pkg.version;
 ```
 <!--endsec-->
 
-# types/array.js
+# types/array.js {#types_array}
 
 ## MongooseArray#$shift()
 
@@ -1249,7 +793,7 @@ obj &lt;[Object][]&gt; the item to look for
 
 ##### 返回值：
 
-  * <Number>
+  * &lt;[Number][]&gt;
 
 ## MongooseArray.inspect()
 
@@ -1372,13 +916,17 @@ console.log(doc.array) // [3]
 
 *marks the entire array as modified, which if saved, will store it as a $set operation, potentially overwritting any changes that happen between when you retrieved the object and when you save it.*
 
+
+
+
 ## MongooseArray.sort()
 
-Wraps [`Array#sort`](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort) with proper change tracking.
+使用适当的变化跟踪包装了
+ [`Array#sort`](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort) 。
 
 ##### 注意：
 
-*marks the entire array as modified, which if saved, will store it as a $set operation, potentially overwritting any changes that happen between when you retrieved the object and when you save it.*
+*将整个数组标记为修改，如果保存，将作为 `$set` 操作存储它，可能会覆盖在检索对象和保存它时发生的任何更改。*
 
 ## MongooseArray.splice()
 
@@ -1408,7 +956,7 @@ Wraps [`Array#unshift`](https://developer.mozilla.org/en/JavaScript/Reference/Gl
 
 *marks the entire array as modified, which if saved, will store it as a $set operation, potentially overwritting any changes that happen between when you retrieved the object and when you save it.*
 
-# types/subdocument.js
+# types/subdocument.js {#types_subdocument}
 
 > 源码：[types/subdocument.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/types/subdocument.js)
 
@@ -1418,9 +966,9 @@ Returns the top level document of this sub-document.
 
 ##### 返回值：
 
-  * <Document>
+  * &lt;[Document][]&gt;
 
-<!--sec data-title="源码" data-id="Subdocument_ownerDocument" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Subdocument_ownerDocument" data-show=true data-collapse=true ces-->
 ```js
 Subdocument.prototype.ownerDocument = function() {
   if (this.$__.ownerDocument) {
@@ -1445,7 +993,7 @@ Subdocument.prototype.ownerDocument = function() {
 
 Returns this sub-documents parent document.
 
-<!--sec data-title="源码" data-id="Subdocument_parent" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Subdocument_parent" data-show=true data-collapse=true ces-->
 ```js
 Subdocument.prototype.parent = function() {
   return this.$parent;
@@ -1462,7 +1010,7 @@ Null-out this subdoc
   * [options] &lt;[Object][]&gt;
   * [callback] &lt;[Function][]&gt; optional callback for compatibility with Document.prototype.remove
 
-<!--sec data-title="源码" data-id="Subdocument_remove" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Subdocument_remove" data-show=true data-collapse=true ces-->
 ```js
 Subdocument.prototype.remove = function(options, callback) {
   if (typeof options === 'function') {
@@ -1484,7 +1032,7 @@ Subdocument.prototype.remove = function(options, callback) {
 ```
 <!--endsec-->
 
-# types/embedded.js
+# types/embedded.js {#types_embedded}
 
 > 源码：[types/embedded.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/types/embedded.js)
 
@@ -1492,7 +1040,7 @@ Subdocument.prototype.remove = function(options, callback) {
 
 Helper for console.log
 
-<!--sec data-title="源码" data-id="EmbeddedDocument_inspect" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_EmbeddedDocument_inspect" data-show=true data-collapse=true ces-->
 ```js
 EmbeddedDocument.prototype.inspect = function() {
   return this.toObject({
@@ -1519,7 +1067,7 @@ Marks a path as invalid, causing validation to fail.
   * &lt;[Boolean][]&gt;
 
 
-<!--sec data-title="源码" data-id="EmbeddedDocument_invalidate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_EmbeddedDocument_invalidate" data-show=true data-collapse=true ces-->
 ```js
 EmbeddedDocument.prototype.invalidate = function(path, err, val, first) {
   if (!this.__parent) {
@@ -1552,9 +1100,9 @@ Returns the top level document of this sub-document.
 
 ##### 返回值：
 
-  * <Document>
+  * &lt;[Document][]&gt;
 
-<!--sec data-title="源码" data-id="EmbeddedDocument_ownerDocument" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_EmbeddedDocument_ownerDocument" data-show=true data-collapse=true ces-->
 ```js
 EmbeddedDocument.prototype.ownerDocument = function() {
   if (this.$__.ownerDocument) {
@@ -1580,7 +1128,7 @@ EmbeddedDocument.prototype.ownerDocument = function() {
 
 Returns this sub-documents parent document.
 
-<!--sec data-title="源码" data-id="EmbeddedDocument_parent" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_EmbeddedDocument_parent" data-show=true data-collapse=true ces-->
 ```js
 EmbeddedDocument.prototype.parent = function() {
   return this.__parent;
@@ -1592,7 +1140,7 @@ EmbeddedDocument.prototype.parent = function() {
 
 Returns this sub-documents parent array.
 
-<!--sec data-title="源码" data-id="EmbeddedDocument_parentArray" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_EmbeddedDocument_parentArray" data-show=true data-collapse=true ces-->
 ```js
 EmbeddedDocument.prototype.parentArray = function() {
   return this.__parentArray;
@@ -1608,7 +1156,7 @@ Removes the subdocument from its parent array.
   * [options] &lt;[Object][]&gt;
   * [fn] &lt;[Function][]&gt;
 
-<!--sec data-title="源码" data-id="EmbeddedDocument_remove" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_EmbeddedDocument_remove" data-show=true data-collapse=true ces-->
 ```js
 EmbeddedDocument.prototype.remove = function(options, fn) {
   if ( typeof options === 'function' && !fn ) {
@@ -1645,7 +1193,7 @@ EmbeddedDocument.prototype.remove = function(options, fn) {
 
 Marks the embedded doc modified.
 
-<!--sec data-title="源码" data-id="EmbeddedDocument_markModified" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_EmbeddedDocument_markModified" data-show=true data-collapse=true ces-->
 ```js
 EmbeddedDocument.prototype.markModified = function(path) {
   this.$__.activePaths.modify(path);
@@ -1677,7 +1225,7 @@ doc.mixed.type = 'changed';
 doc.markModified('mixed.type');
 ```
 
-# types/buffer.js
+# types/buffer.js {#types_buffer}
 
 > 源码：[types/buffer.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/types/buffer.js)
 
@@ -1688,11 +1236,11 @@ Copies the buffer.
 
 ##### 参数：
 
-    * target <Buffer>
+    * target &lt;[Buffer][]&gt;
 
 ##### 返回值：
 
-    * <Number> The number of bytes copied.
+    * &lt;[Number][]&gt; The number of bytes copied.
 
 ##### 注意：
 
@@ -1704,7 +1252,7 @@ Determines if this buffer is equals to other buffer
 
 ##### 参数：
 
-  * other <Buffer>
+  * other &lt;[Buffer][]&gt;
 
 ##### 返回值：
 
@@ -1740,7 +1288,7 @@ Converts this buffer for storage in MongoDB, including subtype
 
 ##### 返回值：
 
-  * <Binary>
+  * &lt;[Binary][]&gt;
 
 
 ## MongooseBuffer.toObject([subtype])
@@ -1753,7 +1301,7 @@ Converts this buffer to its Binary type representation.
 
 ##### 返回值：
 
-  * <Binary>
+  * &lt;[Binary][]&gt;
 
 ##### 参见：
 
@@ -1777,7 +1325,7 @@ Writes the buffer.
 
 ----
 
-# types/objectid.js
+# types/objectid.js {#types_objectid}
 
 > 源码：[types/objectid.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/types/objectid.js)
 
@@ -1793,12 +1341,12 @@ var id = new mongoose.Types.ObjectId;
 
 ----
 
-# types/decimal128.js
+# types/decimal128.js {#types_decimal128}
 
 > 源码：[types/decimal128.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/types/decimal128.js)
 
 
-## exports()
+## exports() {#exports_constructor}
 
 ObjectId type constructor
 
@@ -1808,7 +1356,7 @@ ObjectId type constructor
 var id = new mongoose.Types.ObjectId;
 ```
 
-# types/documentarray.js
+# types/documentarray.js {#types_documentarray}
 
 > 源码：[types/documentarray.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/types/documentarray.js)
 
@@ -1874,7 +1422,7 @@ Adds a single function as a listener to both err and complete.
 
 ##### 返回值：
 
-  * <Promise> this
+  * &lt;[Promise][]&gt; this
 
 
 It will be executed with traditional node.js argument position when the promise is resolved.
@@ -1900,7 +1448,7 @@ Adds a listener to the complete (success) event.
 
 ##### 返回值：
 
-  * <Promise> this
+  * &lt;[Promise][]&gt; this
 
 
 [mpromise#onFulfill](https://github.com/aheckmann/mpromise#onfulfill) 的别名。
@@ -1917,7 +1465,7 @@ Adds a listener to the err (rejected) event.
 
 ##### 返回值：
 
-  * <Promise> this
+  * &lt;[Promise][]&gt; this
 
   [mpromise#onReject](https://github.com/aheckmann/mpromise#onreject) 的别名。
 
@@ -1933,7 +1481,7 @@ ES6-style `.catch()` shorthand
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 
 ## Promise#end()
@@ -1974,13 +1522,13 @@ Rejects this promise with err.
 
 ##### 返回值：
 
-  * <Promise> this
+  * &lt;[Promise][]&gt; this
 
 If the promise has already been fulfilled or rejected, not action is taken.
 
 Differs from [#reject]() by first casting err to an Error if it is not instanceof Error.
 
-<!--sec data-title="源码" data-id="Promise_error" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Promise_error" data-show=true data-collapse=true ces-->
 ```js
 Promise.prototype.error = function(err) {
   if (!(err instanceof Error)) {
@@ -2006,7 +1554,7 @@ Adds listener to the event.
 
 ##### 返回值：
 
-  * <Promise> this
+  * &lt;[Promise][]&gt; this
 
 ##### 参见：
 
@@ -2046,7 +1594,7 @@ if native promises are not present) but still
 support plugging in your own ES6-compatible promises library. Mongoose 5.0
 will **not**support mpromise.
 
-<!--sec data-title="源码" data-id="Promise" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Promise" data-show=true data-collapse=true ces-->
 ```js
 function Promise(fn) {
   MPromise.call(this, fn);
@@ -2064,7 +1612,7 @@ Rejects this promise with reason.
 
 ##### 返回值：
 
-  * <Promise> this
+  * &lt;[Promise][]&gt; this
 
 ##### 参见：
 
@@ -2089,7 +1637,7 @@ err will be cast to an Error if not already instanceof Error.
 
 *overrides mpromise#resolve to provide error casting.*
 
-<!--sec data-title="源码" data-id="Promise_resolve" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Promise_resolve" data-show=true data-collapse=true ces-->
 ```js
 Promise.prototype.resolve = function(err) {
   if (err) return this.error(err);
@@ -2110,7 +1658,7 @@ Creates a new promise and returns it. If onFulfill or onReject are passed, they 
 
 ##### 返回值：
 
-  * <Promise> newPromise
+  * &lt;[Promise][]&gt; newPromise
 
 ##### 参见：
 
@@ -2157,7 +1705,7 @@ Fulfills this promise with passed arguments.
 
 ES6-style promise constructor wrapper around mpromise.
 
-<!--sec data-title="源码" data-id="Promise_ES6" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Promise_ES6" data-show=true data-collapse=true ces-->
 ```js
 Promise.ES6 = function(resolver) {
   var promise = new Promise();
@@ -2182,7 +1730,7 @@ Promise.ES6 = function(resolver) {
 
 ##### 返回值：
 
-  * <Promise> new promise
+  * &lt;[Promise][]&gt; new promise
 
 ## Promise.fulfill(args)
 
@@ -2216,7 +1764,7 @@ var fullname = schema.virtual('fullname');
 fullname instanceof mongoose.VirtualType // true
 ```
 
-<!--sec data-title="源码" data-id="VirtualType" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_VirtualType" data-show=true data-collapse=true ces-->
 ```js
 function VirtualType(options, name) {
   this.path = name;
@@ -2248,7 +1796,7 @@ virtual.get(function () {
 });
 ```
 
-<!--sec data-title="源码" data-id="VirtualType_get" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_VirtualType_get" data-show=true data-collapse=true ces-->
 ```js
 VirtualType.prototype.get = function(fn) {
   this.getters.push(fn);
@@ -2280,7 +1828,7 @@ virtual.set(function (v) {
 });
 ```
 
-<!--sec data-title="源码" data-id="VirtualType_set" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_VirtualType_set" data-show=true data-collapse=true ces-->
 ```js
 VirtualType.prototype.set = function(fn) {
   this.setters.push(fn);
@@ -2303,7 +1851,7 @@ Applies getters to value using optional scope.
 
   * <T> the value after applying all getters
 
-<!--sec data-title="源码" data-id="VirtualType_applyGetters" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_VirtualType_applyGetters" data-show=true data-collapse=true ces-->
 ```js
 VirtualType.prototype.applyGetters = function(value, scope) {
   var v = value;
@@ -2330,7 +1878,7 @@ Applies setters to value using optional scope.
 
   * <T> the value after applying all setters
 
-<!--sec data-title="源码" data-id="VirtualType_applySetters" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_VirtualType_applySetters" data-show=true data-collapse=true ces-->
 ```js
 VirtualType.prototype.applySetters = function(value, scope) {
   var v = value;
@@ -2353,7 +1901,7 @@ VirtualType.prototype.applySetters = function(value, scope) {
 
 Pluralization rules.
 
-<!--sec data-title="源码" data-id="VirtualType_pluralization" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_VirtualType_pluralization" data-show=true data-collapse=true ces-->
 ```js
 exports.pluralization = [
   [/(m)an$/gi, '$1en'],
@@ -2389,7 +1937,7 @@ These rules are applied while processing the argument to toCollectionName.
 
 Uncountable words.
 
-<!--sec data-title="源码" data-id="exports_uncountables" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_exports_uncountables" data-show=true data-collapse=true ces-->
 ```js
 exports.uncountables = [
   'advice',
@@ -2467,11 +2015,11 @@ Switches to a different database using the same connection pool.
 
 ##### 返回值：
 
-  * <Connection> New Connection Object
+  * &lt;[Connection][]&gt; New Connection Object
 
 Returns a new connection object, with the new db.
 
-<!--sec data-title="源码" data-id="NativeConnection_useDb" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_NativeConnection_useDb" data-show=true data-collapse=true ces-->
 ```js
 NativeConnection.prototype.useDb = function(name) {
   // we have to manually copy all of the attributes...
@@ -2529,7 +2077,7 @@ NativeConnection.prototype.useDb = function(name) {
 
 Expose the possible connection states.
 
-<!--sec data-title="源码" data-id="NativeConnection_STATES" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_NativeConnection_STATES" data-show=true data-collapse=true ces-->
 ```js
 NativeConnection.STATES = STATES;
 ```
@@ -2582,7 +2130,7 @@ The various Mongoose SchemaTypes.
 
 *Alias of mongoose.Schema.Types for backwards compatibility.*
 
-<!--sec data-title="源码" data-id="exports_SchemaTypes" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_exports_SchemaTypes" data-show=true data-collapse=true ces-->
 ```js
 exports.SchemaType = require('./schematype.js');
 ```
@@ -2619,7 +2167,7 @@ var ObjectId = mongoose.Types.ObjectId;
 var id1 = new ObjectId;
 ```
 
-<!--sec data-title="源码" data-id="1" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_1" data-show=true data-collapse=true ces-->
 ```js
 exports.Types = require('./types');
 ```
@@ -2655,7 +2203,7 @@ if native promises are not present) but still
 support plugging in your own ES6-compatible promises library. Mongoose 5.0
 will **not** support mpromise.
 
-<!--sec data-title="源码" data-id="2" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_2" data-show=true data-collapse=true ces-->
 ```js
 function ES6Promise() {
   throw new Error('Can\'t use ES6 promise with mpromise style constructor');
@@ -2694,7 +2242,7 @@ var ToySchema = new Schema;
 ToySchema.add({ name: 'string', color: 'string', price: 'number' });
 ```
 
-<!--sec data-title="源码" data-id="3" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_3" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.add = function add(obj, prefix) {
   prefix = prefix || '';
@@ -2745,7 +2293,7 @@ Returns a deep copy of the schema
   * <Schema> the cloned schema
 
 
-<!--sec data-title="源码" data-id="4" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_4" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.clone = function() {
   var s = new Schema(this.paths, this.options);
@@ -2777,7 +2325,7 @@ Iterates the schemas paths similar to Array#forEach.
   * <Schema> this
 The callback is passed the pathname and schemaType as arguments on each iteration.
 
-<!--sec data-title="源码" data-id="5" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_5" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.eachPath = function(fn) {
   var keys = Object.keys(this.paths),
@@ -2802,7 +2350,7 @@ Gets a schema option.
   * `key` &lt;[String][]&gt; option name
 
 
-<!--sec data-title="源码" data-id="Schema_get" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_get" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.get = function(key) {
   return this.options[key];
@@ -2810,17 +2358,17 @@ Schema.prototype.get = function(key) {
 ```
 <!--endsec-->
 
-## Schema#index(fields, [options], [options.expires=null])
+## Schema#index(fields, [options], [options.expires=null]) {#Schema_index}
 
-Defines an index (most likely compound) for this schema.
+为当前模式定一个索引（most likely compound）。
 
 ##### 参数：
 
   * fields &lt;[Object][]&gt;
 
-  * [options] &lt;[Object][]&gt; Options to pass to MongoDB driver's createIndex() function
+  * [options] &lt;[Object][]&gt; 传递给 MongoDB 驱动器的[ `createIndex()` 函数](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#createIndex)的选项。
 
-  * [options.expires=null] &lt;[String][]&gt; Mongoose-specific syntactic sugar, uses ms to convert expires option into seconds for the expireAfterSeconds in the above link.
+  * [options.expires=null] &lt;[String][]&gt; Mongoose 特有的语法糖，为上面的链接中的 `expireAfterSeconds` 使用 [ms](https://www.npmjs.com/package/ms) 将 `expires` 选项转换成秒。
 
 ##### 示例：
 
@@ -2828,7 +2376,7 @@ Defines an index (most likely compound) for this schema.
 schema.index({ first: 1, last: -1 })
 ```
 
-<!--sec data-title="源码" data-id="Schema_index" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_index" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.index = function(fields, options) {
   options || (options = {});
@@ -2845,18 +2393,21 @@ Schema.prototype.index = function(fields, options) {
 
 ## Schema#indexes()
 
-Compiles indexes from fields and schema-level indexes
+从字段和模式级索引编译索引
 
-<!--sec data-title="源码" data-id="Schema_indexes" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_indexes" data-show=true data-collapse=true ces-->
 ```js
 ```
 <!--endsec-->
-Schema#loadClass(model)
+
+
+## Schema#loadClass(model)
+
 Loads an ES6 class into a schema. Maps setters + getters, static methods, and instance methods to schema virtuals, statics, and methods.
 
 ##### 参数：
 model &lt;[Function][]&gt;
-<!--sec data-title="源码" data-id="6" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_loadClass" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.indexes = function() {
   'use strict';
@@ -2973,7 +2524,7 @@ fizz.purr();
 fizz.scratch();
 
 ```
-<!--sec data-title="源码" data-id="schema_method" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_schema_method" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.method = function(name, fn) {
   if (typeof name !== 'string') {
@@ -2988,26 +2539,26 @@ Schema.prototype.method = function(name, fn) {
 ```
 <!--endsec-->
 
-## Schema#path(path, constructor)
+## Schema#path(path, constructor) {#Schema_path}
 
-Gets/sets schema paths.
+获取/设置 schema 路径。
 
 ##### 参数：
 
   * `path` &lt;[String][]&gt;
   * `constructor` &lt;[Object][]&gt;
 
-Sets a path (if arity 2)
-Gets a path (if arity 1)
+设置路径 (如果有两个参数)
+获取路径 (如果有一个参数)
 
 ##### 示例：
 
 ```js
-schema.path('name') // returns a SchemaType
-schema.path('name', Number) // changes the schemaType of `name` to Number
+schema.path('name') // 返回一个 SchemaType
+schema.path('name', Number) // 将 name` 的 schemaType 改变为 Number
 ```
 
-<!--sec data-title="源码" data-id="schema_path" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_schema_path" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.path = function(path, obj) {
   if (obj === undefined) {
@@ -3099,7 +2650,7 @@ Returns the pathType of path for this schema.
 
 Given a path, returns whether it is a real, virtual, nested, or ad-hoc/undefined path.
 
-<!--sec data-title="源码" data-id="Schema_pathType" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_pathType" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.pathType = function(path) {
   if (path in this.paths) {
@@ -3127,13 +2678,13 @@ Schema.prototype.pathType = function(path) {
 <!--endsec-->
 
 
-## Schema#plugin(plugin, [opts])
+## Schema#plugin(plugin, [opts]) {#Schema_plugin}
 
-Registers a plugin for this schema.
+为当前模式注册一个插件。
 
 ##### 参数：
 
-  * `plugin` &lt;[Function][]&gt; callback
+  * `plugin` &lt;[Function][]&gt; 回调
 
   * `[opts]` &lt;[Object][]&gt;
 
@@ -3142,7 +2693,7 @@ Registers a plugin for this schema.
   * [plugins](/Library/mongoose/docs/plugins.md)
 
 
-<!--sec data-title="源码" data-id="Schema_plugin" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_plugin" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.plugin = function(fn, opts) {
   if (typeof fn !== 'function') {
@@ -3166,15 +2717,15 @@ Schema.prototype.plugin = function(fn, opts) {
 ```
 <!--endsec-->
 
-## Schema#post(method, fn)
+## Schema#post(method, fn) {#Schema_post}
 
-Defines a post hook for the document
+为文档定义一个 post 钩子
 
 ##### 参数：
 
-  * `method` &lt;[String][]&gt; name of the method to hook
+  * `method` &lt;[String][]&gt; 钩子方法的名称
 
-  * `fn` &lt;[Function][]&gt; callback
+  * `fn` &lt;[Function][]&gt; 回调
 
 ##### 参见：
 
@@ -3206,7 +2757,7 @@ m.find(function(err, docs) {
 });
 ```
 
-<!--sec data-title="源码" data-id="Schema_post" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_post" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.post = function(method, fn) {
   if (IS_KAREEM_HOOK[method]) {
@@ -3267,7 +2818,7 @@ toySchema.pre('validate', function (next) {
   next();
 })
 ```
-<!--sec data-title="源码" data-id="Schema_pre" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_pre" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.pre = function() {
   var name = arguments[0];
@@ -3291,7 +2842,7 @@ Adds a method call to the queue.
   * args &lt;[Array][]&gt; arguments to pass to the method
 
 
-<!--sec data-title="源码" data-id="Schema_queue" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_queue" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.queue = function(name, args) {
   this.callQueue.push([name, args]);
@@ -3308,7 +2859,7 @@ Removes the given path (or [paths]).
 
   * path <String, Array>
   *
-<!--sec data-title="源码" data-id="Schema_remove" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_remove" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.remove = function(path) {
   if (typeof path === 'string') {
@@ -3345,7 +2896,7 @@ Returns an Array of path strings that are required by this schema.
 
   * &lt;[Array][]&gt;
 
-<!--sec data-title="源码" data-id="Schema_requiredPaths" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_requiredPaths" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.requiredPaths = function requiredPaths(invalidate) {
   if (this._requiredpaths && !invalidate) {
@@ -3444,7 +2995,7 @@ new Schema({ name: String }, { _id: false, autoIndex: false })
 
 When nesting schemas, (children in the example above), always declare the child schema first before passing it into its parent.
 
-<!--sec data-title="源码" data-id="Schema" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema" data-show=true data-collapse=true ces-->
 ```js
 function Schema(obj, options) {
   if (!(this instanceof Schema)) {
@@ -3530,7 +3081,7 @@ schema.set('strict'); // 'true' by default
 schema.set('strict', false); // Sets 'strict' to false
 schema.set('strict'); // 'false'
 ```
-<!--sec data-title="源码" data-id="Schema_set" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_set" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.set = function(key, value, _tags) {
   if (arguments.length === 1) {
@@ -3560,9 +3111,9 @@ Schema.prototype.set = function(key, value, _tags) {
 <!--endsec-->
 
 
-## Schema#static(name, [fn])
+## Schema#static(name, [fn]) {#Schema_static}
 
-Adds static "class" methods to Models compiled from this schema.
+添加静态的“类”方法到从这个模式编译成的模型中。
 
 ##### 参数：
 
@@ -3586,7 +3137,7 @@ Drink.findByName('sanpellegrino', function (err, drinks) {
 
 If a hash of name/fn pairs is passed as the only argument, each name/fn pair will be added as statics.
 
-<!--sec data-title="源码" data-id="Schema_static" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_static" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.static = function(name, fn) {
   if (typeof name !== 'string') {
@@ -3602,9 +3153,10 @@ Schema.prototype.static = function(name, fn) {
 <!--endsec-->
 
 
-## Schema#virtual(name, [options])
+## Schema#virtual(name, [options]) {#Schema_virtual}
 
-Creates a virtual type with the given name.
+使用给定的 `name` 创建一个虚拟类型
+
 
 ##### 参数：
 
@@ -3617,7 +3169,7 @@ Creates a virtual type with the given name.
   * <VirtualType>
 
 
-<!--sec data-title="源码" data-id="Schema_virtual" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_virtual" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.virtual = function(name, options) {
   if (options && options.ref) {
@@ -3726,7 +3278,7 @@ Returns the virtual type with the given name.
   * <VirtualType>
 
 
-<!--sec data-title="源码" data-id="Schema_virtualpath" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_virtualpath" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.virtualpath = function(name) {
   return this.virtuals[name];
@@ -3734,11 +3286,11 @@ Schema.prototype.virtualpath = function(name) {
 ```
 <!--endsec-->
 
-## Schema.indexTypes()
+## Schema.indexTypes() {#Schema_indexTypes}
 
 The allowed index types
 
-<!--sec data-title="源码" data-id="createConnection" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_createConnection" data-show=true data-collapse=true ces-->
 ```js
 var indexTypes = '2d 2dsphere hashed text'.split(' ');
 
@@ -3757,7 +3309,7 @@ Object.defineProperty(Schema, 'indexTypes', {
 
 Reserved document keys.
 
-<!--sec data-title="源码" data-id="Schema_reserved" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_reserved" data-show=true data-collapse=true ces-->
 ```js
 Schema.reserved = Object.create(null);
 var reserved = Schema.reserved;
@@ -3804,11 +3356,11 @@ var schema = new Schema(..);
  schema.methods.init = function () {} // potentially breaking
 ```
 
-## Schema.Types
+## Schema.Types {#Schema_Types}
 
 The various built-in Mongoose Schema Types.
 
-<!--sec data-title="源码" data-id="Schema_Types" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_Types" data-show=true data-collapse=true ces-->
 ```js
 Schema.Types = MongooseTypes = require('./schema/index');
 ```
@@ -3850,7 +3402,7 @@ an object with 2 properties: schema and model.
 This property is typically only useful for plugin authors and advanced users.
 You do not need to interact with this property at all to use mongoose.
 
-<!--sec data-title="源码" data-id="Schema_childSchemas" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_childSchemas" data-show=true data-collapse=true ces-->
 ```js
 Object.defineProperty(Schema.prototype, 'childSchemas', {
   configurable: false,
@@ -3871,7 +3423,7 @@ The original object passed to the schema constructor
 var schema = new Schema({ a: String }).add({ b: String });
 schema.obj; // { a: String }
 ```
-<!--sec data-title="源码" data-id="Schema_obj" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Schema_obj" data-show=true data-collapse=true ces-->
 ```js
 Schema.prototype.obj;
 ```
@@ -3907,7 +3459,7 @@ product.remove(function (err, product) {
   product.remove(); // will execute a remove against the db
 })
 ```
-<!--sec data-title="源码" data-id="MISSING_method_name" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_MISSING_method_name" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.$isDeleted = function(val) {
   if (arguments.length === 0) {
@@ -3935,7 +3487,7 @@ Alias for set(), used internally to avoid conflicts
 
   * `[options]` &lt;[Object][]&gt; optionally specify options that modify the behavior of the set
 
-<!--sec data-title="源码" data-id="MISSING_method_name2" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_MISSING_method_name2" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.$set = function(path, val, type, options) {
   if (type && utils.getFunctionName(type.constructor) === 'Object') {
@@ -4281,7 +3833,7 @@ Takes a populated field and returns it to its unpopulated state.
 
 ##### 返回值：
 
-  * <Document> this
+  * &lt;[Document][]&gt; this
 
 ##### 参见：
 
@@ -4299,7 +3851,7 @@ Model.findOne().populate('author').exec(function (err, doc) {
 
 If the path was not populated, this is a no-op.
 
-<!--sec data-title="源码" data-id="Document_depopulate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_depopulate" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.depopulate = function(path) {
   if (typeof path === 'string') {
@@ -4324,7 +3876,7 @@ Returns true if the Document stores the same data as doc.
 
 ##### 参数：
 
-  * `doc` <Document> a document to compare
+  * `doc` &lt;[Document][]&gt; a document to compare
 
 ##### 返回值：
 
@@ -4334,7 +3886,7 @@ Documents are considered equal when they have matching _ids, unless neither
 document has an _id, in which case this function falls back to using
 deepEqual().
 
-<!--sec data-title="源码" data-id="Document_equals" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_equals" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.equals = function(doc) {
   if (!doc) {
@@ -4360,7 +3912,7 @@ integration.
 
 ##### 返回值：
 
-  * <Promise> promise that resolves to the document when population is done
+  * &lt;[Promise][]&gt; promise that resolves to the document when population is done
 
 ##### 参见：
 
@@ -4384,7 +3936,7 @@ var promise = doc.
 doc.execPopulate().then(resolve, reject);
 ```
 
-<!--sec data-title="源码" data-id="Document_execPopulate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_execPopulate" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.execPopulate = function() {
   var Promise = PromiseProvider.get();
@@ -4423,7 +3975,7 @@ doc.get('age') // 47
 doc.get('age', String) // "47"
 ```
 
-<!--sec data-title="源码" data-id="Document_get" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_get" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.get = function(path, type) {
   var adhoc;
@@ -4470,7 +4022,7 @@ Initializes the document without setters or marking anything modified.
 
 Called internally after a document is returned from mongodb.
 
-<!--sec data-title="源码" data-id="Document_init" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_init" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.init = function(doc, opts, fn) {
   // do not prefix this method with $__ since its
@@ -4519,7 +4071,7 @@ Document.prototype.init = function(doc, opts, fn) {
 
 Helper for console.log
 
-<!--sec data-title="源码" data-id="Document_inspect" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_inspect" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.inspect = function(options) {
   var isPOJO = options &&
@@ -4575,7 +4127,7 @@ doc.validate(function (err) {
 })
 ```
 
-<!--sec data-title="源码" data-id="Document_invalidate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_invalidate" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.invalidate = function(path, err, val, kind) {
   if (!this.$__.validationError) {
@@ -4625,7 +4177,7 @@ doc.isDirectModified('documents.0.title') // true
 doc.isDirectModified('documents') // false
 ```
 
-<!--sec data-title="源码" data-id="Document_isDirectModified" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_isDirectModified" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.isDirectModified = function(path) {
   return (path in this.$__.activePaths.states.modify);
@@ -4656,7 +4208,7 @@ Thing.findOne().select('nested.name').exec(function (err, doc) {
 })
 ```
 
-<!--sec data-title="源码" data-id="Document_isDirectSelected" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_isDirectSelected" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.isDirectSelected = function isDirectSelected(path) {
   if (this.$__.selected) {
@@ -4714,7 +4266,7 @@ Checks if path was initialized.
 
   * &lt;[Boolean][]&gt;
 
-<!--sec data-title="源码" data-id="Document_isInit" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_isInit" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.isInit = function(path) {
   return (path in this.$__.activePaths.states.init);
@@ -4747,7 +4299,7 @@ doc.isModified('documents otherProp') // true
 doc.isDirectModified('documents')     // false
 ```
 
-<!--sec data-title="源码" data-id="Document_isModified" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_isModified" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.isModified = function(paths) {
   if (paths) {
@@ -4790,7 +4342,7 @@ Thing.findOne().select('name').exec(function (err, doc) {
    doc.isSelected('age')  // false
 })
 ```
-<!--sec data-title="源码" data-id="Document_isSelected" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_isSelected" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.isSelected = function isSelected(path) {
   if (this.$__.selected) {
@@ -4862,7 +4414,7 @@ Marks the path as having pending changes to write to the db.
 
   * `path` &lt;[String][]&gt; the path to mark modified
 
-  * `[scope]` <Document> the scope to run validators with
+  * `[scope]` &lt;[Document][]&gt; the scope to run validators with
 
 Very helpful when using Mixed types.
 
@@ -4875,7 +4427,7 @@ doc.markModified('mixed.type');
 doc.save() // changes to mixed.type are now persisted
 ```
 
-<!--sec data-title="源码" data-id="Document_markModified" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_markModified" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.markModified = function(path, scope) {
   this.$__.activePaths.modify(path);
@@ -4894,7 +4446,7 @@ Returns the list of paths that have been modified.
 
   * &lt;[Array][]&gt;
   *
-<!--sec data-title="源码" data-id="Document_modifiedPaths" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_modifiedPaths" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.modifiedPaths = function() {
   var directModifiedPaths = Object.keys(this.$__.activePaths.states.modify);
@@ -4924,7 +4476,7 @@ execPopulate()
 
 ##### 返回值：
 
-  * <Document> this
+  * &lt;[Document][]&gt; this
 
 ##### 参见：
 
@@ -4963,7 +4515,7 @@ call execPopulate().
 Passing the same path a second time will overwrite the previous path options.
 See [Model.populate()]() for explaination of options.
 
-<!--sec data-title="源码" data-id="Document_populate_" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_populate_" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.depopulate = function(path) {
   if (typeof path === 'string') {
@@ -5006,7 +4558,7 @@ Model.findOne().populate('author').exec(function (err, doc) {
 
 If the path was not populated, undefined is returned.
 
-<!--sec data-title="源码" data-id="Document_populated" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_populated" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.populated = function(path, val, options) {
   // val and options are internal
@@ -5056,7 +4608,7 @@ Saves this document.
 
 ##### 返回值：
 
-  * <Promise> Promise
+  * &lt;[Promise][]&gt; Promise
 
 ##### 参见：
 
@@ -5132,7 +4684,7 @@ doc.set(path, value, String)
 doc.set(path, value, { strict: false });
 ```
 
-<!--sec data-title="源码" data-id="8" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_8" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.set = Document.prototype.$set;
 ```
@@ -5163,7 +4715,7 @@ schema.set('toJSON', { virtuals: true })
 
 See [schema options](/Library/mongoose/docs/guide.md#toJSON) for details.
 
-<!--sec data-title="源码" data-id="Document_toJSON" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_toJSON" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.toJSON = function(options) {
   return this.$toObject(options, true);
@@ -5315,7 +4867,7 @@ See [schema options](/Library/mongoose/docs/guide.html#toObject) for some more d
 
 During save, no custom options are applied to the document before being sent to the database.
 
-<!--sec data-title="源码" data-id="Document_toObject" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_toObject" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.toObject = function(options) {
   return this.$toObject(options);
@@ -5344,7 +4896,7 @@ doc.unmarkModified('foo');
 doc.save() // changes to foo will not be persisted
 ```
 
-<!--sec data-title="源码" data-id="Document_unmarkModified" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_unmarkModified" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.unmarkModified = function(path) {
   this.$__.activePaths.init(path);
@@ -5368,7 +4920,7 @@ Sends an update command with this document _id as the query selector.
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 参见：
 
@@ -5381,7 +4933,7 @@ weirdCar.update({$inc: {wheels:1}}, { w: 1 }, callback);
 Valid options:
 same as in Model.update
 ```
-<!--sec data-title="源码" data-id="Document_update" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_update" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.update = function update() {
   var args = utils.args(arguments);
@@ -5404,7 +4956,7 @@ Executes registered validation rules for this document.
 
 ##### 返回值：
 
-  * <Promise> Promise
+  * &lt;[Promise][]&gt; Promise
 
 ##### 注意：
 
@@ -5419,7 +4971,7 @@ doc.validate(function (err) {
 });
 ```
 
-<!--sec data-title="源码" data-id="Document_validate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_validate" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.validate = function(options, callback) {
   if (typeof options === 'function') {
@@ -5439,7 +4991,7 @@ Executes registered validation rules (skipping asynchronous validators) for this
 
 ##### 参数：
 
-  * `pathsToValidate` <Array, string> only validate the given paths
+  * `pathsToValidate` &lt;[Array][], [string][]&gt; only validate the given paths
 
 ##### 返回值：
 
@@ -5460,7 +5012,7 @@ if ( err ){
 }
 ```
 
-<!--sec data-title="源码" data-id="Document_validateSync" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_validateSync" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.validateSync = function(pathsToValidate) {
   var _this = this;
@@ -5538,22 +5090,25 @@ Marks a path as valid, removing existing validation errors.
 
 Hash containing current validation errors.
 
-<!--sec data-title="源码" data-id="Document_errors" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_errors" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.errors;
 ```
 <!--endsec-->
 
 
-## Document#id
+## Document#id {#Document_id}
 
-The string version of this documents _id.
+这个文档 `_id` 的字符串版本。
 
 ##### 注意：
+
+默认情况下，这个 getter 存在于所有文档中。可以在构造时通过设置 Schema 的 [id 选项](/Library/mongoose/docs/guide.md#id) 来禁用该 getter 。
 This getter exists on all documents by default. The getter can be disabled by setting the id [option](http://mongoosejs.com/docs/guide.html#id) of its Schema to false at construction time.
 
 new Schema({ name: String }, { id: false });
-<!--sec data-title="源码" data-id="Document_id" data-show=true data-collapse=true ces-->
+
+<!--sec data-title="源码" data-id="sec_Document_id" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.id;
 ```
@@ -5561,24 +5116,26 @@ Document.prototype.id;
 
 ##### 参见：
 
-  * [Schema options](/Library/mongoose/docs/guide.html#options)
+  * [Schema options](/Library/mongoose/docs/guide.md#options)
 
-## Document#isNew
 
-Boolean flag specifying if the document is new.
 
-<!--sec data-title="源码" data-id="Document_isNew" data-show=true data-collapse=true ces-->
+## Document#isNew {#Document_isNew}
+
+布尔值，标志指定文档是否为新创建。若为新创建，则为 `true`，否则为 `false`。
+
+<!--sec data-title="源码" data-id="sec_Document_isNew" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.isNew;
 ```
 <!--endsec-->
 
 
-## Document#schema
+## Document#schema {#Document_schema}
 
-The documents schema.
+文档的模式。
 
-<!--sec data-title="源码" data-id="Document_schema" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Document_schema" data-show=true data-collapse=true ces-->
 ```js
 Document.prototype.schema;
 ```
@@ -5586,7 +5143,7 @@ Document.prototype.schema;
 
 ----
 
-# query.js
+# query.js {#query-js}
 
 > 源码：[query.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/query.js)
 
@@ -5601,7 +5158,7 @@ Specifies a javascript function or expression to pass to MongoDBs query system.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -5632,7 +5189,7 @@ Specifies an $all query condition.
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -5650,7 +5207,7 @@ Specifies arguments for a $and condition.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -5668,7 +5225,7 @@ Specifies the batchSize option.
 
 ##### 参数：
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -5697,7 +5254,7 @@ Specifies a $box condition
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -5736,7 +5293,7 @@ Casts this query to the schema of model
 
 If obj is present, it is cast instead of this query.
 
-<!--sec data-title="源码" data-id="Query_cast" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_cast" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.cast = function(model, obj) {
   obj || (obj = this._conditions);
@@ -5774,9 +5331,9 @@ Like .then(), but only takes a rejection handler.
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
-<!--sec data-title="源码" data-id="Query_catch" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_catch" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.catch = function(reject) {
   return this.exec().then(null, reject);
@@ -5804,7 +5361,7 @@ DEPRECATED Specifies a $centerSphere condition
 
 ##### 返回值：
 
-    * <Query> this
+    * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -5820,7 +5377,7 @@ DEPRECATED Specifies a $centerSphere condition
 var area = { center: [50, 50], radius: 10 };
 query.where('loc').within().centerSphere(area);
 ```
-<!--sec data-title="源码" data-id="Query_centerSphere" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_centerSphere" data-show=true data-collapse=true ces-->
 ```js
 var area = { center: [50, 50], radius: 10 };
 query.where('loc').within().centerSphere(area);
@@ -5840,7 +5397,7 @@ Specifies a $center or $centerSphere condition.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -5879,13 +5436,13 @@ Adds a collation to this op (MongoDB 3.4 and up)
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
   * [MongoDB](https://docs.mongodb.com/manual/reference/method/cursor.collation/#cursor.collation)
 
-<!--sec data-title="源码" data-id="Query_collation" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_collation" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.collation = function(value) {
   if (this.options == null) {
@@ -5904,7 +5461,7 @@ Specifies the comment option.
 
 ##### 参数：
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -5933,7 +5490,7 @@ Specifying this query as a count query.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -5941,7 +5498,7 @@ Specifying this query as a count query.
 
 Passing a callback executes the query.
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * count()
 
@@ -5960,7 +5517,7 @@ query.where('color', 'black').count(function (err, count) {
   console.log('there are %d kittens', count);
 })
 ```
-<!--sec data-title="源码" data-id="Query_count" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_count" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.count = function(conditions, callback) {
   if (typeof conditions === 'function') {
@@ -5985,12 +5542,11 @@ Query.prototype.count = function(conditions, callback) {
 <!--endsec-->
 
 
-## Query#cursor([options])
+## Query#cursor([options]) {#Query_cursor}
 
 
-Returns a wrapper around a [mongodb driver cursor](http://mongodb.github.io/node-mongodb-native/2.1/api/Cursor.html).
-A QueryCursor exposes a [Streams3][]-compatible
-interface, as well as a .next() function.
+返回一个环绕 [mongodb driver cursor](http://mongodb.github.io/node-mongodb-native/2.1/api/Cursor.html) 的包装器。
+QueryCursor 暴露了一个 [Streams3][] 兼容的接口，以及一个 `.next()` 函数。
 
 [Streams3]: https://strongloop.com/strongblog/whats-new-io-js-beta-streams3/
 
@@ -6000,34 +5556,33 @@ interface, as well as a .next() function.
 
 ##### 返回值：
 
-  * <QueryCursor>
+  * &lt;[QueryCursor][]&gt;
 
 ##### 参见：
 
   * [QueryCursor]()
 
-The `.cursor()` function triggers pre find hooks, but not post find hooks.
+`.cursor()` 函数会触发 pre find 钩子, 但**不会**触发 post find 钩子。
 
 ##### 示例：
 
 ```js
-// There are 2 ways to use a cursor. First, as a stream:
-Thing.
+// 有两种使用 cursor 的方法。首先,作为流（stream）:
   find({ name: /^hello/ }).
   cursor().
   on('data', function(doc) { console.log(doc); }).
   on('end', function() { console.log('Done!'); });
 
-// Or you can use `.next()` to manually get the next doc in the stream.
-// `.next()` returns a promise, so you can use promises or callbacks.
+// 或者你可以在流中使用 `.next()` 来手动地获取下一个文档
+// `.next()` 返回一个 Promise，因此你可以使用 promises 或者 callbacks。
 var cursor = Thing.find({ name: /^hello/ }).cursor();
 cursor.next(function(error, doc) {
   console.log(doc);
 });
 
-// Because `.next()` returns a promise, you can use co
-// to easily iterate through all documents without loading them
-// all into memory.
+// 因为 `.next()` 返回一个 promise，
+// 因此你可以使用 co 来简化迭代所有文档
+// 而不是将他们全部加载到内存中 you can use co
 co(function*() {
   const cursor = Thing.find({ name: /^hello/ }).cursor();
   for (let doc = yield cursor.next(); doc != null; doc = yield cursor.next()) {
@@ -6038,10 +5593,10 @@ co(function*() {
 
 ##### 可用的选项：
 
-  * `transform`: optional function which accepts a mongoose document. The return value of the function will be emitted on data and returned by .next().
+  * `transform`: 一个可选的函数，接受一个 mongoose 文档作为参数。函数的返回值将在 `data` 上被发射，然后由 `.next()` 返回。
 
 
-<!--sec data-title="源码" data-id="Query_cursor" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_cursor" data-show=true data-collapse=true ces-->
 
 ```js
 Query.prototype.cursor = function cursor(opts) {
@@ -6074,13 +5629,13 @@ collection, regardless of the value of single.
 
 ##### 参数：
 
-  * `[filter]` <Object, Query> mongodb selector
+  * `[filter]` &lt;[Object][], [Query][]&gt; mongodb selector
 
   * `[callback]` &lt;[Function][]&gt; optional params are (error, writeOpResult)
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -6097,7 +5652,7 @@ Character.deleteMany({ name: /Stark/, age: { $gte: 18 } }, callback)
 Character.deleteMany({ name: /Stark/, age: { $gte: 18 } }).then(next)
 ```
 
-<!--sec data-title="源码" data-id="Query_deleteMany" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_deleteMany" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.deleteMany = function(filter, callback) {
   if (typeof filter === 'function') {
@@ -6133,13 +5688,13 @@ option.
 
 ##### 参数：
 
-  * `[filter]` <Object, Query> mongodb selector
+  * `[filter]` &lt;[Object][], [Query][]&gt; mongodb selector
 
   * `[callback]` &lt;[Function][]&gt; optional params are (error, writeOpResult)
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -6156,7 +5711,7 @@ Character.deleteOne({ name: 'Eddard Stark' }, callback)
 Character.deleteOne({ name: 'Eddard Stark' }).then(next)
 ```
 
-<!--sec data-title="源码" data-id="Query_deleteOne" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_deleteOne" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.deleteOne = function(filter, callback) {
   if (typeof filter === 'function') {
@@ -6193,13 +5748,13 @@ Declares or executes a distict() operation.
 
   * `[field]` &lt;[String][]&gt;
 
-  * `[criteria]` <Object, Query>
+  * `[criteria]` &lt;[Object][], [Query][]&gt;
 
   * `[callback]` &lt;[Function][]&gt; optional params are (error, arr)
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -6220,7 +5775,7 @@ distinct(callback)
 distinct()
 ```
 
-<!--sec data-title="源码" data-id="Query_distinct" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_distinct" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.distinct = function(field, conditions, callback) {
   if (!callback) {
@@ -6268,7 +5823,7 @@ Specifies an $elemMatch condition
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -6303,7 +5858,7 @@ Specifies the complementary comparison value for paths specified with where()
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 示例：
 
@@ -6351,7 +5906,7 @@ TestModel.find({ num: 'not a number' }).error(new Error('woops')).exec(function(
 });
 ```
 
-<!--sec data-title="源码" data-id="Query_error" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_error" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.error = function error(err) {
   if (arguments.length === 0) {
@@ -6365,7 +5920,7 @@ Query.prototype.error = function error(err) {
 <!--endsec-->
 
 
-## Query#exec([operation], [callback])
+## Query#exec([operation], [callback]) {#Query_exec}
 
 执行查询
 
@@ -6373,11 +5928,11 @@ Query.prototype.error = function error(err) {
 
   * `[operation]` <String, Function>
 
-  * `[callback]` &lt;[Function][]&gt; optional params depend on the function being called
+  * `[callback]` &lt;[Function][]&gt; 可选， 参数依赖于被调用的函数
 
 ##### 返回值：
 
-  <Promise>
+  &lt;[Promise][]&gt;
 
 ##### 示例：
 
@@ -6389,7 +5944,7 @@ query.exec(callback);
 query.exec('find', callback);
 ```
 
-<!--sec data-title="源码" data-id="Query_exec" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_exec" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.exec = function exec(op, callback) {
   var Promise = PromiseProvider.get();
@@ -6451,11 +6006,11 @@ Specifies an $exists condition
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -6487,7 +6042,7 @@ Thing.find().exists('name', false);
 
 ##### 返回值：
 
-  <Query> this
+  &lt;[Query][]&gt; this
 
 When no callback is passed, the query is not executed. When the query is executed, the result will be an array of documents.
 
@@ -6497,7 +6052,7 @@ When no callback is passed, the query is not executed. When the query is execute
 query.find({ name: 'Los Pollos Hermanos' }).find(callback)
 ```
 
-<!--sec data-title="源码" data-id="Query_find" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_find" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.find = function(conditions, callback) {
   if (typeof conditions === 'function') {
@@ -6529,7 +6084,7 @@ Query.prototype.find = function(conditions, callback) {
 <!--endsec-->
 
 
-## Query#findOne([filter], [projection], [options], [callback])
+## Query#findOne([filter], [projection], [options], [callback]) {#query_findOne}
 
 将查询声明为一个 findOne 操作。执行时，第一个被找到的文档被传递给回调。
 
@@ -6545,7 +6100,7 @@ Query.prototype.find = function(conditions, callback) {
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -6558,7 +6113,7 @@ Passing a callback executes the query. The result of the query is a single docum
 ##### 注意：
 *conditions is optional, and if conditions is null or undefined, mongoose will send an empty findOne command to MongoDB, which will return an arbitrary document. If you're querying by _id, use Model.findById() instead.*
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * findOne()
 
@@ -6574,7 +6129,7 @@ query.findOne(function (err, kitten) {
   }
 });
 ```
-<!--sec data-title="源码" data-id="Query_findOne" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_findOne" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.findOne = function(conditions, projection, options, callback) {
   if (typeof conditions === 'function') {
@@ -6650,7 +6205,7 @@ Issues a mongodb findAndModify remove command.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -6658,7 +6213,7 @@ Issues a mongodb findAndModify remove command.
 
 Finds a matching document, removes it, passing the found document (if any) to the callback. Executes immediately if callback is passed.
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * findOneAndRemove()
 
@@ -6698,23 +6253,23 @@ Issues a mongodb [findAndModify](http://www.mongodb.org/display/DOCS/findAndModi
 
 ##### 参数：
 
-  * `[query]` <Object, Query>
+  * `[query]` &lt;[Object][], [Query][]&gt;
 
   * `[doc]` &lt;[Object][]&gt;
 
   * `[options]` &lt;[Object][]&gt;
 
-  * `[options.passRawResult]` &lt;[Boolean][]&gt; if true, passes the [raw result from the MongoDB driver as the third callback parameter](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findAndModify)
+  * `[options.passRawResult]` &lt;[Boolean][]&gt; 如果为 `true`，传递 [来自 MongoDB 驱动器的原始结果作为第三个参数](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findAndModify)
 
-  * `[options.strict]` <Boolean, String> overwrites the schema's [strict mode option](/Library/mongoose/docs/guide.html#strict)
+  * `[options.strict]` &lt;[Boolean][], [String][]&gt; 覆盖模式的 [strict 模式选项](/Library/mongoose/docs/guide.html#strict)
 
-  * `[options.multipleCastError]` &lt;[Boolean][]&gt; by default, mongoose only returns the first error that occurred in casting the query. Turn on this option to aggregate all the cast errors.
+  * `[options.multipleCastError]` &lt;[Boolean][]&gt; 默认情况下，mongoose 只返回在查询中出现的第一个错误。打开这个选项，将所有的错误都聚集起来。
 
-  * `[callback]` &lt;[Function][]&gt; optional params are (error, doc), unless passRawResult is used, in which case params are (error, doc, writeOpResult)
+  * `[callback]` &lt;[Function][]&gt; 可选，其参数是 (error, doc), 除非使用了 `passRawResult` ，在这种情况下，参数为 (error, doc, writeOpResult)
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -6722,25 +6277,25 @@ Issues a mongodb [findAndModify](http://www.mongodb.org/display/DOCS/findAndModi
 
   * [writeOpResult](http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#~WriteOpResult)
 
-Finds a matching document, updates it according to the update arg, passing any options, and returns the found document (if any) to the callback. The query executes immediately if callback is passed.
+找到一个匹配的文档，根据 `update` 参数更新它，传递任何选项，并将找到的文档(如果有的话)返回给回调。如果传入了回调，查询将立即执行。
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * findOneAndUpdate()
 
 
 ##### 可用选项
 
-  * `new`: bool - if true, return the modified document rather than the original. defaults to false (changed in 4.0)
-  * `upsert`: bool - creates the object if it doesn't exist. defaults to false.
-  * `fields`: {Object|String} - Field selection. Equivalent to .select(fields).findOneAndUpdate()
-  * `sort`: if multiple docs are found by the conditions, sets the sort order to choose which doc to update
-  * `maxTimeMS`: puts a time limit on the query - requires mongodb >= 2.6.0
-  * `runValidators`: if true, runs update validators on this command. Update validators validate the update operation against the model's schema.
-  * `setDefaultsOnInsert`: if this and upsert are true, mongoose will apply the defaults specified in the model's schema if a new document is created. This option only works on MongoDB >= 2.4 because it relies on MongoDB's $setOnInsert operator.
-  * `passRawResult`: if true, passes the raw result from the MongoDB driver as the third callback parameter
-  * `context` (string) if set to 'query' and runValidators is on, this will refer to the query in custom validator functions that update validation runs. Does nothing if runValidators is false.
-  * `runSettersOnQuery`: bool - if true, run all setters defined on the associated model's schema for all fields defined in the query and the update.
+  * `new`: bool - 如果为 `true`，返回修改后的文档，而不是原始文件。 默认为 `false` (changed in 4.0)
+  * `upsert`: bool - 如果不存在，就创建对象。 默认为 `false`
+  * `fields`: {Object|String} - 字段选择. 等价于 `.select(fields).findOneAndUpdate()`
+  * `sort`: 如果在条件下找到了多个文档，设置排序顺序来选择要更新的文档
+  * `maxTimeMS`: 对查询的时间限制 - 需要 mongodb >= 2.6.0
+  * `runValidators`: 如果 `true`，在此命令上运行[更新验证器](/Library/mongoose/docs/validation.md#更新验证器)。更新验证器根据模型的模式的定义验证更新操作。
+  * `setDefaultsOnInsert`: 如果这个选项和 `upsert` 都为 `true`，那么如果一个新文档被创建，那么 mongoose 将应用模型模式中指定的默认值。这个选项只适用于 MongoDB >= 2.4，因为它依赖于[ MongoDB 的 `$setOnInsert` 操作符](https://docs.mongodb.org/v2.4/reference/operator/update/setOnInsert/)。
+  * `passRawResult`: 如果为 `true`，将 [MongoDB 驱动器的原始结果](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findAndModify)作为第三个回调参数传入
+  * `context` (string) 如果设置为 “query” 并且 `runValidators` 打开，这将在自定义的验证器函数引用这个 “query”，更新验证运行。如果 `runValidators` 为 `false`，则什么都不做。
+  * `runSettersOnQuery`: bool - 如果为 `true`，为所有在查询和更新中定义的字段运行「所有在相关模型的模式中定义的 setter」
 
 
 ##### 回调函数签名
@@ -6776,7 +6331,7 @@ Specifies a $geometry condition
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -6834,7 +6389,7 @@ query.find({ a: 1 }).where('b').gt(2);
 query.getQuery(); // { a: 1, b: { $gt: 2 } }
 ```
 
-<!--sec data-title="源码" data-id="Query_getQuery" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_getQuery" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.getQuery = function() {
   return this._conditions;
@@ -6859,7 +6414,7 @@ query.update({}, { $set: { a: 5 } });
 query.getUpdate(); // { $set: { a: 5 } }
 ```
 
-<!--sec data-title="源码" data-id="Query_getUpdate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_getUpdate" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.getUpdate = function() {
   return this._update;
@@ -6877,7 +6432,7 @@ Specifies a $gt query condition.
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -6904,7 +6459,7 @@ Specifies a $gte query condition.
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -6945,7 +6500,7 @@ Specifies an $in query condition.
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -6963,7 +6518,7 @@ Declares an intersects query for geometry().
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -6994,19 +6549,21 @@ query.where('path').intersects({
 In Mongoose 3.7, intersects changed from a getter to a function. If you need the old syntax, use this.
 
 
-## Query#lean(bool)
+## Query#lean(bool) {#Query_lean}
 
-Sets the lean option.
+设置 lean 选项。
 
 ##### 参数：
 
-  * `bool` <Boolean, Object> defaults to true
+  * `bool` &lt;[Boolean][], [Object][]&gt;  默认为 `true`
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
-Documents returned from queries with the lean option enabled are plain javascript objects, not MongooseDocuments. They have no save method, getters/setters or other Mongoose magic applied.
+使用 `lean` 选项的查询返回的文档是普通的 javascript 对象，而不是 Mongoose 文档。
+它们没有 `save` 方法、getter/setter 或其他 Mongoose 的神奇应用。
+
 
 ##### 示例：
 
@@ -7019,10 +6576,9 @@ Model.find().lean().exec(function (err, docs) {
   docs[0] instanceof mongoose.Document // false
 });
 ```
+在高性能只读场景中，这是一个[很好](https://groups.google.com/forum/#!topic/mongoose-orm/u2_DzDydcnA/discussion)的选择，特别是在与流结合的情况下。
 
-This is a [great](https://groups.google.com/forum/#!topic/mongoose-orm/u2_DzDydcnA/discussion) option in high-performance read-only scenarios, especially when combined with stream.
-
-<!--sec data-title="源码" data-id="Query_lean" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_lean" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.lean = function(v) {
   this._mongooseOptions.lean = arguments.length ? v : true;
@@ -7038,7 +6594,7 @@ Specifies the maximum number of documents the query will return.
 
 ##### 参数：
 
-  * val <Number>
+  * val &lt;[Number][]&gt;
 
 ##### 示例：
 
@@ -7059,7 +6615,7 @@ Specifies a $lt query condition.
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -7076,7 +6632,7 @@ Specifies a $lte query condition.
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -7093,7 +6649,7 @@ Specifies a $maxDistance query condition.
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -7118,7 +6674,7 @@ Specifies the maxScan option.
 
 ##### 参数：
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -7145,11 +6701,11 @@ Merges another Query or conditions object into this one.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 When a Query is passed, conditions, field selection and options are merged.
 
-<!--sec data-title="源码" data-id="Query_merge" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_merge" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.merge = function(source) {
   if (!source) {
@@ -7205,7 +6761,7 @@ Merges another Query or conditions object into this one.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 When a Query is passed, conditions, field selection and options are merged.
 
@@ -7225,7 +6781,7 @@ path property is a number that is equal to remainder modulo divisor.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -7250,7 +6806,7 @@ Getter/setter around the current mongoose-specific options for this query
 ##### 参数：
 
   * `options` &lt;[Object][]&gt; if specified, overwrites the current options
-<!--sec data-title="源码" data-id="Query_mongooseOptions" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_mongooseOptions" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.mongooseOptions = function(v) {
   if (arguments.length > 0) {
@@ -7270,7 +6826,7 @@ Specifies a $ne query condition.
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -7291,7 +6847,7 @@ Specifies a $near or $nearSphere condition
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -7340,7 +6896,7 @@ query.where('loc').nearSphere({ center: [10, 10], maxDistance: 5 });
 query.where('loc').near({ center: [10, 10], spherical: true });
 ```
 
-<!--sec data-title="源码" data-id="Query_nearSphere" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_nearSphere" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.nearSphere = function() {
   this._mongooseOptions.nearSphere = true;
@@ -7359,7 +6915,7 @@ Specifies an $nin query condition.
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -7378,7 +6934,7 @@ Specifies arguments for a $nor condition.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -7401,7 +6957,7 @@ Specifies arguments for an $or condition.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -7427,7 +6983,7 @@ Specifies a $polygon condition
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -7461,13 +7017,13 @@ Specifies paths which should be populated with other documents.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
   * [population](/Library/mongoose/docs/populate.md)
 
-  * [Query#select]()
+  * [Query#select](#queryselectarg)
 
   * [Model.populate]()
 
@@ -7495,7 +7051,7 @@ Kitten.find().populate('owner', 'name', null, {sort: { name: -1 }}).exec(functio
 
 Paths are populated after the query executes and a response is received. A separate query is then executed for each path specified for population. After a response for each query has also been returned, the results are passed to the callback.
 
-<!--sec data-title="源码" data-id="Query_populate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_populate" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.populate = function() {
   if (arguments.length === 0) {
@@ -7550,7 +7106,7 @@ Determines the MongoDB nodes from which to read.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -7625,13 +7181,13 @@ Declare and/or execute this query as a remove() operation.
 
 ##### 参数：
 
-  * `[filter]` <Object, Query> mongodb selector
+  * `[filter]` &lt;[Object][], [Query][]&gt; mongodb selector
 
   * `[callback]` &lt;[Function][]&gt; optional params are (error, writeOpResult)
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -7669,7 +7225,7 @@ query.remove(fn) // executes
 query.remove()
 ```
 
-<!--sec data-title="源码" data-id="Query_remove" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_remove" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.remove = function(filter, callback) {
   if (typeof filter === 'function') {
@@ -7717,7 +7273,7 @@ not accept any atomic operators ($set, etc.)
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -7732,12 +7288,12 @@ not accept any atomic operators ($set, etc.)
 replaceOne will not fire update middleware. Use pre('replaceOne')
 and post('replaceOne') instead.
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * replaceOne()
 
 
-<!--sec data-title="源码" data-id="Query_replaceOne" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_replaceOne" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.replaceOne = function(conditions, doc, options, callback) {
   if (typeof options === 'function') {
@@ -7781,11 +7337,11 @@ Specifies which document fields to include or exclude (also known as the query "
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
-  * [SchemaType]()
+  * [SchemaType](#SchemaType_constructor)
 
 When using string syntax, prefixing a path with - will flag that path as excluded. When a path does not have the - prefix, it is included. Lastly, if a path is prefixed with +, it forces inclusion of the path, which is useful for paths excluded at the [schema level](http://mongoosejs.com/docs/api.html#schematype_SchemaType-select).
 
@@ -7853,9 +7409,9 @@ query.selectedInclusively() // true
 ```
 
 
-## Query#setOptions(options)
+## Query#setOptions(options) {#Query_setOptions}
 
-Sets query options. Some options only make sense for certain operations.
+设置查询选项。有些选项只对某些操作是有意义的。
 
 ##### 参数：
 
@@ -7863,7 +7419,7 @@ Sets query options. Some options only make sense for certain operations.
 
 ##### 选项：
 
-The following options are only for find():
+以下选项仅用于 `find()`:
 
   - [tailable](http://www.mongodb.org/display/DOCS/Tailable+Cursors)
   - [sort](http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-%7B%7Bsort()%7D%7D)
@@ -7876,19 +7432,21 @@ The following options are only for find():
   - [readPreference](http://docs.mongodb.org/manual/applications/replication/#read-preference)
   - [hint](http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-%24hint)
 
-The following options are only for update(), updateOne(), updateMany(), replaceOne(), and findOneAndUpdate():
+以下选项仅适用于 `update()`, `updateOne()`, `updateMany()`, `replaceOne()`, 和 `findOneAndUpdate()`:
+
   - [upsert](https://docs.mongodb.com/manual/reference/method/db.collection.update/)
   - [writeConcern](https://docs.mongodb.com/manual/reference/method/db.collection.update/)
 
-The following options are only for find(), findOne(), findById(), and findOneAndUpdate():
+以下选项仅适用于 `find()`, `findOne()`, `findById()`, 和 `findOneAndUpdate()`:
+
   - [lean](http://mongoosejs.com/docs/api.html#query_Query-lean)
 
-**The following options are for all operations**
+**以下选项适用于所有操作**
 
   * [collation](https://docs.mongodb.com/manual/reference/collation/)
 
 
-<!--sec data-title="源码" data-id="Query_setOptions" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_setOptions" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.setOptions = function(options, overwrite) {
   // overwrite is only for internal use
@@ -7930,7 +7488,7 @@ Specifies a $size query condition.
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -7950,13 +7508,13 @@ MyModel.where('tags').size(0).exec(function (err, docs) {
 ```
 
 
-## Query#skip(val)
+## Query#skip(val) {#query_skip}
 
-Specifies the number of documents to skip.
+指定要跳过的文档的数量。
 
 ##### 参数：
 
-  * `val` <Number>
+  * `val` &lt;[Number][]&gt;
 
 ##### 参见：
 
@@ -7984,7 +7542,7 @@ DEPRECATED Sets the slaveOk option.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -8013,11 +7571,11 @@ Specifies a $slice projection for an array.
 
   * `[path]` &lt;[String][]&gt;
 
-  * `val` <Number> number/range of elements to slice
+  * `val` &lt;[Number][]&gt; number/range of elements to slice
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -8048,7 +7606,7 @@ Specifies a path for use with chaining.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 示例：
 
@@ -8077,7 +7635,7 @@ Specifies this query as a snapshot query.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -8095,9 +7653,9 @@ query.snapshot(false)
 Cannot be used with distinct()
 
 
-## Query#sort(arg)
+## Query#sort(arg) {#query_sort}
 
-Sets the sort order
+设置排序顺序
 
 ##### 参数：
 
@@ -8105,7 +7663,7 @@ Sets the sort order
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -8131,7 +7689,7 @@ query.sort('field -test');
 
 Cannot be used with distinct()
 
-<!--sec data-title="源码" data-id="Query_sort" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_sort" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.sort = function(arg) {
   if (arguments.length > 1) {
@@ -8191,7 +7749,7 @@ var stream = Thing.find().stream({ transform: JSON.stringify });
 stream.pipe(writeStream);
 ```
 
-<!--sec data-title="源码" data-id="Query_stream" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_stream" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.stream = function stream(opts) {
   this._applyPaths();
@@ -8216,9 +7774,9 @@ Sets the tailable option (for use with capped collections).
 
   * `[opts]` &lt;[Object][]&gt; options to set
 
-  * `[opts.numberOfRetries]` <Number> if cursor is exhausted, retry this many times before giving up
+  * `[opts.numberOfRetries]` &lt;[Number][]&gt; if cursor is exhausted, retry this many times before giving up
 
-  * `[opts.tailableRetryInterval]` <Number> if cursor is exhausted, wait this many milliseconds before
+  * `[opts.tailableRetryInterval]` &lt;[Number][]&gt; if cursor is exhausted, wait this many milliseconds before
  retrying
 
 ##### 参见：
@@ -8237,7 +7795,7 @@ query.tailable(false)
 
 Cannot be used with distinct()
 
-<!--sec data-title="源码" data-id="Query_tailable" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_tailable" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.tailable = function(val, opts) {
   // we need to support the tailable({ awaitdata : true }) as well as the
@@ -8281,9 +7839,9 @@ resolved with either the doc(s) or rejected with the error.
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
-<!--sec data-title="源码" data-id="Query_then" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_then" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.then = function(resolve, reject) {
   return this.exec().then(resolve, reject);
@@ -8298,7 +7856,7 @@ Converts this query to a customized, reusable query constructor with all argumen
 
 ##### 返回值：
 
-  * <Query> subclass-of-Query
+  * &lt;[Query][]&gt; subclass-of-Query
 
 ##### 示例：
 
@@ -8335,7 +7893,7 @@ Adventure().highlyRated.startsWith('Life').exec(callback)
 
 New in 3.7.3
 
-<!--sec data-title="源码" data-id="Query_toConstructor" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_toConstructor" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.toConstructor = function toConstructor() {
   var model = this.model;
@@ -8394,7 +7952,7 @@ Declare and/or execute this query as an update() operation.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -8406,7 +7964,7 @@ Declare and/or execute this query as an update() operation.
 
 All paths passed that are not $atomic operations will become $set ops.
 
-This function triggers the following middleware
+该函数触发以下中间件
 
   * update()
 
@@ -8425,8 +7983,8 @@ Model.where({ _id: id }).update({ $set: { title: 'words' }})
   * `safe` (boolean) safe mode (defaults to value set in schema (true))
   * `upsert` (boolean) whether to create the doc if it doesn't match (false)
   * `multi` (boolean) whether multiple documents should be updated (false)
-  * `runValidators`: if true, runs update validators on this command. Update validators validate the update operation against the model's schema.
-  * `setDefaultsOnInsert`: if this and upsert are true, mongoose will apply the defaults specified in the model's schema if a new document is created. This option only works on MongoDB >= 2.4 because it relies on MongoDB's $setOnInsert operator.
+  * `runValidators`: 如果 `true`，在此命令上运行[更新验证器](/Library/mongoose/docs/validation.md#更新验证器)。更新验证器根据模型的模式的定义验证更新操作。
+  * `setDefaultsOnInsert`: if this and upsert are true, mongoose will apply the defaults specified in the model's schema if a new document is created. This option only works on MongoDB >= 2.4 because it relies on [MongoDB 的 `$setOnInsert` 操作符](https://docs.mongodb.org/v2.4/reference/operator/update/setOnInsert/)。
   * `strict` (boolean) overrides the strict option for this update
   * `overwrite` (boolean) disables update-only mode, allowing you to overwrite the doc (false)
   * `context` (string) if set to 'query' and runValidators is on, this will refer to the query in custom validator functions that update validation runs. Does nothing if runValidators is false.
@@ -8487,7 +8045,7 @@ update(true) // executes
 update()
 ```
 
-<!--sec data-title="源码" data-id="Query_update" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_update" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.update = function(conditions, doc, options, callback) {
   if (typeof options === 'function') {
@@ -8540,7 +8098,7 @@ the multi option.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -8555,10 +8113,10 @@ the multi option.
  updateMany will not fire update middleware. Use pre('updateMany')
 and post('updateMany') instead.
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * updateMany()
-<!--sec data-title="源码" data-id="Query_updateMany" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_updateMany" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.updateMany = function(conditions, doc, options, callback) {
   if (typeof options === 'function') {
@@ -8610,7 +8168,7 @@ matches criteria regardless of the value of the multi option.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -8625,10 +8183,10 @@ matches criteria regardless of the value of the multi option.
  updateOne will not fire update middleware. Use pre('updateOne')
 and post('updateOne') instead.
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * updateOne()
-<!--sec data-title="源码" data-id="Query_updateOne" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_updateOne" data-show=true data-collapse=true ces-->
 ```js
 Query.prototype.updateOne = function(conditions, doc, options, callback) {
   if (typeof options === 'function') {
@@ -8667,7 +8225,7 @@ Defines a $within or $geoWithin argument for geo-spatial queries.
 
 ##### 返回值：
 
-  * <Query> this
+  * &lt;[Query][]&gt; this
 
 ##### 参见：
 
@@ -8720,7 +8278,7 @@ mongoose.Query.use$geoWithin = false;
 
 MongoDB 2.4 deprecated the use of $within, replacing it with $geoWithin. Mongoose uses $geoWithin by default (which is 100% backward compatible with $within). If you are running an older version of MongoDB, set this flag to false so your within() queries continue to work.
 
-<!--sec data-title="源码" data-id="Query_use_geoWithin" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Query_use_geoWithin" data-show=true data-collapse=true ces-->
 ```js
 Query.use$geoWithin = mquery.use$geoWithin;
 ```
@@ -8758,7 +8316,7 @@ Adds a cursor flag
 Model.aggregate(..).addCursorFlag('noCursorTimeout', true).exec();
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_addCursorFlag" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_addCursorFlag" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.addCursorFlag = function(flag, value) {
   if (!this.options) {
@@ -8804,7 +8362,7 @@ aggregate.addFields({
 aggregate.addFields({ salary_k: { $divide: [ "$salary", 1000 ] } });
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_addFields" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_addFields" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.addFields = function(arg) {
   var fields = {};
@@ -8862,7 +8420,7 @@ Model
   * Mongoose does not cast pipeline stages. new Aggregate({ $match: { _id: '00000000000000000000000a' } }); will not work unless _id is a string in the database. Use new Aggregate({ $match: { _id: mongoose.Types.ObjectId('00000000000000000000000a') } }); instead.
 
 
-<!--sec data-title="源码" data-id="aggregate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_aggregate" data-show=true data-collapse=true ces-->
 ```js
 function Aggregate() {
   this._pipeline = [];
@@ -8899,7 +8457,7 @@ Sets the allowDiskUse option for the aggregation query (ignored for < 2.6.0)
 Model.aggregate(..).allowDiskUse(true).exec(callback)
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_allowDiskUse" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_allowDiskUse" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.allowDiskUse = function(value) {
   this.options.allowDiskUse = value;
@@ -8931,7 +8489,7 @@ var pipeline = [{ $match: { daw: 'Logic Audio X' }} ];
 aggregate.append(pipeline);
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_append" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_append" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.append = function() {
   var args = (arguments.length === 1 && util.isArray(arguments[0]))
@@ -8967,7 +8525,7 @@ Adds a collation
 ##### 示例：
 
 Model.aggregate(..).collation({ locale: 'en_US', strength: 1 }).exec();
-<!--sec data-title="源码" data-id="Aggregate_collation" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_collation" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.collation = function(collation) {
   if (!this.options) {
@@ -8991,7 +8549,7 @@ is necessary.
 
   * `options` &lt;[Object][]&gt;
 
-  * `options.batchSize` <Number> set the cursor batch size
+  * `options.batchSize` &lt;[Number][]&gt; set the cursor batch size
 
   * `[options.useMongooseAggCursor]` &lt;[Boolean][]&gt; use experimental mongoose-specific aggregation cursor (for eachAsync() and other query cursor semantics)
 
@@ -9008,7 +8566,7 @@ cursor.each(function(error, doc) {
 });
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_cursor" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_cursor" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.cursor = function(options) {
   if (!this.options) {
@@ -9031,7 +8589,7 @@ Executes the aggregate pipeline on the currently bound Model.
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 ##### 参见：
 
@@ -9047,7 +8605,7 @@ var promise = aggregate.exec();
 promise.then(..);
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_exec" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_exec" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.exec = function(callback) {
   if (!this._model) {
@@ -9146,7 +8704,7 @@ Execute the aggregation with explain
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 ##### 示例：
 
@@ -9154,7 +8712,7 @@ Execute the aggregation with explain
 Model.aggregate(..).explain(callback)
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_explain" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_explain" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.explain = function(callback) {
   var _this = this;
@@ -9221,7 +8779,7 @@ Model.aggregate(...)
 ```
 
 // Output: { books: [...], price: [{...}, {...}] }
-<!--sec data-title="源码" data-id="Aggregate_facet" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_facet" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.facet = function(options) {
   return this.append({$facet: options});
@@ -9257,7 +8815,7 @@ Appends new custom $graphLookup operator(s) to this aggregate pipeline, performi
  ```
 
 
-<!--sec data-title="源码" data-id="Aggregate_graphLooku" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_graphLooku" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.graphLookup = function(options) {
   var cloneOptions = {};
@@ -9312,7 +8870,7 @@ Appends a new $limit operator to this aggregate pipeline.
 
 ##### 参数：
 
-  * `num` <Number> maximum number of records to pass to the next stage
+  * `num` &lt;[Number][]&gt; maximum number of records to pass to the next stage
 
 ##### 返回值：
 
@@ -9351,7 +8909,7 @@ Appends new custom $lookup operator(s) to this aggregate pipeline.
 aggregate.lookup({ from: 'users', localField: 'userId', foreignField: '_id', as: 'users' });
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_lookup" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_lookup" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.lookup = function(options) {
   return this.append({$lookup: options});
@@ -9396,7 +8954,7 @@ Binds this aggregate to a model.
 
   * <Aggregate>
 
-<!--sec data-title="源码" data-id="Aggregate_model" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_model" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.model = function(model) {
   this._model = model;
@@ -9474,7 +9032,7 @@ var agg = Model.aggregate(..).option({ allowDiskUse: true }); // Set the `allowD
 agg.options; // `{ allowDiskUse: true }`
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_option" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_option" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.option = function(value) {
   for (var key in Object.keys(value)) {
@@ -9500,7 +9058,7 @@ Returns the current pipeline
 MyModel.aggregate().match({ test: 1 }).pipeline(); // [{ $match: { test: 1 } }]
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_pipeline" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_pipeline" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.pipeline = function() {
   return this._pipeline;
@@ -9551,7 +9109,7 @@ aggregate.project({ salary_k: { $divide: [ "$salary", 1000 ] } });
 ```
 
 
-<!--sec data-title="源码" data-id="Aggregate_project" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_project" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.project = function(arg) {
   var fields = {};
@@ -9604,7 +9162,7 @@ Sets the readPreference option for the aggregation query.
 Model.aggregate(..).read('primaryPreferred').exec(callback)
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_read" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_read" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.read = function(pref, tags) {
   if (!this.options) {
@@ -9623,7 +9181,7 @@ Appepnds new custom $sample operator(s) to this aggregate pipeline.
 
 ##### 参数：
 
-  * `size` <Number> number of random documents to pick
+  * `size` &lt;[Number][]&gt; number of random documents to pick
 
 ##### 返回值：
 
@@ -9639,7 +9197,7 @@ Appepnds new custom $sample operator(s) to this aggregate pipeline.
 aggregate.sample(3); // Add a pipeline that picks 3 random documents
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_sample" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_sample" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.sample = function(size) {
   return this.append({$sample: {size: size}});
@@ -9654,7 +9212,7 @@ Appends a new $skip operator to this aggregate pipeline.
 
 ##### 参数：
 
-  * `num` <Number> number of records to skip before next stage
+  * `num` &lt;[Number][]&gt; number of records to skip before next stage
 
 ##### 返回值：
 
@@ -9700,7 +9258,7 @@ aggregate.sort({ field: 'asc', test: -1 });
 aggregate.sort('field -test');
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_sort" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_sort" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.sort = function(arg) {
   // TODO refactor to reuse the query builder logic
@@ -9751,7 +9309,7 @@ Provides promise for aggregate.
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 ##### 参见：
 
@@ -9764,7 +9322,7 @@ Model.aggregate(..).then(successCallback, errorCallback);
 ```
 
 
-<!--sec data-title="源码" data-id="Aggregate_then" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_then" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.then = function(resolve, reject) {
   return this.exec().then(resolve, reject);
@@ -9801,7 +9359,7 @@ aggregate.unwind("tags");
 aggregate.unwind("a", "b", "c");
 ```
 
-<!--sec data-title="源码" data-id="Aggregate_unwind" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Aggregate_unwind" data-show=true data-collapse=true ces-->
 ```js
 Aggregate.prototype.unwind = function() {
   var args = utils.args(arguments);
@@ -9842,7 +9400,7 @@ Destroys the stream, closing the underlying cursor, which emits the close event.
 
   * `[err]` &lt;[Error][]&gt;
 
-<!--sec data-title="源码" data-id="QueryStream_destroy" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_QueryStream_destroy" data-show=true data-collapse=true ces-->
 ```js
 QueryStream.prototype.destroy = function(err) {
   if (this._destroyed) {
@@ -9870,7 +9428,7 @@ QueryStream.prototype.destroy = function(err) {
 
 Pauses this stream.
 
-<!--sec data-title="源码" data-id="QueryStream_pause" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_QueryStream_pause" data-show=true data-collapse=true ces-->
 ```js
 QueryStream.prototype.pause = function() {
   this.paused = true;
@@ -9901,7 +9459,7 @@ Provides a Node.js 0.8 style ReadStream interface for Queries.
 
 ##### 参数：
 
-  * `query` <Query>
+  * `query` &lt;[Query][]&gt;
 
   * `[options]` &lt;[Object][]&gt;
 
@@ -9955,7 +9513,7 @@ plugging into an HTTP response will *not* work out of the box. Those streams exp
 
 these streams are Node.js 0.8 style read streams which differ from Node.js 0.10 style. Node.js 0.10 streams are not well tested yet and are not guaranteed to work.
 
-<!--sec data-title="源码" data-id="QueryStream" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_QueryStream" data-show=true data-collapse=true ces-->
 ```js
 function QueryStream(query, options) {
   Stream.call(this);
@@ -9987,7 +9545,7 @@ function QueryStream(query, options) {
 
 Resumes this stream.
 
-<!--sec data-title="源码" data-id="QueryStream_resume" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_QueryStream_resume" data-show=true data-collapse=true ces-->
 ```js
 QueryStream.prototype.resume = function() {
   this.paused = false;
@@ -10016,7 +9574,7 @@ QueryStream.prototype.resume = function() {
 
 Flag stating whether or not this stream is paused.
 
-<!--sec data-title="源码" data-id="QueryStream_paused" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_QueryStream_paused" data-show=true data-collapse=true ces-->
 ```js
 QueryStream.prototype.paused;
 
@@ -10032,7 +9590,7 @@ var T_CONT = 2;
 
 Flag stating whether or not this stream is readable.
 
-<!--sec data-title="源码" data-id="QueryStream_readable" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_QueryStream_readable" data-show=true data-collapse=true ces-->
 ```js
 QueryStream.prototype.readable;
 ```
@@ -10064,7 +9622,7 @@ Returns a promise that resolves when done.
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 
 ----
@@ -10087,7 +9645,7 @@ MongooseError constructor
 
   * [Error](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Error)
 
-<!--sec data-title="源码" data-id="MongooseError" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_MongooseError" data-show=true data-collapse=true ces-->
 ```js
 function MongooseError(msg) {
   Error.call(this);
@@ -10111,17 +9669,17 @@ document was not found. The constructor takes one parameter, the
 conditions that mongoose passed to update() when trying to update
 the document.
 
-<!--sec data-title="源码" data-id="MongooseError_DocumentNotFoundError" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_MongooseError_DocumentNotFoundError" data-show=true data-collapse=true ces-->
 ```js
 MongooseError.DocumentNotFoundError = require('./notFound');
 ```
 <!--endsec-->
 
 
-## MongooseError.messages
+## MongooseError.messages {#MongooseError_messages_1}
 The default built-in validator error messages.
 
-<!--sec data-title="源码" data-id="MongooseError_messages" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_MongooseError_messages" data-show=true data-collapse=true ces-->
 ```js
 MongooseError.messages = require('./messages');
 
@@ -10144,11 +9702,11 @@ MongooseError.Messages = MongooseError.messages;
 > 源码：[error/messages.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/error/messages.js)
 
 
-## MongooseError.messages()
+## MongooseError.messages() {#MongooseError_messages}
 
-The default built-in validator error messages. These may be customized.
+默认的验证器错误消息。可以进行自定义。
 
-<!--sec data-title="源码" data-id="MongooseError_messages_" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_MongooseError_messages_" data-show=true data-collapse=true ces-->
 ```js
 var msg = module.exports = exports = {};
 
@@ -10175,12 +9733,12 @@ msg.String.maxlength = 'Path `{PATH}` (`{VALUE}`) is longer than the maximum all
 <!--endsec-->
 
 ```js
-// customize within each schema or globally like so
+// 在每个模式或全局范围内进行自定义
 var mongoose = require('mongoose');
 mongoose.Error.messages.String.enum  = "Your custom message for {PATH}.";
 ```
 
-As you might have noticed, error messages support basic templating
+正如您可能已经注意到的，错误消息支持基本的模板
 
   * `{PATH}` is replaced with the invalid document path
   * `{VALUE}` is replaced with the invalid value
@@ -10188,8 +9746,7 @@ As you might have noticed, error messages support basic templating
   * `{MIN}` is replaced with the declared min value for the Number.min validator
   * `{MAX}` is replaced with the declared max value for the Number.max validator
 
-Click the "show code" link below to see all defaults.
-
+点击上面的源码，可以看到所有的默认值。
 
 
 -----
@@ -10204,7 +9761,7 @@ Click the "show code" link below to see all defaults.
 
 Console.log helper
 
-<!--sec data-title="源码" data-id="ValidationError_toString" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_ValidationError_toString" data-show=true data-collapse=true ces-->
 ```js
 ValidationError.prototype.toString = function() {
   return this.name + ': ' + _generateMessage(this);
@@ -10229,7 +9786,7 @@ Creates a Query and specifies a $where condition.
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 参见：
 
@@ -10258,7 +9815,7 @@ Model.findById(id, function (err, doc) {
 })
 ```
 
-<!--sec data-title="源码" data-id="Model_increment" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_increment" data-show=true data-collapse=true ces-->
 ```js
 Model.prototype.increment = function increment() {
   this.$__.version = VERSION_ALL;
@@ -10283,7 +9840,7 @@ var doc = new Tank;
 doc.model('User').findById(id, callback);
 ```
 
-<!--sec data-title="源码" data-id="Model_model" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_model" data-show=true data-collapse=true ces-->
 ```js
 Model.prototype.model = function model(name) {
   return this.db.model(name);
@@ -10315,7 +9872,7 @@ Model constructor
 
 Provides the interface to MongoDB collections as well as creates document instances.
 
-<!--sec data-title="源码" data-id="Model" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model" data-show=true data-collapse=true ces-->
 ```js
 function Model(doc, fields, skipId) {
   if (fields instanceof Schema) {
@@ -10339,7 +9896,7 @@ Removes this document from the db.
 
 ##### 返回值：
 
-  * <Promise> Promise
+  * &lt;[Promise][]&gt; Promise
 
 ##### 示例：
 
@@ -10364,7 +9921,7 @@ product.remove().then(function (product) {
 })
 ```
 
-<!--sec data-title="源码" data-id="Model_remove" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_remove" data-show=true data-collapse=true ces-->
 ```js
 Model.prototype.remove = function remove(options, fn) {
   if (typeof options === 'function') {
@@ -10447,7 +10004,7 @@ Saves this document.
 
 ##### 返回值：
 
-  * <Promise> Promise
+  * &lt;[Promise][]&gt; Promise
 
 ##### 参见：
 
@@ -10485,7 +10042,7 @@ MongoDB. To override this behavior, set
 [the toObject.retainKeyOrder option](http://mongoosejs.com/docs/api.html#document_Document-toObject)
 to true on your schema.
 
-<!--sec data-title="源码" data-id="Model_save" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_save" data-show=true data-collapse=true ces-->
 ```js
 Model.prototype.save = function(options, fn) {
   if (typeof options === 'function') {
@@ -10510,7 +10067,7 @@ Model.prototype.save = function(options, fn) {
 
 Performs [aggregations]() on the models collection.
 
-<!--sec data-title="源码" data-id="Model_aggregate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_aggregate" data-show=true data-collapse=true ces-->
 ```js
 Model.aggregate = function aggregate() {
   var args = [].slice.call(arguments),
@@ -10599,7 +10156,7 @@ command. This is faster than sending multiple independent operations (like)
 if you use create()) because with bulkWrite() there is only one round
 trip to MongoDB.
 
-<!--sec data-title="源码" data-id="Model_bulkWrite" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_bulkWrite" data-show=true data-collapse=true ces-->
 ```js
 Model.bulkWrite = function(ops, options, callback) {
   var Promise = PromiseProvider.get();
@@ -10746,7 +10303,7 @@ Model.bulkWrite = function(ops, options, callback) {
 
 ##### 返回值：
 
-  * <Promise> resolves to a `BulkWriteOpResult` if the operation succeeds
+  * &lt;[Promise][]&gt; resolves to a `BulkWriteOpResult` if the operation succeeds
 
 ##### 参见：
 
@@ -10789,11 +10346,11 @@ Character.bulkWrite([
 ]).then(handleResult);
 ```
 
-## Model.count(conditions, [callback])
+## Model.count(conditions, [callback]) {#model_count}
 
-Counts number of matching documents in a database collection.
+计算在数据库集合中匹配的文档数量。
 
-<!--sec data-title="源码" data-id="Model_coun" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_coun" data-show=true data-collapse=true ces-->
 ```js
 Model.count = function count(conditions, callback) {
   if (typeof conditions === 'function') {
@@ -10821,7 +10378,7 @@ Model.count = function count(conditions, callback) {
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 示例：
 
@@ -10834,14 +10391,12 @@ Adventure.count({ type: 'jungle' }, function (err, count) {
 
 
 
-## Model.create(doc(s), [callback])
+## Model.create(doc(s), [callback]) {#model_create}
 
 
-Shortcut for saving one or more documents to the database.
-MyModel.create(docs) does new MyModel(doc).save() for every doc in
-docs.
+将一个或多个文档保存到数据库的快捷方式。`MyModel.create(docs)`  会为 `docs` 参数中的每一个文档执行 `new MyModel(doc).save()`
 
-<!--sec data-title="源码" data-id="Model_creat" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_creat" data-show=true data-collapse=true ces-->
 ```js
 Model.create = function create(doc, callback) {
   var args;
@@ -10951,25 +10506,25 @@ Model.create = function create(doc, callback) {
 
   * `doc(s)` <Array, Object, *>
 
-  * `[callback]` &lt;[Function][]&gt; callback
+  * `[callback]` &lt;[Function][]&gt; 回调
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * save()
 
 ##### 示例：
 
 ```js
-// pass individual docs
+// 传递单个文档
 Candy.create({ type: 'jelly bean' }, { type: 'snickers' }, function (err, jellybean, snickers) {
   if (err) // ...
 });
 
-// pass an array
+// 传递一个数组
 var array = [{ type: 'jelly bean' }, { type: 'snickers' }];
 Candy.create(array, function (err, candies) {
   if (err) // ...
@@ -10979,7 +10534,7 @@ Candy.create(array, function (err, candies) {
   // ...
 });
 
-// callback is optional; use the returned promise if you like:
+// 回调是可选的；如果你喜欢的话，可以使用返回的 promise:
 var promise = Candy.create({ type: 'jawbreaker' });
 promise.then(function (jawbreaker) {
   // ...
@@ -10995,7 +10550,7 @@ function. The ensureIndex() function checks to see if an index with that
 name already exists, and, if not, does not attempt to create the index.
 createIndex() bypasses this check.
 
-<!--sec data-title="源码" data-id="Model_createIndexes" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_createIndexes" data-show=true data-collapse=true ces-->
 ```js
 Model.createIndexes = function createIndexes(options, callback) {
   if (typeof options === 'function') {
@@ -11096,7 +10651,7 @@ function _handleSafe(options) {
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 
 
@@ -11107,7 +10662,7 @@ Deletes all of the documents that match conditions from the collection.
 Behaves like remove(), but deletes all documents that match conditions
 regardless of the single option.
 
-<!--sec data-title="源码" data-id="Model_deleteMany" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_deleteMany" data-show=true data-collapse=true ces-->
 ```js
 Model.deleteMany = function deleteMany(conditions, callback) {
   if (typeof conditions === 'function') {
@@ -11135,7 +10690,7 @@ Model.deleteMany = function deleteMany(conditions, callback) {
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 示例：
 
@@ -11151,12 +10706,10 @@ Like `Model.remove()`, this function does not trigger pre('remove') or post('rem
 
 ## Model.deleteOne(conditions, [callback])
 
+删除集合中与 `conditions`(条件) 相匹配的第一个文档。
+就像 `remove()` 一样，但是最多只能删除一个文件，而不管 `single` 选项。
 
-Deletes the first document that matches conditions from the collection.
-Behaves like remove(), but deletes at most one document regardless of the
-single option.
-
-<!--sec data-title="源码" data-id="Model_deleteOne" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_deleteOne" data-show=true data-collapse=true ces-->
 ```js
 Model.deleteOne = function deleteOne(conditions, callback) {
   if (typeof conditions === 'function') {
@@ -11184,7 +10737,7 @@ Model.deleteOne = function deleteOne(conditions, callback) {
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 示例：
 
@@ -11200,7 +10753,7 @@ Like `Model.remove()`, this function does not trigger pre('remove') or post('rem
 
 Adds a discriminator type.
 
-<!--sec data-title="源码" data-id="Model_discriminator" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_discriminator" data-show=true data-collapse=true ces-->
 ```js
 Model.discriminator = function(name, schema) {
   var model;
@@ -11271,7 +10824,7 @@ var Boss = Person.discriminator('Boss', BossSchema);
 
 Creates a Query for a distinct operation.
 
-<!--sec data-title="源码" data-id="Model_distinct" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_distinct" data-show=true data-collapse=true ces-->
 ```js
 Model.distinct = function distinct(field, conditions, callback) {
   // get the mongodb collection object
@@ -11300,7 +10853,7 @@ Model.distinct = function distinct(field, conditions, callback) {
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 Passing a callback immediately executes the query.
 
@@ -11324,7 +10877,7 @@ query.exec(callback);
 Sends createIndex commands to mongo for each index declared in the schema.
 The createIndex commands are sent in series.
 
-<!--sec data-title="源码" data-id="Model_ensureIndexes" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_ensureIndexes" data-show=true data-collapse=true ces-->
 ```js
 Model.ensureIndexes = function ensureIndexes(options, callback) {
   if (typeof options === 'function') {
@@ -11365,7 +10918,7 @@ Model.ensureIndexes = function ensureIndexes(options, callback) {
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 ##### 示例：
 
@@ -11394,11 +10947,11 @@ It is not recommended that you run this in production. Index creation may impact
 
 
 
-## Model.find(conditions, [projection], [options], [callback])
+## Model.find(conditions, [projection], [options], [callback]) {#model_find}
 
-Finds documents
+查找文档
 
-<!--sec data-title="源码" data-id="Model_find" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_find" data-show=true data-collapse=true ces-->
 ```js
 Model.find = function find(conditions, projection, options, callback) {
   if (typeof conditions === 'function') {
@@ -11439,47 +10992,47 @@ Model.find = function find(conditions, projection, options, callback) {
 
   * `conditions` &lt;[Object][]&gt;
 
-  * `[projection]` &lt;[Object][]&gt; optional fields to return (http://bit.ly/1HotzBo)
+  * `[projection]` &lt;[Object][]&gt; 可选，结果要返回的字段 (http://bit.ly/1HotzBo)
 
-  * `[options]` &lt;[Object][]&gt; optional see <a href="http://mongoosejs.com/docs/api.html#query_Query-setOptions"><code>Query.prototype.setOptions()</code></a>
+  * `[options]` &lt;[Object][]&gt; 可选，见 [`Query.prototype.setOptions()`](#querysetoptionsoptions)
 
   * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 参见：
 
-  * [field selection](http://mongoosejs.com/docs/api.html#query_Query-select)
+  * [field selection](#Query_select)
 
-  * [promise](http://mongoosejs.com/docs/api.html#promise-js)
+  * [promise](#promise-js)
 
-The conditions are cast to their respective SchemaTypes before the command is sent.
+在命令被发送之前，`conditions` 被转换为它们各自的 SchemaTypes。
 
 ##### 示例：
 
 ```js
-// named john and at least 18
+// name 为 john 且 大于等于 18岁
 MyModel.find({ name: 'john', age: { $gte: 18 }});
 
-// executes immediately, passing results to callback
+// 立即执行, 奖结果传递给回调
 MyModel.find({ name: 'john', age: { $gte: 18 }}, function (err, docs) {});
 
-// name LIKE john and only selecting the "name" and "friends" fields, executing immediately
+// name 像 john 并且只选择  "name" 和 "friends" 字段, 立即执行
 MyModel.find({ name: /john/i }, 'name friends', function (err, docs) { })
 
-// passing options
+// 传递选项对象
 MyModel.find({ name: /john/i }, null, { skip: 10 })
 
-// passing options and executing immediately
+// 传递选项对象并立即执行
 MyModel.find({ name: /john/i }, null, { skip: 10 }, function (err, docs) {});
 
-// executing a query explicitly
+// 显式地执行一个查询
 var query = MyModel.find({ name: /john/i }, null, { skip: 10 })
 query.exec(function (err, docs) {});
 
-// using the promise returned from executing a query
+// 使用执行查询返回的 promise
 var query = MyModel.find({ name: /john/i }, null, { skip: 10 });
 var promise = query.exec();
 promise.addBack(function (err, docs) {});
@@ -11493,7 +11046,7 @@ Finds a single document by its _id field. findById(id) is almost*
 equivalent to findOne({ _id: id }). If you want to query by a document's
 _id, use findById() instead of findOne().
 
-<!--sec data-title="源码" data-id="Model_findById" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_findById" data-show=true data-collapse=true ces-->
 ```js
 Model.findById = function findById(id, projection, options, callback) {
   if (typeof id === 'undefined') {
@@ -11514,13 +11067,13 @@ Model.findById = function findById(id, projection, options, callback) {
   * `id` <Object, String, Number> value of <code>_id</code> to query by
 
   * `[projection]` &lt;[Object][]&gt; optional fields to return (http://bit.ly/1HotzBo)
-  * `[options]` &lt;[Object][]&gt; optional see <a href="http://mongoosejs.com/docs/api.html#query_Query-setOptions"><code>Query.prototype.setOptions()</code></a>
+  * `[options]` &lt;[Object][]&gt; 可选，参见 [`Query.prototype.setOptions()`](#Query_setOptions)
 
   * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 参见：
 
@@ -11530,7 +11083,7 @@ Model.findById = function findById(id, projection, options, callback) {
 
 The id is cast based on the Schema before sending the command.
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * findOne()
 
@@ -11570,7 +11123,7 @@ Adventure.findById(id, 'name').lean().exec(function (err, doc) {});
 
 Issue a mongodb findAndModify remove command by a document's _id field. findByIdAndRemove(id, ...) is equivalent to findOneAndRemove({ _id: id }, ...).
 
-<!--sec data-title="源码" data-id="Model_findByIdAndRemove" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_findByIdAndRemove" data-show=true data-collapse=true ces-->
 ```js
 Model.findByIdAndRemove = function(id, options, callback) {
   if (arguments.length === 1 && typeof id === 'function') {
@@ -11598,13 +11151,13 @@ Model.findByIdAndRemove = function(id, options, callback) {
 
   * `id` <Object, Number, String> value of <code>_id</code> to query by
 
-  * `[options]` &lt;[Object][]&gt; optional see <a href="http://mongoosejs.com/docs/api.html#query_Query-setOptions"><code>Query.prototype.setOptions()</code></a>
+  * `[options]` &lt;[Object][]&gt; 可选，参见 [`Query.prototype.setOptions()`](#Query_setOptions)
 
   * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 参见：
 
@@ -11616,7 +11169,7 @@ Finds a matching document, removes it, passing the found document (if any) to th
 
 Executes immediately if callback is passed, else a Query object is returned.
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * findOneAndRemove()
 
@@ -11645,7 +11198,7 @@ A.findByIdAndRemove()           // returns Query
 Issues a mongodb findAndModify update command by a document's _id field.
 findByIdAndUpdate(id, ...) is equivalent to findOneAndUpdate({ _id: id }, ...).
 
-<!--sec data-title="源码" data-id="Model_findByIdAndUpdate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_findByIdAndUpdate" data-show=true data-collapse=true ces-->
 ```js
 Model.findByIdAndUpdate = function(id, update, options, callback) {
   if (callback) {
@@ -11683,13 +11236,13 @@ Model.findByIdAndUpdate = function(id, update, options, callback) {
 
   * `[update]` &lt;[Object][]&gt;
 
-  * `[options]` &lt;[Object][]&gt; optional see <a href="http://mongoosejs.com/docs/api.html#query_Query-setOptions"><code>Query.prototype.setOptions()</code></a>
+  * `[options]` &lt;[Object][]&gt; 可选，参见 [`Query.prototype.setOptions()`](#Query_setOptions)
 
   * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
 
-<Query>
+&lt;[Query][]&gt;
 
 ##### 参见：
 
@@ -11702,7 +11255,7 @@ passing any options, and returns the found document (if any) to the
 callback. The query executes immediately if callback is passed else a
 Query object is returned.
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * findOneAndUpdate()
 
@@ -11711,8 +11264,8 @@ Query object is returned.
 
   * `new`: bool - true to return the modified document rather than the original. defaults to false
   * `upsert`: bool - creates the object if it doesn't exist. defaults to false.
-  * `runValidators`: if true, runs update validators on this command. Update validators validate the update operation against the model's schema.
-  * `setDefaultsOnInsert`: if this and upsert are true, mongoose will apply the defaults specified in the model's schema if a new document is created. This option only works on MongoDB >= 2.4 because it relies on MongoDB's $setOnInsert operator.
+  * `runValidators`: 如果 `true`，在此命令上运行[更新验证器](/Library/mongoose/docs/validation.md#更新验证器)。更新验证器根据模型的模式的定义验证更新操作。
+  * `setDefaultsOnInsert`: if this and upsert are true, mongoose will apply the defaults specified in the model's schema if a new document is created. This option only works on MongoDB >= 2.4 because it relies on [MongoDB 的 `$setOnInsert` 操作符](https://docs.mongodb.org/v2.4/reference/operator/update/setOnInsert/)。.
   * `sort`: if multiple docs are found by the conditions, sets the sort order to choose which doc to update
   * `select`: sets the document fields to return
   * `passRawResult`: if true, passes the raw result from the MongoDB driver as the third callback parameter
@@ -11772,7 +11325,7 @@ Model.findById(id, function (err, doc) {
 
 Finds one document.
 
-<!--sec data-title="源码" data-id="Model_findOne" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_findOne" data-show=true data-collapse=true ces-->
 ```js
 Model.findOne = function findOne(conditions, projection, options, callback) {
   if (typeof options === 'function') {
@@ -11813,13 +11366,13 @@ Model.findOne = function findOne(conditions, projection, options, callback) {
   * `[conditions]` &lt;[Object][]&gt;
   * `[projection]` &lt;[Object][]&gt; optional fields to return (http://bit.ly/1HotzBo)
 
-  * `[options]` &lt;[Object][]&gt; optional see <a href="http://mongoosejs.com/docs/api.html#query_Query-setOptions"><code>Query.prototype.setOptions()</code></a>
+  * `[options]` &lt;[Object][]&gt; 可选，参见 [`Query.prototype.setOptions()`](#Query_setOptions)
 
   * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 参见：
 
@@ -11866,7 +11419,7 @@ Adventure.findOne({ type: 'iphone' }).select('name').lean().exec(callback);
 
 Issue a mongodb findAndModify remove command.
 
-<!--sec data-title="源码" data-id="Model_findOneAndRemove" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_findOneAndRemove" data-show=true data-collapse=true ces-->
 ```js
 Model.findOneAndRemove = function(conditions, options, callback) {
   if (arguments.length === 1 && typeof conditions === 'function') {
@@ -11908,13 +11461,13 @@ Model.findOneAndRemove = function(conditions, options, callback) {
 
   * `conditions` &lt;[Object][]&gt;
 
-  * `[options]` &lt;[Object][]&gt; optional see <a href="http://mongoosejs.com/docs/api.html#query_Query-setOptions"><code>Query.prototype.setOptions()</code></a>
+  * `[options]` &lt;[Object][]&gt; 可选，参见 [`Query.prototype.setOptions()`](#Query_setOptions)
 
   * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 参见：
 
@@ -11924,7 +11477,7 @@ Finds a matching document, removes it, passing the found document (if any) to th
 
 Executes immediately if callback is passed else a Query object is returned.
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * findOneAndRemove()
 
@@ -11974,7 +11527,7 @@ Model.findById(id, function (err, doc) {
 
 Issues a mongodb findAndModify update command.
 
-<!--sec data-title="源码" data-id="Model_findOneAndUpdate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_findOneAndUpdate" data-show=true data-collapse=true ces-->
 ```js
 Model.findOneAndUpdate = function(conditions, update, options, callback) {
   if (typeof options === 'function') {
@@ -12035,13 +11588,13 @@ Model.findOneAndUpdate = function(conditions, update, options, callback) {
 
   * `[update]` &lt;[Object][]&gt;
 
-  * `[options]` &lt;[Object][]&gt; optional see <a href="http://mongoosejs.com/docs/api.html#query_Query-setOptions"><code>Query.prototype.setOptions()</code></a>
+  * `[options]` &lt;[Object][]&gt; 可选，参见 [`Query.prototype.setOptions()`](#Query_setOptions)
 
   * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 参见：
 
@@ -12056,8 +11609,8 @@ Finds a matching document, updates it according to the update arg, passing any o
   * `fields`: {Object|String} - Field selection. Equivalent to .select(fields).findOneAndUpdate()
   * `maxTimeMS`: puts a time limit on the query - requires mongodb >= 2.6.0
   * `sort`: if multiple docs are found by the conditions, sets the sort order to choose which doc to update
-  * `runValidators`: if true, runs update validators on this command. Update validators validate the update operation against the model's schema.
-  * `setDefaultsOnInsert`: if this and upsert are true, mongoose will apply the defaults specified in the model's schema if a new document is created. This option only works on MongoDB >= 2.4 because it relies on MongoDB's $setOnInsert operator.
+  * `runValidators`: 如果 `true`，在此命令上运行[更新验证器](/Library/mongoose/docs/validation.md#更新验证器)。更新验证器根据模型的模式的定义验证更新操作。
+  * `setDefaultsOnInsert`: if this and upsert are true, mongoose will apply the defaults specified in the model's schema if a new document is created. This option only works on MongoDB >= 2.4 because it relies on [MongoDB 的 `$setOnInsert` 操作符](https://docs.mongodb.org/v2.4/reference/operator/update/setOnInsert/)。.
   * `passRawResult`: if true, passes the raw result from the MongoDB driver as the third callback parameter
   * `strict`: overwrites the schema's strict mode option for this update
   * `runSettersOnQuery`: bool - if true, run all setters defined on the associated model's schema for all fields defined in the query and the update.
@@ -12119,7 +11672,7 @@ Model.findById(id, function (err, doc) {
 
 geoNear support for Mongoose
 
-<!--sec data-title="源码" data-id="Model_geoNear" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_geoNear" data-show=true data-collapse=true ces-->
 ```js
 Model.geoNear = function(near, options, callback) {
   if (typeof options === 'function') {
@@ -12230,7 +11783,7 @@ Model.geoNear = function(near, options, callback) {
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 ##### 参见：
 
@@ -12267,7 +11820,7 @@ Model.geoNear(point, { maxDistance : 5, spherical : true }, function(err, result
 
 Implements $geoSearch functionality for Mongoose
 
-<!--sec data-title="源码" data-id="Model_geoSearch" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_geoSearch" data-show=true data-collapse=true ces-->
 ```js
 Model.geoSearch = function(conditions, options, callback) {
   if (typeof options === 'function') {
@@ -12352,7 +11905,7 @@ Model.geoSearch = function(conditions, options, callback) {
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 ##### 参见：
 
@@ -12384,7 +11937,7 @@ Locations.geoSearch({ type : "house" }, options, function(err, res) {
 Shortcut for creating a new Document from existing raw data, pre-saved in the DB.
 The document returned has no paths marked as modified initially.
 
-<!--sec data-title="源码" data-id="Model_hydrate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_hydrate" data-show=true data-collapse=true ces-->
 ```js
 Model.hydrate = function(obj) {
   var model = require('./queryhelpers').createModel(this, obj);
@@ -12400,7 +11953,7 @@ Model.hydrate = function(obj) {
 
 ##### 返回值：
 
-  * <Document>
+  * &lt;[Document][]&gt;
 
 ##### 示例：
 
@@ -12417,7 +11970,7 @@ Performs any async initialization of this model against MongoDB. Currently,
 this function is only responsible for building [indexes](https://docs.mongodb.com/manual/indexes/),
 unless [autoIndex]() is turned off.
 
-<!--sec data-title="源码" data-id="Model_init" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_init" data-show=true data-collapse=true ces-->
 ```js
 Model.init = function init(callback) {
   this.schema.emit('init', this);
@@ -12484,7 +12037,7 @@ MongoDB if they're all valid. This function is faster than .create()
 because it only sends one operation to the server, rather than one for each
 document.
 
-<!--sec data-title="源码" data-id="Model_insertMany" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_insertMany" data-show=true data-collapse=true ces-->
 ```js
 Model.insertMany = function(arr, options, callback) {
   var _this = this;
@@ -12590,7 +12143,7 @@ doc(s) <Array, Object, *>
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 Mongoose always validates each document before sending insertMany
 to MongoDB. So if one document has a validation error, no documents will
@@ -12599,7 +12152,7 @@ be saved, unless you set
 
 This function does **not** trigger save middleware.
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * insertMany()
 
@@ -12616,7 +12169,7 @@ Movies.insertMany(arr, function(error, docs) {});
 
 Executes a mapReduce command.
 
-<!--sec data-title="源码" data-id="Model_mapReduce" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_mapReduce" data-show=true data-collapse=true ces-->
 ```js
 Model.mapReduce = function mapReduce(o, callback) {
   var _this = this;
@@ -12688,7 +12241,7 @@ Model.mapReduce = function mapReduce(o, callback) {
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 ##### 参见：
 
@@ -12766,7 +12319,7 @@ promise.then(function (res) {
 
 Populates document references.
 
-<!--sec data-title="源码" data-id="Model_populate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_populate" data-show=true data-collapse=true ces-->
 ```js
 Model.populate = function(docs, paths, callback) {
   var _this = this;
@@ -12811,7 +12364,7 @@ Model.populate = function(docs, paths, callback) {
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 可用选项:
 
@@ -12876,13 +12429,12 @@ Weapon.populate(users, { path: 'weapon' }, function (err, users) {
 
 
 
-## Model.remove(conditions, [callback])
+## Model.remove(conditions, [callback]) {#Model_remove}
 
-Removes all documents that match conditions from the collection.
-To remove just the first document that matches conditions, set the single
-option to true.
+从集合中删除所有匹配 `conditions` 的文档。
+要删除与条件匹配的第一个文档，请设置 `single` 选项为 `true`。
 
-<!--sec data-title="源码" data-id="Model_remove_" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_remove_" data-show=true data-collapse=true ces-->
 ```js
 Model.remove = function remove(conditions, callback) {
   if (typeof conditions === 'function') {
@@ -12910,7 +12462,7 @@ Model.remove = function remove(conditions, callback) {
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 示例：
 
@@ -12920,10 +12472,7 @@ Character.remove({ name: 'Eddard Stark' }, function (err) {});
 
 ##### 注意：
 
-This method sends a remove command directly to MongoDB, no Mongoose documents
-are involved. Because no Mongoose documents are involved, no middleware
-(hooks) are executed.
-
+该方法直接向 MongoDB 发送一个 remove 命令，不涉及任何 Mongoose 文档。因为没有涉及到 Mongoose 的文档，所以没有执行任何中间件(钩子)。
 
 
 ## Model.replaceOne(conditions, doc, [options], [callback])
@@ -12931,7 +12480,7 @@ are involved. Because no Mongoose documents are involved, no middleware
 Same as update(), except MongoDB replace the existing document with the
 given document (no atomic operators like $set).
 
-<!--sec data-title="源码" data-id="Model_replaceOne" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_replaceOne" data-show=true data-collapse=true ces-->
 ```js
 Model.replaceOne = function replaceOne(conditions, doc, options, callback) {
   return _update(this, 'replaceOne', conditions, doc, options, callback);
@@ -12945,15 +12494,15 @@ Model.replaceOne = function replaceOne(conditions, doc, options, callback) {
 
   * `doc` &lt;[Object][]&gt;
 
-  * `[options]` &lt;[Object][]&gt; optional see <a href="http://mongoosejs.com/docs/api.html#query_Query-setOptions"><code>Query.prototype.setOptions()</code></a>
+  * `[options]` &lt;[Object][]&gt; 可选，参见 [`Query.prototype.setOptions()`](#Query_setOptions)
 
   * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * replaceOne()
 
@@ -12963,7 +12512,7 @@ Model.replaceOne = function replaceOne(conditions, doc, options, callback) {
 
 Translate any aliases fields/conditions so the final query or document object is pure
 
-<!--sec data-title="源码" data-id="Model_translateAliases" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_translateAliases" data-show=true data-collapse=true ces-->
 ```js
 Model.translateAliases = function translateAliases(fields) {
   var aliases = this.schema.aliases;
@@ -13010,11 +12559,11 @@ Only translate arguments of object type anything else is returned raw
 
 
 
-## Model.update(conditions, doc, [options], [callback])
+## Model.update(conditions, doc, [options], [callback]) {#Model_update}
 
-Updates one document in the database without returning it.
+在数据库中更新一个文档而不返回它。
 
-<!--sec data-title="源码" data-id="Model_update" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_update" data-show=true data-collapse=true ces-->
 ```js
 Model.update = function update(conditions, doc, options, callback) {
   return _update(this, 'update', conditions, doc, options, callback);
@@ -13024,25 +12573,25 @@ Model.update = function update(conditions, doc, options, callback) {
 
 ##### 参数：
 
-conditions &lt;[Object][]&gt;
+  * `conditions` &lt;[Object][]&gt;
 
-doc &lt;[Object][]&gt;
+  * `doc` &lt;[Object][]&gt;
 
-[options] &lt;[Object][]&gt; optional see <a href="http://mongoosejs.com/docs/api.html#query_Query-setOptions"><code>Query.prototype.setOptions()</code></a>
+  * `[options]` &lt;[Object][]&gt; 可选， 参见 [`Query.prototype.setOptions()`](#Query_setOptions)
 
-    * `[callback]` &lt;[Function][]&gt;
+  * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
 
-    * <Query>
+    * &lt;[Query][]&gt;
 
 ##### 参见：
 
-    * `strict`
+    * [`strict`](/Library/mongoose/docs/guide.md#strict)
 
-    * `response`
+    * [`response`](http://docs.mongodb.org/v2.6/reference/command/update/#output)
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
     * update()
 
@@ -13058,25 +12607,26 @@ MyModel.update({ name: 'Tobi' }, { ferret: true }, { multi: true }, function (er
 
 ##### 可用选项：
 
-  * `safe` (boolean) safe mode (defaults to value set in schema (true))
-  * `upsert` (boolean) whether to create the doc if it doesn't match (false)
-  * `multi` (boolean) whether multiple documents should be updated (false)
-  * `runValidators`: if true, runs update validators on this command. Update validators validate the update operation against the model's schema.
-  * `setDefaultsOnInsert`: if this and upsert are true, mongoose will apply the defaults specified in the model's schema if a new document is created. This option only works on MongoDB >= 2.4 because it relies on MongoDB's $setOnInsert operator.
-  * `strict` (boolean) overrides the strict option for this update
-  * `overwrite` (boolean) disables update-only mode, allowing you to overwrite the doc (false)
+  * `safe` (boolean) safe 模式 (默认为 schema 设置的值 (`true`))
+  * `upsert` (boolean) 如果不匹配，是否创建文档 (`false`)
+  * `multi` (boolean) 是否需要更新多个文档 (false)
+  * `runValidators`: 如果 `true`，在此命令上运行[更新验证器](/Library/mongoose/docs/validation.md#更新验证器)。更新验证器根据模型的模式的定义验证更新操作。
+  * `setDefaultsOnInsert`: 如果此选项和 `upsert` 都为 `true` ，如果创建了一个新文档，那么 Mongoose 将应用模型模式中指定的[默认值](/Library/mongoose/docs/defaults.md)。这个选项只能工作在 MongoDB >= 2.4，因为因为它依赖于 [MongoDB 的 `$setOnInsert` 操作符](https://docs.mongodb.org/v2.4/reference/operator/update/setOnInsert/)。.
+  * [`strict`](/Library/mongoose/docs/guide.md#strict) (boolean) 为当前更新覆盖 `strict` 选项。
+  * `overwrite` (boolean) 禁用 `update-only` 模式，允许您覆盖文档 (`false`)
 
 
-All update values are cast to their appropriate SchemaTypes before being sent.
+在发送到数据库之前，所有的更新值都被转换为适当的模式类型。
 
-The callback function receives (err, rawResponse).
+回调函数接受 `(err, rawResponse)`。
 
-  * err is the error if any occurred
-  * rawResponse is the full response from Mongo
-  *
+  * `err` 是任何发生的错误
+  * `rawResponse` 在来自 Mongo 完整的响应
+
+
 ##### 注意：
 
-All top level keys which are not atomic operation names are treated as set operations:
+所有非原子操作名称的顶级键都被视为集合操作:
 
 ##### 示例：
 
@@ -13084,20 +12634,20 @@ All top level keys which are not atomic operation names are treated as set opera
 var query = { name: 'borne' };
 Model.update(query, { name: 'jason bourne' }, options, callback)
 
-// is sent as
+// 如果 overwrite 选项为 false，作为下面的被发送
 Model.update(query, { $set: { name: 'jason bourne' }}, options, callback)
-// if overwrite option is false. If overwrite is true, sent without the $set wrapper.
+//  如果 overwrite 为 true，不用 $set 包装器发送。
 ```
 
-This helps prevent accidentally overwriting all documents in your collection with { name: 'jason bourne' }.
+这有助于防止意外地在您的集合中使用 { name: 'jason bourne' } 覆盖所有的文档 。
 
 ##### 注意：
 
-Be careful to not use an existing model instance for the update clause (this won't work and can cause weird behavior like infinite loops). Also, ensure that the update clause does not have an _id property, which causes Mongo to return a "Mod on _id not allowed" error.
+注意不要使用现有的模型实例来更新 update 子句(这不会起作用，并且会导致像无限循环这样的怪异行为)。此外，确保更新条款没有一个 `_id` 属性，这导致 Mongo 返回 "Mod on _id not allowed" 的错误。
 
 ##### 注意：
 
-To update documents without waiting for a response from MongoDB, do not pass a callback, then call exec on the returned Query:
+要在不等待 MongoDB 响应的情况下更新文档，请不要通过回调，然后在返回的查询上调用 `exec`:
 
 ```js
 Comment.update({ _id: id }, { $set: { text: 'changed' }}).exec();
@@ -13105,13 +12655,14 @@ Comment.update({ _id: id }, { $set: { text: 'changed' }}).exec();
 
 ##### 注意：
 
-Although values are casted to their appropriate types when using update, the following are not applied:
+尽管在使用更新时，值会被转换到到适当的类型，但以下是不适用的:
 
   * defaults
   * setters
   * validators
   * middleware
-If you need those features, use the traditional approach of first retrieving the document.
+
+如果您需要这些特性，请使用传统的方法来检索文档。
 
 ```js
 Model.findOne({ name: 'borne' }, function (err, doc) {
@@ -13129,7 +12680,7 @@ Same as update(), except MongoDB will update all documents that match
 criteria (as opposed to just the first one) regardless of the value of
 the multi option.
 
-<!--sec data-title="源码" data-id="Model_updateMany" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_updateMany" data-show=true data-collapse=true ces-->
 ```js
 Model.updateMany = function updateMany(conditions, doc, options, callback) {
   return _update(this, 'updateMany', conditions, doc, options, callback);
@@ -13143,13 +12694,13 @@ Model.updateMany = function updateMany(conditions, doc, options, callback) {
 
   * `doc` &lt;[Object][]&gt;
 
-  * `[options]` &lt;[Object][]&gt; optional see <a href="http://mongoosejs.com/docs/api.html#query_Query-setOptions"><code>Query.prototype.setOptions()</code></a>
+  * `[options]` &lt;[Object][]&gt; 可选，参见 [`Query.prototype.setOptions()`](#Query_setOptions)
 
   * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 ##### 注意：
 
@@ -13157,7 +12708,7 @@ updateMany will not fire update middleware. Use pre('updateMany')
 and post('updateMany') instead.
 
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * updateMany()
 
@@ -13168,7 +12719,7 @@ and post('updateMany') instead.
 Same as update(), except MongoDB will update only the first document that
 matches criteria regardless of the value of the multi option.
 
-<!--sec data-title="源码" data-id="Model_updateOne" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_updateOne" data-show=true data-collapse=true ces-->
 ```js
 Model.updateOne = function updateOne(conditions, doc, options, callback) {
   return _update(this, 'updateOne', conditions, doc, options, callback);
@@ -13182,15 +12733,15 @@ Model.updateOne = function updateOne(conditions, doc, options, callback) {
 
   * `doc` &lt;[Object][]&gt;
 
-  * `[options]` &lt;[Object][]&gt; optional see <a href="http://mongoosejs.com/docs/api.html#query_Query-setOptions"><code>Query.prototype.setOptions()</code></a>
+  * `[options]` &lt;[Object][]&gt; 可选，参见 [`Query.prototype.setOptions()`](#Query_setOptions)
 
   * `[callback]` &lt;[Function][]&gt;
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
-**This function triggers the following middleware**
+**该函数触发以下中间件**
 
   * updateOne()
 
@@ -13199,7 +12750,7 @@ Model.updateOne = function updateOne(conditions, doc, options, callback) {
 
 Creates a Query, applies the passed conditions, and returns the Query.
 
-<!--sec data-title="源码" data-id="Model_where_" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_where_" data-show=true data-collapse=true ces-->
 ```js
 Model.where = function where(path, val) {
   void val; // eslint
@@ -13218,7 +12769,7 @@ Model.where = function where(path, val) {
 
 ##### 返回值：
 
-  * <Query>
+  * &lt;[Query][]&gt;
 
 For example, instead of writing:
 
@@ -13247,7 +12798,7 @@ User
 Additional properties to attach to the query when calling save() and
 isNew is false.
 
-<!--sec data-title="源码" data-id="Model_where" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_where" data-show=true data-collapse=true ces-->
 ```js
 Model.prototype.$where;
 ```
@@ -13258,7 +12809,7 @@ Model.prototype.$where;
 
 Base Mongoose instance the model uses.
 
-<!--sec data-title="源码" data-id="Model_base" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_base" data-show=true data-collapse=true ces-->
 ```js
 Model.base;
 ```
@@ -13270,7 +12821,7 @@ Model.base;
 If this is a discriminator model, baseModelName is the name of
 the base model.
 
-<!--sec data-title="源码" data-id="Model_baseModelName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_baseModelName" data-show=true data-collapse=true ces-->
 ```js
 Model.prototype.baseModelName;
 
@@ -13383,7 +12934,7 @@ Model.prototype.$__handleSave = function(options, callback) {
 
 Collection the model uses.
 
-<!--sec data-title="源码" data-id="Model_collection" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_collection" data-show=true data-collapse=true ces-->
 ```js
 Model.prototype.collection;
 ```
@@ -13394,7 +12945,7 @@ Model.prototype.collection;
 
 Connection the model uses.
 
-<!--sec data-title="源码" data-id="Model_db" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_db" data-show=true data-collapse=true ces-->
 ```js
 Model.prototype.db;
 ```
@@ -13405,7 +12956,7 @@ Model.prototype.db;
 
 Registered discriminators for this model.
 
-<!--sec data-title="源码" data-id="Model_discriminators" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_discriminators" data-show=true data-collapse=true ces-->
 ```js
 Model.discriminators;
 ```
@@ -13416,7 +12967,7 @@ Model.discriminators;
 
 The name of the model
 
-<!--sec data-title="源码" data-id="Model_modelName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_modelName" data-show=true data-collapse=true ces-->
 ```js
 Model.prototype.modelName;
 ```
@@ -13427,7 +12978,7 @@ Model.prototype.modelName;
 
 Schema the model uses.
 
-<!--sec data-title="源码" data-id="Model_schema" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Model_schema" data-show=true data-collapse=true ces-->
 ```js
 Model.schema;
 ```
@@ -13436,7 +12987,7 @@ Model.schema;
 
 -----
 
-# schema/array.js
+# schema/array.js {#schema_array}
 
 > 源码：[schema/array.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/schema/array.js)
 
@@ -13455,7 +13006,7 @@ must be not null nor undefined, and have a positive length.
 
   * &lt;[Boolean][]&gt;
 
-<!--sec data-title="源码" data-id="SchemaArray_checkRequired" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaArray_checkRequired" data-show=true data-collapse=true ces-->
 ```js
 SchemaArray.prototype.checkRequired = function(value) {
   return !!(value && value.length);
@@ -13478,9 +13029,9 @@ Array SchemaType constructor
 
 ##### 继承：
 
-  * [SchemaType]()
+  * [SchemaType](#SchemaType_constructor)
 
-<!--sec data-title="源码" data-id="SchemaArray" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaArray" data-show=true data-collapse=true ces-->
 ```js
 function SchemaArray(key, cast, options, schemaOptions) {
   var typeKey = 'type';
@@ -13556,7 +13107,7 @@ function SchemaArray(key, cast, options, schemaOptions) {
 This schema type's name, to defend against minifiers that mangle
 function names.
 
-<!--sec data-title="源码" data-id="SchemaArray_schemaName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaArray_schemaName" data-show=true data-collapse=true ces-->
 ```js
 SchemaArray.schemaName = 'Array';
 ```
@@ -13565,7 +13116,7 @@ SchemaArray.schemaName = 'Array';
 -----
 
 
-# schema/boolean.js
+# schema/boolean.js {#schema_boolean}
 
 > 源码：[schema/boolean.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/schema/boolean.js)
 
@@ -13583,7 +13134,7 @@ false.
 
   * &lt;[Boolean][]&gt;
 
-<!--sec data-title="源码" data-id="SchemaBoolean_checkRequired" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaBoolean_checkRequired" data-show=true data-collapse=true ces-->
 ```js
 SchemaBoolean.prototype.checkRequired = function(value) {
   return value === true || value === false;
@@ -13604,9 +13155,9 @@ Boolean SchemaType constructor.
 
 ##### 继承：
 
-  * [SchemaType]()
+  * [SchemaType](#SchemaType_constructor)
 
-<!--sec data-title="源码" data-id="SchemaBoolean" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaBoolean" data-show=true data-collapse=true ces-->
 ```js
 function SchemaBoolean(path, options) {
   SchemaType.call(this, path, options, 'Boolean');
@@ -13620,7 +13171,7 @@ function SchemaBoolean(path, options) {
 This schema type's name, to defend against minifiers that mangle
 function names.
 
-<!--sec data-title="源码" data-id="SchemaBoolean_schemaName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaBoolean_schemaName" data-show=true data-collapse=true ces-->
 ```js
 SchemaBoolean.schemaName = 'Boolean';
 ```
@@ -13630,7 +13181,7 @@ SchemaBoolean.schemaName = 'Boolean';
 
 
 
-# schema/mixed.js
+# schema/mixed.js {#schema_mixed}
 
 > 源码：[schema/mixed.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/schema/mixed.js)
 
@@ -13638,7 +13189,7 @@ SchemaBoolean.schemaName = 'Boolean';
 ## Mixed(path, options)
 
 
-Mixed SchemaType constructor.
+Mixed SchemaType 构造函数。
 
 ##### 参数：
 
@@ -13648,9 +13199,9 @@ Mixed SchemaType constructor.
 
 ##### 继承：
 
-  * [SchemaType]()
+  * [SchemaType](#SchemaType_constructor)
 
-<!--sec data-title="源码" data-id="Mixed" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mixed" data-show=true data-collapse=true ces-->
 ```js
 function Mixed(path, options) {
   if (options && options.default) {
@@ -13673,10 +13224,9 @@ function Mixed(path, options) {
 
 ## Mixed.schemaName
 
-This schema type's name, to defend against minifiers that mangle
-function names.
+这个模式类型的名称，用来防御那些损坏函数原命名的代码压缩器。
 
-<!--sec data-title="源码" data-id="Mixed_schemaName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Mixed_schemaName" data-show=true data-collapse=true ces-->
 ```js
 Mixed.schemaName = 'Mixed';
 ```
@@ -13686,7 +13236,7 @@ Mixed.schemaName = 'Mixed';
 
 
 
-# schema/embedded.js
+# schema/embedded.js {#schema_embedded}
 
 > 源码：[schema/embedded.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/schema/embedded.js)
 
@@ -13701,7 +13251,7 @@ Adds a discriminator to this property
 
   * `schema` <Schema> fields to add to the schema for instances of this sub-class
 
-<!--sec data-title="源码" data-id="Embedded_discriminator" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Embedded_discriminator" data-show=true data-collapse=true ces-->
 ```js
 Embedded.prototype.discriminator = function(name, schema) {
   discriminator(this.caster, name, schema);
@@ -13728,9 +13278,9 @@ Sub-schema schematype constructor
 
 ##### 继承：
 
-  * [SchemaType]()
+  * [SchemaType](#SchemaType_constructor)
 
-<!--sec data-title="源码" data-id="Embedded" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Embedded" data-show=true data-collapse=true ces-->
 ```js
 function Embedded(schema, path, options) {
   this.caster = _createConstructor(schema);
@@ -13746,7 +13296,7 @@ function Embedded(schema, path, options) {
 ------
 
 
-# schema/buffer.js
+# schema/buffer.js {#schema_buffer}
 
 > 源码：[schema/buffer.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/schema/buffer.js)
 
@@ -13760,13 +13310,13 @@ non-zero length.
 
   * `value` &lt;[Any][]&gt;
 
-  * `doc` <Document>
+  * `doc` &lt;[Document][]&gt;
 
 ##### 返回值：
 
 &lt;[Boolean][]&gt;
 
-<!--sec data-title="源码" data-id="SchemaBuffer_checkRequired" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaBuffer_checkRequired" data-show=true data-collapse=true ces-->
 ```js
 SchemaBuffer.prototype.checkRequired = function(value, doc) {
   if (SchemaType._isRef(this, value, doc, true)) {
@@ -13790,9 +13340,9 @@ Buffer SchemaType constructor
 
 ##### 继承：
 
-  * [SchemaType]()
+  * [SchemaType](#SchemaType_constructor)
 
-<!--sec data-title="源码" data-id="SchemaBuffer" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaBuffer" data-show=true data-collapse=true ces-->
 ```js
 function SchemaBuffer(key, options) {
   SchemaType.call(this, key, options, 'Buffer');
@@ -13808,7 +13358,7 @@ for this buffer. You can find a list of allowed subtypes here.
 
 ##### 参数：
 
-  * `subtype` <Number> the default subtype
+  * `subtype` &lt;[Number][]&gt; the default subtype
 
 ##### 返回值：
 
@@ -13823,7 +13373,7 @@ var m = new M({ uuid: 'test string' });
 m.uuid._subtype; // 4
 ```
 
-<!--sec data-title="源码" data-id="SchemaBuffer_subtype" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaBuffer_subtype" data-show=true data-collapse=true ces-->
 ```js
 SchemaBuffer.prototype.subtype = function(subtype) {
   this.options.subtype = subtype;
@@ -13839,7 +13389,7 @@ SchemaBuffer.prototype.subtype = function(subtype) {
 This schema type's name, to defend against minifiers that mangle
 function names.
 
-<!--sec data-title="源码" data-id="SchemaBuffer_schemaName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaBuffer_schemaName" data-show=true data-collapse=true ces-->
 ```js
 SchemaBuffer.schemaName = 'Buffer';
 ```
@@ -13848,7 +13398,7 @@ SchemaBuffer.schemaName = 'Buffer';
 ----
 
 
-# schema/objectid.js
+# schema/objectid.js {#schema_objectid}
 
 > 源码：[schema/objectid.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/schema/objectid.js)
 
@@ -13864,7 +13414,7 @@ Adds an auto-generated ObjectId default if turnOn is true.
 
   * <SchemaType> this
 
-<!--sec data-title="源码" data-id="ObjectId_auto" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_ObjectId_auto" data-show=true data-collapse=true ces-->
 ```js
 ObjectId.prototype.auto = function(turnOn) {
   if (turnOn) {
@@ -13886,13 +13436,13 @@ Check if the given value satisfies a required validator.
 
   * `value` &lt;[Any][]&gt;
 
-  * `doc` <Document>
+  * `doc` &lt;[Document][]&gt;
 
 ##### 返回值：
 
   * &lt;[Boolean][]&gt;
 
-<!--sec data-title="源码" data-id="ObjectId_checkRequired" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_ObjectId_checkRequired" data-show=true data-collapse=true ces-->
 ```js
 ObjectId.prototype.checkRequired = function checkRequired(value, doc) {
   if (SchemaType._isRef(this, value, doc, true)) {
@@ -13919,7 +13469,7 @@ ObjectId SchemaType constructor.
 
   * SchemaType
 
-<!--sec data-title="源码" data-id="ObjectId" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_ObjectId" data-show=true data-collapse=true ces-->
 ```js
 function ObjectId(key, options) {
   var isKeyHexStr = typeof key === 'string' && key.length === 24 && /^a-f0-9$/i.test(key);
@@ -13942,7 +13492,7 @@ function ObjectId(key, options) {
 This schema type's name, to defend against minifiers that mangle
 function names.
 
-<!--sec data-title="源码" data-id="ObjectId_schemaName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_ObjectId_schemaName" data-show=true data-collapse=true ces-->
 ```js
 ObjectId.schemaName = 'ObjectId';
 ```
@@ -13952,7 +13502,7 @@ ObjectId.schemaName = 'ObjectId';
 -----
 
 
-# schema/string.js
+# schema/string.js {#schema_string}
 
 > 源码：[schema/string.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/schema/string.js)
 
@@ -13968,13 +13518,13 @@ strings.
 
   * `value` &lt;[Any][]&gt;
 
-  * `doc` <Document>
+  * `doc` &lt;[Document][]&gt;
 
 ##### 返回值：
 
   * &lt;[Boolean][]&gt;
 
-<!--sec data-title="源码" data-id="SchemaString_checkRequired" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaString_checkRequired" data-show=true data-collapse=true ces-->
 ```js
 SchemaString.prototype.checkRequired = function checkRequired(value, doc) {
   if (SchemaType._isRef(this, value, doc, true)) {
@@ -14000,7 +13550,7 @@ Adds an enum validator
 
 ##### 参见：
 
-  * [Customized Error Messages]()
+  * [定制的 Error Messages](#MongooseError_messages)()
 
 ##### 示例：
 
@@ -14030,7 +13580,7 @@ m.save(function (err) {
 })
 ```
 
-<!--sec data-title="源码" data-id="SchemaString_enum" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaString_enum" data-show=true data-collapse=true ces-->
 ```js
 SchemaString.prototype.enum = function() {
   if (this.enumValidator) {
@@ -14107,7 +13657,7 @@ Setters do not run on queries by default. Use the runSettersOnQuery option:
  M.updateOne({}, { $set: { email: 'SomeEmail@example.COM' } }, { runSettersOnQuery: true });
 ```
 
-<!--sec data-title="源码" data-id="SchemaString_lowercase" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaString_lowercase" data-show=true data-collapse=true ces-->
 ```js
 SchemaString.prototype.lowercase = function(shouldApply) {
   if (arguments.length > 0 && !shouldApply) {
@@ -14144,7 +13694,7 @@ Sets a regexp validator.
 
 ##### 参见：
 
-  * [Customized Error Messages]()
+  * [定制的 Error Messages](#MongooseError_messages)
 
 Any value that does not pass regExp.test(val) will fail validation.
 
@@ -14176,7 +13726,7 @@ Empty strings, undefined, and null values always pass the match validator. If yo
 ```js
 var s = new Schema({ name: { type: String, match: /^a/, required: true }})
 ```
-<!--sec data-title="源码" data-id="SchemaString_match" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaString_match" data-show=true data-collapse=true ces-->
 ```js
 SchemaString.prototype.match = function match(regExp, message) {
   // yes, we allow multiple match validators
@@ -14211,7 +13761,7 @@ Sets a maximum length validator.
 
 ##### 参数：
 
-    * `value` <Number> maximum string length
+    * `value` &lt;[Number][]&gt; maximum string length
 
     * `[message]` &lt;[String][]&gt; optional custom error message
 
@@ -14221,7 +13771,7 @@ Sets a maximum length validator.
 
 ##### 参见：
 
-    * [Customized Error Messages]()
+    * [定制的 Error Messages](#MongooseError_messages)()
 
 ##### 示例：
 
@@ -14245,7 +13795,7 @@ address.validate(function (err) {
   console.log(String(err)) // ValidationError: The value of path `postalCode` (`9512512345`) exceeds the maximum allowed length (9).
 })
 ```
-<!--sec data-title="源码" data-id="SchemaString_maxlength" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaString_maxlength" data-show=true data-collapse=true ces-->
 ```js
 SchemaString.prototype.maxlength = function(value, message) {
   if (this.maxlengthValidator) {
@@ -14280,7 +13830,7 @@ Sets a minimum length validator.
 
 ##### 参数：
 
-  * `value` <Number> minimum string length
+  * `value` &lt;[Number][]&gt; minimum string length
 
   * `[message]` &lt;[String][]&gt; optional custom error message
 
@@ -14290,7 +13840,7 @@ Sets a minimum length validator.
 
 ##### 参见：
 
-  * [Customized Error Messages]()
+  * [Customized Error Messages
 
 ##### 示例：
 
@@ -14315,7 +13865,7 @@ address.validate(function (err) {
 })
 
 ```
-<!--sec data-title="源码" data-id="SchemaString_minlength" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaString_minlength" data-show=true data-collapse=true ces-->
 ```js
 SchemaString.prototype.minlength = function(value, message) {
   if (this.minlengthValidator) {
@@ -14355,9 +13905,9 @@ String SchemaType constructor.
 
 ##### 继承：
 
-  * [SchemaType]()
+  * [SchemaType](#SchemaType_constructor)
 
-<!--sec data-title="源码" data-id="SchemaString" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaString" data-show=true data-collapse=true ces-->
 ```js
 function SchemaString(key, options) {
   this.enumValues = [];
@@ -14399,7 +13949,7 @@ Setters do not run on queries by default. Use the runSettersOnQuery option:
  M.updateOne({}, { $set: { email: 'SomeEmail@example.COM' } }, { runSettersOnQuery: true });
 ```
 
-<!--sec data-title="源码" data-id="SchemaString_trim" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaString_trim" data-show=true data-collapse=true ces-->
 ```js
 SchemaString.prototype.trim = function(shouldTrim) {
   if (arguments.length > 0 && !shouldTrim) {
@@ -14447,7 +13997,7 @@ Setters do not run on queries by default. Use the runSettersOnQuery option:
  M.updateOne({}, { $set: { email: 'SomeEmail@example.COM' } }, { runSettersOnQuery: true });
 ```
 
-<!--sec data-title="源码" data-id="SchemaString_uppercase" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaString_uppercase" data-show=true data-collapse=true ces-->
 ```js
 SchemaString.prototype.uppercase = function(shouldApply) {
   if (arguments.length > 0 && !shouldApply) {
@@ -14472,7 +14022,7 @@ SchemaString.prototype.uppercase = function(shouldApply) {
 This schema type's name, to defend against minifiers that mangle
 function names.
 
-<!--sec data-title="源码" data-id="SchemaString_schemaName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaString_schemaName" data-show=true data-collapse=true ces-->
 ```js
 SchemaString.schemaName = 'String';
 ```
@@ -14481,7 +14031,7 @@ SchemaString.schemaName = 'String';
 -----
 
 
-# schema/decimal128.js
+# schema/decimal128.js {#schema_decimal128}
 
 > 源码：[schema/decimal128.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/schema/decimal128.js)
 
@@ -14494,13 +14044,13 @@ Check if the given value satisfies a required validator.
 
   * `value` &lt;[Any][]&gt;
 
-  * `doc` <Document>
+  * `doc` &lt;[Document][]&gt;
 
 ##### 返回值：
 
   * &lt;[Boolean][]&gt;
 
-<!--sec data-title="源码" data-id="Decimal128_checkRequired" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Decimal128_checkRequired" data-show=true data-collapse=true ces-->
 ```js
 Decimal128.prototype.checkRequired = function checkRequired(value, doc) {
   if (SchemaType._isRef(this, value, doc, true)) {
@@ -14524,9 +14074,9 @@ Decimal128 SchemaType constructor.
 
 ##### 继承：
 
-  * [SchemaType]()
+  * [SchemaType](#SchemaType_constructor)
 
-<!--sec data-title="源码" data-id="Decimal128" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Decimal128" data-show=true data-collapse=true ces-->
 ```js
 function Decimal128(key, options) {
   SchemaType.call(this, key, options, 'Decimal128');
@@ -14540,7 +14090,7 @@ function Decimal128(key, options) {
 This schema type's name, to defend against minifiers that mangle
 function names.
 
-<!--sec data-title="源码" data-id="Decimal128_schemaName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Decimal128_schemaName" data-show=true data-collapse=true ces-->
 ```js
 Decimal128.schemaName = 'Decimal128';
 ```
@@ -14549,7 +14099,7 @@ Decimal128.schemaName = 'Decimal128';
 -----
 
 
-# schema/documentarray.js
+# schema/documentarray.js {#schema_documentarray}
 
 ## DocumentArray(key, schema, options)
 
@@ -14567,7 +14117,7 @@ SubdocsArray SchemaType constructor
 
   * [SchemaArray]()
 
-<!--sec data-title="源码" data-id="DocumentArray" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_DocumentArray" data-show=true data-collapse=true ces-->
 ```js
 function DocumentArray(key, schema, options) {
   var EmbeddedDocument = _createConstructor(schema, options);
@@ -14599,33 +14149,33 @@ function DocumentArray(key, schema, options) {
 This schema type's name, to defend against minifiers that mangle
 function names.
 
-<!--sec data-title="源码" data-id="DocumentArray_schemaName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_DocumentArray_schemaName" data-show=true data-collapse=true ces-->
 ```js
 DocumentArray.schemaName = 'DocumentArray';
 ```
 <!--endsec-->
 
 
-# schema/date.js
+# schema/date.js {#schema_date}
 
 > 源码：[schema/date.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/schema/date.js)
 
-## SchemaDate#checkRequired(value, doc)
+## SchemaDate#checkRequired(value, doc) {#SchemaDate_checkRequired}
 
-Check if the given value satisfies a required validator. To satisfy
-a required validator, the given value must be an instance of Date.
+
+检查给定值是否满足需要的(required)验证器。为了满足必需的验证器，给定的值必须是一个 `Date` 的实例。
 
 ##### 参数：
 
   * `value` &lt;[Any][]&gt;
 
-  * `doc` <Document>
+  * `doc` &lt;[Document][]&gt;
 
 ##### 返回值：
 
   * &lt;[Boolean][]&gt;
 
-<!--sec data-title="源码" data-id="SchemaDate_checkRequired" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaDate_checkRequired" data-show=true data-collapse=true ces-->
 ```js
 SchemaDate.prototype.checkRequired = function(value) {
   return value instanceof Date;
@@ -14634,9 +14184,9 @@ SchemaDate.prototype.checkRequired = function(value) {
 <!--endsec-->
 
 
-## SchemaDate#expires(when)
+## SchemaDate#expires(when) {#SchemaDate_expires}
 
-Declares a TTL index (rounded to the nearest second) for Date types only.
+为 *Date* 类型声明一个 TTL 索引(四舍五入到最近的秒)。
 
 ##### 参数：
 
@@ -14646,8 +14196,8 @@ Declares a TTL index (rounded to the nearest second) for Date types only.
 
   * <SchemaType> this
 
-This sets the expireAfterSeconds index option available in MongoDB >= 2.1.2.
-This index type is only compatible with Date types.
+这将设置 MongoDB 的 `expireAfterSeconds` 索引选项。「译者注」：表示到期时间
+该索引类型仅与日期 Date 类型兼容。
 
 ##### 示例：
 
@@ -14669,7 +14219,7 @@ new Schema({ createdAt: { type: Date, expires: '1.5h' }});
 var schema = new Schema({ createdAt: Date });
 schema.path('createdAt').expires('7d');
 ```
-<!--sec data-title="源码" data-id="SchemaDate_expires" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaDate_expires" data-show=true data-collapse=true ces-->
 ```js
 SchemaDate.prototype.expires = function(when) {
   if (!this._index || this._index.constructor.name !== 'Object') {
@@ -14684,15 +14234,15 @@ SchemaDate.prototype.expires = function(when) {
 <!--endsec-->
 
 
-## SchemaDate#max(maximum, [message])
+## SchemaDate#max(maximum, [message]) {#SchemaDate_max}
 
-Sets a maximum date validator.
+设置一个最大日期验证器。
 
 ##### 参数：
 
   * `maximum` <Date> date
 
-  * `[message]` &lt;[String][]&gt; optional custom error message
+  * `[message]` &lt;[String][]&gt; 可选，自定义的错误信息
 
 ##### 返回值：
 
@@ -14700,7 +14250,7 @@ Sets a maximum date validator.
 
 ##### 参见：
 
-  * [Customized Error Messages]()
+  * [定制的 Error Messages](#MongooseError_messages)(#MongooseError_messages)
 
 ##### 示例：
 
@@ -14724,7 +14274,7 @@ s.validate(function (err) {
   console.log(String(err)) // ValidationError: The value of path `d` (2014-12-08) exceeds the limit (2014-01-01).
 })
 ```
-<!--sec data-title="源码" data-id="SchemaDate_max" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaDate_max" data-show=true data-collapse=true ces-->
 ```js
 SchemaDate.prototype.max = function(value, message) {
   if (this.maxValidator) {
@@ -14754,15 +14304,15 @@ SchemaDate.prototype.max = function(value, message) {
 ```
 <!--endsec-->
 
-## SchemaDate#min(value, [message])
+## SchemaDate#min(value, [message]) {#SchemaDate_min}
 
-Sets a minimum date validator.
+设置一个最小日期验证器。
 
 ##### 参数：
 
-  * `value` <Date> minimum date
+  * `value` <Date> 最小日期
 
-  * `[message]` &lt;[String][]&gt; optional custom error message
+  * `[message]` &lt;[String][]&gt; 可选，自定义错误消息
 
 ##### 返回值：
 
@@ -14770,7 +14320,7 @@ Sets a minimum date validator.
 
 ##### 参见：
 
-  * [Customized Error Messages]()
+  * [定制的 Error Messages](#MongooseError_messages)(#MongooseError_messages)
 
 ##### 示例：
 
@@ -14794,7 +14344,7 @@ s.validate(function (err) {
   console.log(String(err)) // ValidationError: The value of path `d` (1969-12-31) is before the limit (1970-01-01).
 })
 ```
-<!--sec data-title="源码" data-id="SchemaDate_min" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaDate_min" data-show=true data-collapse=true ces-->
 ```js
 SchemaDate.prototype.min = function(value, message) {
   if (this.minValidator) {
@@ -14824,9 +14374,9 @@ SchemaDate.prototype.min = function(value, message) {
 ```
 <!--endsec-->
 
-## SchemaDate(key, options)
+## SchemaDate(key, options) {#SchemaDate}
 
-Date SchemaType constructor.
+Date SchemaType 构造函数。
 
 ##### 参数：
 
@@ -14836,9 +14386,9 @@ Date SchemaType constructor.
 
 ##### 继承：
 
-  * [SchemaType]()
+  * [SchemaType](#SchemaType_constructor)
 
-<!--sec data-title="源码" data-id="SchemaDate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaDate" data-show=true data-collapse=true ces-->
 ```js
 function SchemaDate(key, options) {
   SchemaType.call(this, key, options, 'Date');
@@ -14849,10 +14399,9 @@ function SchemaDate(key, options) {
 
 ## SchemaDate.schemaName
 
-This schema type's name, to defend against minifiers that mangle
-function names.
+这个模式类型的名称，用来防御那些损害函数原名称的压缩器。
 
-<!--sec data-title="源码" data-id="SchemaDate_schemaName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaDate_schemaName" data-show=true data-collapse=true ces-->
 ```js
 SchemaDate.schemaName = 'Date';
 ```
@@ -14861,7 +14410,7 @@ SchemaDate.schemaName = 'Date';
 ------
 
 
-# schema/number.js
+# schema/number.js {#schema_number}
 
 > 源码：[schema/number.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/schema/number.js)
 
@@ -14874,13 +14423,13 @@ Check if the given value satisfies a required validator.
 
   * `value` &lt;[Any][]&gt;
 
-  * `doc` <Document>
+  * `doc` &lt;[Document][]&gt;
 
 ##### 返回值：
 
   * &lt;[Boolean][]&gt;
 
-<!--sec data-title="源码" data-id="SchemaNumber_checkRequired" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaNumber_checkRequired" data-show=true data-collapse=true ces-->
 ```js
 SchemaNumber.prototype.checkRequired = function checkRequired(value, doc) {
   if (SchemaType._isRef(this, value, doc, true)) {
@@ -14898,7 +14447,7 @@ Sets a maximum number validator.
 
 ##### 参数：
 
-  * `maximum` <Number> number
+  * `maximum` &lt;[Number][]&gt; number
 
   * `[message]` &lt;[String][]&gt; optional custom error message
 
@@ -14908,7 +14457,7 @@ Sets a maximum number validator.
 
 ##### 参见：
 
-  * [Customized Error Messages]()
+  * [定制的 Error Messages](#MongooseError_messages)
 
 ##### 示例：
 
@@ -14932,7 +14481,7 @@ s.validate(function (err) {
   console.log(String(err)) // ValidationError: The value of path `n` (4) exceeds the limit (10).
 })
 ```
-<!--sec data-title="源码" data-id="SchemaNumber_max" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaNumber_max" data-show=true data-collapse=true ces-->
 ```js
 SchemaNumber.prototype.max = function(value, message) {
   if (this.maxValidator) {
@@ -14967,7 +14516,7 @@ Sets a minimum number validator.
 
 ##### 参数：
 
-  * `value` <Number> minimum number
+  * `value` &lt;[Number][]&gt; minimum number
 
   * `[message]` &lt;[String][]&gt; optional custom error message
 
@@ -14977,7 +14526,7 @@ Sets a minimum number validator.
 
 ##### 参见：
 
-  * [Customized Error Messages]()
+  * [定制的 Error Messages](#MongooseError_messages)()
 
 ##### 示例：
 
@@ -15002,7 +14551,7 @@ s.validate(function (err) {
 })
 ```
 
-<!--sec data-title="源码" data-id="SchemaNumber_min" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaNumber_min" data-show=true data-collapse=true ces-->
 ```js
 SchemaNumber.prototype.min = function(value, message) {
   if (this.minValidator) {
@@ -15042,9 +14591,9 @@ Number SchemaType constructor.
 
 ##### 继承：
 
-  * [SchemaType]()
+  * [SchemaType](#SchemaType_constructor)
 
-<!--sec data-title="源码" data-id="SchemaNumber" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaNumber" data-show=true data-collapse=true ces-->
 ```js
 function SchemaNumber(key, options) {
   SchemaType.call(this, key, options, 'Number');
@@ -15058,7 +14607,7 @@ function SchemaNumber(key, options) {
 This schema type's name, to defend against minifiers that mangle
 function names.
 
-<!--sec data-title="源码" data-id="SchemaNumber_schemaName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaNumber_schemaName" data-show=true data-collapse=true ces-->
 ```js
 SchemaNumber.schemaName = 'Number';
 ```
@@ -15099,7 +14648,7 @@ next() will error.
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 ##### 参见：
 
@@ -15117,13 +14666,13 @@ Returns a promise that resolves when done.
 
   * `[options]` &lt;[Object][]&gt;
 
-  * `[options.parallel]` <Number> the number of promises to execute in parallel. Defaults to 1.
+  * `[options.parallel]` &lt;[Number][]&gt; the number of promises to execute in parallel. Defaults to 1.
 
   * `[callback]` &lt;[Function][]&gt; executed when all docs have been processed
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 
 
@@ -15138,7 +14687,7 @@ via the streams interface or .next()
 
 ##### 返回值：
 
-  * <QueryCursor>
+  * &lt;[QueryCursor][]&gt;
 
 ##### 示例：
 
@@ -15179,10 +14728,10 @@ no documents left.
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 
-## QueryCursor(query, options)
+## QueryCursor(query, options) {#QueryCursor}
 
 A QueryCursor is a concurrency primitive for processing query results
 one document at a time. A QueryCursor fulfills the Node.js streams3 API,
@@ -15191,7 +14740,7 @@ one at a time.
 
 ##### 参数：
 
-  * `query` <Query>
+  * `query` &lt;[Query][]&gt;
 
   * `options` &lt;[Object][]&gt; query options passed to .find()
 
@@ -15215,7 +14764,7 @@ post find hooks.
 Unless you're an advanced user, do not instantiate this class directly.
 Use [Query#cursor()]() instead.
 
-<!--sec data-title="源码" data-id="QueryCursor" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_QueryCursor" data-show=true data-collapse=true ces-->
 ```js
 function QueryCursor(query, options) {
   Readable.call(this, { objectMode: true });
@@ -15301,7 +14850,7 @@ but not the model's post aggregate hooks.
 Unless you're an advanced user, do not instantiate this class directly.
 Use [Aggregate#cursor()](http://mongoosejs.com/docs/api.html#aggregate_Aggregate-cursor) instead.
 
-<!--sec data-title="源码" data-id="AggregationCursor" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_AggregationCursor" data-show=true data-collapse=true ces-->
 ```js
 function AggregationCursor(agg) {
   Readable.call(this, { objectMode: true });
@@ -15331,7 +14880,7 @@ next() will error.
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 ##### 参见：
 
@@ -15351,7 +14900,7 @@ Returns a promise that resolves when done.
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 
 
@@ -15366,7 +14915,7 @@ via the streams interface or .next()
 
 ##### 返回值：
 
-  * <QueryCursor>
+  * &lt;[QueryCursor][]&gt;
 
 ##### 示例：
 
@@ -15406,7 +14955,7 @@ no documents left.
 
 ##### 返回值：
 
-  * <Promise>
+  * &lt;[Promise][]&gt;
 
 
 
@@ -15419,7 +14968,7 @@ no documents left.
 > 源码：[schematype.js](https://github.com/Automattic/mongoose/blob/4.13.7/lib/schematype.js)
 
 
-## SchemaType#default(val)
+## SchemaType#default(val) {#SchemaType_default}
 
 Sets a default value for this SchemaType.
 
@@ -15470,7 +15019,7 @@ var m2 = new M;
 console.log(m2.mixed); // { added: 1 }
 ```
 
-<!--sec data-title="源码" data-id="SchemaType_default" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaType_default" data-show=true data-collapse=true ces-->
 ```js
 SchemaType.prototype.default = function(val) {
   if (arguments.length === 1) {
@@ -15488,7 +15037,7 @@ SchemaType.prototype.default = function(val) {
 ```
 <!--endsec-->
 
-## SchemaType#get(fn)
+## SchemaType#get(fn) {#SchemaType_get}
 
 Adds a getter to this schematype.
 
@@ -15558,7 +15107,7 @@ Virus.findById(id, function (err, virus) {
   console.log(virus.taxonomy); // taxonomy is not
 })
 ```
-<!--sec data-title="源码" data-id="SchemaType_get" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaType_get" data-show=true data-collapse=true ces-->
 ```js
 SchemaType.prototype.get = function(fn) {
   if (typeof fn !== 'function') {
@@ -15571,7 +15120,7 @@ SchemaType.prototype.get = function(fn) {
 <!--endsec-->
 
 
-## SchemaType#index(options)
+## SchemaType#index(options) {#SchemaType_index}
 
 Declares the index options for this schematype.
 
@@ -15602,7 +15151,7 @@ Indexes are created in the background by default. Specify background: false to o
 
 [Direction doesn't matter for single key indexes](http://www.mongodb.org/display/DOCS/Indexes#Indexes-CompoundKeysIndexes)
 
-<!--sec data-title="源码" data-id="SchemaType_index" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaType_index" data-show=true data-collapse=true ces-->
 ```js
 SchemaType.prototype.index = function(options) {
   this._index = options;
@@ -15613,7 +15162,7 @@ SchemaType.prototype.index = function(options) {
 <!--endsec-->
 
 
-## SchemaType#required(required, [options.isRequired], [options.ErrorConstructor], [message])
+## SchemaType#required(required, [options.isRequired], [options.ErrorConstructor], [message]) {#SchemaType_required}
 
 
 Adds a required validator to this SchemaType. The validator gets added
@@ -15635,7 +15184,7 @@ to the front of this SchemaType's validators array using unshift().
 
 ##### 参见：
 
-  * [Customized Error Messages]()
+  * [定制的 Error Messages](#MongooseError_messages)
 
   * [SchemaArray#checkRequired]()
 
@@ -15699,7 +15248,7 @@ a value satisfies the required validator if val != null (that is, if
 the value is not null nor undefined). However, most built-in mongoose schema
 types override the default checkRequired function:
 
-<!--sec data-title="源码" data-id="SchemaType_required" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaType_required" data-show=true data-collapse=true ces-->
 ```js
 SchemaType.prototype.required = function(required, message) {
   var customOptions = {};
@@ -15752,9 +15301,9 @@ SchemaType.prototype.required = function(required, message) {
 <!--endsec-->
 
 
-## SchemaType(path, [options], [instance])
+## SchemaType(path, [options], [instance]) {#SchemaType_constructor}
 
-SchemaType constructor
+SchemaType 构造函数
 
 ##### 参数：
 
@@ -15764,7 +15313,7 @@ SchemaType constructor
 
   * `[instance]` &lt;[String][]&gt;
 
-<!--sec data-title="源码" data-id="11" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_11" data-show=true data-collapse=true ces-->
 ```js
 function SchemaType(path, options, instance) {
   this.path = path;
@@ -15807,7 +15356,7 @@ function SchemaType(path, options, instance) {
 <!--endsec-->
 
 
-## SchemaType#select(val)
+## SchemaType#select(val) {#SchemaType_select}
 
 Sets default select() behavior for this path.
 
@@ -15830,7 +15379,7 @@ T.find(..); // field x will always be selected ..
 T.find().select('-x').exec(callback);
 ```
 
-<!--sec data-title="源码" data-id="SchemaType_select" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaType_select" data-show=true data-collapse=true ces-->
 ```js
 SchemaType.prototype.select = function select(val) {
   this.selected = !!val;
@@ -15840,7 +15389,7 @@ SchemaType.prototype.select = function select(val) {
 <!--endsec-->
 
 
-## SchemaType#set(fn)
+## SchemaType#set(fn) {#SchemaType_set}
 
 Adds a setter to this schematype.
 
@@ -15935,7 +15484,7 @@ console.log(v.name);     // name is required
 console.log(v.taxonomy); // Parvovirinae
 ```
 
-<!--sec data-title="源码" data-id="SchemaType_set" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaType_set" data-show=true data-collapse=true ces-->
 ```js
 SchemaType.prototype.set = function(fn) {
   if (typeof fn !== 'function') {
@@ -15948,7 +15497,7 @@ SchemaType.prototype.set = function(fn) {
 <!--endsec-->
 
 
-## SchemaType#sparse(bool)
+## SchemaType#sparse(bool) {#SchemaType_sparse}
 
 Declares a sparse index.
 
@@ -15967,7 +15516,7 @@ var s = new Schema({ name: { type: String, sparse: true }})
 Schema.path('name').index({ sparse: true });
 ```
 
-<!--sec data-title="源码" data-id="SchemaType_sparse" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaType_sparse" data-show=true data-collapse=true ces-->
 ```js
 SchemaType.prototype.sparse = function(bool) {
   if (this._index === null || this._index === undefined ||
@@ -15985,7 +15534,7 @@ SchemaType.prototype.sparse = function(bool) {
 
 
 
-## SchemaType#text(bool)
+## SchemaType#text(bool) {#SchemaType_text}
 
 
 Declares a full text index.
@@ -16005,7 +15554,7 @@ var s = new Schema({name : {type: String, text : true }})
  Schema.path('name').index({text : true});
 ```
 
-<!--sec data-title="源码" data-id="SchemaType_text" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaType_text" data-show=true data-collapse=true ces-->
 ```js
 SchemaType.prototype.text = function(bool) {
   if (this._index === null || this._index === undefined ||
@@ -16022,7 +15571,7 @@ SchemaType.prototype.text = function(bool) {
 <!--endsec-->
 
 
-## SchemaType#unique(bool)
+## SchemaType#unique(bool) {#SchemaType_unique}
 
 Declares an unique index.
 
@@ -16045,7 +15594,7 @@ Schema.path('name').index({ unique: true });
 
 violating the constraint returns an E11000 error from MongoDB when saving, not a Mongoose validation error.
 
-<!--sec data-title="源码" data-id="SchemaType_unique" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaType_unique" data-show=true data-collapse=true ces-->
 ```js
 SchemaType.prototype.unique = function(bool) {
   if (this._index === false) {
@@ -16068,41 +15617,41 @@ SchemaType.prototype.unique = function(bool) {
 <!--endsec-->
 
 
-## SchemaType#validate(obj, [errorMsg], [type])
+## SchemaType#validate(obj, [errorMsg], [type]) {#SchemaType_validate}
 
-Adds validator(s) for this document path.
+为当前文档路径添加验证器
 
 ##### 参数：
 
-  * `obj` <RegExp, Function, Object> validator
+  * `obj` <RegExp, Function, Object> 验证器
 
-  * `[errorMsg]` &lt;[String][]&gt; optional error message
+  * `[errorMsg]` &lt;[String][]&gt; 可选，错误信息
 
-  * `[type]` &lt;[String][]&gt; optional validator type
+  * `[type]` &lt;[String][]&gt; 可选，验证器类型
 
 ##### 返回值：
 
   * <SchemaType> this
 
-Validators always receive the value to validate as their first argument and must return Boolean. Returning false means validation failed.
+验证器总是接收需要验证的值作为第一个参数，并且必须返回 `Boolean`。返回 `false` 意味着验证失败。
 
-The error message argument is optional. If not passed, the default generic error message template will be used.
+错误消息参数是可选的。如果没有通过，将使用[默认的通用错误消息模板](http://mongoosejs.com/docs/api.html#error_messages_MongooseError-messages)。
 
 ##### 示例：
 
 ```js
-// make sure every value is equal to "something"
+// 确保每个值等于  "something"
 function validator (val) {
   return val == 'something';
 }
 new Schema({ name: { type: String, validate: validator }});
 
-// with a custom error message
+// 使用自定义的错误信息
 
 var custom = [validator, 'Uh oh, {PATH} does not equal "something".']
 new Schema({ name: { type: String, validate: custom }});
 
-// adding many validators at a time
+// 同时添加多个验证器
 
 var many = [
     { validator: validator, msg: 'uh oh' }
@@ -16110,14 +15659,15 @@ var many = [
 ]
 new Schema({ name: { type: String, validate: many }});
 
-// or utilizing SchemaType methods directly:
+// 或者直接利用 SchemaType 方法:
 
 var schema = new Schema({ name: 'string' });
 schema.path('name').validate(validator, 'validation of `{PATH}` failed with value `{VALUE}`');
 ```
 
 ##### Error message templates:
-From the examples above, you may have noticed that error messages support basic templating. There are a few other template keywords besides {PATH} and {VALUE} too. To find out more, details are available here
+
+从上面的示例中，您可能已经注意到错误消息支持基本的模板。除了 {PATH} 和 {VALUE} 之外，还有一些其他的模板关键字。要了解更多信息，可以在这里找到详细信息
 
 ##### Asynchronous validation:
 
@@ -16167,7 +15717,7 @@ If you desire handling these errors at the Model level, attach an error listener
 Product.on('error', handleError);
 ```
 
-<!--sec data-title="源码" data-id="SchemaType_validate" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_SchemaType_validate" data-show=true data-collapse=true ces-->
 ```js
 SchemaType.prototype.validate = function(obj, message, type) {
   if (typeof obj === 'function' || obj && utils.getFunctionName(obj.constructor) === 'RegExp') {
@@ -16234,9 +15784,9 @@ Closes the connection
 
 ##### 返回值：
 
-  * <Connection> self
+  * &lt;[Connection][]&gt; self
 
-<!--sec data-title="源码" data-id="Connection_close" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Connection_close" data-show=true data-collapse=true ces-->
 ```js
 Connection.prototype.close = function(force, callback) {
   var _this = this;
@@ -16279,7 +15829,7 @@ Retrieves a collection, creating it if not cached.
 
 Not typically needed by applications. Just talk to your collection through your model.
 
-<!--sec data-title="源码" data-id="Connection_collection" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Connection_collection" data-show=true data-collapse=true ces-->
 ```js
 Connection.prototype.collection = function(name, options) {
   options = options ? utils.clone(options, { retainKeyOrder: true }) : {};
@@ -16293,13 +15843,13 @@ Connection.prototype.collection = function(name, options) {
 <!--endsec-->
 
 
-## Connection(base)
+## Connection(base) {#Connection}
 
 Connection constructor
 
 ##### 参数：
 
-  * base <[Mongoose]()> a mongoose instance
+  * base <[Mongoose][]> a mongoose instance
 
 ##### 继承：
 
@@ -16329,7 +15879,7 @@ Connection constructor
 
 For practical reasons, a Connection equals a Db.
 
-<!--sec data-title="源码" data-id="Connection" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Connection" data-show=true data-collapse=true ces-->
 ```js
 function Connection(base) {
   this.base = base;
@@ -16370,11 +15920,11 @@ and views from mongoose.
 
 ##### 返回值：
 
-  * <[Promise]()>
+  * &lt;[Promise][]&gt;
 
 Options are passed down without modification to the [MongoDB driver's createCollection() function](http://mongodb.github.io/node-mongodb-native/2.2/api/Db.html#createCollection)
 
-<!--sec data-title="源码" data-id="12" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_12" data-show=true data-collapse=true ces-->
 ```js
 Connection.prototype.createCollection = _wrapConnHelper(function createCollection(collection, options, cb) {
   if (typeof options === 'function') {
@@ -16400,10 +15950,10 @@ all documents and indexes.
 
 ##### 返回值：
 
-  * <[Promise]()>
+  * &lt;[Promise][]&gt;
 
 
-<!--sec data-title="源码" data-id="13" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_13" data-show=true data-collapse=true ces-->
 ```js
 Connection.prototype.dropCollection = _wrapConnHelper(function dropCollection(collection, cb) {
   this.db.dropCollection(collection, cb);
@@ -16419,8 +15969,8 @@ collections, documents, and indexes.
 ##### 参数：
 [callback] &lt;[Function][]&gt;
 ##### 返回值：
-<Promise>
-<!--sec data-title="源码" data-id="14" data-show=true data-collapse=true ces-->
+&lt;[Promise][]&gt;
+<!--sec data-title="源码" data-id="sec_14" data-show=true data-collapse=true ces-->
 ```js
 Connection.prototype.dropDatabase = _wrapConnHelper(function dropDatabase(cb) {
   this.db.dropDatabase(cb);
@@ -16473,7 +16023,7 @@ var collectionName = 'actor'
 var M = conn.model('Actor', schema, collectionName)
 ```
 
-<!--sec data-title="源码" data-id="Connection_model" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Connection_model" data-show=true data-collapse=true ces-->
 ```js
 Connection.prototype.model = function(name, schema, collection) {
   // collection name discovery
@@ -16555,7 +16105,7 @@ Returns an array of model names created on this connection.
 
 ##### 返回值：
 &lt;[Array][]&gt;
-<!--sec data-title="源码" data-id="Connection_modelNames" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Connection_modelNames" data-show=true data-collapse=true ces-->
 ```js
 ```
 <!--endsec-->
@@ -16568,7 +16118,7 @@ Opens the connection to MongoDB.
 
   * `connection_string` &lt;[String][]&gt; mongodb://uri or the host to which you are connecting
   * `[database]` &lt;[String][]&gt; database name
-  * `[port]` <Number> database port
+  * `[port]` &lt;[Number][]&gt; database port
   * `[options]` &lt;[Object][]&gt; options
   * `[callback]` &lt;[Function][]&gt;
 
@@ -16600,7 +16150,7 @@ See the node-mongodb-native driver instance for options that it understands.
 
 *Options passed take precedence over options included in connection strings.*
 
-<!--sec data-title="源码" data-id="14" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_14" data-show=true data-collapse=true ces-->
 ```js
 Connection.prototype.open = util.deprecate(function() {
   var Promise = PromiseProvider.get();
@@ -16674,7 +16224,7 @@ db.openSet("mongodb://user:pwd@localhost:27020,localhost:27021,localhost:27012/m
 The database name and/or auth need only be included in one URI.
 The options is a hash which is passed to the internal driver connection object.
 
-Valid options
+##### 可用选项
 
 <pre>
 db      - passed to the connection db instance
@@ -16703,7 +16253,7 @@ See the node-mongodb-native driver instance for options that it understands.
 
 *Options passed take precedence over options included in connection strings.*
 
-<!--sec data-title="源码" data-id="15" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_15" data-show=true data-collapse=true ces-->
 ```js
 Connection.prototype.openSet = util.deprecate(function(uris, database, options, callback) {
   var Promise = PromiseProvider.get();
@@ -16750,7 +16300,7 @@ Connection.prototype.openSet = util.deprecate(function(uris, database, options, 
 
 A hash of the collections associated with this connection
 
-<!--sec data-title="源码" data-id="Connection_collections" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Connection_collections" data-show=true data-collapse=true ces-->
 ```js
 Connection.prototype.collections;
 ```
@@ -16760,7 +16310,7 @@ Connection.prototype.collections;
 
 A hash of the global options that are associated with this connection
 
-<!--sec data-title="源码" data-id="Connection_config" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Connection_config" data-show=true data-collapse=true ces-->
 ```js
 Connection.prototype.config;
 ```
@@ -16770,7 +16320,7 @@ Connection.prototype.config;
 
 The mongodb.Db instance, set when the connection is opened
 
-<!--sec data-title="源码" data-id="Connection_db" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Connection_db" data-show=true data-collapse=true ces-->
 ```js
 Connection.prototype.db;
 ```
@@ -16795,7 +16345,7 @@ conn.on('connected', callback);
 conn.on('disconnected', callback);
 ```
 
-<!--sec data-title="源码" data-id="Connection_readyState" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Connection_readyState" data-show=true data-collapse=true ces-->
 ```js
 Object.defineProperty(Connection.prototype, 'readyState', {
   get: function() {
@@ -16839,14 +16389,14 @@ Abstract Collection constructor
 
   ** `name` &lt;[String][]&gt; name of the collection
 
-  ** `conn` <Connection> A MongooseConnection instance
+  ** `conn` &lt;[Connection][]&gt; A MongooseConnection instance
 
   ** `opts` &lt;[Object][]&gt; optional collection options
 
 This is the base class that drivers inherit from and implement.
 
 
-<!--sec data-title="源码" data-id="16" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_16" data-show=true data-collapse=true ces-->
 ```js
 function Collection(name, conn, opts) {
   if (opts === void 0) {
@@ -16881,9 +16431,9 @@ function Collection(name, conn, opts) {
 
 ## Collection#createIndex()
 
-Abstract method that drivers must implement.
+驱动程序必须实现的抽象方法。
 
-<!--sec data-title="源码" data-id="Collection_createIndex" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_createIndex" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.createIndex = function() {
   throw new Error('Collection#ensureIndex unimplemented by driver');
@@ -16893,9 +16443,9 @@ Collection.prototype.createIndex = function() {
 
 ## Collection#ensureIndex()
 
-Abstract method that drivers must implement.
+驱动程序必须实现的抽象方法。
 
-<!--sec data-title="源码" data-id="Collection_ensureIndex" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_ensureIndex" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.ensureIndex = function() {
   throw new Error('Collection#ensureIndex unimplemented by driver');
@@ -16905,9 +16455,9 @@ Collection.prototype.ensureIndex = function() {
 
 ## Collection#find()
 
-Abstract method that drivers must implement.
+驱动程序必须实现的抽象方法。
 
-<!--sec data-title="源码" data-id="Collection_find" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_find" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.find = function() {
   throw new Error('Collection#find unimplemented by driver');
@@ -16917,9 +16467,9 @@ Collection.prototype.find = function() {
 
 ## Collection#findAndModify()
 
-Abstract method that drivers must implement.
+驱动程序必须实现的抽象方法。
 
-<!--sec data-title="源码" data-id="Collection_findAndModify" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_findAndModify" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.findAndModify = function() {
   throw new Error('Collection#findAndModify unimplemented by driver');
@@ -16929,9 +16479,9 @@ Collection.prototype.findAndModify = function() {
 
 ## Collection#findOne()
 
-Abstract method that drivers must implement.
+驱动程序必须实现的抽象方法。
 
-<!--sec data-title="源码" data-id="Collection_findOne" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_findOne" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.findOne = function() {
   throw new Error('Collection#findOne unimplemented by driver');
@@ -16941,9 +16491,9 @@ Collection.prototype.findOne = function() {
 
 ## Collection#getIndexes()
 
-Abstract method that drivers must implement.
+驱动程序必须实现的抽象方法。
 
-<!--sec data-title="源码" data-id="Collection_getIndexes" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_getIndexes" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.getIndexes = function() {
   throw new Error('Collection#getIndexes unimplemented by driver');
@@ -16953,9 +16503,9 @@ Collection.prototype.getIndexes = function() {
 
 ## Collection#insert()
 
-Abstract method that drivers must implement.
+驱动程序必须实现的抽象方法。
 
-<!--sec data-title="源码" data-id="Collection_insert" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_insert" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.insert = function() {
   throw new Error('Collection#insert unimplemented by driver');
@@ -16965,9 +16515,9 @@ Collection.prototype.insert = function() {
 
 ## Collection#mapReduce()
 
-Abstract method that drivers must implement.
+驱动程序必须实现的抽象方法。
 
-<!--sec data-title="源码" data-id="Collection_mapReduce" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_mapReduce" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.mapReduce = function() {
   throw new Error('Collection#mapReduce unimplemented by driver');
@@ -16977,9 +16527,9 @@ Collection.prototype.mapReduce = function() {
 
 ## Collection#save()
 
-Abstract method that drivers must implement.
+驱动程序必须实现的抽象方法。
 
-<!--sec data-title="源码" data-id="Collection_save" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_save" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.save = function() {
   throw new Error('Collection#save unimplemented by driver');
@@ -16989,9 +16539,9 @@ Collection.prototype.save = function() {
 
 ## Collection#update()
 
-Abstract method that drivers must implement.
+驱动程序必须实现的抽象方法。
 
-<!--sec data-title="源码" data-id="Collection_update" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_update" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.update = function() {
   throw new Error('Collection#update unimplemented by driver');
@@ -17003,7 +16553,7 @@ Collection.prototype.update = function() {
 
 The collection name
 
-<!--sec data-title="源码" data-id="Collection_collectionName" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_collectionName" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.collectionName;
 ```
@@ -17013,7 +16563,7 @@ Collection.prototype.collectionName;
 
 The Connection instance
 
-<!--sec data-title="源码" data-id="Collection_conn" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_conn" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.conn;
 ```
@@ -17023,7 +16573,7 @@ Collection.prototype.conn;
 
 The collection name
 
-<!--sec data-title="源码" data-id="Collection_name" data-show=true data-collapse=true ces-->
+<!--sec data-title="源码" data-id="sec_Collection_name" data-show=true data-collapse=true ces-->
 ```js
 Collection.prototype.name;
 ```
@@ -17035,7 +16585,17 @@ Collection.prototype.name;
 [Object]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object
 [Function]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function
 [Boolean]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[Number]: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number
 
 
 [Any]: #Any
 [MongooseThenable]: #MongooseThenable
+[Query]: #query-js
+[Promise]: #promise-js
+[Connection]: (#Connection)
+[Document]: #document-js
+[Binary]: https://github.com/mongodb/js-bson/blob/master/lib/bson/binary.js
+[Buffer]: http://nodejs.cn/api/buffer.html
+[QueryCursor]: #QueryCursor
+[Connection#open]: #Connection_open
+[Connection#openSet]: Connection_openSet

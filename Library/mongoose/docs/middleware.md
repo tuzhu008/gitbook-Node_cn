@@ -254,3 +254,24 @@ Person.create(people, function(error) {
 ## 接下来
 
 现在我们已经介绍了 Midlleware，让我们来看看 Mongoose 使用 [population](/Library/mongoose/docs/populate.md) 助手来伪造 JOINs。
+
+## 常见问题 {#faq}
+
+* <strong class="question"><span class='q-icon'><i class="fa fa-question" aria-hidden="true"></i></span>问：</strong>
+  中间件如何修改数据，并将修改后的数据返回？
+
+  <strong class="answer">答：</strong> 调用带参数的 `next` 方法。
+
+  ```js
+  articleSchema.post('find', function (articles, next) {
+
+    if (!articles) {
+      return next(new Error('未获取到数据'));
+    }
+    articles.forEach( function(article, index) {
+      article.title = index;
+    });
+    next(null, articles);
+  });
+  ```
+  上面的例子中简单粗暴的使用错误调用 `next`，对查询结果 `articles` 做了修改之后使用 `(null, articles)` 调用了 `next`。之后就能在最后的结果中使用修改的后的数据了。

@@ -143,6 +143,7 @@ var userSchema = new Schema({
       // 在 mongoose 4.x 中，`isAsync` 不是必须的
       // 但是依赖于 2 个参数验证器是异步的这种行为被弃用。
       // 将 `isAsync` 选项设置为 `true` ，以使弃用警告消失。
+      // v 为需要被验证的值，cb 为回调函数，但都不需要自己传入
       isAsync: true,
       validator: function(v, cb) {
         setTimeout(function() {
@@ -267,7 +268,7 @@ var error = person.validateSync();
 assert.ok(error.errors['name']);
 ```
 
-## 更新验证器
+## 更新验证器 {#built-in-validators}
 
 在上面的例子中，您了解了文档验证。 Mongoose 还支持 `update()` 和 `findOneAndUpdate()` 操作的验证。 在Mongoose 4.x 中，更新验证器默认是关闭的 —— 您需要指定 `runValidators` 选项。
 
@@ -446,4 +447,23 @@ var testSchema = new Schema({
    assert.ok(error.errors['docs']);
  });
 
+```
+
+## 其他示例
+
+[单验证器数组](/Library/mongoose/docs/API.md#SchemaType_validate):
+
+```js
+var custom = [validator, 'Uh oh, {PATH} does not equal "something".']
+new Schema({ name: { type: String, validate: custom }});
+```
+
+[多验证器数组](/Library/mongoose/docs/API.md#SchemaType_validate)：
+
+```js
+var many = [
+    { validator: validator, msg: 'uh oh' }
+  , { validator: anotherValidator, msg: 'failed' }
+]
+new Schema({ name: { type: String, validate: many }});
 ```

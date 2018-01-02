@@ -64,6 +64,7 @@ var animalSchema = new Schema({ name: String, type: String });
 
 // 分配一个函数给 animalSchema 的 "methods" 对象
 animalSchema.methods.findSimilarTypes = function(cb) {
+  // this 指向
   return this.model('Animal').find({ type: this.type }, cb);
 };
 ```
@@ -83,6 +84,8 @@ dog.findSimilarTypes(function(err, dogs) {
 >
 > 重写默认的 mongoose 文档方法可能会导致不可预测的结果。详情请见[此](http://mongoosejs.com/docs/api.html#schema_Schema.reserved)。
 
+<br/>
+
 > **[warning] 警告**
 >
 > 不要使用 ES6 箭头函数(`=>`)声明方法。箭头函数[显式地阻止绑定 `this`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)，因此您的方法将无法访问文档，上面的示例将无法工作。
@@ -94,6 +97,7 @@ dog.findSimilarTypes(function(err, dogs) {
 ```js
 // 分配一个函数给 animalSchema 的 "statics" 对象
 animalSchema.statics.findByName = function(name, cb) {
+  // this 指向的是由 animalSchema 编译成的模型
   return this.find({ name: new RegExp(name, 'i') }, cb);
 };
 
@@ -113,6 +117,7 @@ Animal.findByName('fido', function(err, animals) {
 
 ```js
 animalSchema.query.byName = function(name) {
+  //this 指向的是由 animalSchema 编译成的模型
   return this.find({ name: new RegExp(name, 'i') });
 };
 

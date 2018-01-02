@@ -29,9 +29,6 @@ db.once('open', function() {
 一旦我们的连接打开，我们的回调将被调用。为简洁起见，我们假设以下所有代码都位于此回调中。
 
 Mongoose，一切都是从 Schema 派生的。 让我们来引用它，并定义我们的小猫。
-Once our connection opens, our callback will be called. For brevity, let's assume that all following code is within this callback.
-
-With Mongoose, everything is derived from a Schema. Let's get a reference to it and define our kittens.
 
 ```js
 var kittySchema = mongoose.Schema({
