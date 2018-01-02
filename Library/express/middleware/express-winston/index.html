@@ -1,0 +1,1654 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>express-winston · Node.js</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../../connect/" />
+    
+    
+    <link rel="prev" href="../express-formidable/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    关于 Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../../GLOSSARY.html">
+            
+                <a href="../../../../GLOSSARY.html">
+            
+                    
+                    术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">参考文档</li>
+        
+        
+    
+
+    
+        
+        <li class="header">相关库</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Node 相关库列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../nvm/">
+            
+                <a href="../../../nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../request/">
+            
+                <a href="../../../request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../../async/">
+            
+                <a href="../../../async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../../supervisor/">
+            
+                <a href="../../../supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../../docs/API.html">
+            
+                <a href="../../docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1.1" >
+            
+                <span>
+            
+                    
+                    express()
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.2" >
+            
+                <span>
+            
+                    
+                    Aplication
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.3" >
+            
+                <span>
+            
+                    
+                    Request
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.4" >
+            
+                <span>
+            
+                    
+                    Response
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.5" data-path="../../docs/API.html">
+            
+                <a href="../../docs/API.html#router">
+            
+                    
+                    Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.2.1" data-path="../method-override/">
+            
+                <a href="../method-override/">
+            
+                    
+                    method-override
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.2" data-path="../session/">
+            
+                <a href="../session/">
+            
+                    
+                    express-session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.3" data-path="../connect-mongo/">
+            
+                <a href="../connect-mongo/">
+            
+                    
+                    connect-mongo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.4" data-path="../connect-flash/">
+            
+                <a href="../connect-flash/">
+            
+                    
+                    connect-flash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.5" data-path="../express-formidable/">
+            
+                <a href="../express-formidable/">
+            
+                    
+                    express-formidable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.6.2.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    express-winston
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../../connect/">
+            
+                <a href="../../../connect/">
+            
+                    
+                    connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../../../socket.io/">
+            
+                <a href="../../../socket.io/">
+            
+                    
+                    socket.io
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1" data-path="../../../socket.io/docs/">
+            
+                <a href="../../../socket.io/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1.1" data-path="../../../socket.io/docs/API.html">
+            
+                <a href="../../../socket.io/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.1.2" data-path="../../../socket.io/docs/emit.html">
+            
+                <a href="../../../socket.io/docs/emit.html">
+            
+                    
+                    emit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.2" data-path="../../../socket.io/library/REAME.html">
+            
+                <a href="../../../socket.io/library/REAME.html">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.2.1" data-path="../../../socket.io/library/engine.io/">
+            
+                <a href="../../../socket.io/library/engine.io/">
+            
+                    
+                    engine.io
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../../../socket.io-client/">
+            
+                <a href="../../../socket.io-client/">
+            
+                    
+                    socket.io-client
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1" data-path="../../../socket.io-client/docs/">
+            
+                <a href="../../../socket.io-client/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1.1" data-path="../../../socket.io-client/docs/API.html">
+            
+                <a href="../../../socket.io-client/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../../../node_redis/">
+            
+                <a href="../../../node_redis/">
+            
+                    
+                    node_redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../../../node-http-proxy/">
+            
+                <a href="../../../node-http-proxy/">
+            
+                    
+                    node-http-proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../../../mysql/">
+            
+                <a href="../../../mysql/">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../../../mongoose/">
+            
+                <a href="../../../mongoose/">
+            
+                    
+                    mongoose
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1" data-path="../../../mongoose/docs/">
+            
+                <a href="../../../mongoose/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.1" data-path="../../../mongoose/docs/quick-start.html">
+            
+                <a href="../../../mongoose/docs/quick-start.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2" data-path="../../../mongoose/docs/guide.html">
+            
+                <a href="../../../mongoose/docs/guide.html">
+            
+                    
+                    指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1" data-path="../../../mongoose/docs/guide.html">
+            
+                <a href="../../../mongoose/docs/guide.html">
+            
+                    
+                    schemas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1.1" data-path="../../../mongoose/docs/SchemaTypes.html">
+            
+                <a href="../../../mongoose/docs/SchemaTypes.html">
+            
+                    
+                    types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.2" data-path="../../../mongoose/docs/customschematypes.html">
+            
+                <a href="../../../mongoose/docs/customschematypes.html">
+            
+                    
+                    custom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.3" data-path="../../../mongoose/docs/advanced_schemas.html">
+            
+                <a href="../../../mongoose/docs/advanced_schemas.html">
+            
+                    
+                    advanced usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.2" data-path="../../../mongoose/docs/models.html">
+            
+                <a href="../../../mongoose/docs/models.html">
+            
+                    
+                    models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3" data-path="../../../mongoose/docs/documents.html">
+            
+                <a href="../../../mongoose/docs/documents.html">
+            
+                    
+                    documents
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.3.1" data-path="../../../mongoose/docs/subdocs.html">
+            
+                <a href="../../../mongoose/docs/subdocs.html">
+            
+                    
+                    sub docs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3.2" data-path="../../../mongoose/docs/defaults.html">
+            
+                <a href="../../../mongoose/docs/defaults.html">
+            
+                    
+                    defaults
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.4" data-path="../../../mongoose/docs/queries.html">
+            
+                <a href="../../../mongoose/docs/queries.html">
+            
+                    
+                    queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.5" data-path="../../../mongoose/docs/validation.html">
+            
+                <a href="../../../mongoose/docs/validation.html">
+            
+                    
+                    validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.6" data-path="../../../mongoose/docs/middleware.html">
+            
+                <a href="../../../mongoose/docs/middleware.html">
+            
+                    
+                    middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.7" data-path="../../../mongoose/docs/populate.html">
+            
+                <a href="../../../mongoose/docs/populate.html">
+            
+                    
+                    population
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.8" data-path="../../../mongoose/docs/connections.html">
+            
+                <a href="../../../mongoose/docs/connections.html">
+            
+                    
+                    connections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.9" data-path="../../../mongoose/docs/plugins.html">
+            
+                <a href="../../../mongoose/docs/plugins.html">
+            
+                    
+                    plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.10" data-path="../../../mongoose/docs/promises.html">
+            
+                <a href="../../../mongoose/docs/promises.html">
+            
+                    
+                    promises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.11" data-path="../../../mongoose/docs/discriminators.html">
+            
+                <a href="../../../mongoose/docs/discriminators.html">
+            
+                    
+                    discriminators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.12" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/blob/master/CONTRIBUTING.md">
+            
+                    
+                    contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.13" data-path="../../../mongoose/docs/harmony.html">
+            
+                <a href="../../../mongoose/docs/harmony.html">
+            
+                    
+                    ES2015 integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.14" data-path="../../../mongoose/docs/browser.html">
+            
+                <a href="../../../mongoose/docs/browser.html">
+            
+                    
+                    schemas in the browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.15" data-path="../../../mongoose/docs/compatibility.html">
+            
+                <a href="../../../mongoose/docs/compatibility.html">
+            
+                    
+                    MongoDB Version Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.16" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.6-Release-Notes">
+            
+                    
+                    3.6 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.17" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.8-Release-Notes">
+            
+                    
+                    3.8 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.18" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/4.0-Release-Notes">
+            
+                    
+                    4.0 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.3" data-path="../../../mongoose/docs/API.html">
+            
+                <a href="../../../mongoose/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.4" data-path="../../../mongoose/docs/faq.html">
+            
+                <a href="../../../mongoose/docs/faq.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.5" data-path="../../../mongoose/docs/prior.html">
+            
+                <a href="../../../mongoose/docs/prior.html">
+            
+                    
+                    之前的版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../../../passport/">
+            
+                <a href="../../../passport/">
+            
+                    
+                    passport
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="../../../node-formidable/">
+            
+                <a href="../../../node-formidable/">
+            
+                    
+                    node-formidable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="../../../pm2/">
+            
+                <a href="../../../pm2/">
+            
+                    
+                    pm2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >express-winston</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#express-winston"><b>1. </b>express-winston</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;"><b>1.1. </b>&#x5B89;&#x88C5;</a></li><li><span class="title-icon "></span><a href="#&#x7528;&#x6CD5;"><b>1.2. </b>&#x7528;&#x6CD5;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8BF7;&#x6C42;&#x8BB0;&#x5F55;"><b>1.2.1. </b>&#x8BF7;&#x6C42;&#x8BB0;&#x5F55;</a></li><li><span class="title-icon "></span><a href="#&#x9519;&#x8BEF;&#x65E5;&#x5FD7;"><b>1.2.2. </b>&#x9519;&#x8BEF;&#x65E5;&#x5FD7;</a></li></ul><li><span class="title-icon "></span><a href="#&#x793A;&#x4F8B;"><b>1.3. </b>&#x793A;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#&#x5168;&#x5C40;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;"><b>1.4. </b>&#x5168;&#x5C40;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;</a></li><li><span class="title-icon "></span><a href="#&#x6307;&#x5B9A;&#x8DEF;&#x7531;&#x7684;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;"><b>1.5. </b>&#x6307;&#x5B9A;&#x8DEF;&#x7531;&#x7684;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;</a></li><li><span class="title-icon "></span><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x72B6;&#x6001;&#x7B49;&#x7EA7;"><b>1.6. </b>&#x81EA;&#x5B9A;&#x4E49;&#x72B6;&#x6001;&#x7B49;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#&#x52A8;&#x6001;&#x72B6;&#x6001;&#x7B49;&#x7EA7;"><b>1.7. </b>&#x52A8;&#x6001;&#x72B6;&#x6001;&#x7B49;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#&#x6765;&#x81EA;&#x8BF7;&#x6C42;&#x6216;&#x54CD;&#x5E94;&#x7684;&#x52A8;&#x6001;&#x5143;&#x6570;&#x636E;"><b>1.8. </b>&#x6765;&#x81EA;&#x8BF7;&#x6C42;&#x6216;&#x54CD;&#x5E94;&#x7684;&#x52A8;&#x6001;&#x5143;&#x6570;&#x636E;</a></li><li><span class="title-icon "></span><a href="#&#x6D4B;&#x8BD5;"><b>1.9. </b>&#x6D4B;&#x8BD5;</a></li><li><span class="title-icon "></span><a href="#&#x95EE;&#x9898;&#x548C;&#x534F;&#x4F5C;"><b>1.10. </b>&#x95EE;&#x9898;&#x548C;&#x534F;&#x4F5C;</a></li><li><span class="title-icon "></span><a href="#&#x8D21;&#x732E;&#x8005;"><b>1.11. </b>&#x8D21;&#x732E;&#x8005;</a></li><li><span class="title-icon "></span><a href="#mit-license"><b>1.12. </b>MIT License</a></li></ul></ul></div><a href="#express-winston" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="express-winston"><a name="express-winston" class="anchor-navigation-ex-anchor" href="#express-winston"><i class="fa fa-link" aria-hidden="true"></i></a>1. express-winston</h1>
+<p><a href="https://www.npmjs.com/package/express-winston" target="_blank"><img src="https://img.shields.io/npm/dm/express-winston.svg" alt="Monthly Downloads"></a> <a href="http://travis-ci.org/bithavoc/express-winston" target="_blank"><img src="https://secure.travis-ci.org/bithavoc/express-winston.png" alt="Build Status"></a></p>
+<blockquote>
+<p><a href="https://github.com/winstonjs/winston" target="_blank">winston</a> middleware for express.js</p>
+</blockquote>
+<h2 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5B89;&#x88C5;</h2>
+<pre class="language-"><code>npm install winston express-winston
+</code></pre><p>(&#x652F;&#x6301; node &gt;= 0.10)</p>
+<h2 id="&#x7528;&#x6CD5;"><a name="&#x7528;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x7528;&#x6CD5;</h2>
+<p>express-winston &#x4E3A;&#x60A8;&#x7684; express.js &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x8BF7;&#x6C42;&#x548C;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x63D0;&#x4F9B;&#x4E2D;&#x95F4;&#x4EF6;&#x3002;&#x5B83;&#x4F7F;&#x7528; &#x201C;&#x767D;&#x540D;&#x5355;&#x201D; &#x4ECE;&#x8BF7;&#x6C42;&#x548C; (new in 0.2.x) &#x54CD;&#x5E94;&#x5BF9;&#x8C61;&#x4E2D;&#x9009;&#x62E9;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x8981;&#x4F7F;&#x7528; express-winston&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x5C06;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x6DFB;&#x52A0;&#x5230;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF1A;</p>
+<p>In <code>package.json</code>:</p>
+<pre class="language-"><code>{
+  &quot;dependencies&quot;: {
+    &quot;...&quot;: &quot;...&quot;,
+    &quot;winston&quot;: &quot;^2.0.0&quot;,
+    &quot;express-winston&quot;: &quot;^2.0.0&quot;,
+    &quot;...&quot;: &quot;...&quot;
+  }
+}
+</code></pre><p>&#x5728; <code>server.js</code> &#x4E2D;(&#x6216;&#x4EFB;&#x4F55;&#x4F60;&#x9700;&#x8981;&#x7684;&#x5730;&#x65B9;):</p>
+<pre class="language-"><code>var winston = require(&apos;winston&apos;),
+    expressWinston = require(&apos;express-winston&apos;);
+</code></pre><h3 id="&#x8BF7;&#x6C42;&#x8BB0;&#x5F55;"><a name="&#x8BF7;&#x6C42;&#x8BB0;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x8BF7;&#x6C42;&#x8BB0;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x8BF7;&#x6C42;&#x8BB0;&#x5F55;</h3>
+<p>&#x4F7F;&#x7528; <code>expressWinston.logger(options)</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;&#x6765;&#x8BB0;&#x5F55;&#x4F60;&#x7684; HTTP &#x8BF7;&#x6C42;&#x3002;</p>
+<pre class="language-"><code class="lang-js">    <span class="token keyword">var</span> router <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;./my-express-router&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>expressWinston<span class="token punctuation">.</span><span class="token function">logger</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      transports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">winston<span class="token punctuation">.</span>transports<span class="token punctuation">.</span>Console</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          json<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          colorize<span class="token punctuation">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      meta<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x53EF;&#x9009;: &#x63A7;&#x5236;&#x662F;&#x5426;&#x8981;&#x8BB0;&#x5F55;&#x6709;&#x5173;&#x8BF7;&#x6C42;&#x7684;&#x5143;&#x6570;&#x636E; (&#x9ED8;&#x8BA4;&#x4E3A; true)</span>
+      msg<span class="token punctuation">:</span> <span class="token string">&quot;HTTP {{req.method}} {{req.url}}&quot;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x53EF;&#x9009;: &#x5B9A;&#x5236;&#x9ED8;&#x8BA4;&#x65E5;&#x5FD7;&#x6D88;&#x606F;. &#x4F8B;&#x5982; &quot;{{res.statusCode}} {{req.method}} {{res.responseTime}}ms {{req.url}}&quot;</span>
+      expressFormat<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684; Express/morgan &#x8BF7;&#x6C42;&#x683C;&#x5F0F;&#x5316;&#x3002;&#x5982;&#x679C;&#x4E3A; true &#x5219;&#x542F;&#x7528;&#xFF0C;&#x5C06;&#x8986;&#x76D6;&#x4EFB;&#x4F55;&#x6D88;&#x606F;&#x3002;&#x53EA;&#x4F1A;&#x8F93;&#x51FA; colorize &#x8BBE;&#x7F6E;&#x4E3A; true&#x7684;&#x989C;&#x8272;</span>
+      colorize<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// &#x4F7F;&#x7528; Express/morgan &#x989C;&#x8272;&#x8C03;&#x8272;&#x677F;&#x4E3A;&#x6587;&#x672C;&#x548C;&#x72B6;&#x6001;&#x7801;&#x7740;&#x8272; (text: gray, status: &#x9ED8;&#x8BA4;&#x4E3A; green, 3XX cyan, 4XX yellow, 5XX red).</span>
+      ignoreRoute<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// &#x53EF;&#x9009;: &#x5141;&#x8BB8;&#x6839;&#x636E;&#x8BF7;&#x6C42; &#x548C;/&#x6216; &#x54CD;&#x5E94;&#x8DF3;&#x8FC7;&#x4E00;&#x4E9B;&#x65E5;&#x5FD7;&#x6D88;&#x606F;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// &#x6CE8;&#x610F;&#x8DEF;&#x7531;&#x5668;&#x5982;&#x4F55;&#x5728;&#x8BB0;&#x5F55;&#x5668;&#x4E4B;&#x540E;&#x3002;</span>
+</code></pre>
+<h4 id="&#x9009;&#x9879;"><a name="&#x9009;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x9009;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9009;&#x9879;" class="plugin-anchor" href="#&#x9009;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9009;&#x9879;</h4>
+<pre class="language-"><code class="lang-js">    transports<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>WinstonTransport<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// list of all winston transports instances to use.</span>
+    winstonInstance<span class="token punctuation">:</span> <span class="token operator">&lt;</span>WinstonLogger<span class="token operator">&gt;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// a winston logger instance. If this is provided the transports option is ignored.</span>
+    level<span class="token punctuation">:</span> String or <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> String<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// log level to use, the default is &quot;info&quot;. Assign a  function to dynamically set the level based on request and response, or a string to statically set it always at that level. statusLevels must be false for this setting to be used.</span>
+    msg<span class="token punctuation">:</span> String <span class="token comment" spellcheck="true">// customize the default logging message. E.g. &quot;{{res.statusCode}} {{req.method}} {{res.responseTime}}ms {{req.url}}&quot;, &quot;HTTP {{req.method}} {{req.url}}&quot;.</span>
+    expressFormat<span class="token punctuation">:</span> Boolean<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Use the default Express/morgan request formatting. Enabling this will override any msg if true. Will only output colors when colorize set to true</span>
+    colorize<span class="token punctuation">:</span> Boolean<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Color the text and status code, using the Express/morgan color palette (text: gray, status: default green, 3XX cyan, 4XX yellow, 5XX red).</span>
+    meta<span class="token punctuation">:</span> Boolean<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// control whether you want to log the meta data about the request (default to true).</span>
+    baseMeta<span class="token punctuation">:</span> Object<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// default meta data to be added to log, this will be merged with the meta data.</span>
+    metaField<span class="token punctuation">:</span> String<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// if defined, the meta data will be added in this field instead of the meta root object.</span>
+    statusLevels<span class="token punctuation">:</span> Boolean or Object <span class="token comment" spellcheck="true">// different HTTP status codes caused log messages to be logged at different levels (info/warn/error), the default is false. Use an object to control the levels various status codes are logged at. Using an object for statusLevels overrides any setting of options.level.</span>
+    ignoreRoute<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// A function to determine if logging is skipped, defaults to returning false. Called _before_ any later middleware.</span>
+    skip<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// A function to determine if logging is skipped, defaults to returning false. Called _after_ response has already been sent.</span>
+    requestFilter<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> propName<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> req<span class="token punctuation">[</span>propName<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// A function to filter/return request values, defaults to returning all values allowed by whitelist. If the function returns undefined, the key/value will not be included in the meta.</span>
+    responseFilter<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>res<span class="token punctuation">,</span> propName<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> res<span class="token punctuation">[</span>propName<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// A function to filter/return response values, defaults to returning all values allowed by whitelist. If the function returns undefined, the key/value will not be included in the meta.</span>
+    requestWhitelist<span class="token punctuation">:</span> <span class="token punctuation">[</span>String<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">// Array of request properties to log. Overrides global requestWhitelist for this instance</span>
+    responseWhitelist<span class="token punctuation">:</span> <span class="token punctuation">[</span>String<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">// Array of response properties to log. Overrides global responseWhitelist for this instance</span>
+    bodyWhitelist<span class="token punctuation">:</span> <span class="token punctuation">[</span>String<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">// Array of body properties to log. Overrides global bodyWhitelist for this instance</span>
+    bodyBlacklist<span class="token punctuation">:</span> <span class="token punctuation">[</span>String<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">// Array of body properties to omit from logs. Overrides global bodyBlacklist for this instance</span>
+    ignoredRoutes<span class="token punctuation">:</span> <span class="token punctuation">[</span>String<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">// Array of paths to ignore/skip logging. Overrides global ignoredRoutes for this instance</span>
+    dynamicMeta<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">[</span>Object<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// Extract additional meta data from request or response (typically req.user data if using passport). meta must be true for this function to be activated</span>
+</code></pre>
+<h3 id="&#x9519;&#x8BEF;&#x65E5;&#x5FD7;"><a name="&#x9519;&#x8BEF;&#x65E5;&#x5FD7;" class="anchor-navigation-ex-anchor" href="#&#x9519;&#x8BEF;&#x65E5;&#x5FD7;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. &#x9519;&#x8BEF;&#x65E5;&#x5FD7;</h3>
+<p>&#x4F7F;&#x7528; <code>expressWinston.errorLogger(options)</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;&#x6765;&#x8BB0;&#x5F55;&#x7BA1;&#x9053;&#xFF08;pipeline&#xFF09;&#x9519;&#x8BEF;&#x3002;</p>
+<pre class="language-"><code class="lang-js">    <span class="token keyword">var</span> router <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;./my-express-router&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// &#x8BF7;&#x6CE8;&#x610F;&#x8DEF;&#x7531;&#x5668;&#x5728;&#x524D;&#x9762;</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>expressWinston<span class="token punctuation">.</span><span class="token function">errorLogger</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      transports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">winston<span class="token punctuation">.</span>transports<span class="token punctuation">.</span>Console</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          json<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          colorize<span class="token punctuation">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x5668;&#x9700;&#x8981;&#x5728; express &#x8DEF;&#x7531;&#x5668;(<code>app.router)</code>)&#x4E4B;&#x540E;&#x6DFB;&#x52A0;&#xFF0C;&#x5E76;&#x5728;&#x60A8;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x7A0B;&#x5E8F;(<code>express.handler</code>)&#x4E4B;&#x524D;&#x6DFB;&#x52A0;&#x3002;&#x7531;&#x4E8E; express-winston &#x53EA;&#x4F1A;&#x8BB0;&#x5F55;&#x9519;&#x8BEF;&#x800C;&#x4E0D;<strong>&#x5904;&#x7406;</strong>&#x5B83;&#x4EEC;&#xFF0C;&#x6240;&#x4EE5;&#x60A8;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x60A8;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#xFF0C;&#x5982; <code>express.handler</code>&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x5728;&#x60A8;&#x7684;&#x4EFB;&#x4F55;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x4E4B;&#x524D;&#x5C06;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x5668;&#x653E;&#x5728;&#x524D;&#x9762;&#x3002;</p>
+<h4 id="&#x9009;&#x9879;_1"><a name="&#x9009;&#x9879;_1" class="anchor-navigation-ex-anchor" href="#&#x9009;&#x9879;_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9009;&#x9879;" class="plugin-anchor" href="#&#x9009;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9009;&#x9879;</h4>
+<pre class="language-"><code class="lang-js">    transports<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>WinstonTransport<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// list of all winston transports instances to use.</span>
+    winstonInstance<span class="token punctuation">:</span> <span class="token operator">&lt;</span>WinstonLogger<span class="token operator">&gt;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// a winston logger instance. If this is provided the transports option is ignored</span>
+    msg<span class="token punctuation">:</span> String <span class="token comment" spellcheck="true">// customize the default logging message. E.g. &quot;{{err.message}} {{res.statusCode}} {{req.method}}&quot;.</span>
+    baseMeta<span class="token punctuation">:</span> Object<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// default meta data to be added to log, this will be merged with the error data.</span>
+    metaField<span class="token punctuation">:</span> String<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// if defined, the meta data will be added in this field instead of the meta root object.</span>
+    requestFilter<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> propName<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> req<span class="token punctuation">[</span>propName<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// A function to filter/return request values, defaults to returning all values allowed by whitelist. If the function returns undefined, the key/value will not be included in the meta.</span>
+    requestWhitelist<span class="token punctuation">:</span> <span class="token punctuation">[</span>String<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">// Array of request properties to log. Overrides global requestWhitelist for this instance</span>
+    level<span class="token punctuation">:</span> String or <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> err<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> String<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token comment" spellcheck="true">// custom log level for errors (default is &apos;error&apos;). Assign a function to dynamically set the log level based on request, response, and the exact error.</span>
+    dynamicMeta<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> err<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">[</span>Object<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// Extract additional meta data from request or response (typically req.user data if using passport). meta must be true for this function to be activated</span>
+</code></pre>
+<p>&#x8981;&#x4F7F;&#x7528; winston &#x7684;&#x73B0;&#x6709;&#x4F20;&#x8F93;&#xFF0C;&#x5C06; <code>transports</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>winston.default.transports</code> &#x5BF9;&#x8C61;&#x7684;&#x503C;&#xFF08;&#x952E;-&#x503C;&#xFF09;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <a href="https://github.com/jashkenas/underscore" target="_blank">underscore.js</a> &#x6765;&#x5B8C;&#x6210;&#xFF1A;<code>transports&#xFF1A;_.values&#xFF08;winston.default.transports&#xFF09;</code>&#x3002;</p>
+<p>&#x6216;&#x8005;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x5728;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x4F7F;&#x7528; winston &#x8BB0;&#x5F55;&#x5668;&#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x4E14;&#x5DF2;&#x7ECF;&#x8BBE;&#x7F6E;&#x4E86; <code>levels</code> &#x548C; <code>transports</code>&#xFF0C;&#x5219;&#x4F7F;&#x7528; <code>winstonInstance</code> &#x9009;&#x9879;&#x5C06;&#x8BE5;&#x5B9E;&#x4F8B;&#x4F20;&#x9012;&#x5230; expressWinston&#x3002; &#x7136;&#x540E; <code>transports</code> &#x9009;&#x9879;&#x88AB;&#x5FFD;&#x7565;&#x3002;</p>
+<h2 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x793A;&#x4F8B;</h2>
+<pre class="language-"><code class="lang-js">    <span class="token keyword">var</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;express&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> expressWinston <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;express-winston&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> winston <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;winston&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// for transports.Console</span>
+    <span class="token keyword">var</span> app <span class="token operator">=</span> module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">bodyParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">methodOverride</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// Let&apos;s make our express `Router` first.</span>
+    <span class="token keyword">var</span> router <span class="token operator">=</span> express<span class="token punctuation">.</span><span class="token function">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;/error&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// here we cause an error in the pipeline so we see express-winston in action.</span>
+      <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">&quot;This is an error and it should be logged to the console&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      res<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&apos;This is a normal request, it should be logged to the console too&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// express-winston logger makes sense BEFORE the router.</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>expressWinston<span class="token punctuation">.</span><span class="token function">logger</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      transports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">winston<span class="token punctuation">.</span>transports<span class="token punctuation">.</span>Console</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          json<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          colorize<span class="token punctuation">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// Now we can tell the app to use our routing code:</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// express-winston errorLogger makes sense AFTER the router.</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>expressWinston<span class="token punctuation">.</span><span class="token function">errorLogger</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      transports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">winston<span class="token punctuation">.</span>transports<span class="token punctuation">.</span>Console</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          json<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          colorize<span class="token punctuation">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// Optionally you can include your custom error handler after the logging.</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">errorLogger</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      dumpExceptions<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      showStack<span class="token punctuation">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;express-winston demo listening on port %d in %s mode&quot;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">address</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>port<span class="token punctuation">,</span> app<span class="token punctuation">.</span>settings<span class="token punctuation">.</span>env<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x6D4F;&#x89C8; <code>/</code> &#x4F1A;&#x770B;&#x5230;&#x50CF;&#x8FD9;&#x6837;&#x7684;&#x5E38;&#x89C4; HTTP &#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#xFF1A;</p>
+<pre class="language-"><code>    {
+      &quot;req&quot;: {
+        &quot;httpVersion&quot;: &quot;1.1&quot;,
+        &quot;headers&quot;: {
+          &quot;host&quot;: &quot;localhost:3000&quot;,
+          &quot;connection&quot;: &quot;keep-alive&quot;,
+          &quot;accept&quot;: &quot;*/*&quot;,
+          &quot;user-agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11&quot;,
+          &quot;accept-encoding&quot;: &quot;gzip,deflate,sdch&quot;,
+          &quot;accept-language&quot;: &quot;en-US,en;q=0.8,es-419;q=0.6,es;q=0.4&quot;,
+          &quot;accept-charset&quot;: &quot;ISO-8859-1,utf-8;q=0.7,*;q=0.3&quot;,
+          &quot;cookie&quot;: &quot;connect.sid=nGspCCSzH1qxwNTWYAoexI23.seE%2B6Whmcwd&quot;
+        },
+        &quot;url&quot;: &quot;/&quot;,
+        &quot;method&quot;: &quot;GET&quot;,
+        &quot;originalUrl&quot;: &quot;/&quot;,
+        &quot;query&quot;: {}
+      },
+      &quot;res&quot;: {
+        &quot;statusCode&quot;: 200
+      },
+      &quot;responseTime&quot; : 12,
+      &quot;level&quot;: &quot;info&quot;,
+      &quot;message&quot;: &quot;HTTP GET /favicon.ico&quot;
+    }
+</code></pre><p>&#x6D4F;&#x89C8; <code>/error</code> &#x4F1A;&#x5411;&#x4F60;&#x5C55;&#x793A; express-winston &#x5982;&#x4F55;&#x5904;&#x7406;&#x548C;&#x8BB0;&#x5F55; express &#x7BA1;&#x9053;&#x4E2D;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre class="language-"><code>    {
+      &quot;date&quot;: &quot;Thu Jul 19 2012 23:39:44 GMT-0500 (COT)&quot;,
+      &quot;process&quot;: {
+        &quot;pid&quot;: 35719,
+        &quot;uid&quot;: 501,
+        &quot;gid&quot;: 20,
+        &quot;cwd&quot;: &quot;/Users/thepumpkin/Projects/testExpressWinston&quot;,
+        &quot;execPath&quot;: &quot;/usr/local/bin/node&quot;,
+        &quot;version&quot;: &quot;v0.6.18&quot;,
+        &quot;argv&quot;: [
+          &quot;node&quot;,
+          &quot;/Users/thepumpkin/Projects/testExpressWinston/app.js&quot;
+        ],
+        &quot;memoryUsage&quot;: {
+          &quot;rss&quot;: 14749696,
+          &quot;heapTotal&quot;: 7033664,
+          &quot;heapUsed&quot;: 5213280
+        }
+      },
+      &quot;os&quot;: {
+        &quot;loadavg&quot;: [
+          1.95068359375,
+          1.5166015625,
+          1.38671875
+        ],
+        &quot;uptime&quot;: 498086
+      },
+      &quot;trace&quot;: [
+        ...,
+        {
+          &quot;column&quot;: 3,
+          &quot;file&quot;: &quot;Object].log (/Users/thepumpkin/Projects/testExpressWinston/node_modules/winston/lib/winston/transports/console.js&quot;,
+          &quot;function&quot;: &quot;[object&quot;,
+          &quot;line&quot;: 87,
+          &quot;method&quot;: null,
+          &quot;native&quot;: false
+        }
+      ],
+      &quot;stack&quot;: [
+        &quot;Error: This is an error and it should be logged to the console&quot;,
+        &quot;    at /Users/thepumpkin/Projects/testExpressWinston/app.js:39:15&quot;,
+        &quot;    at callbacks (/Users/thepumpkin/Projects/testExpressWinston/node_modules/express/lib/router/index.js:272:11)&quot;,
+        &quot;    at param (/Users/thepumpkin/Projects/testExpressWinston/node_modules/express/lib/router/index.js:246:11)&quot;,
+        &quot;    at pass (/Users/thepumpkin/Projects/testExpressWinston/node_modules/express/lib/router/index.js:253:5)&quot;,
+        &quot;    at Router._dispatch (/Users/thepumpkin/Projects/testExpressWinston/node_modules/express/lib/router/index.js:280:4)&quot;,
+        &quot;    at Object.handle (/Users/thepumpkin/Projects/testExpressWinston/node_modules/express/lib/router/index.js:45:10)&quot;,
+        &quot;    at next (/Users/thepumpkin/Projects/testExpressWinston/node_modules/express/node_modules/connect/lib/http.js:204:15)&quot;,
+        &quot;    at done (/Users/thepumpkin/Dropbox/Projects/express-winston/index.js:91:14)&quot;,
+        &quot;    at /Users/thepumpkin/Dropbox/Projects/express-winston/node_modules/async/lib/async.js:94:25&quot;,
+        &quot;    at [object Object].log (/Users/thepumpkin/Projects/testExpressWinston/node_modules/winston/lib/winston/transports/console.js:87:3)&quot;
+      ],
+      &quot;req&quot;: {
+        &quot;httpVersion&quot;: &quot;1.1&quot;,
+        &quot;headers&quot;: {
+          &quot;host&quot;: &quot;localhost:3000&quot;,
+          &quot;connection&quot;: &quot;keep-alive&quot;,
+          &quot;cache-control&quot;: &quot;max-age=0&quot;,
+          &quot;user-agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11&quot;,
+          &quot;accept&quot;: &quot;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&quot;,
+          &quot;accept-encoding&quot;: &quot;gzip,deflate,sdch&quot;,
+          &quot;accept-language&quot;: &quot;en-US,en;q=0.8,es-419;q=0.6,es;q=0.4&quot;,
+          &quot;accept-charset&quot;: &quot;ISO-8859-1,utf-8;q=0.7,*;q=0.3&quot;,
+          &quot;cookie&quot;: &quot;connect.sid=nGspCCSzH1qxwNTWYAoexI23.seE%2B6WhmcwdzFEjqhMDuIIl3mAUY7dT4vn%2BkWvRPhZc&quot;
+        },
+        &quot;url&quot;: &quot;/error&quot;,
+        &quot;method&quot;: &quot;GET&quot;,
+        &quot;originalUrl&quot;: &quot;/error&quot;,
+        &quot;query&quot;: {}
+      },
+      &quot;level&quot;: &quot;error&quot;,
+      &quot;message&quot;: &quot;middlewareError&quot;
+    }
+</code></pre><h2 id="&#x5168;&#x5C40;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;"><a name="&#x5168;&#x5C40;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;" class="anchor-navigation-ex-anchor" href="#&#x5168;&#x5C40;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x5168;&#x5C40;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;</h2>
+<p>Express-winston &#x66B4;&#x9732;&#x4E86;&#x4E09;&#x4E2A;&#x767D;&#x540D;&#x5355;&#xFF0C;&#x63A7;&#x5236;&#x4E86;&#x88AB;&#x8BB0;&#x5F55;&#x7684; <code>request</code>, <code>body</code>, &#x548C; `response &#x7684;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>requestWhitelist</code></li>
+<li><code>bodyWhitelist</code>, <code>bodyBlacklist</code></li>
+<li><code>responseWhitelist</code></li>
+</ul>
+<p>&#x4F8B;&#x5982;, <code>requestWhitelist</code> &#x9ED8;&#x8BA4;&#x4E3A;:</p>
+<pre class="language-"><code>[&apos;url&apos;, &apos;headers&apos;, &apos;method&apos;, &apos;httpVersion&apos;, &apos;originalUrl&apos;, &apos;query&apos;];
+</code></pre><p>&#x53EA;&#x6709;&#x4E0A;&#x9762;&#x8FD9;&#x4E9B;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x624D;&#x4F1A;&#x88AB;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x3002;&#x6839;&#x636E;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x6216;&#x4FEE;&#x6539;&#x767D;&#x540D;&#x5355;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x8981;&#x5305;&#x542B;&#x4F1A;&#x8BDD;&#x5C5E;&#x6027;(&#x4F1A;&#x8BDD;&#x6570;&#x636E;)&#xFF0C;&#x5728; logger &#x8BBE;&#x7F6E;&#x8FC7;&#x7A0B;&#x4E2D;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;:</p>
+<pre class="language-"><code class="lang-js">expressWinston<span class="token punctuation">.</span>requestWhitelist<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&apos;session&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x9ED1;&#x540D;&#x5355;&#x4F1A;&#x6392;&#x9664;&#x67D0;&#x4E9B;&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x4FDD;&#x7559;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x3002;&#x5982;&#x679C;&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x4E86; <code>bodyWhitelist</code> &#x548C; <code>bodyBlacklist</code> &#xFF0C;&#x90A3;&#x4E48;&#x88AB;&#x9ED1;&#x540D;&#x5355;&#x6392;&#x9664;&#x7684;&#x5C5E;&#x6027;&#x5373;&#x4F7F;&#x51FA;&#x73B0;&#x5728;&#x767D;&#x540D;&#x5355;&#x91CC;&#x7167;&#x6837;&#x8FD8;&#x662F;&#x4F1A;&#x88AB;&#x6392;&#x9664;&#x3002;</p>
+<p>&#x793A;&#x4F8B;:</p>
+<pre class="language-"><code class="lang-js">expressWinston<span class="token punctuation">.</span>bodyBlacklist<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&apos;secretid&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;secretproperty&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x8BB0;&#x5F55;&#x6574;&#x4E2A;&#x8BF7;&#x6C42;&#x548C;/&#x6216;&#x54CD;&#x5E94;&#x4E3B;&#x4F53;:</p>
+<pre class="language-"><code class="lang-js">  expressWinston<span class="token punctuation">.</span>requestWhitelist<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&apos;body&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  expressWinston<span class="token punctuation">.</span>responseWhitelist<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&apos;body&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="&#x6307;&#x5B9A;&#x8DEF;&#x7531;&#x7684;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;"><a name="&#x6307;&#x5B9A;&#x8DEF;&#x7531;&#x7684;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;" class="anchor-navigation-ex-anchor" href="#&#x6307;&#x5B9A;&#x8DEF;&#x7531;&#x7684;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x6307;&#x5B9A;&#x8DEF;&#x7531;&#x7684;&#x767D;&#x540D;&#x5355;&#x548C;&#x9ED1;&#x540D;&#x5355;</h2>
+<p>&#x7248;&#x672C; 0.2.x &#x4E2D;&#x65B0;&#x589E;&#x7684;&#x529F;&#x80FD;&#x662F;&#x5728;&#x8DEF;&#x7531;&#x4E2D;&#x6DFB;&#x52A0;&#x767D;&#x540D;&#x5355;&#x5143;&#x7D20;&#x3002; express-winston &#x6DFB;&#x52A0;&#x4E00;&#x4E2A; <code>_routeWhitelists</code> &#x5BF9;&#x8C61;&#x5230; <code>req</code>uest&#xFF0C;&#x5305;&#x542B;<code>.body</code>&#xFF0C;<code>.req</code> &#x548C; <code>.res</code> &#x5C5E;&#x6027;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4E2D;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x5728;&#x65E5;&#x5FD7;&#x4E2D;&#x7684;&#x201C;&#x767D;&#x540D;&#x5355;&#x201D;&#x53C2;&#x6570;&#x6570;&#x7EC4;&#xFF0C; &#x660E;&#x786E;&#x5230;&#x6709;&#x95EE;&#x9898;&#x7684;&#x8DEF;&#x7531;&#xFF1A;</p>
+<pre class="language-"><code class="lang-js">    router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">&apos;/user/register&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      req<span class="token punctuation">.</span>_routeWhitelists<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;username&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;email&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;age&apos;</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// But not &apos;password&apos; or &apos;confirm-password&apos; or &apos;top-secret&apos;</span>
+      req<span class="token punctuation">.</span>_routeWhitelists<span class="token punctuation">.</span>res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;_headers&apos;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Post to <code>/user/register</code> would give you something like the following:</p>
+<pre class="language-"><code>    {
+      &quot;req&quot;: {
+        &quot;httpVersion&quot;: &quot;1.1&quot;,
+        &quot;headers&quot;: {
+          &quot;host&quot;: &quot;localhost:3000&quot;,
+          &quot;connection&quot;: &quot;keep-alive&quot;,
+          &quot;accept&quot;: &quot;*/*&quot;,
+          &quot;user-agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11&quot;,
+          &quot;accept-encoding&quot;: &quot;gzip,deflate,sdch&quot;,
+          &quot;accept-language&quot;: &quot;en-US,en;q=0.8,es-419;q=0.6,es;q=0.4&quot;,
+          &quot;accept-charset&quot;: &quot;ISO-8859-1,utf-8;q=0.7,*;q=0.3&quot;,
+          &quot;cookie&quot;: &quot;connect.sid=nGspCCSzH1qxwNTWYAoexI23.seE%2B6Whmcwd&quot;
+        },
+        &quot;url&quot;: &quot;/&quot;,
+        &quot;method&quot;: &quot;GET&quot;,
+        &quot;originalUrl&quot;: &quot;/&quot;,
+        &quot;query&quot;: {},
+        &quot;body&quot;: {
+          &quot;username&quot;: &quot;foo&quot;,
+          &quot;email&quot;: &quot;foo@bar.com&quot;,
+          &quot;age&quot;: &quot;72&quot;
+        }
+      },
+      &quot;res&quot;: {
+        &quot;statusCode&quot;: 200
+      },
+      &quot;responseTime&quot; : 12,
+      &quot;level&quot;: &quot;info&quot;,
+      &quot;message&quot;: &quot;HTTP GET /favicon.ico&quot;
+    }
+</code></pre><p>&#x9ED1;&#x540D;&#x5355;&#x4EC5;&#x652F;&#x6301; <code>body</code> &#x5C5E;&#x6027;&#x3002;</p>
+<pre class="language-"><code class="lang-js">    router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">&apos;/user/register&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      req<span class="token punctuation">.</span>_routeWhitelists<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;username&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;email&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;age&apos;</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// But not &apos;password&apos; or &apos;confirm-password&apos; or &apos;top-secret&apos;</span>
+      req<span class="token punctuation">.</span>_routeBlacklists<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;username&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;password&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;confirm-password&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;top-secret&apos;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      req<span class="token punctuation">.</span>_routeWhitelists<span class="token punctuation">.</span>res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;_headers&apos;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>If both <code>req._bodyWhitelist.body</code> and <code>req._bodyBlacklist.body</code> are set the result will be the white listed properties
+excluding any black listed ones. In the above example, only &apos;email&apos; and &apos;age&apos; would be included.</p>
+<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x72B6;&#x6001;&#x7B49;&#x7EA7;"><a name="&#x81EA;&#x5B9A;&#x4E49;&#x72B6;&#x6001;&#x7B49;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x72B6;&#x6001;&#x7B49;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x81EA;&#x5B9A;&#x4E49;&#x72B6;&#x6001;&#x7B49;&#x7EA7;</h2>
+<p>&#x5982;&#x679C;&#x60A8;&#x5C06; <code>statusLevels</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>true</code> &#xFF0C;&#x90A3;&#x4E48; express-winston &#x5C06;&#x5728; <code>info</code> &#x7EA7;&#x522B;&#x4E0A;&#x8BB0;&#x5F55;&#x4E0B; 400 &#x4E2A;&#x54CD;&#x5E94;&#xFF0C;&#x5C06; 500 &#x4E2A;&#x54CD;&#x5E94;&#x4F5C;&#x4E3A;&#x8B66;&#x544A;&#xFF0C;&#x5E76;&#x5C06; 500 + &#x4E2A;&#x54CD;&#x5E94;&#x4F5C;&#x4E3A;&#x9519;&#x8BEF;&#x3002;&#x8981;&#x66F4;&#x6539;&#x8FD9;&#x4E9B;&#x7EA7;&#x522B;&#xFF0C;&#x8BF7;&#x6307;&#x5B9A;&#x4EE5;&#x4E0B;&#x5BF9;&#x8C61;</p>
+<pre class="language-"><code class="lang-json">  <span class="token property">&quot;statusLevels&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;success&quot;</span><span class="token operator">:</span> <span class="token string">&quot;debug&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;warn&quot;</span><span class="token operator">:</span> <span class="token string">&quot;debug&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token string">&quot;info&quot;</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x52A8;&#x6001;&#x72B6;&#x6001;&#x7B49;&#x7EA7;"><a name="&#x52A8;&#x6001;&#x72B6;&#x6001;&#x7B49;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#&#x52A8;&#x6001;&#x72B6;&#x6001;&#x7B49;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. &#x52A8;&#x6001;&#x72B6;&#x6001;&#x7B49;&#x7EA7;</h2>
+<p>&#x5982;&#x679C;&#x60A8;&#x5C06; <code>statusLevels</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>false</code>&#xFF0C;&#x5E76;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x4E3A; <code>level</code>&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x53EF;&#x4EE5;&#x4E3A;&#x4EFB;&#x4F55;&#x573A;&#x666F;&#x5B9A;&#x5236;&#x65E5;&#x5FD7;&#x7EA7;&#x522B;&#x3002;</p>
+<pre class="language-"><code class="lang-js">  statusLevels<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token comment" spellcheck="true">// default value</span>
+  level<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> level <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>statusCode <span class="token operator">&gt;=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> level <span class="token operator">=</span> <span class="token string">&quot;info&quot;</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>statusCode <span class="token operator">&gt;=</span> <span class="token number">400</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> level <span class="token operator">=</span> <span class="token string">&quot;warn&quot;</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>statusCode <span class="token operator">&gt;=</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> level <span class="token operator">=</span> <span class="token string">&quot;error&quot;</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// Ops is worried about hacking attempts so make Unauthorized and Forbidden critical</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>statusCode <span class="token operator">==</span> <span class="token number">401</span> <span class="token operator">||</span> res<span class="token punctuation">.</span>statusCode <span class="token operator">==</span> <span class="token number">403</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> level <span class="token operator">=</span> <span class="token string">&quot;critical&quot;</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// No one should be using the old path, so always warn for those</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token string">&quot;/v1&quot;</span> <span class="token operator">&amp;&amp;</span> level <span class="token operator">===</span> <span class="token string">&quot;info&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> level <span class="token operator">=</span> <span class="token string">&quot;warn&quot;</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> level<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x6765;&#x81EA;&#x8BF7;&#x6C42;&#x6216;&#x54CD;&#x5E94;&#x7684;&#x52A8;&#x6001;&#x5143;&#x6570;&#x636E;"><a name="&#x6765;&#x81EA;&#x8BF7;&#x6C42;&#x6216;&#x54CD;&#x5E94;&#x7684;&#x52A8;&#x6001;&#x5143;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x6765;&#x81EA;&#x8BF7;&#x6C42;&#x6216;&#x54CD;&#x5E94;&#x7684;&#x52A8;&#x6001;&#x5143;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. &#x6765;&#x81EA;&#x8BF7;&#x6C42;&#x6216;&#x54CD;&#x5E94;&#x7684;&#x52A8;&#x6001;&#x5143;&#x6570;&#x636E;</h2>
+<p>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86; <code>dynamicMeta</code> &#x51FD;&#x6570;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4ECE;&#x8BF7;&#x6C42;&#x6216;&#x54CD;&#x5E94;&#x5BF9;&#x8C61;&#x4E2D;&#x63D0;&#x53D6;&#x5176;&#x4ED6;&#x5143;&#x6570;&#x636E;&#x5B57;&#x6BB5;&#x3002;
+&#x8BE5;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x9009;&#x62E9;&#x8BF7;&#x6C42;&#x6216;&#x54CD;&#x5E94;&#x4F53;&#x4E2D;&#x7684;&#x76F8;&#x5173;&#x5143;&#x7D20;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x5C06;&#x5B83;&#x4EEC;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6574;&#x4F53;&#x8FDB;&#x884C;&#x8BB0;&#x5F55;&#xFF0C;&#x6216;&#x8005;&#x50CF;&#x7528;&#x6237;&#x63D0;&#x51FA;&#x8BF7;&#x6C42;&#x7684;&#x90A3;&#x6837;&#x63D0;&#x53D6;&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x3002; &#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x8BB0;&#x5F55;&#x4E86; Passport &#x8BA4;&#x8BC1;&#x4E2D;&#x95F4;&#x4EF6;&#x5206;&#x914D;&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;&#x89D2;&#x8272;&#x3002;</p>
+<pre class="language-"><code class="lang-js">   meta<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+   dynamicMeta<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> <span class="token punctuation">{</span>
+       user<span class="token punctuation">:</span> req<span class="token punctuation">.</span>user <span class="token operator">?</span> req<span class="token punctuation">.</span>user<span class="token punctuation">.</span>username <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+       role<span class="token punctuation">:</span> req<span class="token punctuation">.</span>user <span class="token operator">?</span> req<span class="token punctuation">.</span>user<span class="token punctuation">.</span>role <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+       <span class="token operator">...</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x6D4B;&#x8BD5;"><a name="&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. &#x6D4B;&#x8BD5;</h2>
+<p>&#x8FD0;&#x884C;&#x57FA;&#x672C;&#x7684; Mocha &#x6D4B;&#x8BD5;:</p>
+<pre class="language-"><code>npm test
+</code></pre><p>&#x8FD0;&#x884C; Travis-CI &#x6D4B;&#x8BD5; (&#x8FD9;&#x5C06;&#x5931;&#x8D25;&#xFF0C;&#x56E0;&#x4E3A; &lt; 100% &#x8986;&#x76D6;&#x7387;):</p>
+<pre class="language-"><code>npm run test-travis
+</code></pre><p>&#x751F;&#x6210; <code>coverage.html</code> &#x8986;&#x76D6;&#x7387;&#x62A5;&#x544A;&#xFF1A;</p>
+<pre class="language-"><code>npm run test-coverage
+</code></pre><h2 id="&#x95EE;&#x9898;&#x548C;&#x534F;&#x4F5C;"><a name="&#x95EE;&#x9898;&#x548C;&#x534F;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x95EE;&#x9898;&#x548C;&#x534F;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.10. &#x95EE;&#x9898;&#x548C;&#x534F;&#x4F5C;</h2>
+<p>&#x5982;&#x679C;&#x9047;&#x5230;&#x4EFB;&#x4F55;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x8BE5;&#x9879;&#x76EE; <a href="https://github.com/bithavoc/express-winston/issues" target="_blank">Issues &#x90E8;&#x5206;</a> &#x6765;&#x641C;&#x7D22;&#x6216;&#x53D1;&#x5E03;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#x3002;</p>
+<h2 id="&#x8D21;&#x732E;&#x8005;"><a name="&#x8D21;&#x732E;&#x8005;" class="anchor-navigation-ex-anchor" href="#&#x8D21;&#x732E;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>1.11. &#x8D21;&#x732E;&#x8005;</h2>
+<ul>
+<li><a href="https://github.com/bithavoc" target="_blank">Johan Hernandez</a> (<a href="https://github.com/bithavoc" target="_blank">https://github.com/bithavoc</a>)</li>
+<li><a href="https://github.com/jaclar" target="_blank">Lars Jacob</a> (<a href="https://github.com/jaclar" target="_blank">https://github.com/jaclar</a>)</li>
+<li><a href="https://github.com/floatingLomas" target="_blank">Jonathan Lomas</a> (<a href="https://github.com/floatingLomas" target="_blank">https://github.com/floatingLomas</a>)</li>
+<li><a href="https://github.com/rosston" target="_blank">Ross Brandes</a> (<a href="https://github.com/rosston" target="_blank">https://github.com/rosston</a>)</li>
+</ul>
+<p>Also see AUTHORS file, add yourself if you are missing.</p>
+<h2 id="mit-license"><a name="mit-license" class="anchor-navigation-ex-anchor" href="#mit-license"><i class="fa fa-link" aria-hidden="true"></i></a>1.12. MIT License</h2>
+<p>Copyright (c) 2012-2014 Bithavoc.io and Contributors - <a href="http://bithavoc.io" target="_blank">http://bithavoc.io</a></p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-01-01 23:03:19
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../express-formidable/" class="navigation navigation-prev " aria-label="Previous page: express-formidable">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../../connect/" class="navigation navigation-next " aria-label="Next page: connect">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"express-winston","level":"3.6.2.6","depth":3,"next":{"title":"connect","level":"3.7","depth":1,"path":"Library/connect/README.md","ref":"Library/connect/README.md","articles":[]},"previous":{"title":"express-formidable","level":"3.6.2.5","depth":3,"path":"Library/express/middleware/express-formidable/README.md","ref":"Library/express/middleware/express-formidable/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"acefull","theme":"tomorrow","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Node.js","language":"zh-hans","gitbook":"*","description":"Node.js 自我学习"},"file":{"path":"Library/express/middleware/express-winston/README.md","mtime":"2018-01-01T15:03:19.144Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-02T12:02:55.597Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

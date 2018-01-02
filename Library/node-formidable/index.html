@@ -1,0 +1,1650 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>node-formidable · Node.js</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../pm2/" />
+    
+    
+    <link rel="prev" href="../passport/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于 Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../GLOSSARY.html">
+            
+                <a href="../../GLOSSARY.html">
+            
+                    
+                    术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">参考文档</li>
+        
+        
+    
+
+    
+        
+        <li class="header">相关库</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node 相关库列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../nvm/">
+            
+                <a href="../nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../request/">
+            
+                <a href="../request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../async/">
+            
+                <a href="../async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../supervisor/">
+            
+                <a href="../supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../express/">
+            
+                <a href="../express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../express/docs/API.html">
+            
+                <a href="../express/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1.1" >
+            
+                <span>
+            
+                    
+                    express()
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.2" >
+            
+                <span>
+            
+                    
+                    Aplication
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.3" >
+            
+                <span>
+            
+                    
+                    Request
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.4" >
+            
+                <span>
+            
+                    
+                    Response
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.5" data-path="../express/docs/API.html">
+            
+                <a href="../express/docs/API.html#router">
+            
+                    
+                    Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../express/middleware/">
+            
+                <a href="../express/middleware/">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.2.1" data-path="../express/middleware/method-override/">
+            
+                <a href="../express/middleware/method-override/">
+            
+                    
+                    method-override
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.2" data-path="../express/middleware/session/">
+            
+                <a href="../express/middleware/session/">
+            
+                    
+                    express-session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.3" data-path="../express/middleware/connect-mongo/">
+            
+                <a href="../express/middleware/connect-mongo/">
+            
+                    
+                    connect-mongo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.4" data-path="../express/middleware/connect-flash/">
+            
+                <a href="../express/middleware/connect-flash/">
+            
+                    
+                    connect-flash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.5" data-path="../express/middleware/express-formidable/">
+            
+                <a href="../express/middleware/express-formidable/">
+            
+                    
+                    express-formidable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.6" data-path="../express/middleware/express-winston/">
+            
+                <a href="../express/middleware/express-winston/">
+            
+                    
+                    express-winston
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../connect/">
+            
+                <a href="../connect/">
+            
+                    
+                    connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../socket.io/">
+            
+                <a href="../socket.io/">
+            
+                    
+                    socket.io
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1" data-path="../socket.io/docs/">
+            
+                <a href="../socket.io/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1.1" data-path="../socket.io/docs/API.html">
+            
+                <a href="../socket.io/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.1.2" data-path="../socket.io/docs/emit.html">
+            
+                <a href="../socket.io/docs/emit.html">
+            
+                    
+                    emit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.2" data-path="../socket.io/library/REAME.html">
+            
+                <a href="../socket.io/library/REAME.html">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.2.1" data-path="../socket.io/library/engine.io/">
+            
+                <a href="../socket.io/library/engine.io/">
+            
+                    
+                    engine.io
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../socket.io-client/">
+            
+                <a href="../socket.io-client/">
+            
+                    
+                    socket.io-client
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1" data-path="../socket.io-client/docs/">
+            
+                <a href="../socket.io-client/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1.1" data-path="../socket.io-client/docs/API.html">
+            
+                <a href="../socket.io-client/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../node_redis/">
+            
+                <a href="../node_redis/">
+            
+                    
+                    node_redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../node-http-proxy/">
+            
+                <a href="../node-http-proxy/">
+            
+                    
+                    node-http-proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../mysql/">
+            
+                <a href="../mysql/">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../mongoose/">
+            
+                <a href="../mongoose/">
+            
+                    
+                    mongoose
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1" data-path="../mongoose/docs/">
+            
+                <a href="../mongoose/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.1" data-path="../mongoose/docs/quick-start.html">
+            
+                <a href="../mongoose/docs/quick-start.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2" data-path="../mongoose/docs/guide.html">
+            
+                <a href="../mongoose/docs/guide.html">
+            
+                    
+                    指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1" data-path="../mongoose/docs/guide.html">
+            
+                <a href="../mongoose/docs/guide.html">
+            
+                    
+                    schemas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1.1" data-path="../mongoose/docs/SchemaTypes.html">
+            
+                <a href="../mongoose/docs/SchemaTypes.html">
+            
+                    
+                    types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.2" data-path="../mongoose/docs/customschematypes.html">
+            
+                <a href="../mongoose/docs/customschematypes.html">
+            
+                    
+                    custom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.3" data-path="../mongoose/docs/advanced_schemas.html">
+            
+                <a href="../mongoose/docs/advanced_schemas.html">
+            
+                    
+                    advanced usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.2" data-path="../mongoose/docs/models.html">
+            
+                <a href="../mongoose/docs/models.html">
+            
+                    
+                    models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3" data-path="../mongoose/docs/documents.html">
+            
+                <a href="../mongoose/docs/documents.html">
+            
+                    
+                    documents
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.3.1" data-path="../mongoose/docs/subdocs.html">
+            
+                <a href="../mongoose/docs/subdocs.html">
+            
+                    
+                    sub docs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3.2" data-path="../mongoose/docs/defaults.html">
+            
+                <a href="../mongoose/docs/defaults.html">
+            
+                    
+                    defaults
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.4" data-path="../mongoose/docs/queries.html">
+            
+                <a href="../mongoose/docs/queries.html">
+            
+                    
+                    queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.5" data-path="../mongoose/docs/validation.html">
+            
+                <a href="../mongoose/docs/validation.html">
+            
+                    
+                    validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.6" data-path="../mongoose/docs/middleware.html">
+            
+                <a href="../mongoose/docs/middleware.html">
+            
+                    
+                    middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.7" data-path="../mongoose/docs/populate.html">
+            
+                <a href="../mongoose/docs/populate.html">
+            
+                    
+                    population
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.8" data-path="../mongoose/docs/connections.html">
+            
+                <a href="../mongoose/docs/connections.html">
+            
+                    
+                    connections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.9" data-path="../mongoose/docs/plugins.html">
+            
+                <a href="../mongoose/docs/plugins.html">
+            
+                    
+                    plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.10" data-path="../mongoose/docs/promises.html">
+            
+                <a href="../mongoose/docs/promises.html">
+            
+                    
+                    promises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.11" data-path="../mongoose/docs/discriminators.html">
+            
+                <a href="../mongoose/docs/discriminators.html">
+            
+                    
+                    discriminators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.12" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/blob/master/CONTRIBUTING.md">
+            
+                    
+                    contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.13" data-path="../mongoose/docs/harmony.html">
+            
+                <a href="../mongoose/docs/harmony.html">
+            
+                    
+                    ES2015 integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.14" data-path="../mongoose/docs/browser.html">
+            
+                <a href="../mongoose/docs/browser.html">
+            
+                    
+                    schemas in the browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.15" data-path="../mongoose/docs/compatibility.html">
+            
+                <a href="../mongoose/docs/compatibility.html">
+            
+                    
+                    MongoDB Version Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.16" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.6-Release-Notes">
+            
+                    
+                    3.6 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.17" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.8-Release-Notes">
+            
+                    
+                    3.8 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.18" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/4.0-Release-Notes">
+            
+                    
+                    4.0 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.3" data-path="../mongoose/docs/API.html">
+            
+                <a href="../mongoose/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.4" data-path="../mongoose/docs/faq.html">
+            
+                <a href="../mongoose/docs/faq.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.5" data-path="../mongoose/docs/prior.html">
+            
+                <a href="../mongoose/docs/prior.html">
+            
+                    
+                    之前的版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../passport/">
+            
+                <a href="../passport/">
+            
+                    
+                    passport
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.15" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    node-formidable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="../pm2/">
+            
+                <a href="../pm2/">
+            
+                    
+                    pm2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >node-formidable</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#formidable"><b>1. </b>Formidable</a></li><ul><li><span class="title-icon "></span><a href="#&#x7528;&#x9014;"><b>1.1. </b>&#x7528;&#x9014;</a></li><li><span class="title-icon "></span><a href="#&#x5F53;&#x524D;&#x72B6;&#x6001;"><b>1.2. </b>&#x5F53;&#x524D;&#x72B6;&#x6001;</a></li><li><span class="title-icon "></span><a href="#&#x7279;&#x6027;"><b>1.3. </b>&#x7279;&#x6027;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;"><b>1.4. </b>&#x5B89;&#x88C5;</a></li><li><span class="title-icon "></span><a href="#&#x793A;&#x4F8B;"><b>1.5. </b>&#x793A;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#api"><b>1.6. </b>API</a></li><ul><li><span class="title-icon "></span><a href="#formidableincomingform"><b>1.6.1. </b>Formidable.IncomingForm</a></li><li><span class="title-icon "></span><a href="#formidablefile"><b>1.6.2. </b>Formidable.File</a></li><li><span class="title-icon "></span><a href="#&#x4E8B;&#x4EF6;"><b>1.6.3. </b>&#x4E8B;&#x4EF6;</a></li></ul><li><span class="title-icon "></span><a href="#&#x66F4;&#x65B0;&#x65E5;&#x5FD7;"><b>1.7. </b>&#x66F4;&#x65B0;&#x65E5;&#x5FD7;</a></li><ul><li><span class="title-icon "></span><a href="#v111-2017-01-15"><b>1.7.1. </b>v1.1.1 (2017-01-15)</a></li><li><span class="title-icon "></span><a href="#v1014-2013-05-03"><b>1.7.2. </b>v1.0.14 (2013-05-03)</a></li><li><span class="title-icon "></span><a href="#v1013"><b>1.7.3. </b>v1.0.13</a></li><li><span class="title-icon "></span><a href="#v1012"><b>1.7.4. </b>v1.0.12</a></li></ul><li><span class="title-icon "></span><a href="#license"><b>1.8. </b>License</a></li><li><span class="title-icon "></span><a href="#&#x79FB;&#x690D;"><b>1.9. </b>&#x79FB;&#x690D;</a></li><li><span class="title-icon "></span><a href="#&#x5173;&#x4E8E;&#x4F5C;&#x8005;"><b>1.10. </b>&#x5173;&#x4E8E;&#x4F5C;&#x8005;</a></li></ul></ul></div><a href="#formidable" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="formidable"><a name="formidable" class="anchor-navigation-ex-anchor" href="#formidable"><i class="fa fa-link" aria-hidden="true"></i></a>1. Formidable</h1>
+<p><a href="https://travis-ci.org/felixge/node-formidable" target="_blank"><img src="https://travis-ci.org/felixge/node-formidable.svg?branch=master" alt="Build Status"></a></p>
+<h2 id="&#x7528;&#x9014;"><a name="&#x7528;&#x9014;" class="anchor-navigation-ex-anchor" href="#&#x7528;&#x9014;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x7528;&#x9014;</h2>
+<p>&#x4E00;&#x4E2A; Node.js &#x6A21;&#x5757;&#xFF0C;&#x7528;&#x4E8E;&#x89E3;&#x6790;&#x8868;&#x5355;&#x6570;&#x636E;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x3002;</p>
+<h2 id="&#x5F53;&#x524D;&#x72B6;&#x6001;"><a name="&#x5F53;&#x524D;&#x72B6;&#x6001;" class="anchor-navigation-ex-anchor" href="#&#x5F53;&#x524D;&#x72B6;&#x6001;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5F53;&#x524D;&#x72B6;&#x6001;</h2>
+<p><strong>&#x8BDA;&#x5BFB;&#x7EF4;&#x62A4;&#x8005;:</strong> &#x8BF7;&#x53C2;&#x89C1; <a href="https://github.com/felixge/node-formidable/issues/412" target="_blank">https://github.com/felixge/node-formidable/issues/412</a></p>
+<p>&#x6B64;&#x6A21;&#x5757;&#x662F;&#x4E3A; <a href="http://transloadit.com/" target="_blank">Transloadit</a> &#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x8BE5;&#x670D;&#x52A1;&#x4E13;&#x6CE8;&#x4E8E;&#x4E0A;&#x4F20;
+&#x5E76;&#x7F16;&#x7801;&#x56FE;&#x50CF;&#x548C;&#x89C6;&#x9891;&#x3002;&#x5B83;&#x5DF2;&#x7ECF;&#x4E45;&#x7ECF;&#x6C99;&#x573A;&#xFF0C;&#x5DF2;&#x5904;&#x7406;&#x4E86;&#x6570;&#x767E; GB &#x7684;&#x6765;&#x81EA;&#x5404;&#x79CD;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#xFF0C;&#x5E76;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x53EF;&#x91CF;&#x4EA7;&#x7684;&#x3002;</p>
+<h2 id="&#x7279;&#x6027;"><a name="&#x7279;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x7279;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x7279;&#x6027;</h2>
+<ul>
+<li>&#x5FEB;&#x901F; (~500mb/sec), &#x975E;&#x7F13;&#x51B2;&#x591A;&#x90E8;&#x5206;&#x89E3;&#x6790;&#x5668;</li>
+<li>&#x81EA;&#x52A8;&#x5C06;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5230;&#x78C1;&#x76D8;</li>
+<li>&#x4F4E;&#x5185;&#x5B58;&#x5360;&#x7528;</li>
+<li>&#x4F18;&#x96C5;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;</li>
+<li>&#x975E;&#x5E38;&#x9AD8;&#x7684;&#x6D4B;&#x8BD5;&#x8986;&#x76D6;&#x7387;</li>
+</ul>
+<h2 id="&#x5B89;&#x88C5;"><a name="&#x5B89;&#x88C5;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x5B89;&#x88C5;</h2>
+<pre class="language-"><code class="lang-sh"><span class="token function">npm</span> i -S formidable
+</code></pre>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x4F4E;&#x9636;&#x7684;&#x5305;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x9636;&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x88AB;&#x5305;&#x542B;&#x5728;&#x5185;&#x4E86;&#x3002;&#x7136;&#x800C; <a href="http://expressjs.com" target="_blank">Express v4</a>  &#x6CA1;&#x6709;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x591A;&#x90E8;&#x5206;&#xFF08;multipart&#xFF09;&#x5904;&#x7406;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709; <a href="https://github.com/expressjs/body-parser" target="_blank">body-parser</a>&#x3002;</p>
+<p>&#x6CE8;&#x610F;: Formidable &#x9700;&#x8981; <a href="http://github.com/felixge/node-gently" target="_blank">gently</a> &#x6765;&#x8FD0;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x5B83;&#xFF0C;&#x53EA;&#x7BA1;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5E93;&#x3002;</p>
+<h2 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x793A;&#x4F8B;</h2>
+<p>&#x89E3;&#x6790;&#x4F20;&#x5165;&#x7684;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> formidable <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;formidable&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;http&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    util <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;util&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">==</span> <span class="token string">&apos;/upload&apos;</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>method<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">&apos;post&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// parse a file upload</span>
+    <span class="token keyword">var</span> form <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">formidable<span class="token punctuation">.</span>IncomingForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    form<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> fields<span class="token punctuation">,</span> files<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">&apos;content-type&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;text/plain&apos;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      res<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&apos;received upload:\n\n&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>util<span class="token punctuation">.</span><span class="token function">inspect</span><span class="token punctuation">(</span><span class="token punctuation">{</span>fields<span class="token punctuation">:</span> fields<span class="token punctuation">,</span> files<span class="token punctuation">:</span> files<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// &#x663E;&#x793A;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x8868;&#x5355;</span>
+  res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">&apos;content-type&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;text/html&apos;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>
+    <span class="token string">&apos;&lt;form action=&quot;/upload&quot; enctype=&quot;multipart/form-data&quot; method=&quot;post&quot;&gt;&apos;</span><span class="token operator">+</span>
+    <span class="token string">&apos;&lt;input type=&quot;text&quot; name=&quot;title&quot;&gt;&lt;br&gt;&apos;</span><span class="token operator">+</span>
+    <span class="token string">&apos;&lt;input type=&quot;file&quot; name=&quot;upload&quot; multiple=&quot;multiple&quot;&gt;&lt;br&gt;&apos;</span><span class="token operator">+</span>
+    <span class="token string">&apos;&lt;input type=&quot;submit&quot; value=&quot;Upload&quot;&gt;&apos;</span><span class="token operator">+</span>
+    <span class="token string">&apos;&lt;/form&gt;&apos;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="api"><a name="api" class="anchor-navigation-ex-anchor" href="#api"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. API</h2>
+<h3 id="formidableincomingform"><a name="formidableincomingform" class="anchor-navigation-ex-anchor" href="#formidableincomingform"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.1. Formidable.IncomingForm</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> form <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">formidable<span class="token punctuation">.</span>IncomingForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4F20;&#x5165;&#x8868;&#x5355;&#x3002;</p>
+<blockquote>
+<p><strong>[info] &#x300C;&#x8BD1;&#x8005;&#x6CE8;&#xFF1A;&#x300D;</strong></p>
+<p>&#x8868;&#x5355;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>    <code>encoding</code></td>
+<td>&#x4E3A;&#x4F20;&#x5165;&#x8868;&#x5355;&#x7684;&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#x5B57;&#x7B26;&#x7F16;&#x7801;</td>
+</tr>
+<tr>
+<td>    <code>uploadDir</code></td>
+<td>&#x8BBE;&#x7F6E;&#x653E;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;</td>
+</tr>
+<tr>
+<td>    <code>keepExtensions</code></td>
+<td>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x5199;&#x5165; <code>form.uploadDir</code> &#x7684;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x539F;&#x59CB;&#x6587;&#x4EF6;&#x7684;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x4E3A;<code>true</code></td>
+</tr>
+<tr>
+<td>    <code>type</code></td>
+<td>&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; &apos;multipart&apos; &#x6216; &apos;urlencoded&apos;</td>
+</tr>
+<tr>
+<td>    <code>maxFieldsSize</code></td>
+<td>&#x9650;&#x5236;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x7684;&#x5185;&#x5B58;&#x91CF;</td>
+</tr>
+<tr>
+<td>    <code>maxFields</code></td>
+<td>&#x9650;&#x5236;&#x5C06;&#x88AB;&#x89E3;&#x7801;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x5668;&#x7684;&#x5B57;&#x6BB5;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td>    <code>hash</code></td>
+<td>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4E3A;&#x4F20;&#x5165;&#x7684;&#x6587;&#x4EF6;&#x8BA1;&#x7B97;&#x6821;&#x9A8C;&#x548C;&#xFF0C;&#x628A;&#x5B83;&#x8BBE;&#x7F6E;&#x4E3A; &apos;sha1&apos; &#x6216; &apos;md5&apos;&#x3002;</td>
+</tr>
+<tr>
+<td>    <code>multiples</code></td>
+<td>&#x542F;&#x7528;&#x591A;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;</td>
+</tr>
+<tr>
+<td>    <code>bytesReceived</code></td>
+<td>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x8FD9;&#x4E2A;&#x8868;&#x5355;&#x6536;&#x5230;&#x7684;&#x5B57;&#x8282;&#x6570;&#x91CF;&#x3002;</td>
+</tr>
+<tr>
+<td>    <code>bytesExpected</code></td>
+<td>&#x8FD9;&#x4E2A;&#x8868;&#x5355;&#x7684;&#x9884;&#x671F;&#x5B57;&#x8282;&#x6570;&#x3002;</td>
+</tr>
+<tr>
+<td>    <code>parse()</code></td>
+<td>&#x89E3;&#x6790;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x7684; node.js <code>request</code></td>
+</tr>
+<tr>
+<td>    <code>onPart()</code></td>
+<td></td>
+</tr>
+<tr>
+<td>    <code>handlePart()</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>encoding <span class="token operator">=</span> <span class="token string">&apos;utf-8&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4E3A;&#x4F20;&#x5165;&#x8868;&#x5355;&#x7684;&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>uploadDir <span class="token operator">=</span> <span class="token string">&quot;/my/dir&quot;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x8BBE;&#x7F6E;&#x653E;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x7A0D;&#x540E;&#x4F7F;&#x7528; <code>fs.rename()</code> &#x79FB;&#x52A8;&#x5B83;&#x4EEC;&#x3002; &#x9ED8;&#x8BA4;&#x662F;<a href="http://nodejs.cn/api/os.html#os_os_tmpdir" target="_blank"><code>os.tmpdir()</code></a>&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>keepExtensions <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x5199;&#x5165; <code>form.uploadDir</code> &#x7684;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x539F;&#x59CB;&#x6587;&#x4EF6;&#x7684;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x4E3A;<code>true</code>&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>type
+</code></pre>
+<p>&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; &apos;multipart&apos; &#x6216; &apos;urlencoded&apos;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>maxFieldsSize <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x9650;&#x5236;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x7684;&#x5185;&#x5B58;&#x91CF;&#xFF08;&#x6587;&#x4EF6;&#x9664;&#x5916;&#xFF09;&#x53EF;&#x4EE5;&#x6309;&#x5B57;&#x8282;&#x5206;&#x914D;&#x3002;&#x5982;&#x679C;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x5219;&#x4F1A;&#x53D1;&#x51FA; <code>&apos;error&apos;</code> &#x4E8B;&#x4EF6;&#x3002;&#x9ED8;&#x8BA4;&#x5927;&#x5C0F;&#x662F; 2MB&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>maxFields <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x9650;&#x5236;&#x5C06;&#x88AB;&#x89E3;&#x7801;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x6790;&#x5668;&#x7684;&#x5B57;&#x6BB5;&#x6570;&#x3002; &#x9ED8;&#x8BA4;&#x4E3A; 1000&#xFF08;&#x65E0;&#x9650;&#x5236;&#x4E3A; 0&#xFF09;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>hash <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4E3A;&#x4F20;&#x5165;&#x7684;&#x6587;&#x4EF6;&#x8BA1;&#x7B97;&#x6821;&#x9A8C;&#x548C;&#xFF0C;&#x628A;&#x5B83;&#x8BBE;&#x7F6E;&#x4E3A; <code>&apos;sha1&apos;</code> &#x6216; <code>&apos;md5&apos;</code>&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>multiples <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x88AB;&#x542F;&#x7528;&#xFF0C;&#x5F53;&#x8C03;&#x7528; <code>form.parse</code> &#x65F6;&#xFF0C;<code>files</code> &#x53C2;&#x6570;&#x5C06;&#x5305;&#x542B;&#x8F93;&#x5165;&#x6846;&#x6587;&#x4EF6;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x8FD9;&#x4E2A;&#x8F93;&#x5165;&#x6846;&#x4F7F;&#x7528; HTML5 <code>multiple</code> &#x5C5E;&#x6027;&#x63D0;&#x4EA4;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>bytesReceived
+</code></pre>
+<p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x8FD9;&#x4E2A;&#x8868;&#x5355;&#x6536;&#x5230;&#x7684;&#x5B57;&#x8282;&#x6570;&#x91CF;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>bytesExpected
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x8868;&#x5355;&#x7684;&#x9884;&#x671F;&#x5B57;&#x8282;&#x6570;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token punctuation">[</span>cb<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x89E3;&#x6790;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x7684; node.js <code>request</code>&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x8868;&#x5355;&#x6570;&#x636E;&#x3002;&#x5982;&#x679C;&#x63D0;&#x4F9B;&#x4E86; <code>cb</code>&#xFF0C;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x548C;&#x6587;&#x4EF6;&#x90FD;&#x88AB;&#x6536;&#x96C6;&#x8D77;&#x6765;&#x5E76;&#x4F20;&#x9012;&#x7ED9;&#x56DE;&#x8C03;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> fields<span class="token punctuation">,</span> files<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+form<span class="token punctuation">.</span><span class="token function">onPart</span><span class="token punctuation">(</span>part<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x60A8;&#x6709;&#x5174;&#x8DA3;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x591A;&#x90E8;&#x5206;&#x6D41;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x91CD;&#x5199;&#x6B64;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x6837;&#x505A;&#x4F1A;&#x7981;&#x7528;&#x6240;&#x6709;&#x5C06;&#x4F1A;&#x53D1;&#x751F;&#x7684; <code>&apos;field&apos;</code> / <code>&apos;file&apos;</code> &#x4E8B;&#x4EF6;&#x5904;&#x7406;&#xFF0C;&#x4F7F;&#x60A8;&#x5168;&#x6743;&#x5904;&#x7406;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>onPart <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>part<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  part<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token string">&apos;data&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// ...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4F7F;&#x7528; formidable &#x6765;&#x5904;&#x7406;&#x67D0;&#x4E9B;&#x90E8;&#x5206;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span>onPart <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>part<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>part<span class="token punctuation">.</span>filename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// let formidable handle all non-file parts</span>
+    form<span class="token punctuation">.</span><span class="token function">handlePart</span><span class="token punctuation">(</span>part<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x68C0;&#x67E5;&#x6B64;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x4EE5;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x7075;&#x611F;&#x3002;</p>
+<h3 id="formidablefile"><a name="formidablefile" class="anchor-navigation-ex-anchor" href="#formidablefile"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.2. Formidable.File</h3>
+<blockquote>
+<p><strong>[info] &#x300C;&#x8BD1;&#x8005;&#x6CE8;&#xFF1A;&#x300D;</strong></p>
+<p>&#x6587;&#x4EF6;&#x6709;&#x5982;&#x4E0B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>      <code>size</code></td>
+<td>&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#xFF08;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td>      <code>path</code></td>
+<td>&#x8BE5;&#x6587;&#x4EF6;&#x6B63;&#x5728;&#x88AB;&#x5199;&#x5165;&#x7684;&#x8DEF;&#x5F84;</td>
+</tr>
+<tr>
+<td>      <code>name</code></td>
+<td>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x5B57;&#x662F;&#x6839;&#x636E;&#x4E0A;&#x4F20;&#x5BA2;&#x6237;&#x7AEF;&#x6765;&#x7684;&#x3002;</td>
+</tr>
+<tr>
+<td>      <code>type</code></td>
+<td>&#x8BE5;&#x6587;&#x4EF6;&#x7684;MIME&#x7C7B;&#x578B;&#xFF0C;&#x6839;&#x636E;&#x4E0A;&gt; &#x4F20;&#x5BA2;&#x6237;&#x7AEF;&#x3002; &#x7684;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x539F;&#x59CB;&#x6587;&#x4EF6;&#x7684;&#x6269;&#x5C55;&#x540D;&#xFF0C;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x4E3A;<code>true</code></td>
+</tr>
+<tr>
+<td>  <code>lastModifiedDate</code></td>
+<td>&#x4E00;&#x4E2A;&#x65E5;&#x671F;&#x5BF9;&#x8C61;&#xFF08;&#x6216; null&#xFF09;,&#x5305;&#x542B;&#x4E0A;&#x6B21;&#x5199;&#x5165;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x95F4;&#x3002;</td>
+</tr>
+<tr>
+<td>      <code>hash</code></td>
+<td>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;&#x54C8;&#x5E0C;&#x8BA1;&#x7B97;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4ECE;&#x8BE5;&#x53D8;&#x91CF;&#x4E2D;&#x8BFB;&#x53D6;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x6458;&#x8981;&#x3002;</td>
+</tr>
+<tr>
+<td>      <code>toJSON()</code></td>
+<td>&#x6B64;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x7684; JSON &#x8868;&#x793A;&#x5F62;&#x5F0F;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<pre class="language-"><code class="lang-javascript">file<span class="token punctuation">.</span>size <span class="token operator">=</span> <span class="token number">0</span>
+</code></pre>
+<p>&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#xFF08;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;&#xFF09;&#x3002; &#x5982;&#x679C;&#x6587;&#x4EF6;&#x4ECD;&#x7136;&#x5728;&#x4E0A;&#x4F20;&#xFF08;&#x53C2;&#x89C1; <code>fileBegin&apos;</code> &#x4E8B;&#x4EF6;&#xFF09;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x8BF4;&#x660E;&#x6587;&#x4EF6;&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x5B57;&#x8282;&#x5DF2;&#x7ECF;&#x88AB;&#x5199;&#x5165;&#x78C1;&#x76D8;&#x4E86;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">file<span class="token punctuation">.</span>path <span class="token operator">=</span> <span class="token keyword">null</span>
+</code></pre>
+<p>&#x8BE5;&#x6587;&#x4EF6;&#x6B63;&#x5728;&#x88AB;&#x5199;&#x5165;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728; <code>&apos;fileBegin&apos;</code> &#x4E8B;&#x4EF6;&#x4E2D;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x4EE5;&#x9632;&#x4F60;&#x4E0D;&#x6EE1;&#x610F;&#x7684;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;formidable &#x4E3A;&#x4F60;&#x7684;&#x6587;&#x4EF6;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x8DEF;&#x5F84;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">file<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token keyword">null</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x5B57;&#x662F;&#x6839;&#x636E;&#x4E0A;&#x4F20;&#x5BA2;&#x6237;&#x7AEF;&#x6765;&#x7684;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">file<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token keyword">null</span>
+</code></pre>
+<p>&#x8BE5;&#x6587;&#x4EF6;&#x7684;MIME&#x7C7B;&#x578B;&#xFF0C;&#x6839;&#x636E;&#x4E0A;&#x4F20;&#x5BA2;&#x6237;&#x7AEF;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">file<span class="token punctuation">.</span>lastModifiedDate <span class="token operator">=</span> <span class="token keyword">null</span>
+</code></pre>
+<p>&#x4E00;&#x4E2A;&#x65E5;&#x671F;&#x5BF9;&#x8C61;&#xFF08;&#x6216; <code>null</code>&#xFF09;,&#x5305;&#x542B;&#x4E0A;&#x6B21;&#x5199;&#x5165;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x95F4;&#x3002; &#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x4E0E;<a href="http://dev.w3.org/2006/webapi/FileAPI/" target="_blank">W3C File API &#x8349;&#x6848;</a> &#x517C;&#x5BB9;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">file<span class="token punctuation">.</span>hash <span class="token operator">=</span> <span class="token keyword">null</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;&#x54C8;&#x5E0C;&#x8BA1;&#x7B97;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4ECE;&#x8BE5;&#x53D8;&#x91CF;&#x4E2D;&#x8BFB;&#x53D6;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x6458;&#x8981;&#x3002;</p>
+<h4 id="formidablefiletojson"><a name="formidablefiletojson" class="anchor-navigation-ex-anchor" href="#formidablefiletojson"><i class="fa fa-link" aria-hidden="true"></i></a><a name="formidablefiletojson" class="plugin-anchor" href="#formidablefiletojson"><i class="fa fa-link" aria-hidden="true"></i></a>Formidable.File#toJSON()</h4>
+<p>  &#x6B64;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x7684; JSON &#x8868;&#x793A;&#x5F62;&#x5F0F;&#xFF0C;&#x5141;&#x8BB8;&#x60A8;&#x4F7F;&#x7528; <code>JSON.stringify()</code> &#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x8BB0;&#x5F55;&#x548C;&#x54CD;&#x5E94;&#x8BF7;&#x6C42;&#x5F88;&#x6709;&#x7528;&#x3002;</p>
+<h3 id="&#x4E8B;&#x4EF6;"><a name="&#x4E8B;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x4E8B;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6.3. &#x4E8B;&#x4EF6;</h3>
+<blockquote>
+<p><strong>[info] &#x300C;&#x8BD1;&#x8005;&#x6CE8;&#xFF1A;&#x300D;</strong></p>
+<p>&#x4E8B;&#x4EF6;&#x5217;&#x8868;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E8B;&#x4EF6;&#x540D;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>   &apos;progress&apos;</td>
+<td>&#x5728;&#x6BCF;&#x4E2A;&#x4F20;&#x5165;&#x7684;&#x6570;&#x636E;&#x5757;&#x5DF2;&#x7ECF;&#x88AB;&#x89E3;&#x6790;&#x540E;&#x88AB;&#x53D1;&#x5C04;&#x3002;</td>
+</tr>
+<tr>
+<td>   &apos;field&apos;</td>
+<td>&#x6BCF;&#x5F53;&#x6536;&#x5230;&#x4E00;&#x4E2A; &#x5B57;&#x6BB5;/&#x503C; &#x5BF9;&#x65F6;&#x88AB;&#x53D1;&#x5C04;&#x3002;</td>
+</tr>
+<tr>
+<td>   &apos;fileBegin&apos;</td>
+<td>&#x5728;&#x4E0A;&#x4F20;&#x6D41;&#x4E2D;&#x68C0;&#x6D4B;&#x5230;&#x65B0;&#x6587;&#x4EF6;&#x65F6;&#x88AB;&#x53D1;&#x5C04;&#x3002;</td>
+</tr>
+<tr>
+<td>   &apos;file&apos;</td>
+<td>&#x6BCF;&#x5F53;&#x63A5;&#x6536;&#x5230;&#x4E00;&#x4E2A; &#x5B57;&#x6BB5;/&#x6587;&#x4EF6; &#x5BF9;&#x65F6;&#x88AB;&#x53D1;&#x53D1;&#x5C04;&#x3002;</td>
+</tr>
+<tr>
+<td>   &apos;error&apos;</td>
+<td>&#x5728;&#x5904;&#x7406;&#x4F20;&#x5165;&#x8868;&#x5355;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#x88AB;&#x53D1;&#x5C04;</td>
+</tr>
+<tr>
+<td>   &apos;aborted&apos;</td>
+<td>&#x5F53;&#x8BF7;&#x6C42;&#x88AB;&#x7528;&#x6237;&#x4E2D;&#x6B62;&#x65F6;&#x88AB;&#x53D1;&#x5C04;&#x3002;</td>
+</tr>
+<tr>
+<td>   &apos;end&apos;</td>
+<td>&#x5F53;&#x6536;&#x5230;&#x6574;&#x4E2A;&#x8BF7;&#x6C42;&#x65F6;&#x88AB;&#x53D1;&#x5C04;</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h4 id="progress"><a name="progress" class="anchor-navigation-ex-anchor" href="#progress"><i class="fa fa-link" aria-hidden="true"></i></a><a name="progress" class="plugin-anchor" href="#progress"><i class="fa fa-link" aria-hidden="true"></i></a>&apos;progress&apos;</h4>
+<p>&#x5728;&#x6BCF;&#x4E2A;&#x4F20;&#x5165;&#x7684;&#x6570;&#x636E;&#x5757;&#x5DF2;&#x7ECF;&#x88AB;&#x89E3;&#x6790;&#x540E;&#x88AB;&#x53D1;&#x5C04;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6EDA;&#x52A8;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x8FDB;&#x5EA6;&#x6761;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;progress&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>bytesReceived<span class="token punctuation">,</span> bytesExpected<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="field"><a name="field" class="anchor-navigation-ex-anchor" href="#field"><i class="fa fa-link" aria-hidden="true"></i></a><a name="field" class="plugin-anchor" href="#field"><i class="fa fa-link" aria-hidden="true"></i></a>&apos;field&apos;</h4>
+<p>&#x6BCF;&#x5F53;&#x6536;&#x5230;&#x4E00;&#x4E2A; &#x5B57;&#x6BB5;/&#x503C; &#x5BF9;&#x65F6;&#x88AB;&#x53D1;&#x5C04;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;field&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="filebegin"><a name="filebegin" class="anchor-navigation-ex-anchor" href="#filebegin"><i class="fa fa-link" aria-hidden="true"></i></a><a name="filebegin" class="plugin-anchor" href="#filebegin"><i class="fa fa-link" aria-hidden="true"></i></a>&apos;fileBegin&apos;</h4>
+<p>&#x5728;&#x4E0A;&#x4F20;&#x6D41;&#x4E2D;&#x68C0;&#x6D4B;&#x5230;&#x65B0;&#x6587;&#x4EF6;&#x65F6;&#x88AB;&#x53D1;&#x5C04;&#x3002;&#x5982;&#x679C;&#x8981;&#x5C06;&#x6587;&#x4EF6;&#x6D41;&#x5F0F;&#x4F20;&#x8F93;&#x5230;&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;&#xFF0C;&#x540C;&#x65F6;&#x7F13;&#x51B2;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x4E0A;&#x4F20;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x6B64;&#x4E8B;&#x4EF6;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;fileBegin&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="file"><a name="file" class="anchor-navigation-ex-anchor" href="#file"><i class="fa fa-link" aria-hidden="true"></i></a><a name="file" class="plugin-anchor" href="#file"><i class="fa fa-link" aria-hidden="true"></i></a>&apos;file&apos;</h4>
+<p>&#x6BCF;&#x5F53;&#x63A5;&#x6536;&#x5230;&#x4E00;&#x4E2A; &#x5B57;&#x6BB5;/&#x6587;&#x4EF6; &#x5BF9;&#x65F6;&#x88AB;&#x53D1;&#x53D1;&#x5C04;&#x3002; <code>file</code> &#x662F; <code>File</code> &#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;file&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="error"><a name="error" class="anchor-navigation-ex-anchor" href="#error"><i class="fa fa-link" aria-hidden="true"></i></a><a name="error" class="plugin-anchor" href="#error"><i class="fa fa-link" aria-hidden="true"></i></a>&apos;error&apos;</h4>
+<p>&#x5728;&#x5904;&#x7406;&#x4F20;&#x5165;&#x8868;&#x5355;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#x88AB;&#x53D1;&#x5C04;&#x3002;&#x9047;&#x5230;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x6C42;&#x4F1A;&#x81EA;&#x52A8;&#x6682;&#x505C;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x5E0C;&#x671B;&#x8BF7;&#x6C42;&#x7EE7;&#x7EED;&#x89E6;&#x53D1; <code>&apos;data&apos;</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x624B;&#x52A8;&#x8C03;&#x7528; <code>request.resume()</code>&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;error&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="aborted"><a name="aborted" class="anchor-navigation-ex-anchor" href="#aborted"><i class="fa fa-link" aria-hidden="true"></i></a><a name="aborted" class="plugin-anchor" href="#aborted"><i class="fa fa-link" aria-hidden="true"></i></a>&apos;aborted&apos;</h4>
+<p>&#x5F53;&#x8BF7;&#x6C42;&#x88AB;&#x7528;&#x6237;&#x4E2D;&#x6B62;&#x65F6;&#x88AB;&#x53D1;&#x5C04;&#x3002;&#x73B0;&#x5728;&#x8FD9;&#x53EF;&#x80FD;&#x662F;&#x7531;&#x4E8E;&#x5957;&#x63A5;&#x5B57;&#x4E0A;&#x7684; &apos;timeout&apos; &#x6216; &apos;close&apos; &#x4E8B;&#x4EF6;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x88AB;&#x53D1;&#x5C04;&#x4E4B;&#x540E;&#xFF0C;&#x5C06;&#x4F1A;&#x8DDF;&#x968F;&#x4E00;&#x4E2A; <code>error</code> &#x4E8B;&#x4EF6;&#x3002;&#x5C06;&#x6765;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684; &apos;timeout&apos; &#x4E8B;&#x4EF6;&#xFF08;&#x9700;&#x8981;&#x5728; node &#x6838;&#x5FC3;&#x4E2D;&#x8FDB;&#x884C;&#x66F4;&#x6539;&#xFF09;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;aborted&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="end"><a name="end" class="anchor-navigation-ex-anchor" href="#end"><i class="fa fa-link" aria-hidden="true"></i></a><a name="end" class="plugin-anchor" href="#end"><i class="fa fa-link" aria-hidden="true"></i></a>&apos;end&apos;</h5>
+<pre class="language-"><code class="lang-javascript">form<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;end&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5F53;&#x6536;&#x5230;&#x6574;&#x4E2A;&#x8BF7;&#x6C42;&#x65F6;&#x88AB;&#x53D1;&#x5C04;&#xFF0C;&#x6240;&#x6709;&#x5305;&#x542B;&#x7684;&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x51B2;&#x6D17;&#xFF08;flushing&#xFF09;&#x5230;&#x78C1;&#x76D8;&#x3002; &#x8FD9;&#x662F;&#x60A8;&#x53D1;&#x9001;&#x54CD;&#x5E94;&#x7684;&#x597D;&#x5730;&#x65B9;&#x3002;</p>
+<h2 id="&#x66F4;&#x65B0;&#x65E5;&#x5FD7;"><a name="&#x66F4;&#x65B0;&#x65E5;&#x5FD7;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;&#x65E5;&#x5FD7;"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. &#x66F4;&#x65B0;&#x65E5;&#x5FD7;</h2>
+<h3 id="v111-2017-01-15"><a name="v111-2017-01-15" class="anchor-navigation-ex-anchor" href="#v111-2017-01-15"><i class="fa fa-link" aria-hidden="true"></i></a>1.7.1. v1.1.1 (2017-01-15)</h3>
+<ul>
+<li>Fix DeprecationWarning about os.tmpDir() (Christian)</li>
+<li>Update <code>buffer.write</code> order of arguments for Node 7 (Kornel Lesi&#x144;ski)</li>
+<li>JSON Parser emits error events to the IncomingForm (alessio.montagnani)</li>
+<li>Improved Content-Disposition parsing (Sebastien)</li>
+<li>Access WriteStream of fs during runtime instead of include time (Jonas Amundsen)</li>
+<li>Use built-in toString to convert buffer to hex (Charmander)</li>
+<li>Add hash to json if present (Nick Stamas)</li>
+<li>Add license to package.json (Simen Bekkhus)</li>
+</ul>
+<h3 id="v1014-2013-05-03"><a name="v1014-2013-05-03" class="anchor-navigation-ex-anchor" href="#v1014-2013-05-03"><i class="fa fa-link" aria-hidden="true"></i></a>1.7.2. v1.0.14 (2013-05-03)</h3>
+<ul>
+<li>Add failing hash tests. (Ben Trask)</li>
+<li>Enable hash calculation again (Eugene Girshov)</li>
+<li>Test for immediate data events (Tim Smart)</li>
+<li>Re-arrange IncomingForm#parse (Tim Smart)</li>
+</ul>
+<h3 id="v1013"><a name="v1013" class="anchor-navigation-ex-anchor" href="#v1013"><i class="fa fa-link" aria-hidden="true"></i></a>1.7.3. v1.0.13</h3>
+<ul>
+<li>Only update hash if update method exists (Sven Lito)</li>
+<li>According to travis v0.10 needs to go quoted (Sven Lito)</li>
+<li>Bumping build node versions (Sven Lito)</li>
+<li>Additional fix for empty requests (Eugene Girshov)</li>
+<li>Change the default to 1000, to match the new Node behaviour. (OrangeDog)</li>
+<li>Add ability to control maxKeys in the querystring parser. (OrangeDog)</li>
+<li>Adjust test case to work with node 0.9.x (Eugene Girshov)</li>
+<li>Update package.json (Sven Lito)</li>
+<li>Path adjustment according to eb4468b (Markus Ast)</li>
+</ul>
+<h3 id="v1012"><a name="v1012" class="anchor-navigation-ex-anchor" href="#v1012"><i class="fa fa-link" aria-hidden="true"></i></a>1.7.4. v1.0.12</h3>
+<ul>
+<li>Emit error on aborted connections (Eugene Girshov)</li>
+<li>Add support for empty requests (Eugene Girshov)</li>
+<li>Fix name/filename handling in Content-Disposition (jesperp)</li>
+<li>Tolerate malformed closing boundary in multipart (Eugene Girshov)</li>
+<li>Ignore preamble in multipart messages (Eugene Girshov)</li>
+<li>Add support for application/json (Mike Frey, Carlos Rodriguez)</li>
+<li>Add support for Base64 encoding (Elmer Bulthuis)</li>
+<li>Add File#toJSON (TJ Holowaychuk)</li>
+<li>Remove support for Node.js 0.4 &amp; 0.6 (Andrew Kelley)</li>
+<li>Documentation improvements (Sven Lito, Andre Azevedo)</li>
+<li>Add support for application/octet-stream (Ion Lupascu, Chris Scribner)</li>
+<li>Use os.tmpdir() to get tmp directory (Andrew Kelley)</li>
+<li>Improve package.json (Andrew Kelley, Sven Lito)</li>
+<li>Fix benchmark script (Andrew Kelley)</li>
+<li>Fix scope issue in incoming_forms (Sven Lito)</li>
+<li>Fix file handle leak on error (OrangeDog)</li>
+</ul>
+<h2 id="license"><a name="license" class="anchor-navigation-ex-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. License</h2>
+<p>Formidable is licensed under the MIT license.</p>
+<h2 id="&#x79FB;&#x690D;"><a name="&#x79FB;&#x690D;" class="anchor-navigation-ex-anchor" href="#&#x79FB;&#x690D;"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. &#x79FB;&#x690D;</h2>
+<ul>
+<li><a href="http://github.com/FooBarWidget/multipart-parser" target="_blank">multipart-parser</a>: &#x57FA;&#x4E8E; formidable &#x7684; C++ &#x89E3;&#x6790;&#x5668;&#x3002;</li>
+</ul>
+<h2 id="&#x5173;&#x4E8E;&#x4F5C;&#x8005;"><a name="&#x5173;&#x4E8E;&#x4F5C;&#x8005;" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x4E8E;&#x4F5C;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>1.10. &#x5173;&#x4E8E;&#x4F5C;&#x8005;</h2>
+<ul>
+<li><a href="http://twitter.com/ryah" target="_blank">Ryan Dahl</a> &#x5728; <a href="http://github.com/ry/http-parser" target="_blank">http-parser</a> &#x65B9;&#x9762;&#x7684;&#x5DE5;&#x4F5C;&#x6DF1;&#x6DF1;&#x5730;&#x6FC0;&#x53D1;&#x4E86; multipart_parser.js</li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-01-02 21:01:59
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../passport/" class="navigation navigation-prev " aria-label="Previous page: passport">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../pm2/" class="navigation navigation-next " aria-label="Next page: pm2">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"node-formidable","level":"3.15","depth":1,"next":{"title":"pm2","level":"3.16","depth":1,"path":"Library/pm2/README.md","ref":"Library/pm2/README.md","articles":[]},"previous":{"title":"passport","level":"3.14","depth":1,"path":"Library/passport/README.md","ref":"Library/passport/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"acefull","theme":"tomorrow","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Node.js","language":"zh-hans","gitbook":"*","description":"Node.js 自我学习"},"file":{"path":"Library/node-formidable/README.md","mtime":"2018-01-02T13:01:59.644Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-02T12:02:55.597Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

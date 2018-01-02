@@ -1,0 +1,1493 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>pm2 · Node.js</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tuzhu008">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../node-formidable/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于 Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../GLOSSARY.html">
+            
+                <a href="../../GLOSSARY.html">
+            
+                    
+                    术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">参考文档</li>
+        
+        
+    
+
+    
+        
+        <li class="header">相关库</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node 相关库列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../nvm/">
+            
+                <a href="../nvm/">
+            
+                    
+                    node 版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../request/">
+            
+                <a href="../request/">
+            
+                    
+                    request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../async/">
+            
+                <a href="../async/">
+            
+                    
+                    async
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../supervisor/">
+            
+                <a href="../supervisor/">
+            
+                    
+                    supervisior
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../express/">
+            
+                <a href="../express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../express/docs/API.html">
+            
+                <a href="../express/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1.1" >
+            
+                <span>
+            
+                    
+                    express()
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.2" >
+            
+                <span>
+            
+                    
+                    Aplication
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.3" >
+            
+                <span>
+            
+                    
+                    Request
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.4" >
+            
+                <span>
+            
+                    
+                    Response
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.1.5" data-path="../express/docs/API.html">
+            
+                <a href="../express/docs/API.html#router">
+            
+                    
+                    Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../express/middleware/">
+            
+                <a href="../express/middleware/">
+            
+                    
+                    中间件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.2.1" data-path="../express/middleware/method-override/">
+            
+                <a href="../express/middleware/method-override/">
+            
+                    
+                    method-override
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.2" data-path="../express/middleware/session/">
+            
+                <a href="../express/middleware/session/">
+            
+                    
+                    express-session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.3" data-path="../express/middleware/connect-mongo/">
+            
+                <a href="../express/middleware/connect-mongo/">
+            
+                    
+                    connect-mongo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.4" data-path="../express/middleware/connect-flash/">
+            
+                <a href="../express/middleware/connect-flash/">
+            
+                    
+                    connect-flash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.5" data-path="../express/middleware/express-formidable/">
+            
+                <a href="../express/middleware/express-formidable/">
+            
+                    
+                    express-formidable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2.6" data-path="../express/middleware/express-winston/">
+            
+                <a href="../express/middleware/express-winston/">
+            
+                    
+                    express-winston
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../connect/">
+            
+                <a href="../connect/">
+            
+                    
+                    connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../socket.io/">
+            
+                <a href="../socket.io/">
+            
+                    
+                    socket.io
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1" data-path="../socket.io/docs/">
+            
+                <a href="../socket.io/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1.1" data-path="../socket.io/docs/API.html">
+            
+                <a href="../socket.io/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.1.2" data-path="../socket.io/docs/emit.html">
+            
+                <a href="../socket.io/docs/emit.html">
+            
+                    
+                    emit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.2" data-path="../socket.io/library/REAME.html">
+            
+                <a href="../socket.io/library/REAME.html">
+            
+                    
+                    相关库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.2.1" data-path="../socket.io/library/engine.io/">
+            
+                <a href="../socket.io/library/engine.io/">
+            
+                    
+                    engine.io
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../socket.io-client/">
+            
+                <a href="../socket.io-client/">
+            
+                    
+                    socket.io-client
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1" data-path="../socket.io-client/docs/">
+            
+                <a href="../socket.io-client/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.9.1.1" data-path="../socket.io-client/docs/API.html">
+            
+                <a href="../socket.io-client/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../node_redis/">
+            
+                <a href="../node_redis/">
+            
+                    
+                    node_redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../node-http-proxy/">
+            
+                <a href="../node-http-proxy/">
+            
+                    
+                    node-http-proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../mysql/">
+            
+                <a href="../mysql/">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../mongoose/">
+            
+                <a href="../mongoose/">
+            
+                    
+                    mongoose
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1" data-path="../mongoose/docs/">
+            
+                <a href="../mongoose/docs/">
+            
+                    
+                    文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.1" data-path="../mongoose/docs/quick-start.html">
+            
+                <a href="../mongoose/docs/quick-start.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2" data-path="../mongoose/docs/guide.html">
+            
+                <a href="../mongoose/docs/guide.html">
+            
+                    
+                    指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1" data-path="../mongoose/docs/guide.html">
+            
+                <a href="../mongoose/docs/guide.html">
+            
+                    
+                    schemas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.1.1" data-path="../mongoose/docs/SchemaTypes.html">
+            
+                <a href="../mongoose/docs/SchemaTypes.html">
+            
+                    
+                    types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.2" data-path="../mongoose/docs/customschematypes.html">
+            
+                <a href="../mongoose/docs/customschematypes.html">
+            
+                    
+                    custom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.1.3" data-path="../mongoose/docs/advanced_schemas.html">
+            
+                <a href="../mongoose/docs/advanced_schemas.html">
+            
+                    
+                    advanced usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.2" data-path="../mongoose/docs/models.html">
+            
+                <a href="../mongoose/docs/models.html">
+            
+                    
+                    models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3" data-path="../mongoose/docs/documents.html">
+            
+                <a href="../mongoose/docs/documents.html">
+            
+                    
+                    documents
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.13.1.2.3.1" data-path="../mongoose/docs/subdocs.html">
+            
+                <a href="../mongoose/docs/subdocs.html">
+            
+                    
+                    sub docs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.3.2" data-path="../mongoose/docs/defaults.html">
+            
+                <a href="../mongoose/docs/defaults.html">
+            
+                    
+                    defaults
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.4" data-path="../mongoose/docs/queries.html">
+            
+                <a href="../mongoose/docs/queries.html">
+            
+                    
+                    queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.5" data-path="../mongoose/docs/validation.html">
+            
+                <a href="../mongoose/docs/validation.html">
+            
+                    
+                    validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.6" data-path="../mongoose/docs/middleware.html">
+            
+                <a href="../mongoose/docs/middleware.html">
+            
+                    
+                    middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.7" data-path="../mongoose/docs/populate.html">
+            
+                <a href="../mongoose/docs/populate.html">
+            
+                    
+                    population
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.8" data-path="../mongoose/docs/connections.html">
+            
+                <a href="../mongoose/docs/connections.html">
+            
+                    
+                    connections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.9" data-path="../mongoose/docs/plugins.html">
+            
+                <a href="../mongoose/docs/plugins.html">
+            
+                    
+                    plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.10" data-path="../mongoose/docs/promises.html">
+            
+                <a href="../mongoose/docs/promises.html">
+            
+                    
+                    promises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.11" data-path="../mongoose/docs/discriminators.html">
+            
+                <a href="../mongoose/docs/discriminators.html">
+            
+                    
+                    discriminators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.12" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/blob/master/CONTRIBUTING.md">
+            
+                    
+                    contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.13" data-path="../mongoose/docs/harmony.html">
+            
+                <a href="../mongoose/docs/harmony.html">
+            
+                    
+                    ES2015 integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.14" data-path="../mongoose/docs/browser.html">
+            
+                <a href="../mongoose/docs/browser.html">
+            
+                    
+                    schemas in the browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.15" data-path="../mongoose/docs/compatibility.html">
+            
+                <a href="../mongoose/docs/compatibility.html">
+            
+                    
+                    MongoDB Version Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.16" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.6-Release-Notes">
+            
+                    
+                    3.6 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.17" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/3.8-Release-Notes">
+            
+                    
+                    3.8 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.2.18" >
+            
+                <a target="_blank" href="https://github.com/Automattic/mongoose/wiki/4.0-Release-Notes">
+            
+                    
+                    4.0 release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.3" data-path="../mongoose/docs/API.html">
+            
+                <a href="../mongoose/docs/API.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.4" data-path="../mongoose/docs/faq.html">
+            
+                <a href="../mongoose/docs/faq.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13.1.5" data-path="../mongoose/docs/prior.html">
+            
+                <a href="../mongoose/docs/prior.html">
+            
+                    
+                    之前的版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../passport/">
+            
+                <a href="../passport/">
+            
+                    
+                    passport
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="../node-formidable/">
+            
+                <a href="../node-formidable/">
+            
+                    
+                    node-formidable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.16" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    pm2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >pm2</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div align="center">
+  <br>
+  <a href="http://pm2.keymetrics.io" title="PM2 Keymetrics link" target="_blank">
+    <img width="710px" src="https://raw.githubusercontent.com/Unitech/pm2/master/pres/pm2-v4.png" alt="pm2 logo">
+  </a>
+  <br>
+<br>
+<b>P</b>(rocess) <b>M</b>(anager) <b>2</b>
+<br><br>
+
+ <a href="https://www.bithound.io/github/Unitech/pm2" title="Bithound PM2 score" target="_blank">
+ <img src="https://www.bithound.io/github/Unitech/pm2/badges/score.svg" alt="bitHound Score">
+</a>
+
+<a href="https://www.npmjs.com/package/pm2" title="PM2 on NPM" target="_blank">
+  <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/pm2.svg?style=flat-square">
+</a>
+
+<a href="https://travis-ci.org/Unitech/pm2" title="PM2 Tests" target="_blank">
+  <img src="https://travis-ci.org/Unitech/pm2.svg?branch=master" alt="Build Status">
+</a>
+
+
+<br>
+<br>
+<br>
+</div>
+
+<p>PM2 &#x662F;&#x5177;&#x6709;&#x5185;&#x7F6E;&#x8D1F;&#x8F7D;&#x5E73;&#x8861;&#x5668;&#x7684; Node.js &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x751F;&#x4EA7;&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#x5668;&#x3002;&#x5B83;&#x4F7F;&#x60A8;&#x53EF;&#x4EE5;&#x6C38;&#x4E45;&#x4FDD;&#x6301;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#xFF0C;&#x65E0;&#x9700;&#x505C;&#x673A;&#x5373;&#x53EF;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4F7F;&#x5E38;&#x89C1;&#x7684;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x4EFB;&#x52A1;&#x66F4;&#x5BB9;&#x6613;</p>
+<p>&#x5728;&#x751F;&#x4EA7;&#x6A21;&#x5F0F;&#x4E0B;&#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">$ pm2 start app.js
+</code></pre>
+<p>PM2 &#x7ECF;&#x8FC7;&#x4E86;<a href="https://travis-ci.org/Unitech/pm2" target="_blank">&#x8D85;&#x8FC7; 1400 &#x6B21;&#x6D4B;&#x8BD5;</a>&#x3002;</p>
+<p>&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#xFF1A; <a href="http://pm2.keymetrics.io/" target="_blank">http://pm2.keymetrics.io/</a></p>
+<p>&#x9002;&#x7528;&#x4E8E; Linux&#xFF08;stable&#xFF09;&#xFF06; macOS&#xFF08;stable&#xFF09;&#xFF06; Windows&#xFF08;stable&#xFF09;&#x3002;
+&#x4ECE; Node.js 0.12 &#x5F00;&#x59CB;&#xFF0C;&#x6240;&#x6709; Node.js &#x7248;&#x672C;&#x90FD;&#x652F;&#x6301;&#x3002;</p>
+<p><a href="https://nodei.co/npm/pm2/" target="_blank"><img src="https://nodei.co/npm/pm2.png?downloads=true&amp;downloadRank=true" alt="NPM"></a></p>
+<h2 id="&#x5B89;&#x88C5;-pm2"><a name="&#x5B89;&#x88C5;-pm2" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;-pm2"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B89;&#x88C5;-pm2" class="plugin-anchor" href="#&#x5B89;&#x88C5;-pm2"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5; PM2</h2>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">npm</span> <span class="token function">install</span> pm2 -g
+</code></pre>
+<p><em>&#x5F53;&#x60A8;&#x5B89;&#x88C5; Node.js &#x65F6;&#xFF0C;npm &#x662F;&#x4E00;&#x4E2A;&#x5185;&#x7F6E;&#x7684; CLI - <a href="https://keymetrics.io/2015/02/03/installing-node-js-and-io-js-with-nvm/" target="_blank">&#x4F7F;&#x7528; NVM &#x5B89;&#x88C5; Node.js</a></em></p>
+<h2 id="&#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><a name="&#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;" class="plugin-anchor" href="#&#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</h2>
+<pre class="language-"><code class="lang-bash">$ pm2 start app.js
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5DF2;&#x88AB;&#x5B88;&#x62A4;&#xFF0C;&#x88AB;&#x76D1;&#x63A7;&#x5E76;&#x4FDD;&#x6301;&#x6C38;&#x4E45;&#x6FC0;&#x6D3B;&#x3002;</p>
+<p><a href="http://pm2.keymetrics.io/docs/usage/process-management/" target="_blank">&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;</a></p>
+<h2 id="&#x5B98;&#x65B9;&#x7684;-docker-&#x56FE;&#x50CF;"><a name="&#x5B98;&#x65B9;&#x7684;-docker-&#x56FE;&#x50CF;" class="anchor-navigation-ex-anchor" href="#&#x5B98;&#x65B9;&#x7684;-docker-&#x56FE;&#x50CF;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B98;&#x65B9;&#x7684;-docker-&#x56FE;&#x50CF;" class="plugin-anchor" href="#&#x5B98;&#x65B9;&#x7684;-docker-&#x56FE;&#x50CF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B98;&#x65B9;&#x7684; Docker &#x56FE;&#x50CF;</h2>
+<p>Docker Hub PM2 image:</p>
+<p><a href="https://hub.docker.com/r/keymetrics/pm2/" target="_blank">PM2 Official Docker Image</a></p>
+<p>&#x4F7F;&#x7528; pm2-docker &#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;:</p>
+<pre class="language-"><code>FROM keymetrics/pm2:latest
+[...]
+CMD [ &quot;pm2-docker&quot;, &quot;start&quot;, &quot;ecosystem.config.js&quot; ]
+</code></pre><p> &#x66F4;&#x591A; Docker/PM2 &#x96C6;&#x6210;&#xFF1A;
+<a href="http://pm2.keymetrics.io/docs/usage/docker-pm2-nodejs/" target="_blank">pm2 Docker &#x652F;&#x6301;</a></p>
+<h2 id="&#x76D1;&#x63A7;&#x5668;-pm2-&#x548C;-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><a name="&#x76D1;&#x63A7;&#x5668;-pm2-&#x548C;-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x76D1;&#x63A7;&#x5668;-pm2-&#x548C;-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x76D1;&#x63A7;&#x5668;-pm2-&#x548C;-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;" class="plugin-anchor" href="#&#x76D1;&#x63A7;&#x5668;-pm2-&#x548C;-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76D1;&#x63A7;&#x5668; PM2 &#x548C; &#x5E94;&#x7528;&#x7A0B;&#x5E8F;</h2>
+<p>&#x8981;&#x76D1;&#x63A7;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x53EA;&#x9700;&#x952E;&#x5165;:</p>
+<pre class="language-"><code class="lang-bash">$ pm2 register
+</code></pre>
+<p><a href="http://docs.keymetrics.io/" target="_blank">&#x66F4;&#x591A;&#x5173;&#x4E8E; PM2 &#x76D1;&#x63A7;</a></p>
+<h2 id="&#x66F4;&#x65B0;-pm2"><a name="&#x66F4;&#x65B0;-pm2" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;-pm2"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x66F4;&#x65B0;-pm2" class="plugin-anchor" href="#&#x66F4;&#x65B0;-pm2"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66F4;&#x65B0; PM2</h2>
+<pre class="language-"><code class="lang-bash"><span class="token comment" spellcheck="true"># &#x5B89;&#x88C5; PM2 &#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> pm2@latest -g
+<span class="token comment" spellcheck="true"># &#x4FDD;&#x5B58;&#x8FDB;&#x7A0B;&#x5217;&#x8868;&#xFF0C;&#x9000;&#x51FA;&#x65E7;&#x7684; PM2 &#x5E76;&#x6062;&#x590D;&#x6240;&#x6709;&#x8FDB;&#x7A0B;</span>
+$ pm2 update
+</code></pre>
+<p><em>PM2 &#x65E0;&#x7F1D;&#x66F4;&#x65B0;</em></p>
+<h2 id="&#x4E3B;&#x8981;&#x7279;&#x6027;"><a name="&#x4E3B;&#x8981;&#x7279;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x4E3B;&#x8981;&#x7279;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E3B;&#x8981;&#x7279;&#x6027;" class="plugin-anchor" href="#&#x4E3B;&#x8981;&#x7279;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3B;&#x8981;&#x7279;&#x6027;</h2>
+<h3 id="&#x547D;&#x4EE4;&#x6982;&#x8FF0;"><a name="&#x547D;&#x4EE4;&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#&#x547D;&#x4EE4;&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x547D;&#x4EE4;&#x6982;&#x8FF0;" class="plugin-anchor" href="#&#x547D;&#x4EE4;&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x6982;&#x8FF0;</h3>
+<pre class="language-"><code class="lang-bash"><span class="token comment" spellcheck="true"># &#x5E38;&#x89C4;</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> pm2 -g            <span class="token comment" spellcheck="true"># &#x5B89;&#x88C5; PM2</span>
+$ pm2 start app.js              <span class="token comment" spellcheck="true"># &#x542F;&#x52A8;&#xFF0C;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x5E76;&#x81EA;&#x52A8;&#x91CD;&#x542F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F; (Node)</span>
+$ pm2 start app.py              <span class="token comment" spellcheck="true"># &#x542F;&#x52A8;&#xFF0C;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x5E76;&#x81EA;&#x52A8;&#x91CD;&#x542F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F; (Python)</span>
+$ pm2 start <span class="token function">npm</span> -- start        <span class="token comment" spellcheck="true"># &#x542F;&#x52A8;&#xFF0C;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x5E76;&#x81EA;&#x52A8;&#x91CD;&#x542F; Node &#x5E94;&#x7528;&#x7A0B;&#x5E8F;</span>
+
+<span class="token comment" spellcheck="true"># &#x96C6;&#x7FA4;&#x6A21;&#x5F0F; (&#x4EC5;&#x9650; Node.js )</span>
+$ pm2 start app.js -i 4         <span class="token comment" spellcheck="true"># &#x5728;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x4E0B;&#x542F;&#x52A8; 4 &#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5B9E;&#x4F8B;&#xFF0C;&#x5B83;&#x5C06;&#x4E3A;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x52A0;&#x8F7D;&#x5E73;&#x8861;&#x7F51;&#x7EDC;&#x67E5;&#x8BE2;&#xFF08;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF09;</span>
+$ pm2 reload all                <span class="token comment" spellcheck="true"># 0 &#x79D2;&#x505C;&#x673A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;</span>
+$ pm2 scale <span class="token punctuation">[</span>app-name<span class="token punctuation">]</span> 10       <span class="token comment" spellcheck="true"># &#x96C6;&#x7FA4;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x89C4;&#x6A21;&#x4E3A; 10 &#x4E2A;&#x96C6;&#x6210;</span>
+
+<span class="token comment" spellcheck="true"># &#x8FC7;&#x7A0B;&#x76D1;&#x63A7;</span>
+$ pm2 list                      <span class="token comment" spellcheck="true"># &#x5217;&#x51FA;&#x6240;&#x6709;&#x4F7F;&#x7528; PM2 &#x542F;&#x52A8;&#x7684;&#x8FDB;&#x7A0B;</span>
+$ pm2 monit                     <span class="token comment" spellcheck="true"># &#x663E;&#x793A;&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5185;&#x5B58;&#x548C; cpu &#x4F7F;&#x7528;&#x60C5;&#x51B5;</span>
+$ pm2 show <span class="token punctuation">[</span>app-name<span class="token punctuation">]</span>           <span class="token comment" spellcheck="true"># &#x663E;&#x793A;&#x5173;&#x4E8E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;</span>
+
+<span class="token comment" spellcheck="true"># &#x65E5;&#x5FD7;&#x7BA1;&#x7406;</span>
+$ pm2 logs                      <span class="token comment" spellcheck="true"># &#x663E;&#x793A;&#x6240;&#x6709;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x65E5;&#x5FD7;</span>
+$ pm2 logs <span class="token punctuation">[</span>app-name<span class="token punctuation">]</span>           <span class="token comment" spellcheck="true"># &#x663E;&#x793A;&#x6307;&#x5B9A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x65E5;&#x5FD7;</span>
+$ pm2 logs --json               <span class="token comment" spellcheck="true"># JSON&#x683C;&#x5F0F;&#x7684;&#x65E5;&#x5FD7;</span>
+$ pm2 flush
+$ pm2 reloadLogs
+
+<span class="token comment" spellcheck="true"># &#x8FDB;&#x7A0B;&#x72B6;&#x6001;&#x7BA1;&#x7406;</span>
+$ pm2 start app.js --name<span class="token operator">=</span><span class="token string">&quot;api&quot;</span> <span class="token comment" spellcheck="true"># &#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5E76;&#x547D;&#x540D;&#x4E3A; &#x201C;api&#x201D;</span>
+$ pm2 start app.js -- -a 34     <span class="token comment" spellcheck="true"># &#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5E76;&#x4F20;&#x9012;&#x9009;&#x9879; &quot;-a 34&quot; &#x4F5C;&#x4E3A;&#x53C2;&#x6570;</span>
+$ pm2 start app.js --watch      <span class="token comment" spellcheck="true"># &#x6587;&#x4EF6;&#x66F4;&#x6539;&#x65F6;&#xFF0C;&#x91CD;&#x542F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</span>
+$ pm2 start script.sh           <span class="token comment" spellcheck="true"># &#x542F;&#x52A8; bash &#x811A;&#x672C;</span>
+$ pm2 start app.json            <span class="token comment" spellcheck="true"># &#x542F;&#x52A8;&#x5728; app.json &#x4E2D;&#x58F0;&#x660E;&#x7684;&#x6240;&#x6709;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</span>
+$ pm2 reset <span class="token punctuation">[</span>app-name<span class="token punctuation">]</span>          <span class="token comment" spellcheck="true"># &#x91CD;&#x7F6E;&#x6240;&#x6709;&#x8BA1;&#x6570;&#x5668;</span>
+$ pm2 stop all                  <span class="token comment" spellcheck="true"># &#x505C;&#x6B62;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</span>
+$ pm2 stop 0                    <span class="token comment" spellcheck="true"># &#x4F7F;&#x7528; id 0 &#x505C;&#x6B62;&#x6240;&#x6709; &#x8FDB;&#x7A0B;</span>
+$ pm2 restart all               <span class="token comment" spellcheck="true"># &#x91CD;&#x542F;&#x6240;&#x6709;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</span>
+$ pm2 gracefulReload all        <span class="token comment" spellcheck="true"># &#x5728;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x4E0B;&#x4F18;&#x96C5;&#x5730;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x6240;&#x6709;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</span>
+$ pm2 delete all                <span class="token comment" spellcheck="true"># &#x6740;&#x6B7B;&#x548C;&#x5220;&#x9664;&#x6240;&#x6709;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</span>
+$ pm2 delete 0                  <span class="token comment" spellcheck="true"># &#x4F7F;&#x7528; id 0 &#x5220;&#x9664;&#x6240;&#x6709;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</span>
+
+<span class="token comment" spellcheck="true"># Startup/Boot &#x7BA1;&#x7406;</span>
+$ pm2 startup                   <span class="token comment" spellcheck="true"># &#x68C0;&#x6D4B;&#x521D;&#x59CB;&#x5316;&#x7CFB;&#x7EDF;&#xFF0C;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x751F;&#x6210;&#x548C;&#x914D;&#x7F6E;pm2 boot</span>
+$ pm2 save                      <span class="token comment" spellcheck="true"># &#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x8FDB;&#x7A0B;&#x5217;&#x8868;</span>
+$ pm2 resurrect                 <span class="token comment" spellcheck="true"># &#x6062;&#x590D;&#x4EE5;&#x524D;&#x4FDD;&#x5B58;&#x7684;&#x8FDB;&#x7A0B;</span>
+$ pm2 unstartup                 <span class="token comment" spellcheck="true"># &#x7981;&#x7528;&#x548C;&#x79FB;&#x9664;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;</span>
+
+$ pm2 update                    <span class="token comment" spellcheck="true"># &#x4FDD;&#x5B58;&#x8FDB;&#x7A0B;&#xFF0C;&#x6740;&#x6B7B; PM2 &#x8FDB;&#x7A0B;&#x5E76;&#x6062;&#x590D;&#x8FDB;&#x7A0B;</span>
+$ pm2 generate                  <span class="token comment" spellcheck="true"># &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6837;&#x672C; json &#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+
+<span class="token comment" spellcheck="true"># &#x90E8;&#x7F72;</span>
+$ pm2 deploy app.json prod setup    <span class="token comment" spellcheck="true"># &#x8BBE;&#x7F6E; &quot;prod&quot; &#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;</span>
+$ pm2 deploy app.json prod          <span class="token comment" spellcheck="true"># &#x66F4;&#x65B0; &quot;prod&quot; &#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;</span>
+$ pm2 deploy app.json prod revert 2 <span class="token comment" spellcheck="true"># &#x4F7F;&#x7528; 2 &#x6062;&#x590D; &quot;prod&quot; &#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;</span>
+
+<span class="token comment" spellcheck="true"># &#x6A21;&#x5757;&#x7CFB;&#x7EDF;</span>
+$ pm2 module:generate <span class="token punctuation">[</span>name<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># &#x751F;&#x6210;&#x5E26;&#x6709;&#x540D;&#x79F0; [name] &#x7684;&#x6837;&#x4F8B;&#x6A21;&#x5757;</span>
+$ pm2 <span class="token function">install</span> pm2-logrotate     <span class="token comment" spellcheck="true"># &#x5B89;&#x88C5;&#x6A21;&#x5757; (&#x8FD9;&#x91CC;&#x662F;&#x4E00;&#x4E2A; log &#x5FAA;&#x73AF;&#x7CFB;&#x7EDF;)</span>
+$ pm2 uninstall pm2-logrotate   <span class="token comment" spellcheck="true"># &#x5378;&#x8F7D;&#x6A21;&#x5757;</span>
+$ pm2 publish                   <span class="token comment" spellcheck="true"># &#x589E;&#x52A0;&#x7248;&#x672C;, git push &#x548C; npm publish</span>
+</code></pre>
+<h3 id="&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;"><a name="&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;" class="anchor-navigation-ex-anchor" href="#&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;" class="plugin-anchor" href="#&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;</h3>
+<p>&#x4E00;&#x65E6;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#xFF0C;&#x60A8;&#x5C31;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x5730;&#x5217;&#x51FA;&#x548C;&#x7BA1;&#x7406;&#x5B83;&#x4EEC;:</p>
+<p><img src="https://github.com/unitech/pm2/raw/master/pres/pm2-list.png" alt="Process listing"></p>
+<p>&#x5217;&#x51FA;&#x6240;&#x6709;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x8FDB;&#x7A0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">$ pm2 list
+</code></pre>
+<p>&#x7BA1;&#x7406;&#x8FDB;&#x7A0B;&#x662F;&#x5F88;&#x7B80;&#x6D01;&#x660E;&#x4E86;&#x7684;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">$ pm2 stop     <span class="token operator">&lt;</span>app_name<span class="token operator">|</span><span class="token function">id</span><span class="token operator">|</span><span class="token string">&apos;all&apos;</span><span class="token operator">|</span>json_conf<span class="token operator">&gt;</span>
+$ pm2 restart  <span class="token operator">&lt;</span>app_name<span class="token operator">|</span><span class="token function">id</span><span class="token operator">|</span><span class="token string">&apos;all&apos;</span><span class="token operator">|</span>json_conf<span class="token operator">&gt;</span>
+$ pm2 delete   <span class="token operator">&lt;</span>app_name<span class="token operator">|</span><span class="token function">id</span><span class="token operator">|</span><span class="token string">&apos;all&apos;</span><span class="token operator">|</span>json_conf<span class="token operator">&gt;</span>
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x786E;&#x4FDD;&#x5B83;&#x5BF9; <code>json_conf</code> &#x4E2D;&#x58F0;&#x660E;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4ECE; <code>json_conf</code> &#x4E2D;&#x9009;&#x62E9;&#x81EA;&#x5B9A;&#x4E49;&#x7684; <code>env</code> &#x540D;&#x79F0;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash">$ pm2 restart <span class="token operator">&lt;</span>json_conf<span class="token operator">&gt;</span> <span class="token punctuation">[</span>--env <span class="token operator">&lt;</span>env_name<span class="token operator">&gt;</span><span class="token punctuation">]</span>
+</code></pre>
+<p>&#x83B7;&#x5F97;&#x5173;&#x4E8E;&#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x7684;&#x66F4;&#x591A;&#x7EC6;&#x8282;:</p>
+<pre class="language-"><code class="lang-bash">$ pm2 describe <span class="token operator">&lt;</span>id<span class="token operator">|</span>app_name<span class="token operator">&gt;</span>
+</code></pre>
+<p><a href="http://pm2.keymetrics.io/docs/usage/process-management/" target="_blank">&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;</a></p>
+<h3 id="&#x8D1F;&#x8F7D;&#x5E73;&#x8861;--0-&#x79D2;&#x505C;&#x673A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;"><a name="&#x8D1F;&#x8F7D;&#x5E73;&#x8861;--0-&#x79D2;&#x505C;&#x673A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;" class="anchor-navigation-ex-anchor" href="#&#x8D1F;&#x8F7D;&#x5E73;&#x8861;--0-&#x79D2;&#x505C;&#x673A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8D1F;&#x8F7D;&#x5E73;&#x8861;--0-&#x79D2;&#x505C;&#x673A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;" class="plugin-anchor" href="#&#x8D1F;&#x8F7D;&#x5E73;&#x8861;--0-&#x79D2;&#x505C;&#x673A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8D1F;&#x8F7D;&#x5E73;&#x8861; &amp; 0 &#x79D2;&#x505C;&#x673A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;</h3>
+<p>&#x5F53;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4F7F;&#x7528; <code>-i <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>instance_number</span><span class="token punctuation">&gt;</span></span></code> &#x9009;&#x9879;&#x542F;&#x52A8;&#x65F6;&#xFF0C;<strong>&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;</strong> &#x662F;&#x88AB;&#x542F;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x542F;&#x52A8;&#x4E86;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684; <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>instance_number</span><span class="token punctuation">&gt;</span></span></code> &#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x5728;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x4E4B;&#x95F4;&#x81EA;&#x52A8;&#x8D1F;&#x8F7D;&#x5E73;&#x8861; HTTP/TCP/UDP&#x3002;&#x8FD9;&#x5141;&#x8BB8;&#x6839;&#x636E;&#x53EF;&#x7528; CPU &#x7684;&#x6570;&#x91CF;&#x6765;&#x589E;&#x52A0;&#x603B;&#x4F53;&#x6027;&#x80FD;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x4E3B;&#x8981;&#x8282;&#x70B9;&#x7684;&#x65E0;&#x7F1D;&#x652F;&#x6301;&#x3002;js&#x6846;&#x67B6;&#x548C;&#x4EFB;&#x4F55;&#x8282;&#x70B9;&#x3002;js&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0D;&#x9700;&#x8981;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;&#x66F4;&#x6539;:</p>
+<p>&#x6240;&#x6709;&#x4E3B;&#x6D41;&#x7684;  Node.js &#x6846;&#x67B6;&#x548C;&#x4EFB;&#x4F55;  Node.js &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x90FD;&#x65E0;&#x7F1D;&#x652F;&#x6301;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x66F4;&#x6539;&#x4EFB;&#x4F55;&#x4EE3;&#x7801;</p>
+<p><img src="https://raw.githubusercontent.com/Unitech/PM2/development/pres/cluster-support.png" alt="Framework supported"></p>
+<p>&#x4E3B;&#x8981;&#x547D;&#x4EE4;:</p>
+<pre class="language-"><code class="lang-bash">$ pm2 start app.js -i max  <span class="token comment" spellcheck="true"># &#x542F;&#x7528;&#x8D1F;&#x8F7D;&#x5E73;&#x8861;&#x5668;&#x5E76;&#x542F;&#x52A8; &apos;max&apos; &#x5B9E;&#x4F8B;(cpu nb)</span>
+
+$ pm2 reload all           <span class="token comment" spellcheck="true"># 0 &#x79D2;&#x505C;&#x673A;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;</span>
+
+$ pm2 scale <span class="token operator">&lt;</span>app_name<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>instance_number<span class="token operator">&gt;</span> <span class="token comment" spellcheck="true"># &#x589E;&#x52A0;/&#x51CF;&#x5C11; &#x8FDB;&#x7A0B;&#x6570;&#x91CF;</span>
+</code></pre>
+<p><a href="https://keymetrics.io/2015/03/26/pm2-clustering-made-easy/" target="_blank">&#x66F4;&#x591A;&#x5173;&#x4E8E; PM2 &#x5982;&#x4F55;&#x4F7F;&#x96C6;&#x7FA4;&#x53D8;&#x5F97;&#x5BB9;&#x6613;&#x7684;&#x4FE1;&#x606F;</a></p>
+<h3 id="cpu--memory-&#x76D1;&#x63A7;"><a name="cpu--memory-&#x76D1;&#x63A7;" class="anchor-navigation-ex-anchor" href="#cpu--memory-&#x76D1;&#x63A7;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cpu--memory-&#x76D1;&#x63A7;" class="plugin-anchor" href="#cpu--memory-&#x76D1;&#x63A7;"><i class="fa fa-link" aria-hidden="true"></i></a>CPU / Memory &#x76D1;&#x63A7;</h3>
+<p><img src="https://github.com/Unitech/pm2/raw/master/pres/pm2-monit.png" alt="Monit"></p>
+<p>&#x76D1;&#x63A7;&#x6240;&#x6709;&#x8FDB;&#x7A0B;&#x542F;&#x52A8;:</p>
+<pre class="language-"><code class="lang-bash">$ pm2 monit
+</code></pre>
+<h3 id="&#x65E5;&#x5FD7;&#x8BBE;&#x65BD;"><a name="&#x65E5;&#x5FD7;&#x8BBE;&#x65BD;" class="anchor-navigation-ex-anchor" href="#&#x65E5;&#x5FD7;&#x8BBE;&#x65BD;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x65E5;&#x5FD7;&#x8BBE;&#x65BD;" class="plugin-anchor" href="#&#x65E5;&#x5FD7;&#x8BBE;&#x65BD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x5FD7;&#x8BBE;&#x65BD;</h3>
+<p><img src="https://github.com/unitech/pm2/raw/master/pres/pm2-logs.png" alt="Monit"></p>
+<p>&#x5B9E;&#x65F6;&#x663E;&#x793A;&#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x6216;&#x6240;&#x6709;&#x8FDB;&#x7A0B;&#x7684;&#x65E5;&#x5FD7;&#x3002;&#x6807;&#x51C6;&#x7684;&#x3001;&#x539F;&#x59CB;&#x7684;&#x3001;JSON &#x548C;&#x683C;&#x5F0F;&#x5316;&#x7684;&#x8F93;&#x51FA;&#x90FD;&#x53EF;&#x7528;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ pm2 logs <span class="token punctuation">[</span><span class="token string">&apos;all&apos;</span><span class="token operator">|</span>app_name<span class="token operator">|</span>app_id<span class="token punctuation">]</span> <span class="token punctuation">[</span>--json<span class="token punctuation">]</span> <span class="token punctuation">[</span>--format<span class="token punctuation">]</span> <span class="token punctuation">[</span>--raw<span class="token punctuation">]</span>
+</code></pre>
+<p>&#x793A;&#x4F8B;:</p>
+<pre class="language-"><code class="lang-bash">$ pm2 logs APP-NAME       <span class="token comment" spellcheck="true"># &#x663E;&#x793A; APP-NAME &#x65E5;&#x5FD7;</span>
+$ pm2 logs --json         <span class="token comment" spellcheck="true"># JSON &#x8F93;&#x51FA;</span>
+$ pm2 logs --format       <span class="token comment" spellcheck="true"># &#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;</span>
+
+$ pm2 flush               <span class="token comment" spellcheck="true"># &#x51B2;&#x6D17;&#x6240;&#x6709;&#x65E5;&#x5FD7;</span>
+$ pm2 reloadLogs          <span class="token comment" spellcheck="true"># &#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x6240;&#x6709;&#x65E5;&#x5FD7;</span>
+</code></pre>
+<p><a href="http://pm2.keymetrics.io/docs/usage/log-management/" target="_blank">&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x65E5;&#x5FD7;&#x7BA1;&#x7406;</a></p>
+<h3 id="&#x542F;&#x52A8;&#x811A;&#x672C;&#x751F;&#x6210;"><a name="&#x542F;&#x52A8;&#x811A;&#x672C;&#x751F;&#x6210;" class="anchor-navigation-ex-anchor" href="#&#x542F;&#x52A8;&#x811A;&#x672C;&#x751F;&#x6210;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x542F;&#x52A8;&#x811A;&#x672C;&#x751F;&#x6210;" class="plugin-anchor" href="#&#x542F;&#x52A8;&#x811A;&#x672C;&#x751F;&#x6210;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x542F;&#x52A8;&#x811A;&#x672C;&#x751F;&#x6210;</h3>
+<p>&#x5728;&#x6BCF;&#x6B21;&#x670D;&#x52A1;&#x5668;&#x91CD;&#x542F;&#x65F6;&#xFF0C;PM2 &#x90FD;&#x4F1A;&#x751F;&#x6210;&#x5E76;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;&#x542F;&#x52A8;&#x811A;&#x672C;&#xFF0C;&#x4EE5;&#x4FDD;&#x6301;  PM2 &#x548C; &#x8FDB;&#x7A0B;&#x6D3B;&#x8DC3;&#x3002;</p>
+<p>&#x652F;&#x6301;&#x521D;&#x59CB;&#x7CFB;&#x7EDF;&#xFF0C;&#x5982;&#xFF1A; <strong>systemd</strong> (Ubuntu 16, CentOS, Arch), <strong>upstart</strong> (Ubuntu 14/12), <strong>launchd</strong> (MacOSx, Darwin), <strong>rc.d</strong> (FreeBSD).</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment" spellcheck="true"># &#x81EA;&#x52A8;&#x68C0;&#x6D4B;&#x521D;&#x59CB;&#x7CFB;&#x7EDF; + &#x5728;&#x670D;&#x52A1;&#x5668;&#x542F;&#x52A8;&#x65F6;&#x751F;&#x6210;&#x548C;&#x8BBE;&#x7F6E; PM2 boot</span>
+$ pm2 startup
+
+<span class="token comment" spellcheck="true"># &#x624B;&#x52A8;&#x6307;&#x5B9A;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;</span>
+<span class="token comment" spellcheck="true"># &#x53EF;&#x4EE5;&#x662F;: systemd, upstart, launchd, rcd</span>
+$ pm2 startup <span class="token punctuation">[</span>platform<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># &#x5728;&#x670D;&#x52A1;&#x5668;&#x542F;&#x52A8;&#x65F6;&#x7981;&#x7528;&#x548C;&#x79FB;&#x9664; PM2</span>
+$ pm2 unstartup
+</code></pre>
+<p>&#x5728;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#xFF08;reboot&#xFF09;&#x65F6;&#x4FDD;&#x5B58;/&#x51BB;&#x7ED3;&#xFF08;save/freeze &#xFF09;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5217;&#x8868;:</p>
+<pre class="language-"><code class="lang-bash">$ pm2 save
+</code></pre>
+<p><a href="http://pm2.keymetrics.io/docs/usage/startup/" target="_blank">&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x542F;&#x52A8;&#x811A;&#x672C;</a></p>
+<h2 id="&#x6A21;&#x5757;&#x7CFB;&#x7EDF;"><a name="&#x6A21;&#x5757;&#x7CFB;&#x7EDF;" class="anchor-navigation-ex-anchor" href="#&#x6A21;&#x5757;&#x7CFB;&#x7EDF;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6A21;&#x5757;&#x7CFB;&#x7EDF;" class="plugin-anchor" href="#&#x6A21;&#x5757;&#x7CFB;&#x7EDF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6A21;&#x5757;&#x7CFB;&#x7EDF;</h2>
+<p>PM2 &#x5D4C;&#x5165;&#x4E86;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x800C;&#x5F3A;&#x5927;&#x7684;&#x6A21;&#x5757;&#x7CFB;&#x7EDF;&#x3002;&#x5B89;&#x88C5;&#x6A21;&#x5757;&#x5F88;&#x7B80;&#x5355;:</p>
+<pre class="language-"><code class="lang-bash">$ pm2 <span class="token function">install</span> <span class="token operator">&lt;</span>module_name<span class="token operator">&gt;</span>
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x4E0E; PM2 &#x517C;&#x5BB9;&#x7684;&#x6A21;&#x5757;(&#x7531; PM2 &#x7BA1;&#x7406;&#x7684;&#x72EC;&#x7ACB;&#x7684; Node.js &#x5E94;&#x7528;&#x7A0B;&#x5E8F;):</p>
+<p><a href="https://github.com/pm2-hive/pm2-logrotate" target="_blank"><strong>pm2-logrotate</strong></a> auto rotate logs of PM2 and applications managed<br>
+<a href="https://github.com/pm2-hive/pm2-webshell" target="_blank"><strong>pm2-webshell</strong></a> expose a fully capable terminal in browsers<br>
+<a href="https://github.com/pm2-hive/pm2-server-monit" target="_blank"><strong>pm2-server-monit</strong></a> monitor your server health<br></p>
+<p><a href="http://pm2.keymetrics.io/docs/advanced/pm2-module-system/" target="_blank">&#x7F16;&#x5199;&#x81EA;&#x5DF1;&#x7684;&#x6A21;&#x5757;</a></p>
+<h2 id="keymetrics-&#x76D1;&#x63A7;"><a name="keymetrics-&#x76D1;&#x63A7;" class="anchor-navigation-ex-anchor" href="#keymetrics-&#x76D1;&#x63A7;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="keymetrics-&#x76D1;&#x63A7;" class="plugin-anchor" href="#keymetrics-&#x76D1;&#x63A7;"><i class="fa fa-link" aria-hidden="true"></i></a>Keymetrics &#x76D1;&#x63A7;</h2>
+<p><a href="https://app.keymetrics.io/#/register" target="_blank"><img src="https://keymetrics.io/assets/images/application-demo.png" alt="Keymetrics Dashboard"></a></p>
+<p>&#x5982;&#x679C;&#x4F60;&#x7528; PM2 &#x6765;&#x7BA1;&#x7406;&#x4F60;&#x7684; NodeJS &#x5E94;&#x7528;&#xFF0C;&#x90A3;&#x4E48; Keymetrics &#x53EF;&#x4EE5;&#x4F7F;&#x76D1;&#x63A7;&#x548C;&#x7BA1;&#x7406;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x5E94;&#x7528;&#x53D8;&#x5F97;&#x7B80;&#x5355;&#x3002;
+&#x8BD5;&#x4E00;&#x8BD5;:</p>
+<p><a href="https://app.keymetrics.io/#/register" target="_blank">PM2&#x53D1;&#x73B0;  PM2 &#x7684;&#x76D1;&#x6D4B;&#x6307;&#x793A;&#x677F;</a></p>
+<p>&#x8C22;&#x8C22;&#x60A8;&#x7684;&#x5E2E;&#x52A9;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x60A8;&#x559C;&#x6B22;&#x6211;&#x4EEC;&#x7684; PM2 &#x3002;</p>
+<h2 id="&#x66F4;&#x591A;&#x5173;&#x4E8E;-pm2"><a name="&#x66F4;&#x591A;&#x5173;&#x4E8E;-pm2" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x591A;&#x5173;&#x4E8E;-pm2"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x66F4;&#x591A;&#x5173;&#x4E8E;-pm2" class="plugin-anchor" href="#&#x66F4;&#x591A;&#x5173;&#x4E8E;-pm2"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66F4;&#x591A;&#x5173;&#x4E8E; PM2</h2>
+<ul>
+<li><a href="http://pm2.keymetrics.io/docs/usage/application-declaration/" target="_blank">&#x901A;&#x8FC7; JS &#x6587;&#x4EF6;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x58F0;&#x660E;</a></li>
+<li><a href="http://pm2.keymetrics.io/docs/usage/watch-and-restart/" target="_blank">Watch &amp; Restart</a></li>
+<li><a href="http://pm2.keymetrics.io/docs/usage/pm2-api/" target="_blank">PM2 API</a></li>
+<li><a href="http://pm2.keymetrics.io/docs/usage/deployment/" target="_blank">&#x90E8;&#x7F72;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</a></li>
+<li><a href="http://pm2.keymetrics.io/docs/usage/use-pm2-with-cloud-providers/" target="_blank">PM2 on Heroku/Azure/App Engine</a></li>
+<li><a href="http://pm2.keymetrics.io/docs/usage/auto-completion/" target="_blank">PM2 &#x81EA;&#x52A8;&#x5B8C;&#x6210;</a></li>
+<li><a href="http://pm2.keymetrics.io/docs/tutorials/use-pm2-with-aws-elastic-beanstalk/" target="_blank">&#x5728; ElasticBeanStalk &#x4E2D;&#x4F7F;&#x7528; PM2 </a></li>
+<li><a href="https://futurestud.io/tutorials/pm2-utility-overview-installation" target="_blank">PM2 &#x6559;&#x7A0B;&#x7CFB;&#x5217;</a></li>
+</ul>
+<h2 id="&#x66F4;&#x65B0;&#x65E5;&#x5FD7;"><a name="&#x66F4;&#x65B0;&#x65E5;&#x5FD7;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;&#x65E5;&#x5FD7;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x66F4;&#x65B0;&#x65E5;&#x5FD7;" class="plugin-anchor" href="#&#x66F4;&#x65B0;&#x65E5;&#x5FD7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66F4;&#x65B0;&#x65E5;&#x5FD7;</h2>
+<p><a href="https://github.com/Unitech/PM2/blob/master/CHANGELOG.md" target="_blank">CHANGELOG</a></p>
+<h2 id="&#x8D21;&#x732E;&#x8005;"><a name="&#x8D21;&#x732E;&#x8005;" class="anchor-navigation-ex-anchor" href="#&#x8D21;&#x732E;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8D21;&#x732E;&#x8005;" class="plugin-anchor" href="#&#x8D21;&#x732E;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8D21;&#x732E;&#x8005;</h2>
+<p><a href="http://pm2.keymetrics.io/hall-of-fame/" target="_blank">Contributors</a></p>
+<h2 id="license"><a name="license" class="anchor-navigation-ex-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a><a name="license" class="plugin-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a>License</h2>
+<p>PM2 is made available under the terms of the GNU Affero General Public License 3.0 (AGPL 3.0).
+We can deliver other licenses, for more informations <a href="mailto:sales@keymetrics.io" target="_blank">contact sales</a>.</p>
+<p><a href="https://github.com/igrigorik/ga-beacon" target="_blank"><img src="https://ga-beacon.appspot.com/UA-51734350-7/pm2/readme?pixel&amp;useReferer" alt="GA"></a></p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; tuzhu008 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-01-01 21:04:01
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../node-formidable/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: node-formidable">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"pm2","level":"3.16","depth":1,"previous":{"title":"node-formidable","level":"3.15","depth":1,"path":"Library/node-formidable/README.md","ref":"Library/node-formidable/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","anchors","anchor-navigation-ex","favicon","copy-code-button","alerts","splitter","book-summary-scroll-position-saver","include-codeblock","ace","prism","prism-themes","-highlight","tbfed-pagefooter","github","sectionx","livereload"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy tuzhu008 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ace":{},"github":{"url":"https://github.com/tuzhu008"},"livereload":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"night","family":"serif","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"copy-code-button":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"acefull","theme":"tomorrow","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"tuzhu008","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Node.js","language":"zh-hans","gitbook":"*","description":"Node.js 自我学习"},"file":{"path":"Library/pm2/README.md","mtime":"2018-01-01T13:04:01.371Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-02T12:02:55.597Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
