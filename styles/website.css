@@ -83,16 +83,16 @@ blockquote.info strong {
     color: #42acf3 !important;
 }
 
-blockquote.info warning {
+blockquote.warning strong {
     color: #f0ad4e !important;
 }
 
-blockquote.info danger {
-    color: #d9534f !important;
+blockquote.success strong {
+    color: #50af51 !important;
 }
 
-blockquote.info error {
-    color: #50af51 !important;
+blockquote.danger strong {
+    color: #d9534f !important;
 }
 
 a>code:first-child {
