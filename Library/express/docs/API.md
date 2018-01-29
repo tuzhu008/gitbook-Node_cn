@@ -1932,7 +1932,7 @@ res.status(404).sendFile('/absolute/path/to/404.png');
 ### res.type(type) {#res_type}
 
 根据 [ mime.lookup()](https://github.com/broofa/node-mime#mimelookuppath) 为指定的 `type` 确定 MIME 类型，该 MIME 类型被用来设置 `Content-Type` HTTP 头。如果 `type` 包含 “/” 字符，那么它将设置 `Content-Type` 为 `type`。
-
+    
 ```js
 res.type('.html');              // => 'text/html'
 res.type('html');               // => 'text/html'

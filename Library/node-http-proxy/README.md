@@ -12,9 +12,9 @@ node-http-proxy
   <img src="https://coveralls.io/repos/nodejitsu/node-http-proxy/badge.png"/></a>
 </p>
 
-`node-http-proxy` is an HTTP programmable proxying library that supports
-websockets. It is suitable for implementing components such as reverse
-proxies and load balancers.
+`node-http-proxy` 是一个支持 websockets 的 HTTP 可编程代理库。
+它适合于实现诸如反向代理和负载平衡器之类的组件。
+
 
 ### Table of Contents
   * [Installation](#installation)
@@ -38,38 +38,39 @@ proxies and load balancers.
   * [Contributing and Issues](#contributing-and-issues)
   * [License](#license)
 
-### Installation
+###
 
 `npm install http-proxy --save`
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-### Upgrading from 0.8.x ?
+### 从 0.8.x 升级?
 
-Click [here](UPGRADING.md)
+点击[这里](https://github.com/nodejitsu/node-http-proxy/blob/master/UPGRADING.md)
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-### Core Concept
+### 核心概念
 
-A new proxy is created by calling `createProxyServer` and passing
-an `options` object as argument ([valid properties are available here](lib/http-proxy.js#L22-L50))
+`createProxyServer` 用于创建一个新的代理，
+它接受一个 `options` 对象作为其参数([有效属性可参见](https://github.com/nodejitsu/node-http-proxy/blob/master/lib/http-proxy.js#L22-L50))
 
 ```javascript
 var httpProxy = require('http-proxy');
 
 var proxy = httpProxy.createProxyServer(options); // See (†)
 ```
-†Unless listen(..) is invoked on the object, this does not create a webserver. See below.
 
-An object will be returned with four methods:
+除非在对象上调用 listen(..)，否则不会创建一个 web 服务器。见下文。
 
-* web `req, res, [options]` (used for proxying regular HTTP(S) requests)
-* ws `req, socket, head, [options]` (used for proxying WS(S) requests)
-* listen `port` (a function that wraps the object in a webserver, for your convenience)
-* close `[callback]` (a function that closes the inner webserver and stops listening on given port)
+可以使用下面四种方法来返回对象：
 
-It is then possible to proxy requests by calling these functions
+* web `req, res, [options]` (用于代理常规的 HTTP(S) 请求)
+* ws `req, socket, head, [options]` (用于代理 WS(S) 请求)
+* listen `port` (一个函数，为了方便，它将对象包装在 web 服务器中)
+* close `[callback]` (一个关闭内部网络服务器的函数，停止监听给定端口)
+
+然后通过调用这些函数来代理请求
 
 ```javascript
 http.createServer(function(req, res) {
@@ -77,7 +78,7 @@ http.createServer(function(req, res) {
 });
 ```
 
-Errors can be listened on either using the Event Emitter API
+可以使用事件发送器 API 来监听错误
 
 ```javascript
 proxy.on('error', function(e) {
@@ -85,34 +86,32 @@ proxy.on('error', function(e) {
 });
 ```
 
-or using the callback API
+或使用回调 API
 
 ```javascript
 proxy.web(req, res, { target: 'http://mytarget.com:8080' }, function(e) { ... });
 ```
 
-When a request is proxied it follows two different pipelines ([available here](lib/http-proxy/passes))
-which apply transformations to both the `req` and `res` object.
-The first pipeline (incoming) is responsible for the creation and manipulation of the stream that connects your client to the target.
-The second pipeline (outgoing) is responsible for the creation and manipulation of the stream that, from your target, returns data
-to the client.
+当一个请求被代理时，它会遵循两个不同的管道(pipelines)([这里可用](https://github.com/nodejitsu/node-http-proxy/blob/master/lib/http-proxy/passes))，它将同时对 `req` 和 `res` 对象进行转换。
+第一个管道(传入)负责创建和处理连接客户端到目标的流。
+第二个管道(传出)负责创建和操作流，从您的目标，将数据返回给客户端。
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-### Use Cases
+### 用例
 
-#### Setup a basic stand-alone proxy server
+#### 设置一个基本的独立代理服务器
 
 ```js
 var http = require('http'),
     httpProxy = require('http-proxy');
 //
-// Create your proxy server and set the target in the options.
+// 创建 proxy 服务器，并在 options 中设置 target
 //
 httpProxy.createProxyServer({target:'http://localhost:9000'}).listen(8000); // See (†)
 
 //
-// Create your target server
+// 创建 target 服务器
 //
 http.createServer(function (req, res) {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -120,31 +119,32 @@ http.createServer(function (req, res) {
   res.end();
 }).listen(9000);
 ```
-†Invoking listen(..) triggers the creation of a web server. Otherwise, just the proxy instance is created.
+†调用 `listen(..)` 触发 web 服务器的创建。否则，只是创建了代理实例。
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-#### Setup a stand-alone proxy server with custom server logic
-This example show how you can proxy a request using your own HTTP server
-and also you can put your own logic to handle the request.
+#### 使用自定义的服务器逻辑来设置一个独立的代理
+
+这个示例展示了如何使用自己的 HTTP 服务器来代理请求，还可以使用自己的逻辑来处理请求。
 
 ```js
 var http = require('http'),
     httpProxy = require('http-proxy');
 
 //
-// Create a proxy server with custom application logic
+// 创建一个带有自定义应用程序逻辑的代理服务器
 //
 var proxy = httpProxy.createProxyServer({});
 
 //
-// Create your custom server and just call `proxy.web()` to proxy
-// a web request to the target passed in the options
-// also you can use `proxy.ws()` to proxy a websockets request
+// 创建一个自定义服务器并
+//调用 `proxy.web()` 来代理到目标的 web 请求
+// 也可以使用 `proxy.ws()` 来代理一个 websockets 请求
 //
+
 var server = http.createServer(function(req, res) {
-  // You can define here your custom logic to handle the request
-  // and then proxy the request.
+  // 可以在这里定义自定义的逻辑来爱处理这个请求
+  // 然后代理这些请求
   proxy.web(req, res, { target: 'http://127.0.0.1:5060' });
 });
 
@@ -152,36 +152,33 @@ console.log("listening on port 5050")
 server.listen(5050);
 ```
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-#### Setup a stand-alone proxy server with proxy request header re-writing
-This example shows how you can proxy a request using your own HTTP server that
-modifies the outgoing proxy request by adding a special header.
+#### 设置一个带有请求头重写的独立代理服务器
+
+这个示例展示了如何使用您自己的 HTTP 服务器来代理一个请求，该服务器通过添加一个特殊的头来修改传出的代理请求。
 
 ```js
 var http = require('http'),
     httpProxy = require('http-proxy');
 
 //
-// Create a proxy server with custom application logic
+// 创建一个带有自定义应用程序逻辑的代理服务器
 //
 var proxy = httpProxy.createProxyServer({});
 
-// To modify the proxy connection before data is sent, you can listen
-// for the 'proxyReq' event. When the event is fired, you will receive
-// the following arguments:
+//要在数据被发送之前修改代理连接，可以监听 'proxyReq' 事件
+// 当事件被触发时，你将收到下面的参数：
 // (http.ClientRequest proxyReq, http.IncomingMessage req,
-//  http.ServerResponse res, Object options). This mechanism is useful when
-// you need to modify the proxy request before the proxy connection
-// is made to the target.
-//
+//  http.ServerResponse res, Object options)。
+// 当需要在到目标的代理连接被创建之前修改代理请求，这个机制是很有用的
 proxy.on('proxyReq', function(proxyReq, req, res, options) {
   proxyReq.setHeader('X-Special-Proxy-Header', 'foobar');
 });
 
 var server = http.createServer(function(req, res) {
-  // You can define here your custom logic to handle the request
-  // and then proxy the request.
+  // 可以在这里定义自定义的逻辑来爱处理这个请求
+  // 然后代理这些请求
   proxy.web(req, res, {
     target: 'http://127.0.0.1:5060'
   });
@@ -191,32 +188,32 @@ console.log("listening on port 5050")
 server.listen(5050);
 ```
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-#### Modify a response from a proxied server
-Sometimes when you have received a HTML/XML document from the server of origin you would like to modify it before forwarding it on.
+#### 修改来自代理服务器的响应
 
-[Harmon](https://github.com/No9/harmon) allows you to do this in a streaming style so as to keep the pressure on the proxy to a minimum.
+有时，当您从原始服务器收到 HTML/XML 文档时，您希望在转发它之前修改它。
 
-**[Back to top](#table-of-contents)**
+[Harmon](https://github.com/No9/harmon) 允许你以流的方式来做这件事，这样就可以将代理的压力保持在最低限度。
 
-#### Setup a stand-alone proxy server with latency
+**[回到顶部](#table-of-contents)**
+
+#### 设置一个具有延迟的独立代理服务器
 
 ```js
 var http = require('http'),
     httpProxy = require('http-proxy');
 
 //
-// Create a proxy server with latency
+// 创建一个带有延迟的代理服务器
 //
 var proxy = httpProxy.createProxyServer();
 
 //
-// Create your server that makes an operation that waits a while
-// and then proxies the request
+// 创建服务器，使操作等待一段时间，然后代理请求
 //
 http.createServer(function (req, res) {
-  // This simulates an operation that takes 500ms to execute
+  // 这将模拟执行 500 毫秒后执行的操作
   setTimeout(function () {
     proxy.web(req, res, {
       target: 'http://localhost:9008'
@@ -225,7 +222,7 @@ http.createServer(function (req, res) {
 }).listen(8008);
 
 //
-// Create your target server
+// 创建目标服务器
 //
 http.createServer(function (req, res) {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -234,16 +231,17 @@ http.createServer(function (req, res) {
 }).listen(9008);
 ```
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-#### Using HTTPS
-You can activate the validation of a secure SSL certificate to the target connection (avoid self signed certs), just set `secure: true` in the options.
+#### 使用 HTTPS
+
+您可以激活安全 SSL 证书的验证到目标连接(避免自签署的证书)，只需在选项中设置 `secure: true`。
 
 ##### HTTPS -> HTTP
 
 ```js
 //
-// Create the HTTPS proxy server in front of a HTTP server
+// 在 HTTP 服务器前面创建 HTTPS 代理服务器
 //
 httpProxy.createServer({
   target: {
@@ -261,7 +259,7 @@ httpProxy.createServer({
 
 ```js
 //
-// Create the proxy server listening on port 443
+// 创建代理服务器监听端口 443
 //
 httpProxy.createServer({
   ssl: {
@@ -269,18 +267,19 @@ httpProxy.createServer({
     cert: fs.readFileSync('valid-ssl-cert.pem', 'utf8')
   },
   target: 'https://localhost:9010',
-  secure: true // Depends on your needs, could be false.
+  secure: true // 这取决于你的需求，可以为 false。
 }).listen(443);
 ```
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-#### Proxying WebSockets
-You can activate the websocket support for the proxy using `ws:true` in the options.
+#### 代理 WebSockets
+
+可以在选项中使用 `ws:true` 激活对代理的 websocket 支持。
 
 ```js
 //
-// Create a proxy server for websockets
+// 为 websockets 创建代理服务器
 //
 httpProxy.createServer({
   target: 'ws://localhost:9014',
@@ -288,11 +287,11 @@ httpProxy.createServer({
 }).listen(8014);
 ```
 
-Also you can proxy the websocket requests just calling the `ws(req, socket, head)` method.
+只需要调用 `ws(req, socket, head)` 方法就可以代理 websocket 请求。
 
 ```js
 //
-// Setup our server to proxy standard HTTP requests
+// 设置服务器来代理标准 HTTP 请求
 //
 var proxy = new httpProxy.createProxyServer({
   target: {
@@ -305,8 +304,7 @@ var proxyServer = http.createServer(function (req, res) {
 });
 
 //
-// Listen to the `upgrade` event and proxy the
-// WebSocket requests as well.
+// 监听 `upgrade` 时间，并代理 WebSocket 请求
 //
 proxyServer.on('upgrade', function (req, socket, head) {
   proxy.ws(req, socket, head);
@@ -315,11 +313,11 @@ proxyServer.on('upgrade', function (req, socket, head) {
 proxyServer.listen(8015);
 ```
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-### Options
+### 选项
 
-`httpProxy.createProxyServer` supports the following options:
+`httpProxy.createProxyServer` 支持以下选项：
 
 *  **target**: url string to be parsed with the url module
 *  **forward**: url string to be parsed with the url module
@@ -341,7 +339,7 @@ proxyServer.listen(8015);
 *  **cookieDomainRewrite**: rewrites domain of `set-cookie` headers. Possible values:
    * `false` (default): disable cookie rewriting
    * String: new domain, for example `cookieDomainRewrite: "new.domain"`. To remove the domain, use `cookieDomainRewrite: ""`.
-   * Object: mapping of domains to new domains, use `"*"` to match all domains.  
+   * Object: mapping of domains to new domains, use `"*"` to match all domains.
      For example keep one domain unchanged, rewrite one domain and remove other domains:
      ```
      cookieDomainRewrite: {
@@ -353,18 +351,18 @@ proxyServer.listen(8015);
 *  **headers**: object with extra headers to be added to target requests.
 *  **proxyTimeout**: timeout (in millis) when proxy receives no response from target
 
-**NOTE:**
-`options.ws` and `options.ssl` are optional.
-`options.target` and `options.forward` cannot both be missing
+**注意:**
+`options.ws` 和 `options.ssl` 是可选的。
+`options.target` 和 `options.forward` 不能同时缺失
 
-If you are using the `proxyServer.listen` method, the following options are also applicable:
+如果使用 `proxyServer.listen` 方法，以下选项也适用:
 
- *  **ssl**: object to be passed to https.createServer()
- *  **ws**: true/false, if you want to proxy websockets
+ *  **ssl**: 对象被传递到  https.createServer()
+ *  **ws**: true/false，如果你想要代理 websockets
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-### Listening for proxy events
+### 监听代理事件
 
 * `error`: The error event is emitted if the request to the target fail. **We do not do any error handling of messages passed between client and proxy, and messages passed between proxy and target, so it is recommended that you listen on errors and handle them.**
 * `proxyReq`: This event is emitted before the data is sent. It gives you a chance to alter the proxyReq request object. Applies to "web" connections
@@ -376,9 +374,9 @@ If you are using the `proxyServer.listen` method, the following options are also
 
 ```js
 var httpProxy = require('http-proxy');
-// Error example
+// Error 示例
 //
-// Http Proxy Server with bad target
+// 带有损坏的目标的代理服务器
 //
 var proxy = httpProxy.createServer({
   target:'http://localhost:9005'
@@ -420,12 +418,12 @@ proxy.on('close', function (res, socket, head) {
 });
 ```
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-### Shutdown
+### 关闭
 
-* When testing or running server within another program it may be necessary to close the proxy.
-* This will stop the proxy from accepting new connections.
+* 当在另一个程序中测试或运行服务器时，可能需要关闭代理。
+* 这将阻止代理接受新的连接。
 
 ```js
 var proxy = new httpProxy.createProxyServer({
@@ -438,15 +436,15 @@ var proxy = new httpProxy.createProxyServer({
 proxy.close();
 ```
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-### Miscellaneous
+### 其他
 
 #### ProxyTable API
 
-A proxy table API is available through this add-on [module](https://github.com/donasaur/http-proxy-rules), which lets you define a set of rules to translate matching routes to target routes that the reverse proxy will talk to.
+通过附加[模块](https://github.com/donasaur/http-proxy-rules)，proxy table API 是可用的，它允许你定义一组规则来将匹配的路由转换成反向代理将与之交流的目标路由。
 
-#### Test
+#### 测试
 
 ```
 $ npm test
@@ -454,11 +452,11 @@ $ npm test
 
 #### Logo
 
-Logo created by [Diego Pasquali](http://dribbble.com/diegopq)
+Logo 由 [Diego Pasquali](http://dribbble.com/diegopq) 设计
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
-### Contributing and Issues
+### 贡献和问题
 
 * Read carefully our [Code Of Conduct](https://github.com/nodejitsu/node-http-proxy/blob/master/CODE_OF_CONDUCT.md)
 * Search on Google/Github
@@ -467,7 +465,7 @@ Logo created by [Diego Pasquali](http://dribbble.com/diegopq)
 * Commit to your local branch (which must be different from `master`)
 * Submit your Pull Request (be sure to include tests and update documentation)
 
-**[Back to top](#table-of-contents)**
+**[回到顶部](#table-of-contents)**
 
 ### License
 

@@ -24,7 +24,7 @@
     - [Application](Library/express/docs/API.md#application)
     - [Request](Library/express/docs/API.md#request)
     - [Response](Library/express/docs/API.md#response)
-    - [Router]((Library/express/docs/API.md#router)
+    - [Router](Library/express/docs/API.md#router)
   - [中间件](Library/express/middleware/README.md)
     - [method-override](Library/express/middleware/method-override/README.md)
     - [express-session](Library/express/middleware/session/README.md)
@@ -32,6 +32,7 @@
     - [connect-flash](Library/express/middleware/connect-flash/README.md)
     - [express-formidable](Library/express/middleware/express-formidable/README.md)
     - [express-winston](Library/express/middleware/express-winston/README.md)
+    - [body-parser](Library/express/middleware/body-parser/README.md)
 * [connect](Library/connect/README.md)
 
 * [socket.io](Library/socket.io/README.md)
